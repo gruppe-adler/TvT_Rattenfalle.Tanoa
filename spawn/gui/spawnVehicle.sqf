@@ -1,7 +1,7 @@
 spawnRussianVehicle = {
 	_vehicle = _this select 0;
 
-	_spawnedVeh = createVehicle [_vehicle, russianSpawnPos, [], 0, "NONE"];
+	[_vehicle, russianSpawnPos] call spawnSupplyDrop;
 
 	_spawnedVeh allowDamage false;
 	

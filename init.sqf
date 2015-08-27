@@ -1,35 +1,45 @@
+DEBUG = true;
+//
+// customizable variables
+//
+customRespawnTime = 10;
+
+
+// functional variables - do not change!
+player_respawned = false;
+
+if (isServer) then {
+
+	// possible crash site markerlist
+	crash_sites = [
+			"mrk_crash_site_01",
+			"mrk_crash_site_02",
+			"mrk_crash_site_03",
+			"mrk_crash_site_04",
+			"mrk_crash_site_05",
+			"mrk_crash_site_06",
+			"mrk_crash_site_07",
+			"mrk_crash_site_08",
+			"mrk_crash_site_09",
+			"mrk_crash_site_10"
+	];
+	0 = [] execVM "spawn\addRespawnLoadouts.sqf";
+
+	// add crash sites to respawn positions of independents
+	for [{_i=0}, {_i<count crash_sites}, {_i=_i+1}] do
+	{
+		[crashpilot, (crash_sites select _i)] call BIS_fnc_addRespawnPosition;
+	};
+	
+};
+
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
 call compile preprocessfile "vehicle_definitions\wrecks.sqf";
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "spawn\gui\initGUI.sqf";
-
-
-
-DEBUG = true;
-
-//
-// customizable variables
-//
-customRespawnTime = 10;
-
-// possible crash site markerlist
-crash_sites = [
-		"mrk_crash_site_01",
-		"mrk_crash_site_02",
-		"mrk_crash_site_03",
-		"mrk_crash_site_04",
-		"mrk_crash_site_05",
-		"mrk_crash_site_06",
-		"mrk_crash_site_07",
-		"mrk_crash_site_08",
-		"mrk_crash_site_09",
-		"mrk_crash_site_10"
-];
-
-// functional variables - do not change!
-player_respawned = false;
+[]execVM "helpers\supplyDropOnMarker.sqf";
 
 
 if (isServer) then {
@@ -61,15 +71,6 @@ if (isServer) then {
 	publicVariable "russianSpawnPos";
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
-
-	0 = [] execVM "spawn\addRespawnLoadouts.sqf";
-
-	// add crash sites to respawn positions of independents
-	for [{_i=0}, {_i<count crash_sites}, {_i=_i+1}] do
-	{
-		[crashpilot, (crash_sites select _i)] call BIS_fnc_addRespawnPosition;
-	};
-	
 	
 };
 
