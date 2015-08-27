@@ -218,7 +218,7 @@ refreshUI = {
 
 		[] call resetUI;
 
-		[_vehicle,russianSpawnPos] spawn spawnRussianVehicle;
+		[_vehicle, russianSpawnPos] call spawnSupplyDrop;
 	};
 
 };

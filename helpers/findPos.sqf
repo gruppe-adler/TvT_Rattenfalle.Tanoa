@@ -119,7 +119,7 @@ point_in_circle = {
 		_angle = floor (random 360);
         _point = [_center,(random _radius),_angle] call BIS_fnc_relPos;
 		_water = [_point] call water_check;
-		_hard_objs = [_point,5] call hard_check;
+		_hard_objs = [_point,10] call hard_check;
 		if (!_water && _hard_objs == 0) then 
 		{
 			_slope = [_point, 5] call get_slope;

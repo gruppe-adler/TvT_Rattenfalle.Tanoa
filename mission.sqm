@@ -967,31 +967,31 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={644.09778,542.70593,343.93997};
+					position[]={645.05304,541.16553,333.21451};
 					class args
 					{
 						items=6;
 						class Item0
 						{
-							value="1";
+							value="0";
 							parentCls="ace_weather_ModuleSettings";
 							typeName="enableServerController";
 						};
 						class Item1
 						{
-							value="1";
+							value="0";
 							parentCls="ace_weather_ModuleSettings";
 							typeName="useACEWeather";
 						};
 						class Item2
 						{
-							value="1";
+							value="0";
 							parentCls="ace_weather_ModuleSettings";
 							typeName="syncRain";
 						};
 						class Item3
 						{
-							value="1";
+							value="0";
 							parentCls="ace_weather_ModuleSettings";
 							typeName="syncWind";
 						};
