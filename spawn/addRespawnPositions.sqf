@@ -1,4 +1,8 @@
+#include "\z\ace\addons\main\script_component.hpp"
+
 _size = getNumber (configFile >> "CfgWorlds" >> worldName >> "MapSize");
+
+["Suche Startpositionen..."] call EFUNC(common,displayTextStructured);
 
 // find positions on road for bases
 _max_distance = 50;
@@ -48,37 +52,47 @@ while{count _eastSpawnPosition < 1} do {
 _randomNearPosition = [_westSpawnPosition,[50,80], random 360] call SHK_pos;
 
 // find a free spot
-westHQSpawnPos = [_randomNearPosition,50] call findSpawnPos;
+westHQSpawnPos = [_randomNearPosition,20] call findSpawnPos;
 
 waitUntil {
   count westHQSpawnPos > 0
 };
 
-
+if (DEBUG) then { diag_log format ["west spawn position %1 found", westHQSpawnPos]; };
 
 _barracks = createVehicle ["TK_WarfareBBarracks_Base_EP1", westHQSpawnPos, [], 0, "NONE"];
-_veh2 = createVehicle ["FLAG_RED_F",  [westHQSpawnPos select 0, (westHQSpawnPos select 1) + 5,0], [], 0, "NONE"];
+_veh2 = createVehicle ["FLAG_RED_F",  [westHQSpawnPos select 0, (westHQSpawnPos select 1) + 5,0], [], 0, "CAN_COLLIDE"];
 
-russianSpawnPos = [westHQSpawnPos,50] call findSpawnPos;
+_actionHelper = createVehicle ["Land_SatellitePhone_F", [getPos _barracks select 0, getPos _barracks select 1, 1.5], [], 0, "NONE"];
+
+
+
+_russianSupplyAction = _actionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, ""] call refreshUI; }, _Args, 1, false, true, "","_target distance _this < 5"];
+
+russianSpawnPos = [westHQSpawnPos,20] call findSpawnPos;
 
 waitUntil {
   count russianSpawnPos > 0
 };
 
+if (DEBUG) then { diag_log format ["west vehicle spawn position %1 found", russianSpawnPos]; };
+
 publicVariable "russianSpawnPos";
 
-_helipad = createVehicle ["Land_HelipadCivil_F", [russianSpawnPos select 0, russianSpawnPos select 1, 1.8], [], 0, "CAN_COLLIDE"];
+_helipad = createVehicle ["Land_HelipadCivil_F", russianSpawnPos, [], 0, "NONE"];
 
 
 // find a random position in circle
 _randomNearPosition = [_eastSpawnPosition,[50,80], random 360] call SHK_pos;
 
 // find a free spot
-eastHQSpawnPos = [_randomNearPosition,50]call findSpawnPos;
+eastHQSpawnPos = [_randomNearPosition,50] call findSpawnPos;
 
 waitUntil {
   count eastHQSpawnPos > 0
 };
+
+if (DEBUG) then { diag_log format ["east spawn position %1 found", eastHQSpawnPos]; };
 
 publicVariable "eastHQSpawnPos";
 
@@ -95,3 +109,6 @@ _tent3 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "CAN_COLLIDE"];
 _tent3 setDir (([_tent3, _fire] call BIS_fnc_relativeDirTo)-180);
 _tent4 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "CAN_COLLIDE"];
 _tent4 setDir (([_tent4, _fire] call BIS_fnc_relativeDirTo)-180);
+
+
+["Missions-Setup abgeschlossen."] call EFUNC(common,displayTextStructured);

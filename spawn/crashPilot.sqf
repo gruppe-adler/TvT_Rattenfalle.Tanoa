@@ -31,9 +31,9 @@ waitUntil {
 };
 
 _veh1 = createVehicle [(possibleWrecks call BIS_fnc_selectRandom), crashSpawnPos, [], 0, "NONE"];
+_veh1 allowDamage false;
 _veh1 setDamage 0.95;
 _veh1 setFuel 0.01;
-_veh1 allowDamage false;
 clearItemCargoGlobal _veh1;
 clearWeaponCargoGlobal _veh1;
 clearMagazineCargoGlobal _veh1;

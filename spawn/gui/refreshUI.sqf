@@ -1,4 +1,4 @@
-centerString = {
+	centerString = {
 	_string = _this select 0;
 	_newstring = "<t align='center'>" + (str _string) + "</t>";
 
@@ -29,9 +29,36 @@ resetUI = {
 		ctrlSetText [1502, _buttonRelease];
 		ctrlSetText [1503, _buttonRelease];
 		ctrlSetText [1504, _buttonRelease];
-		
+
+		ctrlEnable [1501, true];
+		ctrlEnable [1502, true];
+		ctrlEnable [1503, true];
+		ctrlEnable [1504, true];
 		
 			
+};
+
+refreshOrder = {
+	_bool = _this select 0;
+
+	if (_bool) then {
+
+		_display displayCtrl 1600 ctrlSetStructuredText parseText ([_headlineBlocked] call headlineString);
+		ctrlSetText [1501, _pleasewait];
+		ctrlSetText [1502, _pleasewait];
+		ctrlSetText [1503, _pleasewait];
+		ctrlSetText [1504, _pleasewait];
+
+		ctrlEnable [1501, false];
+		ctrlEnable [1502, false];
+		ctrlEnable [1503, false];
+		ctrlEnable [1504, false];
+
+	} else {
+
+		[] call resetUI;
+	};
+	
 };
 
 
@@ -57,6 +84,9 @@ refreshUI = {
 	_display = findDisplay 3000;
 
 	if (!(_vehicleOrdered == "")) then {
+		VEHICLE_ORDERED_WEST = true;
+		publicVariable "VEHICLE_ORDERED_WEST";
+
 		_display displayCtrl 1600 ctrlSetStructuredText parseText ([_headlineBlocked] call headlineString);
 		ctrlSetText [1501, _pleasewait];
 		ctrlSetText [1502, _pleasewait];

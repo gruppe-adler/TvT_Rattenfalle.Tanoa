@@ -45,6 +45,9 @@ if (isServer) then {
 	VEHICLE_SUPPORT_EAST = [0,0,0];
 	publicVariable "VEHICLE_SUPPORT_WEST";
 
+	VEHICLE_ORDERED_WEST = false;
+	publicVariable "VEHICLE_ORDERED_WEST";
+
 	westMinSpawnDistance = 6000;
 	westMaxSpawnDistance = 7000;
 

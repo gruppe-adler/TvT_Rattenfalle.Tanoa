@@ -69,6 +69,16 @@ fillRussianSupplies = {
 
         [_this select 1,false,0,""] call refreshUI;
     };
+
+    "VEHICLE_ORDERED_WEST" addPublicVariableEventHandler {
+    diag_log format [
+            "%1 has been updated to: %2",
+            _this select 0,
+            _this select 1
+        ];
+
+        [_this select 1] call refreshOrder;
+    };
 };
 
 [_russianCredits] call fillRussianSupplies;

@@ -1,4 +1,4 @@
-class GUI 
+class russianSupplyGUI 
 {
 		idd = 3000;
 		movingenable = 0;
@@ -80,7 +80,7 @@ class GUI
 			{
 				idc = 1001;
 				x = 6 * GUI_GRID_W + GUI_GRID_X;
-				y = 4 * GUI_GRID_H + GUI_GRID_Y;
+				y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
 				w = 8 * GUI_GRID_W;
 				h = 7 * GUI_GRID_H;
 				text = "spawn\gui\pic\jeep_grunge_small.paa";
@@ -89,7 +89,7 @@ class GUI
 			{
 				idc = 1002;
 				x = 14 * GUI_GRID_W + GUI_GRID_X;
-				y = 4 * GUI_GRID_H + GUI_GRID_Y;
+				y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
 				w = 8 * GUI_GRID_W;
 				h = 7 * GUI_GRID_H;
 				text = "spawn\gui\pic\gaz66_grunge_small.paa";
@@ -98,7 +98,7 @@ class GUI
 			{
 				idc = 1003;
 				x = 22 * GUI_GRID_W + GUI_GRID_X;
-				y = 4 * GUI_GRID_H + GUI_GRID_Y;
+				y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
 				w = 8 * GUI_GRID_W;
 				h = 7 * GUI_GRID_H;
 				text = "spawn\gui\pic\prp3_grunge_small.paa";
@@ -107,7 +107,7 @@ class GUI
 			{
 				idc = 1004;
 				x = 30 * GUI_GRID_W + GUI_GRID_X;
-				y = 4 * GUI_GRID_H + GUI_GRID_Y;
+				y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
 				w = 8 * GUI_GRID_W;
 				h = 7 * GUI_GRID_H;
 				text = "spawn\gui\pic\brm1k_grunge_small.paa";
