@@ -1,0 +1,899 @@
+#include "spawn\gui\_defines.hpp"
+#include "spawn\gui\_dialogs.hpp"
+
+OnLoadMission = "TvT_Rattenfalle";
+author = "Nomisum für Gruppe Adler";  //appears as author in overview and loading screen
+overviewText = "Wettrennen um die verschollenen Piloten."; //appears in overview and loading screen
+onLoadName = "TvT_Rattenfalle"; //mission name for loading screen only
+enableDebugConsole = 1;
+
+respawn = "BASE";
+respawnOnStart = 1;
+
+respawnTemplates[] = {"MenuInventory","MenuPosition"};
+
+respawnDelay = 10; // 600 // 10min
+
+respawnTemplatesWest[] = {"Wave","MenuInventory","MenuPosition"};
+respawnTemplatesEast[] = {"Wave","MenuInventory","MenuPosition"};
+respawnTemplatesGuer[] = {"MenuInventory","MenuPosition","MenuSpectator"};
+respawnTemplatesCiv[] = {"Spectator"};
+
+class CfgRespawnInventory
+{
+	class BW_Tropen_Rifleman
+	{
+		displayName = "Schütze"; // Name visible in the menu
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"SMA_HK416afg",
+			"Binocular"
+		};
+		magazines[] = {
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"ARC_GER_Tropentarn_rangemaster_belt",
+			"ARC_GER_Tropentarn_Helmet_Light",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "ARC_GER_Tropentarn_Uniform_Light";
+		backpack = "ARC_GER_Backpack_compact_Tropentarn";
+	};
+	class BW_Tropen_Medic
+	{
+		displayName = "Medic"; // Name visible in the menu
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"SMA_HK416afg",
+			"Binocular"
+		};
+		magazines[] = {
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"ARC_GER_Tropentarn_BandollierB_rgr",
+			"ARC_GER_Tropentarn_Helmet_Light",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "ARC_GER_Tropentarn_Uniform";
+		backpack = "ARC_GER_Backpack_Carryall_Tropentarn";
+	};
+	class BW_Tropen_Marksman
+	{
+		displayName = "Gruppenscharfschütze"; // Name visible in the menu
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"SMA_HK416afg",
+			"Binocular"
+		};
+		magazines[] = {
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SMA_30Rnd_556x45_M855A1_Tracer",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"ARC_GER_Tropentarn_rangemaster_belt",
+			"ARC_GER_Tropentarn_Helmet_Light",
+			"optic_Hamr",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "ARC_GER_Tropentarn_PlateCarrier_1";
+		backpack = "ARC_GER_Backpack_compact_Tropentarn";
+	};
+
+
+
+	// RUSSIANS FRIENDLY
+
+	class Russian_Rifleman
+	{
+		displayName = "Schütze"; // Name visible in the menu
+		icon = "loadout\rus_rifleman.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_ak103_npz",
+			"hgun_Rook40_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"rhs_6b23_digi",
+			"rhs_6b27m_digi",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "rhs_uniform_emr_patchless";
+		backpack = "rhs_sidor";
+	};
+	class Russian_Medic
+	{
+		displayName = "Sanitäter"; // Name visible in the menu
+		icon = "loadout\rus_medic.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_ak103_npz",
+			"hgun_Rook40_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"rhs_6b23_digi_medic",
+			"rhs_6b27m_digi",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "rhs_uniform_emr_patchless";
+		backpack = "rhs_sidor";
+	};
+	class Russian_Marksman
+	{
+		displayName = "Gruppenscharfschütze"; // Name visible in the menu
+		icon = "loadout\rus_marksman.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_ak103_npz",
+			"hgun_Rook40_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"rhs_6b23_digi_sniper",
+			"rhs_6b27m_digi_bala",
+			"optic_Hamr",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "rhs_uniform_emr_patchless";
+		
+	};
+	class Russian_AT
+	{
+		displayName = "AT-Schütze"; // Name visible in the menu
+		icon = "loadout\rus_at.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_ak103_npz",
+			"hgun_Rook40_F",
+			"rhs_weap_rpg7",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_rpg7_PG7VL_mag",
+			"rhs_rpg7_PG7VR_mag",
+			"rhs_rpg7_PG7VR_mag",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"rhs_6b23_digi",
+			"rhs_6b27m_digi_ess",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "rhs_uniform_emr_patchless";
+		backpack = "rhs_rpg_empty";
+	};
+	class Russian_MG
+	{
+		displayName = "MG-Schütze"; // Name visible in the menu
+		icon = "loadout\rus_mg.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_pkp",
+			"hgun_Rook40_F",
+			"rhs_weap_rpg7",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"SmokeShell",
+			"SmokeShell",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"rhs_6b23_digi_6sh92_headset",
+			"rhs_6b28",
+			"rhs_acc_ekp1",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_anprc152"
+		};
+		uniformClass = "rhs_uniform_emr_patchless";
+		backpack = "rhs_rpg_empty";
+	};
+
+
+	// TALIBANS EVIL
+
+	class Taliban_Rifleman
+	{
+		displayName = "Schütze"; // Name visible in the menu
+		icon = "loadout\tali_rifleman.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_akm",
+			"hgun_P07_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"LOP_H_Turban",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_fadak"
+		};
+		uniformClass = "LOP_U_AM_Fatigue_01";
+		backpack = "rhs_assault_umbts";
+	};
+	class Taliban_Medic
+	{
+		displayName = "Doc"; // Name visible in the menu
+		icon = "loadout\tali_medic.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_akm",
+			"hgun_P07_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"LOP_H_Turban_mask",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_fadak"
+		};
+		uniformClass = "LOP_U_AM_Fatigue_02";
+		backpack = "rhs_assault_umbts";
+	};
+	class Taliban_Marksman
+	{
+		displayName = "Gruppenscharfschütze"; // Name visible in the menu
+		icon = "loadout\tali_marksman.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"srifle_DMR_06_olive_F",
+			"hgun_P07_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"20Rnd_762x51_Mag",
+			"SmokeShell",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"V_TacVest_blk",
+			"LOP_H_Pakol",
+			"optic_Hamr",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_fadak"
+		};
+		uniformClass = "LOP_U_AM_Fatigue_03";
+		backpack = "rhs_sidor";
+	};
+	class Taliban_AT
+	{
+		displayName = "RPG-Schütze"; // Name visible in the menu
+		icon = "loadout\tali_at.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_akms",
+			"rhs_weap_rpg7",
+			"hgun_P07_F",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_rpg7_PG7VL_mag",
+			"rhs_rpg7_PG7VR_mag",
+			"rhs_rpg7_PG7VR_mag",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"SmokeShell",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"V_BandollierB_rgr",
+			"H_ShemagOpen_tan",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_fadak"
+		};
+		uniformClass = "LOP_U_ISTS_Fatigue_01";
+		backpack = "rhs_rpg_empty";
+	};
+	class Taliban_MG
+	{
+		displayName = "MG-Schütze"; // Name visible in the menu
+		icon = "loadout\tali_mg.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"rhs_weap_pkm",
+			"rhs_weap_rpg7",
+			"Binocular"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhs_100Rnd_762x54mmR_green",
+			"rhs_30Rnd_762x39mm",
+			"rhs_30Rnd_762x39mm",
+			"SmokeShell",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen"
+		};
+		linkedItems[] = {
+			"V_TacVest_oli",
+			"LOP_H_Turban",
+			"optic_Aco",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"tf_fadak"
+		};
+		uniformClass = "LOP_U_ISTS_Fatigue_02";
+		backpack = "rhs_sidor";
+	};
+
+	class Russian_Pilot
+	{
+		displayName = "Russischer Pilot"; // Name visible in the menu
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"hgun_P07_F"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen",
+			"ACE_HandFlare_Red",
+			"ACE_HandFlare_White",
+			"Chemlight_blue"
+		};
+		linkedItems[] = {
+			"rhs_vest_commander",
+			"rhs_zsh7a_mike",
+			"ItemWatch"
+		};
+		uniformClass = "rhs_uniform_m88_patchless";
+	};
+
+	class Russian_Crew
+	{
+		displayName = "Russisches Crewmitglied"; // Name visible in the menu
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\sergeant_gs.paa"; // Icon displayed next to the name
+
+		// Loadout definition, uses same entries as CfgVehicles classes
+		weapons[] = {
+			"hgun_P07_F"
+		};
+		magazines[] = {
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"SmokeShell"
+		};
+		items[] = {
+			"ACE_Earplugs",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_fieldDressing",
+			"ACE_Morphine",
+			"ACE_Morphine",
+			"ACE_Epipen",
+			"ACE_HandFlare_White"
+		};
+		linkedItems[] = {
+			"rhs_vydra_3m",
+			"rhs_gssh18",
+			"ItemWatch"
+		};
+		uniformClass = "rhs_uniform_m88_patchless";
+	};
+};
