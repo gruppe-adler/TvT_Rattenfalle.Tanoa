@@ -614,7 +614,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={334.6395,652.83441,331.16531};
+					position[]={7905.9185,296.04001,1706.5713};
 					special="NONE";
 					id=29;
 					side="GUER";

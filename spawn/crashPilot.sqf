@@ -30,7 +30,8 @@ waitUntil {
   count crashSpawnPos > 0
 };
 
-_veh1 = createVehicle [(possibleWrecks call BIS_fnc_selectRandom), crashSpawnPos, [], 0, "NONE"];
+_veh1 = createVehicle ["RHS_Mi24Vt_vvs", crashSpawnPos, [], 0, "NONE"];
+[_veh1,	nil,[	"exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;
 _veh1 allowDamage false;
 _veh1 setDamage 0.95;
 _veh1 setFuel 0.01;
@@ -39,7 +40,7 @@ clearWeaponCargoGlobal _veh1;
 clearMagazineCargoGlobal _veh1;
 clearWeaponCargoGlobal _veh1;
 sleep 0.1;
-_veh2 = createVehicle [(possibleCrater call BIS_fnc_selectRandom), getPos _veh1, [], 0, "CAN_COLLIDE"];
+_veh2 = createVehicle ["CraterLong", getPos _veh1, [], 0, "CAN_COLLIDE"];
 _smoke = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 _smoke2 = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 

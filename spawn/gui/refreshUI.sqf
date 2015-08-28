@@ -1,4 +1,4 @@
-	centerString = {
+centerString = {
 	_string = _this select 0;
 	_newstring = "<t align='center'>" + (str _string) + "</t>";
 
@@ -29,12 +29,15 @@ resetUI = {
 		ctrlSetText [1502, _buttonRelease];
 		ctrlSetText [1503, _buttonRelease];
 		ctrlSetText [1504, _buttonRelease];
+		ctrlSetText [1505, _buttonRelease];
 
 		ctrlEnable [1501, true];
 		ctrlEnable [1502, true];
 		ctrlEnable [1503, true];
 		ctrlEnable [1504, true];
-		
+		ctrlEnable [1505, true];
+		VEHICLE_ORDERED_WEST = false;
+		publicVariable "VEHICLE_ORDERED_WEST";
 			
 };
 
@@ -48,11 +51,13 @@ refreshOrder = {
 		ctrlSetText [1502, _pleasewait];
 		ctrlSetText [1503, _pleasewait];
 		ctrlSetText [1504, _pleasewait];
+		ctrlSetText [1505, _pleasewait];
 
 		ctrlEnable [1501, false];
 		ctrlEnable [1502, false];
 		ctrlEnable [1503, false];
 		ctrlEnable [1504, false];
+		ctrlEnable [1505, false];
 
 	} else {
 
@@ -67,6 +72,9 @@ refreshUI = {
 	_outOfMoney = _this select 1;
 	_outOfStockIndicator = _this select 2;
 	_vehicleOrdered = _this select 3;
+	_vehicleExtras = _this select 4;
+
+
 
 
 
@@ -92,6 +100,7 @@ refreshUI = {
 		ctrlSetText [1502, _pleasewait];
 		ctrlSetText [1503, _pleasewait];
 		ctrlSetText [1504, _pleasewait];
+		ctrlSetText [1505, _pleasewait];
 	};
 	
 
@@ -163,6 +172,11 @@ refreshUI = {
 	_pricedisplay_4 = (_array select 4) select 3;
 	_eta_4 = (_array select 4) select 4;
 
+	_namedisplay_5 = (_array select 5) select 1;
+	_countleft_5 = (_array select 5) select 2;
+	_pricedisplay_5 = (_array select 5) select 3;
+	_eta_5 = (_array select 5) select 4;
+
 	
 
 	//if (DEBUG) then { diag_log format ["typeName _namedisplay_1: %1",typeName _namedisplay_1]; };
@@ -198,6 +212,10 @@ refreshUI = {
 	//_display displayCtrl 1404 ctrlSetStructuredText parseText _eta_4;
 	// ctrlSetText [1504, _pleasewait];
 
+	_display displayCtrl 1105 ctrlSetStructuredText parseText ([_namedisplay_5] call centerString);
+	_display displayCtrl 1205 ctrlSetStructuredText parseText ([_countleft_5] call centerString);
+	_display displayCtrl 1305 ctrlSetStructuredText parseText ([_pricedisplay_5] call centerString);
+
 	disableSerialization;
 	
 	_display displayCtrl 1700 ctrlSetStructuredText parseText _moneyLeft;
@@ -211,14 +229,15 @@ refreshUI = {
 	publicVariable "russianSupplies";
 	
 	// // // // //
-	[_vehicleOrdered] spawn {
+	[_vehicleOrdered,_vehicleExtras] spawn {
 		_vehicle = _this select 0;
-		
+		_extras = _this select 1;
+
 		sleep 0.3;
 
 		[] call resetUI;
 
-		[_vehicle, russianSpawnPos] call spawnSupplyDrop;
+		[_vehicle, russianSpawnPos, _extras] call spawnSupplyDrop;
 	};
 
 };

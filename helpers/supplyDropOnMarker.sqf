@@ -7,17 +7,21 @@
 		*/
 		
 		spawnSupplyDrop = {
-			_crateType = _this select 0;	//ammocrate class for blufor, feel free to change to whichever box you desire
+			_vehicleType = _this select 0;	//ammocrate class for blufor, feel free to change to whichever box you desire
 			_pos = _this select 1;
 	        _chuteType = "B_Parachute_02_F";	//parachute for blufor, for opfor and greenfor replace the 'B' with 'O' or 'G' respectively
+
+	        _init = _this select 2;
+
+	        
+
+	        if (DEBUG) then { diag_log format ["Init Vehicle Spawn is %1",_init];};
 
 	        _origWind = wind;
 	        _origWindForce = windStr;
 
 	        setWind [0, 0, true];
 	        0 setWindForce 0;
-			
-			hintSilent format ["%1",_pos];
 
 			if (DEBUG) then {diag_log format ["%1",_pos]; };
 
@@ -36,11 +40,18 @@
 	    	};
 
 	       
-			_crate = createVehicle [_crateType, position _chute, [], 0, "NONE"];
-	        _crate attachTo [_chute, [0, 0, -1.5]];
-	        waitUntil {position _crate select 2 < 0.7 || isNull _chute};
-	        detach _crate;
-	        _crate setPos [position _crate select 0, position _crate select 1, 0];
+			_vehicle = createVehicle [_vehicleType, position _chute, [], 0, "NONE"];
+
+			// adjust vehicle (remove lamp covers and stuff)
+			if (count _init > 0) then {
+	     		[_vehicle,nil, _init] call BIS_fnc_initVehicle;
+	    	};
+			
+
+	        _vehicle attachTo [_chute, [0, 0, -1.5]];
+	        waitUntil {position _vehicle select 2 < 0.7 || isNull _chute};
+	        detach _vehicle;
+	        _vehicle setPos [position _vehicle select 0, position _vehicle select 1, 0];
 
 	        0 setWindForce _origWindForce;
 	        setWind [_origWind select 0, _origWind select 1, true];

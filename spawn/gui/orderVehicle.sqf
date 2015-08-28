@@ -4,6 +4,7 @@ _tempRussian_1 = (russianSupplies select 1);
 _tempRussian_2 = (russianSupplies select 2);
 _tempRussian_3 = (russianSupplies select 3);
 _tempRussian_4 = (russianSupplies select 4);
+_tempRussian_5 = (russianSupplies select 5);
 
 _oldMoney = (russianSupplies select 0);
 _price = [_idc] call russian_IDC_to_price;
@@ -15,7 +16,7 @@ _newMoney = _oldMoney - _price;
 
 // dont fucking buy without money dude -> exit with hint
 if (_newMoney < 0) exitWith { 
-    [russianSupplies,true,0,""] call refreshUI;
+    [russianSupplies,true,0,"",""] call refreshUI;
 };
 
 _selector = [_idc] call russian_IDC_to_selector;
@@ -28,13 +29,14 @@ switch (_selector) do {
     case 2: { _tempRussian_2 = [_idc,_tempRussian_2] call calculateVehicleCall; };
     case 3: { _tempRussian_3 = [_idc,_tempRussian_3] call calculateVehicleCall; };
     case 4: { _tempRussian_4 = [_idc,_tempRussian_4] call calculateVehicleCall; };
+    case 4: { _tempRussian_5 = [_idc,_tempRussian_5] call calculateVehicleCall; };
 
     default {};
 };
 
 // dont fucking buy without stock dude -> exit with hint
-if (count _tempRussian_1 == 1 || count _tempRussian_2 == 1 || count _tempRussian_3 == 1 || count _tempRussian_4 == 1) exitWith { 
-    [russianSupplies,false,_idc,""] call refreshUI;
+if (count _tempRussian_1 == 1 || count _tempRussian_2 == 1 || count _tempRussian_3 == 1 || count _tempRussian_4 == 1 || count _tempRussian_5 == 1) exitWith { 
+    [russianSupplies,false,_idc,"",""] call refreshUI;
     player say3D "rhs_rus_land_rc_01";
 };
 
@@ -42,8 +44,9 @@ if (count _tempRussian_1 == 1 || count _tempRussian_2 == 1 || count _tempRussian
 // SUCCESS - VEHICLE WILL BE ORDERED!
 
 _vehicleOrdered = [_idc] call russian_IDC_to_classname;
+_vehicleExtras = [_idc] call russian_IDC_to_extras;
 
-if (DEBUG) then { diag_log format ["_vehicleOrdered: %1",_vehicleOrdered]; };
+if (DEBUG) then { diag_log format ["_vehicleOrdered: %1, _vehicleExtras: %2",_vehicleOrdered, _vehicleExtras]; };
 
 _randomSound = [
     "rhs_rus_land_rc_02",
@@ -80,9 +83,10 @@ _tempSupplies =
         _tempRussian_1,
         _tempRussian_2,
         _tempRussian_3,
-        _tempRussian_4
+        _tempRussian_4,
+        _tempRussian_5
     ];
 
-[_tempSupplies,false,0,_vehicleOrdered] call refreshUI;
+[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras] call refreshUI;
 
 //if (DEBUG) then { diag_log format ["russianSupplies refreshed: %1",russianSupplies]; };

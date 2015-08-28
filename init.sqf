@@ -34,12 +34,14 @@ if (isServer) then {
 };
 
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
-call compile preprocessfile "vehicle_definitions\wrecks.sqf";
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "spawn\gui\initGUI.sqf";
 []execVM "helpers\supplyDropOnMarker.sqf";
+
+// driving AI
+//[] execVM "VCOM_Driving\init.sqf";
 
 
 if (isServer) then {
@@ -64,7 +66,7 @@ if (isServer) then {
 	eastMinSpawnDistance = 1500;
 	eastMaxSpawnDistance = 2500;
 
-	russianCredits = 4000;
+	russianCredits = 5000;
 	mudschahedinCredits = 3000;
 
 	russianSpawnPos = [0,0,0];

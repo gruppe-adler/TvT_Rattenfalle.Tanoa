@@ -18,9 +18,8 @@ _mudschahedinCredits = _this select 1;
 
 fillRussianSupplies = {
 
-    russianSupplies = 
-    [
-         
+     russianSupplies = [
+
         _this select 0,
         [
             "rhs_tigr_ffv_3camo_vdv",
@@ -28,7 +27,8 @@ fillRussianSupplies = {
             30,
             100,
             "<t align='center'>100 cr</t>",
-            120
+            120,
+            [[]]
         ],
         [
             "rhs_gaz66o_vdv",
@@ -36,7 +36,8 @@ fillRussianSupplies = {
             99,
             15,
             "<t align='center'>15 cr</t>",
-            60
+            60,
+            [["light_hide", 0 ]]
         ],
         [
             "rhs_prp3_vdv",
@@ -44,7 +45,8 @@ fillRussianSupplies = {
             2,
             1500,
             "<t align='center'>1500 cr</t>",
-            180
+            180,
+            [[]]
         ],
         [
             "rhs_brm1k_vdv",
@@ -52,12 +54,22 @@ fillRussianSupplies = {
             1,
             2000,
             "<t align='center'>2000 cr</t>",
-            180
+            180,
+            [[]]
+        ],
+        [
+            "RHS_Mi24Vt_vvs",
+            "Mi24VT",
+            1,
+            5000,
+            "<t align='center'>4000 cr</t>",
+            180,
+            [["exhaust_hide", 1,"at_rack_hide", 0]]
         ]
     ];
 
-
     publicVariable "russianSupplies";
+
 
 
     "russianSupplies" addPublicVariableEventHandler {
@@ -67,7 +79,7 @@ fillRussianSupplies = {
             _this select 1
         ];
 
-        [_this select 1,false,0,""] call refreshUI;
+        [_this select 1,false,0,"",""] call refreshUI;
     };
 
     "VEHICLE_ORDERED_WEST" addPublicVariableEventHandler {
