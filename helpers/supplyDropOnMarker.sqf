@@ -46,6 +46,12 @@
 			if (count _init > 0) then {
 	     		[_vehicle,nil, _init] call BIS_fnc_initVehicle;
 	    	};
+
+	    	if (_vehicleType == "RHS_Mi24Vt_vvs") then {
+	    		_vehicle setObjectTextureGlobal [0, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo2_co.paa"];
+				_vehicle setObjectTextureGlobal [1, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa"];
+				_vehicle setObjectTextureGlobal [2, "rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"];
+	    	};
 			
 
 	        _vehicle attachTo [_chute, [0, 0, -1.5]];

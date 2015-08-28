@@ -37,7 +37,7 @@ fillRussianSupplies = {
             15,
             "<t align='center'>15 cr</t>",
             60,
-            [["light_hide", 0 ]]
+            ["light_hide", 0 ]
         ],
         [
             "rhs_prp3_vdv",
@@ -64,7 +64,7 @@ fillRussianSupplies = {
             5000,
             "<t align='center'>4000 cr</t>",
             180,
-            [["exhaust_hide", 1,"at_rack_hide", 0]]
+            ["exhaust_hide", 1,"at_rack_hide", 0]
         ]
     ];
 

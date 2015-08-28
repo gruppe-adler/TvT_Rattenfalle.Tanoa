@@ -32,6 +32,11 @@ waitUntil {
 
 _veh1 = createVehicle ["RHS_Mi24Vt_vvs", crashSpawnPos, [], 0, "NONE"];
 [_veh1,	nil,[	"exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;
+
+_veh1 setObjectTextureGlobal [0, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo2_co.paa"];
+_veh1 setObjectTextureGlobal [1, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa"];
+_veh1 setObjectTextureGlobal [2, "rhsafrf\addons\rhs_a2port_air\Mi17\data\camo\mi8_det_g_camo1_co.paa"];
+
 _veh1 allowDamage false;
 _veh1 setDamage 0.95;
 _veh1 setFuel 0.01;
