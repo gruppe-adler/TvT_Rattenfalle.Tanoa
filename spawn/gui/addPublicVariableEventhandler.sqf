@@ -29,7 +29,7 @@ fillRussianSupplies = {
             "<t align='center'>100 cr</t>",
             120,
             [[]],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ],
         [
             "rhs_gaz66o_vdv",
@@ -39,7 +39,7 @@ fillRussianSupplies = {
             "<t align='center'>15 cr</t>",
             60,
             ["light_hide", 0 ],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ],
         [
             "rhs_prp3_vdv",
@@ -49,7 +49,7 @@ fillRussianSupplies = {
             "<t align='center'>1500 cr</t>",
             180,
             [[]],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ],
         [
             "rhs_brm1k_vdv",
@@ -59,7 +59,7 @@ fillRussianSupplies = {
             "<t align='center'>2000 cr</t>",
             180,
             [[]],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ],
         [
             "RHS_Mi24Vt_vvs",
@@ -69,7 +69,7 @@ fillRussianSupplies = {
             "<t align='center'>4000 cr</t>",
             180,
             ["exhaust_hide", 1,"at_rack_hide", 0],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ]
     ];
 
@@ -111,7 +111,7 @@ fillMudschahedinSupplies = {
             "<t align='center'>50 cr</t>",
             120,
             [["light_hide", 0 ]],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ],
         [
             "LOP_AM_Landrover_M2",
@@ -121,7 +121,7 @@ fillMudschahedinSupplies = {
             "<t align='center'>200 cr</t>",
             60,
             [[]],
-            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
+            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
         ],
         [
             "Ammocrates_NoInteractive_Medium",
@@ -131,7 +131,7 @@ fillMudschahedinSupplies = {
             "<t align='center'>1500 cr</t>",
             180,
             [[]],
-            "
+            {
             clearWeaponCargoGlobal this; 
             clearItemCargoGlobal this; 
             clearBackpackCargoGlobal this; 
@@ -140,7 +140,7 @@ fillMudschahedinSupplies = {
             this addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',4];
             this addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',4];
             this addMagazineCargoGlobal ['rhs_rpg7_OG7V_mag',4];
-            " ;
+            }
         ],
         [
             "Ammocrates_NoInteractive_Small",
@@ -150,7 +150,7 @@ fillMudschahedinSupplies = {
             "<t align='center'>2000 cr</t>",
             180,
             [[]],
-            "
+            {
             clearWeaponCargoGlobal this; 
             clearItemCargoGlobal this; 
             clearBackpackCargoGlobal this; 
@@ -160,7 +160,7 @@ fillMudschahedinSupplies = {
             this addMagazineCargoGlobal ['IEDLandSmall_F',1];
             this addMagazineCargoGlobal ['IEDUrbanSmall_F',1];
             this addItemCargoGlobal ['ACE_Cellphone',4];
-            " ;
+             }
         ],
         [
             "Ammocrates_NoInteractive_Large",
@@ -170,13 +170,13 @@ fillMudschahedinSupplies = {
             "<t align='center'>3000 cr</t>",
             180,
             [[]],
-            "
+            {
             clearWeaponCargoGlobal this; 
             clearItemCargoGlobal this; 
             clearBackpackCargoGlobal this; 
             clearMagazineCargoGlobal this;
             this addWeaponCargoGlobal ['rhs_weap_fim92',2];
-            "
+            }
         ]
     ];
 

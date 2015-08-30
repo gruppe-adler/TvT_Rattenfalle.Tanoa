@@ -73,7 +73,7 @@ refreshRussianUI = {
 	_outOfStockIndicator = _this select 2;
 	_vehicleOrdered = _this select 3;
 	_vehicleExtras = _this select 4;
-
+	// _vehicleCalls = _array select 7;
 
 
 
@@ -233,11 +233,12 @@ refreshRussianUI = {
 		_vehicle = _this select 0;
 		_extras = _this select 1;
 
+
 		sleep 0.3;
 
 		[] call resetRussianUI;
 
-		[_vehicle, russianSpawnPos, _extras] call spawnSupplyDrop;
+		[_vehicle, russianSpawnPos, _extras, _calls] call spawnSupplyDrop;
 	};
 
 };

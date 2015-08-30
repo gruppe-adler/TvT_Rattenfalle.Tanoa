@@ -1,10 +1,19 @@
 /*
 		
-		This script was created by [EVO] Dan, with help from [EVO] Curry, with snippets from the BIS module, this script creates a parachute and a box, then drops it. When it contacts the ground it will run VAS.
+		This script is based on a script created by [EVO] Dan, with help from [EVO] Curry, with snippets from the BIS module.
 			
 		modified by nomisum to his needs
 
-		*/
+*/
+		// execute vehicle init from array
+		executeCalls =  {
+			_vehicle = this select 0;
+			_calls = _this select 1;
+			
+			_vehicle call _calls;
+		};
+
+
 		
 		spawnSupplyDrop = {
 			_vehicleType = _this select 0;	//ammocrate class for blufor, feel free to change to whichever box you desire
@@ -12,7 +21,8 @@
 	        _chuteType = "B_Parachute_02_F";	//parachute for blufor, for opfor and greenfor replace the 'B' with 'O' or 'G' respectively
 
 	        _init = _this select 2;
-	        _stringCalls = _this select 3;
+	        //_calls = _this select 3;
+
 
 	        
 	        if (_vehicleType == "RHS_Mi24Vt_vvs") exitWith {
@@ -90,6 +100,7 @@
 	       
 			_vehicle = createVehicle [_vehicleType, position _chute, [], 0, "NONE"];
 
+			//[_vehicle,_calls] call executeCalls;
 
 
 			// adjust vehicle (remove lamp covers and stuff)
