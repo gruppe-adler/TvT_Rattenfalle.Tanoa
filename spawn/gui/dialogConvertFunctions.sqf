@@ -284,11 +284,11 @@ mudschahedin_buttonIDC_to_countleftIDC = {
 
 	switch (_idc) do {
 
-		case 3501: { _countleftIDC = 1201; };
-		case 3502: { _countleftIDC = 1202; };
-		case 3503: { _countleftIDC = 1203; };
-		case 3504: { _countleftIDC = 1204; };
-		case 3505: { _countleftIDC = 1205; };
+		case 3501: { _countleftIDC = 3201; };
+		case 3502: { _countleftIDC = 3202; };
+		case 3503: { _countleftIDC = 3203; };
+		case 3504: { _countleftIDC = 3204; };
+		case 3505: { _countleftIDC = 3205; };
 		default {};
 	};
 

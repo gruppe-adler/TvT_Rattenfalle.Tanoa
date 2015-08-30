@@ -25,11 +25,11 @@ _selector = [_idc] call russian_IDC_to_selector;
 
 switch (_selector) do {
     
-    case 1: { _tempRussian_1 = [_idc,_tempRussian_1] call calculateVehicleCall; };
-    case 2: { _tempRussian_2 = [_idc,_tempRussian_2] call calculateVehicleCall; };
-    case 3: { _tempRussian_3 = [_idc,_tempRussian_3] call calculateVehicleCall; };
-    case 4: { _tempRussian_4 = [_idc,_tempRussian_4] call calculateVehicleCall; };
-    case 4: { _tempRussian_5 = [_idc,_tempRussian_5] call calculateVehicleCall; };
+    case 1: { _tempRussian_1 = [_idc,_tempRussian_1] call calculateRussianVehicleCall; };
+    case 2: { _tempRussian_2 = [_idc,_tempRussian_2] call calculateRussianVehicleCall; };
+    case 3: { _tempRussian_3 = [_idc,_tempRussian_3] call calculateRussianVehicleCall; };
+    case 4: { _tempRussian_4 = [_idc,_tempRussian_4] call calculateRussianVehicleCall; };
+    case 4: { _tempRussian_5 = [_idc,_tempRussian_5] call calculateRussianVehicleCall; };
 
     default {};
 };

@@ -60,6 +60,9 @@ if (isServer) then {
 	VEHICLE_ORDERED_WEST = false;
 	publicVariable "VEHICLE_ORDERED_WEST";
 
+	VEHICLE_ORDERED_EAST = false;
+	publicVariable "VEHICLE_ORDERED_EAST";
+
 	westMinSpawnDistance = 6000;
 	westMaxSpawnDistance = 7000;
 
@@ -67,10 +70,13 @@ if (isServer) then {
 	eastMaxSpawnDistance = 2500;
 
 	russianCredits = 5000;
-	mudschahedinCredits = 3000;
+	mudschahedinCredits = 5000;
 
 	russianSpawnPos = [0,0,0];
 	publicVariable "russianSpawnPos";
+
+	mudschahedinSpawnPos = [0,0,0];
+	publicVariable "mudschahedinSpawnPos";
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
 	

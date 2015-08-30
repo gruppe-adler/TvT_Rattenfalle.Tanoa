@@ -76,14 +76,16 @@ if (DEBUG) then { diag_log format ["west spawn position %1 found", westHQSpawnPo
 _barracks = createVehicle ["TK_WarfareBBarracks_Base_EP1", westHQSpawnPos, [], 0, "NONE"];
 _veh2 = createVehicle ["FLAG_RED_F",  [westHQSpawnPos select 0, (westHQSpawnPos select 1) + 5,0], [], 0, "CAN_COLLIDE"];
 
-_actionHelper = createVehicle ["Land_SatellitePhone_F", [getPos _barracks select 0, getPos _barracks select 1, 1.5], [], 0, "NONE"];
-_actionHelper attachTo [_barracks, [-1,0,1.5]];
-_actionHelper setVectorDirAndUp [[1,0,0],[0,0,1]];
+_rusActionHelper = createVehicle ["Land_SatellitePhone_F", [getPos _barracks select 0, getPos _barracks select 1, 1.5], [], 0, "NONE"];
+_rusActionHelper attachTo [_barracks, [-1,0,1.5]];
+_rusActionHelper setVectorDirAndUp [[1,0,0],[0,0,1]];
 sleep 0.01;
-_actionHelper setVectorDirAndUp [[1,0,0],[0,0,1]];
+_rusActionHelper setVectorDirAndUp [[1,0,0],[0,0,1]];
+
+ _rusGrasscutter = createVehicle ["Land_ClutterCutter_large_F", westHQSpawnPos, [], 0, "NONE"];
 
 
-_russianSupplyAction = _actionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, "",""] call refreshRussianUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
+_russianSupplyAction = _rusActionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, "",""] call refreshRussianUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
 
 russianSpawnPos = [westHQSpawnPos,40] call findSpawnPos;
 
@@ -109,6 +111,14 @@ waitUntil {
   count eastHQSpawnPos > 0
 };
 
+_muhaActionHelper = createVehicle ["Land_PortableLongRangeRadio_F", [eastHQSpawnPos select 0, (eastHQSpawnPos select 1) + 0.5, 0], [], 0, "NONE"];
+_muhaSupplyAction = _muhaActionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "mudschahedinSupplyGUI"; [mudschahedinSupplies, false, 0, "",""] call refreshMudschahedinUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
+
+mudschahedinSpawnPos = eastHQSpawnPos;
+publicVariable "mudschahedinSpawnPos";
+
+_muhaGrasscutter = createVehicle ["Land_ClutterCutter_large_F", eastHQSpawnPos, [], 0, "NONE"];
+
 ["eastHQSpawnPos gefunden."] call EFUNC(common,displayTextStructured);
 if (DEBUG) then { diag_log format ["east spawn position %1 found", eastHQSpawnPos]; };
 
@@ -118,14 +128,19 @@ publicVariable "eastHQSpawnPos";
 null = [{[russianSpawnPos,eastHQSpawnPos] execVM "helpers\createDebugMarker.sqf";}, "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
 
 
-_fire = createVehicle ["Land_Campfire_F", eastHQSpawnPos, [], 5, "CAN_COLLIDE"];
-_tent1 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "CAN_COLLIDE"];
+_fire = createVehicle ["Land_Campfire_F", eastHQSpawnPos, [], 5, "NONE"];
+_fire setPos (getPos _fire);
+_tent1 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "NONE"];
+_tent1 setPos (getPos _tent1);
 _tent1 setDir (([_tent1, _fire] call BIS_fnc_relativeDirTo)-180);
-_tent2 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "CAN_COLLIDE"];
+_tent2 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "NONE"];
+_tent2 setPos (getPos _tent2);
 _tent2 setDir (([_tent2, _fire] call BIS_fnc_relativeDirTo)-180);
-_tent3 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "CAN_COLLIDE"];
+_tent3 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "NONE"];
+_tent3 setPos (getPos _tent3);
 _tent3 setDir (([_tent3, _fire] call BIS_fnc_relativeDirTo)-180);
-_tent4 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "CAN_COLLIDE"];
+_tent4 = createVehicle ["Land_TentA_F", eastHQSpawnPos, [], 15, "NONE"];
+_tent4 setPos (getPos _tent4);
 _tent4 setDir (([_tent4, _fire] call BIS_fnc_relativeDirTo)-180);
 
 

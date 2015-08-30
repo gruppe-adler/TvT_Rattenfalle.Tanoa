@@ -12,6 +12,7 @@
 	        _chuteType = "B_Parachute_02_F";	//parachute for blufor, for opfor and greenfor replace the 'B' with 'O' or 'G' respectively
 
 	        _init = _this select 2;
+	        _stringCalls = _this select 3;
 
 	        
 	        if (_vehicleType == "RHS_Mi24Vt_vvs") exitWith {
@@ -89,6 +90,8 @@
 	       
 			_vehicle = createVehicle [_vehicleType, position _chute, [], 0, "NONE"];
 
+
+
 			// adjust vehicle (remove lamp covers and stuff)
 			if (count _init > 0) then {
 	     		[_vehicle,nil, _init] call BIS_fnc_initVehicle;
@@ -97,7 +100,7 @@
 	    	
 			
 
-	        _vehicle attachTo [_chute, [0, 0, -1.5]];
+	        _vehicle attachTo [_chute, [0, 0, -1]];
 	        waitUntil {position _vehicle select 2 < 0.7 || isNull _chute};
 	        detach _vehicle;
 	        _vehicle setPos [position _vehicle select 0, position _vehicle select 1, 0];

@@ -460,7 +460,7 @@ class mudschahedinSupplyGUI
 				y = 3.5 * GUI_GRID_H + GUI_GRID_Y;
 				w = 7 * GUI_GRID_W;
 				h = 6 * GUI_GRID_H;
-				text = "spawn\gui\pic\muha_jeep_grunge_small.paa.paa";
+				text = "spawn\gui\pic\muha_jeep_grunge_small.paa";
 			};
 			class mudschahedin_gui_pic_2: RscPicture
 			{

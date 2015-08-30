@@ -28,7 +28,8 @@ fillRussianSupplies = {
             100,
             "<t align='center'>100 cr</t>",
             120,
-            [[]]
+            [[]],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ],
         [
             "rhs_gaz66o_vdv",
@@ -37,7 +38,8 @@ fillRussianSupplies = {
             15,
             "<t align='center'>15 cr</t>",
             60,
-            ["light_hide", 0 ]
+            ["light_hide", 0 ],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ],
         [
             "rhs_prp3_vdv",
@@ -46,7 +48,8 @@ fillRussianSupplies = {
             1500,
             "<t align='center'>1500 cr</t>",
             180,
-            [[]]
+            [[]],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ],
         [
             "rhs_brm1k_vdv",
@@ -55,7 +58,8 @@ fillRussianSupplies = {
             2000,
             "<t align='center'>2000 cr</t>",
             180,
-            [[]]
+            [[]],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ],
         [
             "RHS_Mi24Vt_vvs",
@@ -64,7 +68,8 @@ fillRussianSupplies = {
             5000,
             "<t align='center'>4000 cr</t>",
             180,
-            ["exhaust_hide", 1,"at_rack_hide", 0]
+            ["exhaust_hide", 1,"at_rack_hide", 0],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ]
     ];
 
@@ -102,46 +107,76 @@ fillMudschahedinSupplies = {
             "LOP_TAK_Civ_UAZ",
             "UAZ",
             30,
-            100,
-            "<t align='center'>100 cr</t>",
+            50,
+            "<t align='center'>50 cr</t>",
             120,
-            [[]]
+            [["light_hide", 0 ]],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ],
         [
             "LOP_AM_Landrover_M2",
             "Landrover M2",
             99,
-            15,
-            "<t align='center'>15 cr</t>",
+            200,
+            "<t align='center'>200 cr</t>",
             60,
-            [[]]
+            [[]],
+            "clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;"
         ],
         [
-            "rhsusf_ammo_crate",
-            "Kiste mit 10 RPG",
+            "Ammocrates_NoInteractive_Medium",
+            "10 RPG",
             2,
             1500,
             "<t align='center'>1500 cr</t>",
             180,
-            [[]]
+            [[]],
+            "
+            clearWeaponCargoGlobal this; 
+            clearItemCargoGlobal this; 
+            clearBackpackCargoGlobal this; 
+            clearMagazineCargoGlobal this; 
+            this addWeaponCargoGlobal ['rhs_weap_rpg7',10];  
+            this addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',4];
+            this addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',4];
+            this addMagazineCargoGlobal ['rhs_rpg7_OG7V_mag',4];
+            " ;
         ],
         [
-            "rhsusf_ammo_crate",
-            "Kiste mit 5 IED",
+            "Ammocrates_NoInteractive_Small",
+            "6 IED",
             1,
             2000,
             "<t align='center'>2000 cr</t>",
             180,
-            [[]]
+            [[]],
+            "
+            clearWeaponCargoGlobal this; 
+            clearItemCargoGlobal this; 
+            clearBackpackCargoGlobal this; 
+            clearMagazineCargoGlobal this; 
+            this addMagazineCargoGlobal ['IEDUrbanBig_F',2];  
+            this addMagazineCargoGlobal ['IEDLandBig_F',2];
+            this addMagazineCargoGlobal ['IEDLandSmall_F',1];
+            this addMagazineCargoGlobal ['IEDUrbanSmall_F',1];
+            this addItemCargoGlobal ['ACE_Cellphone',4];
+            " ;
         ],
         [
-            "rhsusf_ammo_crate",
-            "Kiste mit 2 FIM92 Stinger",
+            "Ammocrates_NoInteractive_Large",
+            "2 FIM92 Stinger",
             1,
-            5000,
-            "<t align='center'>4000 cr</t>",
+            3000,
+            "<t align='center'>3000 cr</t>",
             180,
-            [[]]
+            [[]],
+            "
+            clearWeaponCargoGlobal this; 
+            clearItemCargoGlobal this; 
+            clearBackpackCargoGlobal this; 
+            clearMagazineCargoGlobal this;
+            this addWeaponCargoGlobal ['rhs_weap_fim92',2];
+            "
         ]
     ];
 

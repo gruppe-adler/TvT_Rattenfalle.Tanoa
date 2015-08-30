@@ -1,4 +1,4 @@
-resetmudschahedinUI = {
+resetMudschahedinUI = {
 
 		disableSerialization;
 
@@ -25,7 +25,7 @@ resetmudschahedinUI = {
 			
 };
 
-refreshmudschahedinOrder = {
+refreshMudschahedinOrder = {
 	_bool = _this select 0;
 
 	if (_bool) then {
@@ -51,13 +51,13 @@ refreshmudschahedinOrder = {
 };
 
 
-refreshmudschahedinUI = {
+refreshMudschahedinUI = {
 	_array = _this select 0;
 	_outOfMoney = _this select 1;
 	_outOfStockIndicator = _this select 2;
 	_vehicleOrdered = _this select 3;
 	_vehicleExtras = _this select 4;
-
+	_vehicleCalls = _this select 7;
 
 
 
@@ -90,7 +90,7 @@ refreshmudschahedinUI = {
 
 
 	if (_outOfMoney) exitWith {
-		[] call resetmudschahedinUI;
+		[] call resetMudschahedinUI;
 
 		_brightness = 0;
 		disableSerialization;
@@ -110,7 +110,7 @@ refreshmudschahedinUI = {
 	};
 
 	if (_outOfStockIndicator != 0) exitWith {
-		[] call resetmudschahedinUI;
+		[] call resetMudschahedinUI;
 
 		_idc = [_outOfStockIndicator] call mudschahedin_buttonIDC_to_countleftIDC;
 		_countLeft = [_idc] call mudschahedin_IDC_to_countleft;
@@ -213,15 +213,16 @@ refreshmudschahedinUI = {
 	publicVariable "mudschahedinSupplies";
 	
 	// // // // //
-	[_vehicleOrdered,_vehicleExtras] spawn {
+	[_vehicleOrdered,_vehicleExtras,_vehicleCalls] spawn {
 		_vehicle = _this select 0;
 		_extras = _this select 1;
+		_calls = _this select 2;
 
 		sleep 0.3;
 
-		[] call resetmudschahedinUI;
+		[] call resetMudschahedinUI;
 
-		[_vehicle, mudschahedinSpawnPos, _extras] call spawnSupplyDrop;
+		[_vehicle, mudschahedinSpawnPos, _extras, _calls] call spawnSupplyDrop;
 	};
 
 };
