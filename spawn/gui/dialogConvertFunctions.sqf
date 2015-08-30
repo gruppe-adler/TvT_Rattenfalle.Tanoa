@@ -189,6 +189,25 @@ russian_IDC_to_extras = {
 };
 
 
+// takes IDC, gives back calls
+russian_IDC_to_calls = {
+	_idc = _this select 0;
+	_calls = 0;
+
+	switch (_idc) do {
+
+		case 1501: { _calls = ((russianSupplies select 1) select 7); };
+		case 1502: { _calls = ((russianSupplies select 2) select 7); };
+		case 1503: { _calls = ((russianSupplies select 3) select 7); };
+		case 1504: { _calls = ((russianSupplies select 4) select 7); };
+		case 1505: { _calls = ((russianSupplies select 5) select 7); };
+		default {};
+	};
+
+	_calls
+};
+
+
 
 
 
@@ -372,4 +391,22 @@ mudschahedin_IDC_to_extras = {
 	};
 
 	_extras
+};
+
+// takes IDC, gives back extras
+mudschahedin_IDC_to_calls = {
+	_idc = _this select 0;
+	_calls = 0;
+
+	switch (_idc) do {
+
+		case 3501: { _calls = ((mudschahedinSupplies select 1) select 7); };
+		case 3502: { _calls = ((mudschahedinSupplies select 2) select 7); };
+		case 3503: { _calls = ((mudschahedinSupplies select 3) select 7); };
+		case 3504: { _calls = ((mudschahedinSupplies select 4) select 7); };
+		case 3505: { _calls = ((mudschahedinSupplies select 5) select 7); };
+		default {};
+	};
+
+	_calls
 };

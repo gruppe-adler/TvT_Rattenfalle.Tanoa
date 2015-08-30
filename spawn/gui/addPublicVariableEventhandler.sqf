@@ -29,7 +29,12 @@ fillRussianSupplies = {
             "<t align='center'>100 cr</t>",
             120,
             [[]],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ],
         [
             "rhs_gaz66o_vdv",
@@ -39,7 +44,12 @@ fillRussianSupplies = {
             "<t align='center'>15 cr</t>",
             60,
             ["light_hide", 0 ],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ],
         [
             "rhs_prp3_vdv",
@@ -49,7 +59,12 @@ fillRussianSupplies = {
             "<t align='center'>1500 cr</t>",
             180,
             [[]],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ],
         [
             "rhs_brm1k_vdv",
@@ -59,7 +74,12 @@ fillRussianSupplies = {
             "<t align='center'>2000 cr</t>",
             180,
             [[]],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ],
         [
             "RHS_Mi24Vt_vvs",
@@ -69,7 +89,12 @@ fillRussianSupplies = {
             "<t align='center'>4000 cr</t>",
             180,
             ["exhaust_hide", 1,"at_rack_hide", 0],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ]
     ];
 
@@ -94,7 +119,7 @@ fillRussianSupplies = {
             _this select 1
         ];
 
-        [_this select 1] call refreshOrder;
+        [_this select 1] call refreshRussianOrder;
     };
 };
 
@@ -110,8 +135,13 @@ fillMudschahedinSupplies = {
             50,
             "<t align='center'>50 cr</t>",
             120,
-            [["light_hide", 0 ]],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            ["light_hide", 1 ],
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ],
         [
             "LOP_AM_Landrover_M2",
@@ -121,10 +151,15 @@ fillMudschahedinSupplies = {
             "<t align='center'>200 cr</t>",
             60,
             [[]],
-            {clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this;}
+            {
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            }
         ],
         [
-            "Ammocrates_NoInteractive_Medium",
+            "B_CargoNet_01_Ammo_F",
             "10 RPG",
             2,
             1500,
@@ -132,18 +167,18 @@ fillMudschahedinSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal this; 
-            clearItemCargoGlobal this; 
-            clearBackpackCargoGlobal this; 
-            clearMagazineCargoGlobal this; 
-            this addWeaponCargoGlobal ['rhs_weap_rpg7',10];  
-            this addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',4];
-            this addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',4];
-            this addMagazineCargoGlobal ['rhs_rpg7_OG7V_mag',4];
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0); 
+            (_this select 0) addWeaponCargoGlobal ['rhs_weap_rpg7',10];  
+            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',4];
+            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',4];
+            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_OG7V_mag',4];
             }
         ],
         [
-            "Ammocrates_NoInteractive_Small",
+            "Box_East_Wps_F",
             "6 IED",
             1,
             2000,
@@ -151,19 +186,19 @@ fillMudschahedinSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal this; 
-            clearItemCargoGlobal this; 
-            clearBackpackCargoGlobal this; 
-            clearMagazineCargoGlobal this; 
-            this addMagazineCargoGlobal ['IEDUrbanBig_F',2];  
-            this addMagazineCargoGlobal ['IEDLandBig_F',2];
-            this addMagazineCargoGlobal ['IEDLandSmall_F',1];
-            this addMagazineCargoGlobal ['IEDUrbanSmall_F',1];
-            this addItemCargoGlobal ['ACE_Cellphone',4];
-             }
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0); 
+            (_this select 0) addWeaponCargoGlobal ['IEDUrbanBig_F',2];  
+            (_this select 0) addWeaponCargoGlobal ['IEDLandBig_F',2];
+            (_this select 0) addWeaponCargoGlobal ['IEDLandSmall_F',1];
+            (_this select 0) addWeaponCargoGlobal ['IEDUrbanSmall_F',1];
+            (_this select 0) addItemCargoGlobal ['ACE_Cellphone',4];
+            }
         ],
         [
-            "Ammocrates_NoInteractive_Large",
+            "Box_East_WpsSpecial_F",
             "2 FIM92 Stinger",
             1,
             3000,
@@ -171,11 +206,11 @@ fillMudschahedinSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal this; 
-            clearItemCargoGlobal this; 
-            clearBackpackCargoGlobal this; 
-            clearMagazineCargoGlobal this;
-            this addWeaponCargoGlobal ['rhs_weap_fim92',2];
+            clearWeaponCargoGlobal (_this select 0); 
+            clearItemCargoGlobal (_this select 0); 
+            clearBackpackCargoGlobal (_this select 0); 
+            clearMagazineCargoGlobal (_this select 0);
+            (_this select 0) addWeaponCargoGlobal ['rhs_weap_fim92',2];
             }
         ]
     ];
@@ -191,7 +226,7 @@ fillMudschahedinSupplies = {
             _this select 1
         ];
 
-        [_this select 1,false,0,"",""] call refreshRussianUI;
+        [_this select 1,false,0,"",""] call refreshMudschahedinUI;
     };
 
     "VEHICLE_ORDERED_EAST" addPublicVariableEventHandler {
@@ -201,7 +236,7 @@ fillMudschahedinSupplies = {
             _this select 1
         ];
 
-        [_this select 1] call refreshOrder;
+        [_this select 1] call refreshMudschahedinOrder;
     };
 };
 

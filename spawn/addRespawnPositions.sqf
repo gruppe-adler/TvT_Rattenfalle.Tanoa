@@ -5,13 +5,24 @@ _size = getNumber (configFile >> "CfgWorlds" >> worldName >> "MapSize");
 
 ["Suche Startpositionen..."] call EFUNC(common,displayTextStructured);
 
+
+// northwest = [270,0]
+// southeast = [90,180]
+// northeast = [0,90]
+// southwest = [180,270]
+_vector = [0,0];
+if (CRASH_SITE select 0 > _size/2 && CRASH_SITE select 1 > _size/2) then { _vector = [270,0]; };
+if (CRASH_SITE select 0 < _size/2 && CRASH_SITE select 1 > _size/2) then { _vector = [0,90]; };
+if (CRASH_SITE select 0 < _size/2 && CRASH_SITE select 1 < _size/2) then { _vector = [90,180]; };
+if (CRASH_SITE select 0 > _size/2 && CRASH_SITE select 1 < _size/2) then { _vector = [180,270]; };
+
 // find positions on road for bases
 _max_distance = 150;
 
 _westSpawnPosition = [];
 while{count _westSpawnPosition < 1} do {
 
-	_westSpawnPosition = [CRASH_SITE,[westMinSpawnDistance,westMaxSpawnDistance], random 360,0,[2,_max_distance]] call SHK_pos;
+	_westSpawnPosition = [CRASH_SITE,[westMinSpawnDistance,westMaxSpawnDistance], _vector,0,[2,_max_distance]] call SHK_pos;
 		sleep 0.04;
 		_max_distance = _max_distance + 100;
 
@@ -28,7 +39,7 @@ _max_distance = 150;
 _eastSpawnPosition = [];
 while{count _eastSpawnPosition < 1} do {
 
-	_eastSpawnPosition = [CRASH_SITE,[eastMinSpawnDistance,eastMaxSpawnDistance], random 360,0,[2,_max_distance]] call SHK_pos;
+	_eastSpawnPosition = [CRASH_SITE,[eastMinSpawnDistance,eastMaxSpawnDistance], _vector,0,[2,_max_distance]] call SHK_pos;
 		sleep 0.04;
 		_max_distance = _max_distance + 100;
 
@@ -111,7 +122,7 @@ waitUntil {
   count eastHQSpawnPos > 0
 };
 
-_muhaActionHelper = createVehicle ["Land_PortableLongRangeRadio_F", [eastHQSpawnPos select 0, (eastHQSpawnPos select 1) + 0.5, 0], [], 0, "NONE"];
+_muhaActionHelper = createVehicle ["Land_SatellitePhone_F", [eastHQSpawnPos select 0, (eastHQSpawnPos select 1) + 0.5, 0], [], 0, "NONE"];
 _muhaSupplyAction = _muhaActionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "mudschahedinSupplyGUI"; [mudschahedinSupplies, false, 0, "",""] call refreshMudschahedinUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
 
 mudschahedinSpawnPos = eastHQSpawnPos;

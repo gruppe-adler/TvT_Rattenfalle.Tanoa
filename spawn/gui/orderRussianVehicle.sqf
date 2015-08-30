@@ -45,8 +45,9 @@ if (count _tempRussian_1 == 1 || count _tempRussian_2 == 1 || count _tempRussian
 
 _vehicleOrdered = [_idc] call russian_IDC_to_classname;
 _vehicleExtras = [_idc] call russian_IDC_to_extras;
+_vehicleCalls = [_idc] call russian_IDC_to_calls;
 
-if (DEBUG) then { diag_log format ["_vehicleOrdered: %1, _vehicleExtras: %2",_vehicleOrdered, _vehicleExtras]; };
+if (DEBUG) then { diag_log format ["_vehicleOrdered: %1, _vehicleExtras: %2, _vehicleCalls: %3",_vehicleOrdered, _vehicleExtras,_vehicleCalls]; };
 
 _randomSound = [
     "rhs_rus_land_rc_02",
@@ -87,6 +88,6 @@ _tempSupplies =
         _tempRussian_5
     ];
 
-[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras] call refreshRussianUI;
+[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras,_vehicleCalls] call refreshRussianUI;
 
 //if (DEBUG) then { diag_log format ["russianSupplies refreshed: %1",russianSupplies]; };

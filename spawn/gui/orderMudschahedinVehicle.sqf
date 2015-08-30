@@ -45,6 +45,7 @@ if (count _tempMudschahedin_1 == 1 || count _tempMudschahedin_2 == 1 || count _t
 
 _vehicleOrdered = [_idc] call mudschahedin_IDC_to_classname;
 _vehicleExtras = [_idc] call mudschahedin_IDC_to_extras;
+_vehicleCalls = [_idc] call mudschahedin_IDC_to_calls;
 
 if (DEBUG) then { diag_log format ["_vehicleOrdered: %1, _vehicleExtras: %2",_vehicleOrdered, _vehicleExtras]; };
 
@@ -87,6 +88,6 @@ _tempSupplies =
         _tempMudschahedin_5
     ];
 
-[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras] call refreshMudschahedinUI;
+[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras,_vehicleCalls] call refreshMudschahedinUI;
 
 //if (DEBUG) then { diag_log format ["mudschahedinSupplies refreshed: %1",mudschahedinSupplies]; };

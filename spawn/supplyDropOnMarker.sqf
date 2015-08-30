@@ -5,13 +5,7 @@
 		modified by nomisum to his needs
 
 */
-		// execute vehicle init from array
-		executeCalls =  {
-			_vehicle = this select 0;
-			_calls = _this select 1;
-			
-			_vehicle call _calls;
-		};
+		
 
 
 		
@@ -21,7 +15,9 @@
 	        _chuteType = "B_Parachute_02_F";	//parachute for blufor, for opfor and greenfor replace the 'B' with 'O' or 'G' respectively
 
 	        _init = _this select 2;
-	        //_calls = _this select 3;
+	        _calls = _this select 3;
+
+	       if (DEBUG) then {diag_log format ["%1",_calls];};
 
 
 	        
@@ -100,19 +96,20 @@
 	       
 			_vehicle = createVehicle [_vehicleType, position _chute, [], 0, "NONE"];
 
-			//[_vehicle,_calls] call executeCalls;
-
+			[_vehicle] call _calls;
+			sleep 0.1;
 
 			// adjust vehicle (remove lamp covers and stuff)
 			if (count _init > 0) then {
-	     		[_vehicle,nil, _init] call BIS_fnc_initVehicle;
+	     		[_vehicle, nil, _init] call BIS_fnc_initVehicle;
 	    	};
+	    	sleep 0.1;
 
 	    	
 			
 
-	        _vehicle attachTo [_chute, [0, 0, -1]];
-	        waitUntil {position _vehicle select 2 < 0.7 || isNull _chute};
+	        _vehicle attachTo [_chute, [0, 0, -0.5]];
+	        waitUntil {position _vehicle select 2 < 0.6 || isNull _chute};
 	        detach _vehicle;
 	        _vehicle setPos [position _vehicle select 0, position _vehicle select 1, 0];
 

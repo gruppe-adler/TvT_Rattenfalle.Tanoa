@@ -7,8 +7,6 @@ calculateRussianVehicleCall = {
 	_price = [_idc] call russian_IDC_to_price;
 	_priceDisplay = [_idc] call russian_IDC_to_pricedisplay;
 	_eta = [_idc] call russian_IDC_to_eta;
-	_init = _source_array select 6;
-	_calls = _source_array select 7;
 
 	if (_countLeft == 0) exitWith {	_target_array = [_idc]; _target_array };
 
@@ -20,9 +18,7 @@ calculateRussianVehicleCall = {
         _countLeft,
         _price,
         _priceDisplay,
-        _eta,
-        _init,
-        _calls
+        _eta
 	];
 
 	//if (DEBUG) then { diag_log format ["calculateVehicleCall: %1",_target_array]; };
@@ -40,8 +36,6 @@ calculateMudschahedinVehicleCall = {
 	_price = [_idc] call mudschahedin_IDC_to_price;
 	_priceDisplay = [_idc] call mudschahedin_IDC_to_pricedisplay;
 	_eta = [_idc] call mudschahedin_IDC_to_eta;
-	_init = _source_array select 6;
-	_calls = _source_array select 7;
 
 	if (_countLeft == 0) exitWith {	_target_array = [_idc]; _target_array };
 
@@ -53,9 +47,7 @@ calculateMudschahedinVehicleCall = {
         _countLeft,
         _price,
         _priceDisplay,
-        _eta,
-        _init,
-        _calls
+        _eta
 	];
 
 	//if (DEBUG) then { diag_log format ["calculateVehicleCall: %1",_target_array]; };
