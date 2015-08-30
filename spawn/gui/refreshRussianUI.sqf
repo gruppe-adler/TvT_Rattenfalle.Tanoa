@@ -14,7 +14,7 @@ headlineString = {
 };
 
 
-resetUI = {
+resetRussianUI = {
 
 		disableSerialization;
 
@@ -22,7 +22,7 @@ resetUI = {
 		_headlineRelease = ["Nachschub anfordern"] call headlineString;
 
 		disableSerialization;
-		_display = findDisplay 3000;
+		_display = findDisplay 1000;
 		_display displayCtrl 1600 ctrlSetStructuredText parseText ([_headlineRelease] call headlineString);
 
 		ctrlSetText [1501, _buttonRelease];
@@ -41,7 +41,7 @@ resetUI = {
 			
 };
 
-refreshOrder = {
+refreshRussianOrder = {
 	_bool = _this select 0;
 
 	if (_bool) then {
@@ -61,13 +61,13 @@ refreshOrder = {
 
 	} else {
 
-		[] call resetUI;
+		[] call resetRussianUI;
 	};
 	
 };
 
 
-refreshUI = {
+refreshRussianUI = {
 	_array = _this select 0;
 	_outOfMoney = _this select 1;
 	_outOfStockIndicator = _this select 2;
@@ -89,7 +89,7 @@ refreshUI = {
 
 
 	disableSerialization;
-	_display = findDisplay 3000;
+	_display = findDisplay 1000;
 
 	if (!(_vehicleOrdered == "")) then {
 		VEHICLE_ORDERED_WEST = true;
@@ -106,7 +106,7 @@ refreshUI = {
 
 
 	if (_outOfMoney) exitWith {
-		[] call resetUI;
+		[] call resetRussianUI;
 
 		_brightness = 0;
 		disableSerialization;
@@ -126,7 +126,7 @@ refreshUI = {
 	};
 
 	if (_outOfStockIndicator != 0) exitWith {
-		[] call resetUI;
+		[] call resetRussianUI;
 
 		_idc = [_outOfStockIndicator] call russian_buttonIDC_to_countleftIDC;
 		_countLeft = [_idc] call russian_IDC_to_countleft;
@@ -235,7 +235,7 @@ refreshUI = {
 
 		sleep 0.3;
 
-		[] call resetUI;
+		[] call resetRussianUI;
 
 		[_vehicle, russianSpawnPos, _extras] call spawnSupplyDrop;
 	};

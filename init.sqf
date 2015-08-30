@@ -38,7 +38,7 @@ call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "spawn\gui\initGUI.sqf";
-[]execVM "helpers\supplyDropOnMarker.sqf";
+[]execVM "spawn\supplyDropOnMarker.sqf";
 
 // driving AI
 //[] execVM "VCOM_Driving\init.sqf";

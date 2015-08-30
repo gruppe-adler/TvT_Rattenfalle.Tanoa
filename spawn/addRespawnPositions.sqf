@@ -83,7 +83,7 @@ sleep 0.01;
 _actionHelper setVectorDirAndUp [[1,0,0],[0,0,1]];
 
 
-_russianSupplyAction = _actionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, "",""] call refreshUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
+_russianSupplyAction = _actionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, "",""] call refreshRussianUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
 
 russianSpawnPos = [westHQSpawnPos,40] call findSpawnPos;
 
