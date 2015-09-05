@@ -16,7 +16,7 @@ _newMoney = _oldMoney - _price;
 
 // dont fucking buy without money dude -> exit with hint
 if (_newMoney < 0) exitWith { 
-    [russianSupplies,true,0,"",""] call refreshRussianUI;
+    [russianSupplies,true,0,"","",""] call refreshRussianUI;
 };
 
 _selector = [_idc] call russian_IDC_to_selector;
@@ -36,7 +36,7 @@ switch (_selector) do {
 
 // dont fucking buy without stock dude -> exit with hint
 if (count _tempRussian_1 == 1 || count _tempRussian_2 == 1 || count _tempRussian_3 == 1 || count _tempRussian_4 == 1 || count _tempRussian_5 == 1) exitWith { 
-    [russianSupplies,false,_idc,"",""] call refreshRussianUI;
+    [russianSupplies,false,_idc,"","",""] call refreshRussianUI;
     player say3D "rhs_rus_land_rc_01";
 };
 
@@ -46,6 +46,7 @@ if (count _tempRussian_1 == 1 || count _tempRussian_2 == 1 || count _tempRussian
 _vehicleOrdered = [_idc] call russian_IDC_to_classname;
 _vehicleExtras = [_idc] call russian_IDC_to_extras;
 _vehicleCalls = [_idc] call russian_IDC_to_calls;
+_vehicleEta = [_idc] call russian_IDC_to_eta;
 
 if (DEBUG) then { diag_log format ["_vehicleOrdered: %1, _vehicleExtras: %2, _vehicleCalls: %3",_vehicleOrdered, _vehicleExtras,_vehicleCalls]; };
 
@@ -88,6 +89,6 @@ _tempSupplies =
         _tempRussian_5
     ];
 
-[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras,_vehicleCalls] call refreshRussianUI;
+[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras,_vehicleCalls,_vehicleEta] call refreshRussianUI;
 
 //if (DEBUG) then { diag_log format ["russianSupplies refreshed: %1",russianSupplies]; };

@@ -109,7 +109,7 @@ fillRussianSupplies = {
             _this select 1
         ];
 
-        [_this select 1,false,0,"",""] call refreshRussianUI;
+        [_this select 1,false,0,"","",""] call refreshRussianUI;
     };
 
     "VEHICLE_ORDERED_WEST" addPublicVariableEventHandler {
@@ -226,7 +226,7 @@ fillMudschahedinSupplies = {
             _this select 1
         ];
 
-        [_this select 1,false,0,"",""] call refreshMudschahedinUI;
+        [_this select 1,false,0,"","",""] call refreshMudschahedinUI;
     };
 
     "VEHICLE_ORDERED_EAST" addPublicVariableEventHandler {

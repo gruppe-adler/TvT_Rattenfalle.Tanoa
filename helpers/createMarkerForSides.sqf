@@ -5,16 +5,17 @@ _position = _this select 1;
 
 if (!(side player in _side)) exitWith {};
 
+_position = [_position select 0, _position select 1];
 
 _inner_marker = createMarkerLocal ["mrk_crash_site", _position];
 "mrk_crash_site" setMarkerShapeLocal "ELLIPSE";
 "mrk_crash_site" setMarkerTypeLocal "mil_unknown";
 "mrk_crash_site" setMarkerColorLocal "ColorRed";
 "mrk_crash_site" setMarkerAlphaLocal 1;
-"mrk_crash_site" setMarkerSizeLocal [1, 1];
+"mrk_crash_site" setMarkerSizeLocal [100, 100];
 "mrk_crash_site" setMarkerBrushLocal "SolidBorder";
 
-
+/*
 pulseMarker = {
 
 	pulseMarkerSize = 1;
@@ -50,4 +51,4 @@ checkMapOpen = {
 		};
 };
 
-[] call checkMapOpen;
+[] call checkMapOpen;*/

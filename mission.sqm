@@ -623,6 +623,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="crashpilot";
+					init="this linkItem ""ItemMap""";
 					description="Pilot";
 				};
 			};
@@ -1020,66 +1021,376 @@ class Mission
 	};
 	class Markers
 	{
-		items=10;
+		items=56;
 		class Item0
 		{
 			position[]={620.83221,242.74055,2830.0474};
 			name="mrk_crash_site_01";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item1
 		{
 			position[]={1740.3115,211.28996,3772.1372};
 			name="mrk_crash_site_02";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item2
 		{
 			position[]={2125.8481,262.52521,7702.7412};
 			name="mrk_crash_site_03";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item3
 		{
 			position[]={1879.1359,147.1904,11782.373};
 			name="mrk_crash_site_04";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item4
 		{
 			position[]={3816.5225,44.350525,10336.888};
 			name="mrk_crash_site_05";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item5
 		{
 			position[]={5644.3477,74.379669,9788.0742};
 			name="mrk_crash_site_06";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item6
 		{
 			position[]={6855.1792,120.67165,8840.6797};
 			name="mrk_crash_site_07";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item7
 		{
 			position[]={9013.1572,200.67775,6897.4253};
 			name="mrk_crash_site_08";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item8
 		{
 			position[]={8785.9316,271.88214,5195.0723};
 			name="mrk_crash_site_09";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
 		};
 		class Item9
 		{
 			position[]={11615.905,382.03995,2542.4258};
 			name="mrk_crash_site_10";
-			type="Empty";
+			type="hd_pickup";
+			colorName="ColorWEST";
+		};
+		class Item10
+		{
+			position[]={4759.1533,316.51056,775.34192};
+			name="mrk_west_site_01";
+			type="rhs_flag_Russia";
+		};
+		class Item11
+		{
+			position[]={3914.6226,332.83221,536.19934};
+			name="mrk_west_site_02";
+			type="rhs_flag_Russia";
+		};
+		class Item12
+		{
+			position[]={2109.6941,360.44986,326.99136};
+			name="mrk_west_site_03";
+			type="rhs_flag_Russia";
+		};
+		class Item13
+		{
+			position[]={1648.5535,228.48955,5669.6826};
+			name="mrk_west_site_04";
+			type="rhs_flag_Russia";
+		};
+		class Item14
+		{
+			position[]={1328.0142,219.58737,3411.9619};
+			name="mrk_west_site_05";
+			type="rhs_flag_Russia";
+		};
+		class Item15
+		{
+			position[]={3535.8555,161.32257,8359.7529};
+			name="mrk_west_site_06";
+			type="rhs_flag_Russia";
+		};
+		class Item16
+		{
+			position[]={2160.2935,76.917686,12144.231};
+			name="mrk_west_site_07";
+			type="rhs_flag_Russia";
+		};
+		class Item17
+		{
+			position[]={3494.6721,48.77076,10182.635};
+			name="mrk_west_site_08";
+			type="rhs_flag_Russia";
+		};
+		class Item18
+		{
+			position[]={6168.5288,83.040001,11594.508};
+			name="mrk_west_site_09";
+			type="rhs_flag_Russia";
+		};
+		class Item19
+		{
+			position[]={5558.3706,74.336784,9735.0674};
+			name="mrk_west_site_10";
+			type="rhs_flag_Russia";
+		};
+		class Item20
+		{
+			position[]={3649.8813,219.54306,4664.2681};
+			name="mrk_west_site_11";
+			type="rhs_flag_Russia";
+		};
+		class Item21
+		{
+			position[]={4516.5176,162.74178,5752.333};
+			name="mrk_west_site_12";
+			type="rhs_flag_Russia";
+		};
+		class Item22
+		{
+			position[]={5645.1011,147.67189,6436.3198};
+			name="mrk_west_site_13";
+			type="rhs_flag_Russia";
+		};
+		class Item23
+		{
+			position[]={7106.0654,280.49619,1073.897};
+			name="mrk_west_site_14";
+			type="rhs_flag_Russia";
+		};
+		class Item24
+		{
+			position[]={7997.4468,296.16229,1954.7213};
+			name="mrk_west_site_15";
+			type="rhs_flag_Russia";
+		};
+		class Item25
+		{
+			position[]={11166.211,410.63409,2464.9668};
+			name="mrk_west_site_16";
+			type="rhs_flag_Russia";
+		};
+		class Item26
+		{
+			position[]={8781.0947,271.8179,5199.6021};
+			name="mrk_west_site_17";
+			type="rhs_flag_Russia";
+		};
+		class Item27
+		{
+			position[]={10431.085,257.16568,6420.4282};
+			name="mrk_west_site_18";
+			type="rhs_flag_Russia";
+		};
+		class Item28
+		{
+			position[]={6857.7661,120.58446,8850.0723};
+			name="mrk_west_site_19";
+			type="rhs_flag_Russia";
+		};
+		class Item29
+		{
+			position[]={8446.5215,231.04292,10902.705};
+			name="mrk_west_site_20";
+			type="rhs_flag_Russia";
+		};
+		class Item30
+		{
+			position[]={12251.38,133.22899,10637.921};
+			name="mrk_west_site_21";
+			type="rhs_flag_Russia";
+		};
+		class Item31
+		{
+			position[]={11440.827,276.76898,8200.7119};
+			name="mrk_west_site_22";
+			type="rhs_flag_Russia";
+		};
+		class Item32
+		{
+			position[]={583.60278,515.67981,7443.4272};
+			name="mrk_east_site_01";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item33
+		{
+			position[]={860.4563,545.59991,10468.315};
+			name="mrk_east_site_02";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item34
+		{
+			position[]={966.07581,281.18488,2053.9902};
+			name="mrk_east_site_03";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item35
+		{
+			position[]={6593.229,370.02313,4540.4585};
+			name="mrk_east_site_04";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item36
+		{
+			position[]={4761.6289,542.46472,3156.7808};
+			name="mrk_east_site_05";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item37
+		{
+			position[]={6430.5991,351.74207,1974.3521};
+			name="mrk_east_site_06";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item38
+		{
+			position[]={12099.764,315.70319,1378.7085};
+			name="mrk_east_site_07";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item39
+		{
+			position[]={5053.6245,301.07999,6885.481};
+			name="mrk_east_site_08";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item40
+		{
+			position[]={4349.9141,152.52946,9050.6064};
+			name="mrk_east_site_09";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item41
+		{
+			position[]={5024.6411,122.45238,9455.7637};
+			name="mrk_east_site_10";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item42
+		{
+			position[]={630.59143,416.24792,4525.4883};
+			name="mrk_east_site_11";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item43
+		{
+			position[]={1941.6573,52.835827,12585.387};
+			name="mrk_east_site_12";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item44
+		{
+			position[]={4402.9761,82.71048,11671.429};
+			name="mrk_east_site_13";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item45
+		{
+			position[]={3434.7307,93.311897,10914.545};
+			name="mrk_east_site_14";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item46
+		{
+			position[]={8139.1807,235.25169,11213.164};
+			name="mrk_east_site_15";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item47
+		{
+			position[]={7764.9678,228.68059,11553.456};
+			name="mrk_east_site_16";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item48
+		{
+			position[]={9226.8916,72.460922,12560.11};
+			name="mrk_east_site_17";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item49
+		{
+			position[]={10208.83,143.28539,10719.501};
+			name="mrk_east_site_18";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item50
+		{
+			position[]={12634.772,117.41306,10882.381};
+			name="mrk_east_site_19";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item51
+		{
+			position[]={8795.9697,247.38507,9047.2139};
+			name="mrk_east_site_20";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item52
+		{
+			position[]={9399.4688,497.05768,3293.9678};
+			name="mrk_east_site_21";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item53
+		{
+			position[]={10033.793,402.81528,1848.9565};
+			name="mrk_east_site_22";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item54
+		{
+			position[]={11473.387,276.60071,8189.063};
+			name="mrk_east_site_23";
+			type="hd_ambush";
+			colorName="ColorEAST";
+		};
+		class Item55
+		{
+			position[]={2955.3203,383.80756,1154.9526};
+			name="mrk_east_site_24";
+			type="hd_ambush";
+			colorName="ColorEAST";
 		};
 	};
 };

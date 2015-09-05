@@ -4,25 +4,13 @@ DEBUG = true;
 //
 customRespawnTime = 10;
 
-
 // functional variables - do not change!
-player_respawned = false;
+player_respawned = 0;
+
+0 = []execVM "helpers\spawnSiteList.sqf";
 
 if (isServer) then {
 
-	// possible crash site markerlist
-	crash_sites = [
-			"mrk_crash_site_01",
-			"mrk_crash_site_02",
-			"mrk_crash_site_03",
-			"mrk_crash_site_04",
-			"mrk_crash_site_05",
-			"mrk_crash_site_06",
-			"mrk_crash_site_07",
-			"mrk_crash_site_08",
-			"mrk_crash_site_09",
-			"mrk_crash_site_10"
-	];
 	0 = [] execVM "spawn\addRespawnLoadouts.sqf";
 
 	// add crash sites to respawn positions of independents
@@ -39,6 +27,8 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "spawn\gui\initGUI.sqf";
 []execVM "spawn\supplyDropOnMarker.sqf";
+[]execVM "helpers\addActionMP.sqf";
+[]execVM "helpers\selectSpawnMarker.sqf";
 
 // driving AI
 //[] execVM "VCOM_Driving\init.sqf";
@@ -57,16 +47,19 @@ if (isServer) then {
 	VEHICLE_SUPPORT_EAST = [0,0,0];
 	publicVariable "VEHICLE_SUPPORT_WEST";
 
-	VEHICLE_ORDERED_WEST = false;
+	VEHICLE_ORDERED_WEST = [false,0];
 	publicVariable "VEHICLE_ORDERED_WEST";
 
-	VEHICLE_ORDERED_EAST = false;
+	VEHICLE_ORDERED_EAST = [false,0];
 	publicVariable "VEHICLE_ORDERED_EAST";
 
-	westMinSpawnDistance = 6000;
-	westMaxSpawnDistance = 7000;
+	SETUP_DONE = false;
+	publicVariable "SETUP_DONE";
 
-	eastMinSpawnDistance = 1500;
+	westMinSpawnDistance = 3500;
+	westMaxSpawnDistance = 4000;
+
+	eastMinSpawnDistance = 2000;
 	eastMaxSpawnDistance = 2500;
 
 	russianCredits = 5000;
@@ -83,7 +76,7 @@ if (isServer) then {
 };
 
 	// dont let west and east spawn too early
-	waitUntil {(CRASH_SITE_SELECTED)};
+	//waitUntil {CRASH_SITE_SELECTED};
 
 	
 
@@ -95,5 +88,4 @@ if (isServer) then {
 	[crew2, CRASH_SITE] call BIS_fnc_addRespawnPosition;
 	[crew3, CRASH_SITE] call BIS_fnc_addRespawnPosition;
 
-	"respawn_independent" setMarkerPos CRASH_SITE;
 };

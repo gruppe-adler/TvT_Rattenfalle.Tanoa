@@ -9,5 +9,5 @@
 //	Param2: Max. distance to players/
 /////////////////////////////////////	
 
-[10, 1500, 2400] spawn L_fnc_civs_spawnCivs;
+[5, 1500, 2400] spawn L_fnc_civs_spawnCivs;
 //////////////////////////////////////////////////

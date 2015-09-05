@@ -20,28 +20,38 @@ resetMudschahedinUI = {
 		ctrlEnable [3503, true];
 		ctrlEnable [3504, true];
 		ctrlEnable [3505, true];
-		VEHICLE_ORDERED_EAST = false;
+		VEHICLE_ORDERED_EAST = [false,0];
 		publicVariable "VEHICLE_ORDERED_EAST";
 			
 };
 
 refreshMudschahedinOrder = {
-	_bool = _this select 0;
+	_bool = (_this select 0) select 0;
+	_eta = (_this select 0) select 1;
+
+	//if (DEBUG) then { diag_log format ["_bool is %1, _eta is %2",_bool, _eta];};
+
+	_headlineBlocked = "Anforderung läuft";
+	_refreshPleasewait = format ["noch %1 s",_eta];
 
 	if (_bool) then {
 
+		disableSerialization;
+		_display = findDisplay 3000;
 		_display displayCtrl 3600 ctrlSetStructuredText parseText ([_headlineBlocked] call headlineString);
-		ctrlSetText [3501, _pleasewait];
-		ctrlSetText [3502, _pleasewait];
-		ctrlSetText [3503, _pleasewait];
-		ctrlSetText [3504, _pleasewait];
-		ctrlSetText [3505, _pleasewait];
+		ctrlSetText [3501, _refreshPleasewait];
+		ctrlSetText [3502, _refreshPleasewait];
+		ctrlSetText [3503, _refreshPleasewait];
+		ctrlSetText [3504, _refreshPleasewait];
+		ctrlSetText [3505, _refreshPleasewait];
 
 		ctrlEnable [3501, false];
 		ctrlEnable [3502, false];
 		ctrlEnable [3503, false];
 		ctrlEnable [3504, false];
 		ctrlEnable [3505, false];
+
+		if (DEBUG) then { diag_log format ["_bool is %1, _eta is %2",_bool, _eta];};
 
 	} else {
 
@@ -58,6 +68,7 @@ refreshMudschahedinUI = {
 	_vehicleOrdered = _this select 3;
 	_vehicleExtras = _this select 4;
 	_vehicleCalls = _this select 5;
+	_vehicleEta = _this select 6;
 
 
 
@@ -76,7 +87,7 @@ refreshMudschahedinUI = {
 	_display = findDisplay 3000;
 
 	if (!(_vehicleOrdered == "")) then {
-		VEHICLE_ORDERED_EAST = true;
+		VEHICLE_ORDERED_EAST = [true,_vehicleEta];
 		publicVariable "VEHICLE_ORDERED_EAST";
 
 		_display displayCtrl 3600 ctrlSetStructuredText parseText ([_headlineBlocked] call headlineString);
@@ -86,6 +97,9 @@ refreshMudschahedinUI = {
 		ctrlSetText [3504, _pleasewait];
 		ctrlSetText [3505, _pleasewait];
 	};
+
+	[VEHICLE_ORDERED_EAST] call refreshMudschahedinOrder;
+
 	
 
 
@@ -213,12 +227,23 @@ refreshMudschahedinUI = {
 	publicVariable "mudschahedinSupplies";
 	
 	// // // // //
-	[_vehicleOrdered,_vehicleExtras,_vehicleCalls] spawn {
+	[_vehicleOrdered,_vehicleExtras,_vehicleCalls,_vehicleEta] spawn {
 		_vehicle = _this select 0;
 		_extras = _this select 1;
 		_calls = _this select 2;
+		_eta = _this select 3;
 
-		sleep 0.3;
+		while {_eta > 0} do
+		{
+			_eta = _eta - 1;
+		
+			VEHICLE_ORDERED_EAST = [true,_eta];
+			publicVariable "VEHICLE_ORDERED_EAST";
+			[VEHICLE_ORDERED_EAST] call refreshMudschahedinOrder;
+			sleep 1;
+		};
+
+	
 
 		[] call resetMudschahedinUI;
 

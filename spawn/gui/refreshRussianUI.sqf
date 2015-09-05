@@ -36,28 +36,40 @@ resetRussianUI = {
 		ctrlEnable [1503, true];
 		ctrlEnable [1504, true];
 		ctrlEnable [1505, true];
-		VEHICLE_ORDERED_WEST = false;
+		VEHICLE_ORDERED_WEST = [false,0];
 		publicVariable "VEHICLE_ORDERED_WEST";
 			
 };
 
 refreshRussianOrder = {
-	_bool = _this select 0;
+	_bool = (_this select 0) select 0;
+	_eta = (_this select 0) select 1;
+
+	// if (DEBUG) then { diag_log format ["_bool is %1, _eta is %2",_bool, _eta];};
+
+	_headlineBlocked = "Anforderung läuft";
+	_refreshPleasewait = format ["noch %1 s",_eta];
 
 	if (_bool) then {
+		
+		disableSerialization;
+		_display = findDisplay 1000;
 
 		_display displayCtrl 1600 ctrlSetStructuredText parseText ([_headlineBlocked] call headlineString);
-		ctrlSetText [1501, _pleasewait];
-		ctrlSetText [1502, _pleasewait];
-		ctrlSetText [1503, _pleasewait];
-		ctrlSetText [1504, _pleasewait];
-		ctrlSetText [1505, _pleasewait];
+		ctrlSetText [1501, _refreshPleasewait];
+		ctrlSetText [1502, _refreshPleasewait];
+		ctrlSetText [1503, _refreshPleasewait];
+		ctrlSetText [1504, _refreshPleasewait];
+		ctrlSetText [1505, _refreshPleasewait];
 
 		ctrlEnable [1501, false];
 		ctrlEnable [1502, false];
 		ctrlEnable [1503, false];
 		ctrlEnable [1504, false];
 		ctrlEnable [1505, false];
+
+		if (DEBUG) then { diag_log format ["_bool is %1, _eta is %2",_bool, _eta];};
+
 
 	} else {
 
@@ -74,6 +86,7 @@ refreshRussianUI = {
 	_vehicleOrdered = _this select 3;
 	_vehicleExtras = _this select 4;
 	_vehicleCalls = _this select 5;
+	_vehicleEta = _this select 6;
 
 
 
@@ -92,7 +105,7 @@ refreshRussianUI = {
 	_display = findDisplay 1000;
 
 	if (!(_vehicleOrdered == "")) then {
-		VEHICLE_ORDERED_WEST = true;
+		VEHICLE_ORDERED_WEST = [true,_vehicleEta];
 		publicVariable "VEHICLE_ORDERED_WEST";
 
 		_display displayCtrl 1600 ctrlSetStructuredText parseText ([_headlineBlocked] call headlineString);
@@ -103,7 +116,7 @@ refreshRussianUI = {
 		ctrlSetText [1505, _pleasewait];
 	};
 	
-
+	[VEHICLE_ORDERED_WEST] call refreshRussianOrder;
 
 	if (_outOfMoney) exitWith {
 		[] call resetRussianUI;
@@ -229,13 +242,22 @@ refreshRussianUI = {
 	publicVariable "russianSupplies";
 	
 	// // // // //
-	[_vehicleOrdered,_vehicleExtras,_vehicleCalls] spawn {
+	[_vehicleOrdered,_vehicleExtras,_vehicleCalls,_vehicleEta] spawn {
 		_vehicle = _this select 0;
 		_extras = _this select 1;
 		_calls = _this select 2;
+		_eta = _this select 3;
 
 
-		sleep 0.3;
+		while {_eta > 0} do
+		{
+			_eta = _eta - 1;
+		
+			VEHICLE_ORDERED_WEST = [true,_eta];
+			publicVariable "VEHICLE_ORDERED_WEST";
+			[VEHICLE_ORDERED_WEST] call refreshRussianOrder;
+			sleep 1;
+		};
 
 		[] call resetRussianUI;
 

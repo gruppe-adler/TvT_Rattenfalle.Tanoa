@@ -1,21 +1,22 @@
 findSpawnPos = {
 
-_nearestPosition = [];
-_center = _this select 0;
-_max_distance = _this select 1;
+	_nearestPosition = [];
+	_center = _this select 0;
+	_min_distance = _this select 1;
+	_max_distance = _this select 2;
 
-// find a free spot
-while{ count _nearestPosition < 1} do {
+	_nearestPosition = [_center,_min_distance,_max_distance,11,0,0.2,0] call BIS_fnc_findSafePos;
 
-	_nearestPosition = [_center,_max_distance] call get_vec_spawn_point;
-		sleep 0.04;
-		_max_distance = _max_distance + 40;
 
-	};
 
-// found Position
-_returnValue = _nearestPosition select 0;
 
-// return
-_returnValue
+	_returnValue = [_nearestPosition select 0, _nearestPosition select 1, 0];
+
+	// found Position
+	//_returnValue = _nearestPosition;
+
+	if (DEBUG) then { diag_log format ["findSpawnPos found: %1",_returnValue]; };
+
+	// return
+	_returnValue
 };

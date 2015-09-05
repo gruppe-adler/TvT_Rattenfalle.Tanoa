@@ -17,18 +17,10 @@ CRASH_SITE_SELECTED = true;
 publicVariable "CRASH_SITE_SELECTED";
 
 // find a random position in circle
-_randomNearPosition = [getMarkerPos _closest,[50,80], random 360] call SHK_pos;
-
-waitUntil {
-  count _randomNearPosition > 0
-};
+_randomNearCrashPosition = [getMarkerPos _closest,[10,80], random 360] call SHK_pos;
 
 // find a spawn pos on given position
-crashSpawnPos = [_randomNearPosition,50] call findSpawnPos;
-
-waitUntil {
-  count crashSpawnPos > 0
-};
+crashSpawnPos = [_randomNearCrashPosition,5,30,7] call findSpawnPos;
 
 _veh1 = createVehicle ["RHS_Mi24Vt_vvs", crashSpawnPos, [], 0, "NONE"];
 [_veh1,	nil,[	"exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;

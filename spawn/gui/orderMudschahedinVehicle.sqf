@@ -16,7 +16,7 @@ _newMoney = _oldMoney - _price;
 
 // dont fucking buy without money dude -> exit with hint
 if (_newMoney < 0) exitWith { 
-    [mudschahedinSupplies,true,0,"",""] call refreshMudschahedinUI;
+    [mudschahedinSupplies,true,0,"","",""] call refreshMudschahedinUI;
 };
 
 _selector = [_idc] call mudschahedin_IDC_to_selector;
@@ -36,7 +36,7 @@ switch (_selector) do {
 
 // dont fucking buy without stock dude -> exit with hint
 if (count _tempMudschahedin_1 == 1 || count _tempMudschahedin_2 == 1 || count _tempMudschahedin_3 == 1 || count _tempMudschahedin_4 == 1 || count _tempMudschahedin_5 == 1) exitWith { 
-    [mudschahedinSupplies,false,_idc,"",""] call refreshMudschahedinUI;
+    [mudschahedinSupplies,false,_idc,"","",""] call refreshMudschahedinUI;
     player say3D "rhs_usa_land_rc_1";
 };
 
@@ -46,6 +46,7 @@ if (count _tempMudschahedin_1 == 1 || count _tempMudschahedin_2 == 1 || count _t
 _vehicleOrdered = [_idc] call mudschahedin_IDC_to_classname;
 _vehicleExtras = [_idc] call mudschahedin_IDC_to_extras;
 _vehicleCalls = [_idc] call mudschahedin_IDC_to_calls;
+_vehicleEta = [_idc] call mudschahedin_IDC_to_eta;
 
 if (DEBUG) then { diag_log format ["_vehicleOrdered: %1, _vehicleExtras: %2",_vehicleOrdered, _vehicleExtras]; };
 
@@ -88,6 +89,6 @@ _tempSupplies =
         _tempMudschahedin_5
     ];
 
-[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras,_vehicleCalls] call refreshMudschahedinUI;
+[_tempSupplies,false,0,_vehicleOrdered,_vehicleExtras,_vehicleCalls,_vehicleEta] call refreshMudschahedinUI;
 
 //if (DEBUG) then { diag_log format ["mudschahedinSupplies refreshed: %1",mudschahedinSupplies]; };

@@ -13,7 +13,7 @@ respawnOnStart = 1;
 
 respawnTemplates[] = {"MenuInventory","MenuPosition"};
 
-respawnDelay = 10; // 600 // 10min
+respawnDelay = 600; // will be set higher in onplayerrespawn
 
 respawnTemplatesWest[] = {"Wave","MenuInventory","MenuPosition"};
 respawnTemplatesEast[] = {"Wave","MenuInventory","MenuPosition"};
