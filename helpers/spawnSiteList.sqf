@@ -9,7 +9,11 @@ crash_sites = [
 		"mrk_crash_site_07",
 		"mrk_crash_site_08",
 		"mrk_crash_site_09",
-		"mrk_crash_site_10"
+		"mrk_crash_site_10",
+		"mrk_crash_site_11",
+		"mrk_crash_site_12",
+		"mrk_crash_site_13",
+		"mrk_crash_site_14"
 ];
 
 spawn_sites_west = [
@@ -61,7 +65,10 @@ spawn_sites_east = [
 		"mrk_east_site_21",
 		"mrk_east_site_22",
 		"mrk_east_site_23",
-		"mrk_east_site_24"
+		"mrk_east_site_24",
+		"mrk_east_site_25",
+		"mrk_east_site_26",
+		"mrk_east_site_27"
 ];
 
 {_x setMarkerAlpha 0;} forEach spawn_sites_east;

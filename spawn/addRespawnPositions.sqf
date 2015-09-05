@@ -22,22 +22,7 @@ if (CRASH_SITE select 0 > _size/2 && CRASH_SITE select 1 < _size/2) then { _vect
 
 
 findRussianSpawnPos = {
-	// find positions on road for bases
-	_max_distance = 150;
-	
-	/*
-	while{count westSpawnPosition < 1} do {
 
-		//westSpawnPosition = [CRASH_SITE,[westMinSpawnDistance,westMaxSpawnDistance], random 360,0,[2,_max_distance]] call SHK_pos;
-		westSpawnPosition = [] call selectSpawnMarkerRussian;
-		sleep 0.04;
-		_max_distance = _max_distance + 100;
-
-		// check if found position is out of boundary of map
-		if (count westSpawnPosition > 0) then {
-			if ( westSpawnPosition select 0 > _size || westSpawnPosition select 1 > _size || westSpawnPosition select 0 < 0 || westSpawnPosition select 1 < 0) then { westSpawnPosition = []; };
-		};
-	};*/
 	westSpawnPosition = [] call selectSpawnMarkerRussian;
 	["westSpawnPosition gefunden."] call EFUNC(common,displayTextStructured);
 
@@ -48,7 +33,6 @@ findRussianSpawnPos = {
 
 	// fallback
 	"respawn_west" setMarkerPos [westSpawnPosition select 0, westSpawnPosition select 1];
-
 	
 };
 
@@ -60,9 +44,6 @@ findRussianHQPos = {
 	westHQSpawnPos = [_center,2,40] call findSpawnPos;
 
 	if (DEBUG) then { diag_log format ["westHQSpawnPos %1 found", westHQSpawnPos]; };
-
-
-	
 
 	["westHQSpawnPos gefunden."] call EFUNC(common,displayTextStructured);
 
@@ -79,8 +60,6 @@ findRussianHQPos = {
 
 	 _rusGrasscutter = createVehicle ["Land_ClutterCutter_large_F", westHQSpawnPos, [], 0, "CAN_COLLIDE"];
 
-
-	//_russianSupplyAction = _rusActionHelper addAction["<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, "","",""] call refreshRussianUI; }, _Args, 1, true, true, "","_target distance _this < 6"];
 	[[_rusActionHelper,"<t color=""#93E352"">Nachschub anfordern</t>",{0 = createDialog "russianSupplyGUI"; [russianSupplies, false, 0, "","",""] call refreshRussianUI;}],"addactionMP",nil,false] spawn BIS_fnc_MP;
 
 	russianSpawnPos = [westHQSpawnPos,2,50] call findSpawnPos;
@@ -88,39 +67,25 @@ findRussianHQPos = {
 	waitUntil {
 	  count russianSpawnPos > 0
 	};
+
 	["russianSpawnPos gefunden."] call EFUNC(common,displayTextStructured);
 
-	if (DEBUG) then { diag_log format ["west vehicle spawn position %1 found", russianSpawnPos]; };
 
 	publicVariable "russianSpawnPos";
 
 	_helipad = createVehicle ["Land_HelipadCivil_F", russianSpawnPos, [], 0, "NONE"];
 
-	eastSpawnPosition = [] call selectSpawnMarkerMudschahedin;
+	if (DEBUG) then { diag_log format ["findRussianHQPos done, russianSpawnPos is %1", russianSpawnPos]; };
+
+	eastSpawnPosition = [westHQSpawnPos] call selectSpawnMarkerMudschahedin;
+
 };
 
 
 
 
 findMudschahedinSpawnPos = {
-	
-	_max_distance = 150;
 
-	
-
-	
-	/*
-	while{count eastSpawnPosition < 1} do {
-
-		eastSpawnPosition = [CRASH_SITE,[eastMinSpawnDistance,eastMaxSpawnDistance], random 360,0,[2,_max_distance]] call SHK_pos;
-			sleep 0.04;
-			_max_distance = _max_distance + 100;
-
-			// check if found position is out of boundary of map
-			if (count eastSpawnPosition > 0) then {
-				if ( eastSpawnPosition select 0 > _size || eastSpawnPosition select 1 > _size || eastSpawnPosition select 0 < 0 || eastSpawnPosition select 1 < 0) then { eastSpawnPosition = []; };
-			};
-		};*/
 
 	["eastSpawnPosition gefunden."] call EFUNC(common,displayTextStructured);
 	[east, eastSpawnPosition] call BIS_fnc_addRespawnPosition;
@@ -198,8 +163,10 @@ publicVariable "SETUP_DONE";
 
 
 // create more positions just to show its working
+/*
 if (DEBUG) then {
 
 	0 = [] execVM "spawn\addRespawnPositions.sqf";
-	sleep 1;
+	sleep 5;
 };
+*/

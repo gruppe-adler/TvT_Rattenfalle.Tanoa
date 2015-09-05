@@ -2,12 +2,13 @@ DEBUG = true;
 //
 // customizable variables
 //
-customRespawnTime = 10;
+customRespawnTime = 60;
 
 // functional variables - do not change!
 player_respawned = 0;
 
 0 = [] execVM "helpers\spawnSiteList.sqf";
+0 = [] execVM "helpers\balancingPenalties.sqf";
 
 
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
@@ -18,6 +19,7 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "spawn\supplyDropOnMarker.sqf";
 []execVM "helpers\addActionMP.sqf";
 []execVM "helpers\selectSpawnMarker.sqf";
+
 
 // driving AI
 //[] execVM "VCOM_Driving\init.sqf";
@@ -46,9 +48,9 @@ if (isServer) then {
 	publicVariable "SETUP_DONE";
 
 	westMinSpawnDistance = 3500;
-	westMaxSpawnDistance = 4000;
+	westMaxSpawnDistance = 4500;
 
-	eastMinSpawnDistance = 2000;
+	eastMinSpawnDistance = 1500;
 	eastMaxSpawnDistance = 2500;
 
 	russianCredits = 5000;
@@ -59,6 +61,7 @@ if (isServer) then {
 
 	mudschahedinSpawnPos = [0,0,0];
 	publicVariable "mudschahedinSpawnPos";
+
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
 	
