@@ -9,7 +9,7 @@ enableDebugConsole = 1;
 loadScreen = "pic\loading_pic.jpg";
 
 respawn = "BASE";
-respawnOnStart = 1;
+respawnOnStart = 0;
 
 respawnTemplates[] = {"MenuInventory","MenuPosition"};
 

@@ -7,19 +7,8 @@ customRespawnTime = 10;
 // functional variables - do not change!
 player_respawned = 0;
 
-0 = []execVM "helpers\spawnSiteList.sqf";
+0 = [] execVM "helpers\spawnSiteList.sqf";
 
-if (isServer) then {
-
-	0 = [] execVM "spawn\addRespawnLoadouts.sqf";
-
-	// add crash sites to respawn positions of independents
-	for [{_i=0}, {_i<count crash_sites}, {_i=_i+1}] do
-	{
-		[crashpilot, (crash_sites select _i)] call BIS_fnc_addRespawnPosition;
-	};
-	
-};
 
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";

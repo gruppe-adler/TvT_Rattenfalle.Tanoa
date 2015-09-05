@@ -34,8 +34,7 @@ spawn_sites_west = [
 		"mrk_west_site_19",
 		"mrk_west_site_20",
 		"mrk_west_site_21",
-		"mrk_west_site_22",
-		"mrk_west_site_23"
+		"mrk_west_site_22"
 ];
 
 spawn_sites_east = [
@@ -68,3 +67,15 @@ spawn_sites_east = [
 {_x setMarkerAlpha 0;} forEach spawn_sites_east;
 {_x setMarkerAlpha 0;} forEach spawn_sites_west;
 {_x setMarkerAlpha 0;} forEach crash_sites;
+
+if (isServer) then {
+
+	0 = [] execVM "spawn\addRespawnLoadouts.sqf";
+
+	// add crash sites to respawn positions of independents
+	for [{_i=0}, {_i<count crash_sites}, {_i=_i+1}] do
+	{
+		[crashpilot, (crash_sites select _i)] call BIS_fnc_addRespawnPosition;
+	};
+	
+};

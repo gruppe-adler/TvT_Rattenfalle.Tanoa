@@ -19,12 +19,12 @@ if (CRASH_SITE select 0 > _size/2 && CRASH_SITE select 1 < _size/2) then { _vect
 */
 
 
+
+
 findRussianSpawnPos = {
 	// find positions on road for bases
 	_max_distance = 150;
 	
-
-	westSpawnPosition = [] call selectSpawnMarkerRussian;
 	/*
 	while{count westSpawnPosition < 1} do {
 
@@ -38,10 +38,10 @@ findRussianSpawnPos = {
 			if ( westSpawnPosition select 0 > _size || westSpawnPosition select 1 > _size || westSpawnPosition select 0 < 0 || westSpawnPosition select 1 < 0) then { westSpawnPosition = []; };
 		};
 	};*/
-	
+	westSpawnPosition = [] call selectSpawnMarkerRussian;
 	["westSpawnPosition gefunden."] call EFUNC(common,displayTextStructured);
 
-	if (DEBUG) then { diag_log format ["WestSpawnPosition is %1",westSpawnPosition]; };
+	if (DEBUG) then { diag_log format ["westSpawnPosition is %1",westSpawnPosition]; };
 
 	[west, westSpawnPosition] call BIS_fnc_addRespawnPosition;
 	[westSpawnPosition] call findRussianHQPos;
@@ -57,13 +57,12 @@ findRussianHQPos = {
 	
 	_center = _this select 0;
 
-	_randomNearPosition = [_center,[10,40], random 360] call SHK_pos;
+	westHQSpawnPos = [_center,2,40] call findSpawnPos;
 
-	if (DEBUG) then { diag_log format ["_randomNearPositionWest %1 found", _randomNearPosition]; };
+	if (DEBUG) then { diag_log format ["westHQSpawnPos %1 found", westHQSpawnPos]; };
 
 
-	// find a free spot
-	westHQSpawnPos = [_randomNearPosition,2,50] call findSpawnPos;
+	
 
 	["westHQSpawnPos gefunden."] call EFUNC(common,displayTextStructured);
 
@@ -97,6 +96,7 @@ findRussianHQPos = {
 
 	_helipad = createVehicle ["Land_HelipadCivil_F", russianSpawnPos, [], 0, "NONE"];
 
+	eastSpawnPosition = [] call selectSpawnMarkerMudschahedin;
 };
 
 
@@ -106,8 +106,7 @@ findMudschahedinSpawnPos = {
 	
 	_max_distance = 150;
 
-
-	eastSpawnPosition = [] call selectSpawnMarkerMudschahedin;
+	
 
 	
 	/*
@@ -126,7 +125,7 @@ findMudschahedinSpawnPos = {
 	["eastSpawnPosition gefunden."] call EFUNC(common,displayTextStructured);
 	[east, eastSpawnPosition] call BIS_fnc_addRespawnPosition;
 
-	if (DEBUG) then { diag_log format ["EastSpawnPosition is %1",eastSpawnPosition]; };
+	if (DEBUG) then { diag_log format ["eastSpawnPosition is %1",eastSpawnPosition]; };
 
 	[eastSpawnPosition] call findMudschahedinHQPos;
 
@@ -201,6 +200,6 @@ publicVariable "SETUP_DONE";
 // create more positions just to show its working
 if (DEBUG) then {
 
-	//0 = [] execVM "spawn\addRespawnPositions.sqf";
+	0 = [] execVM "spawn\addRespawnPositions.sqf";
 	sleep 1;
 };
