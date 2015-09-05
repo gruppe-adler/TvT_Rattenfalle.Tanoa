@@ -16,10 +16,19 @@ _civ addEventHandler ["Killed", {
 
     if (side _killer == west || side _killer == independent) then {
     	civiliansKilledByRussians = civiliansKilledByRussians + 1;	
+
+    	null = [{[civiliansKilledByRussians,west] call adjustRespawnTime;}, "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
+    	
+    	if (DEBUG) then {hintSilent "civilian killed by west"};
 	};
 
 	if (side _killer == east) then {
 		civiliansKilledByMudschahedin = civiliansKilledByMudschahedin +1;
+
+		null = [{[civiliansKilledByMudschahedin,east] call adjustRespawnTime;}, "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
+
+		[civiliansKilledByMudschahedin,east] call adjustRespawnTime;
+		if (DEBUG) then {hintSilent "civilian killed by east"};
 	};
     
 }];

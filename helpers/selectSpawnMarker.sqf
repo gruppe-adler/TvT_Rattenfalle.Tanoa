@@ -7,9 +7,9 @@ selectSpawnMarkerRussian = {
 	{
 		_possibleSpawn = getMarkerPos (spawn_sites_west call BIS_fnc_selectRandom);
 
-		if ((_possibleSpawn distance _crashPos) > westMinSpawnDistance && 
-			(_possibleSpawn distance _crashPos) < westMaxSpawnDistance) exitWith {
-				if (DEBUG) then { diag_log format ["checking marker: %1,%2,%3",_possibleSpawn distance _crashPos,_possibleSpawn distance _crashPos]; };
+		if (((_possibleSpawn distance _crashPos) > westMinSpawnDistance) && 
+			((_possibleSpawn distance _crashPos) < westMaxSpawnDistance)) exitWith {
+				if (DEBUG) then { diag_log format ["distance is %1, therefore boolean is %2",_possibleSpawn distance _crashPos,((_possibleSpawn distance _crashPos) < westMaxSpawnDistance)]; };
 					_possibleSpawn 
 		};
 

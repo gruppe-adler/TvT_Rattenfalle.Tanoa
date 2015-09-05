@@ -53,7 +53,8 @@ if (_identity == "crew1" || _identity == "crew2" || _identity == "crew3") exitWi
 				};
 			player_respawned = 2;
 			cutText ["Missionssetup abgeschlossen!","BLACK IN",5];
-			setPlayerRespawnTime customRespawnTime;
+			setPlayerRespawnTime mudschahedinRespawnTime;
+			
 		};
 
 		default {};
@@ -85,7 +86,7 @@ if (side player == west || side player == east) exitWith {
 				};
 				player_respawned = 2;
 				cutText ["Missionssetup abgeschlossen!","BLACK IN",5];
-				setPlayerRespawnTime customRespawnTime;
+				setPlayerRespawnTime mudschahedinRespawnTime;
 			};
 
 		default {}; // [] execVM "spawn\checkPlayerClass.sqf"; };

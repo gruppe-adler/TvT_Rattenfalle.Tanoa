@@ -2,7 +2,11 @@ DEBUG = true;
 //
 // customizable variables
 //
-customRespawnTime = 60;
+russianRespawnTime = 60;
+mudschahedinRespawnTime = 60;
+
+publicVariable "russianRespawnTime";
+publicVariable "mudschahedinRespawnTime";
 
 // functional variables - do not change!
 player_respawned = 0;

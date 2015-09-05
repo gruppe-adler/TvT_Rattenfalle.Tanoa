@@ -24,7 +24,7 @@ while {!(_tooFar)} do {
 		sleep 0.002;	
 	} forEach allPlayers;
 	
-	_pos = (getPosATL _car);
+	//_pos = (getPosATL _car);
 };
 // {if (alive _x) then {deleteVehicle _x}} forEach [_civ, _car];
 /*if ((_car distance _civ) <= 20) then {	// Delete the car if it's close to the civilian (and therefore far away from any player, too...)
