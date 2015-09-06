@@ -52,11 +52,11 @@ fillRussianSupplies = {
             }
         ],
         [
-            "rhs_prp3_vdv",
-            "PRP 3",
-            2,
-            1500,
-            "<t align='center'>1500 cr</t>",
+            "rhs_gaz66_ap2_vdv",
+            "GAZ 66 AP2",
+            4,
+            700,
+            "<t align='center'>700 cr</t>",
             180,
             [[]],
             {
@@ -170,10 +170,9 @@ fillMudschahedinSupplies = {
             clearWeaponCargoGlobal (_this select 0); 
             clearItemCargoGlobal (_this select 0); 
             clearBackpackCargoGlobal (_this select 0); 
-            clearMagazineCargoGlobal (_this select 0); 
-            (_this select 0) addWeaponCargoGlobal ['rhs_weap_rpg7',10];  
-            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',4];
-            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',4];
+            clearMagazineCargoGlobal (_this select 0);  
+            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',3];
+            (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',3];
             (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_OG7V_mag',4];
             }
         ],
@@ -211,6 +210,7 @@ fillMudschahedinSupplies = {
             clearBackpackCargoGlobal (_this select 0); 
             clearMagazineCargoGlobal (_this select 0);
             (_this select 0) addWeaponCargoGlobal ['rhs_weap_fim92',2];
+            (_this select 0) addWeaponCargoGlobal ['rhs_fim92_mag',4];
             }
         ]
     ];

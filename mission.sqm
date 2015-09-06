@@ -15,7 +15,8 @@ class Mission
 		"ace_interaction",
 		"ace_respawn",
 		"ace_zeus",
-		"ace_weather"
+		"ace_weather",
+		"ace_medical"
 	};
 	addOnsAuto[]=
 	{
@@ -31,6 +32,7 @@ class Mission
 		"ace_respawn",
 		"ace_zeus",
 		"ace_weather",
+		"ace_medical",
 		"aia_takistan_config"
 	};
 	randomSeed=380829;
@@ -52,7 +54,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			side="WEST";
@@ -802,6 +804,106 @@ class Mission
 				};
 			};
 		};
+		class Item17
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={566.28052,565.60254,336.39908};
+					class args
+					{
+						items=13;
+						class Item0
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="level";
+						};
+						class Item1
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="medicSetting";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="allowLitterCreation";
+						};
+						class Item3
+						{
+							value="1800";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="litterCleanUpDelay";
+						};
+						class Item4
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="enableScreams";
+						};
+						class Item5
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="playerDamageThreshold";
+						};
+						class Item6
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="AIDamageThreshold";
+						};
+						class Item7
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="enableUnconsciousnessAI";
+						};
+						class Item8
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="remoteControlledAI";
+						};
+						class Item9
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="preventInstaDeath";
+						};
+						class Item10
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="bleedingCoefficient";
+						};
+						class Item11
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="painCoefficient";
+						};
+						class Item12
+						{
+							value="1";
+							parentCls="ACE_moduleMedicalSettings";
+							typeName="keepLocalSettingsSynced";
+						};
+					};
+					id=41;
+					side="LOGIC";
+					vehicle="ACE_moduleMedicalSettings";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Markers
 	{
@@ -878,25 +980,25 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={4759.1533,316.51056,775.34192};
+			position[]={4751.3984,316.57669,781.5835};
 			name="mrk_west_site_01";
 			type="rhs_flag_Russia";
 		};
 		class Item11
 		{
-			position[]={3914.6226,332.83221,536.19934};
+			position[]={3910.9976,333.48547,550.91339};
 			name="mrk_west_site_02";
 			type="rhs_flag_Russia";
 		};
 		class Item12
 		{
-			position[]={2109.6941,360.44986,326.99136};
+			position[]={2112.3735,360.45502,324.52936};
 			name="mrk_west_site_03";
 			type="rhs_flag_Russia";
 		};
 		class Item13
 		{
-			position[]={1648.5535,228.48955,5669.6826};
+			position[]={1647.308,228.48743,5666.9839};
 			name="mrk_west_site_04";
 			type="rhs_flag_Russia";
 		};
@@ -938,13 +1040,13 @@ class Mission
 		};
 		class Item20
 		{
-			position[]={3649.8813,219.54306,4664.2681};
+			position[]={3656.4792,219.51503,4661.8921};
 			name="mrk_west_site_11";
 			type="rhs_flag_Russia";
 		};
 		class Item21
 		{
-			position[]={4516.5176,162.74178,5752.333};
+			position[]={4516.6855,162.62122,5748.3071};
 			name="mrk_west_site_12";
 			type="rhs_flag_Russia";
 		};
@@ -956,7 +1058,7 @@ class Mission
 		};
 		class Item23
 		{
-			position[]={7106.0654,280.49619,1073.897};
+			position[]={7099.9399,280.52734,1081.6935};
 			name="mrk_west_site_14";
 			type="rhs_flag_Russia";
 		};
@@ -974,7 +1076,7 @@ class Mission
 		};
 		class Item26
 		{
-			position[]={8781.0947,271.8179,5199.6021};
+			position[]={8792.5742,271.67007,5200.2612};
 			name="mrk_west_site_17";
 			type="rhs_flag_Russia";
 		};
@@ -998,7 +1100,7 @@ class Mission
 		};
 		class Item30
 		{
-			position[]={12251.38,133.22899,10637.921};
+			position[]={12253.368,133.32535,10638.74};
 			name="mrk_west_site_21";
 			type="rhs_flag_Russia";
 		};
@@ -1224,6 +1326,39 @@ class Mission
 			name="mrk_crash_site_14";
 			type="hd_pickup";
 			colorName="ColorWEST";
+		};
+	};
+	class Sensors
+	{
+		items=2;
+		class Item0
+		{
+			position[]={-39.368004,610.15997,-24.687195};
+			a=30;
+			b=30;
+			activationBy="ANY";
+			interruptable=1;
+			age="UNKNOWN";
+			name="trg_pilots_rescued";
+			expCond="(checkObjectives) && ({isPlayer _x && side _x == independent } count thislist == {isPlayer _x && side _x == independent} count allUnits)";
+			expActiv="if (isServer) then {PILOTS_RESCUED = true; publicVariable ""PILOTS_RESCUED"";}; hintSilent ""Alle lebenden Piloten gerettet"";";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={25.850716,599.83636,-31.555176};
+			a=0;
+			b=0;
+			interruptable=1;
+			age="UNKNOWN";
+			name="trg_pilots_dead";
+			expCond="(checkObjectives) && ({isPlayer _x && side _x == independent} count allUnits == 0)";
+			expActiv="if (isServer) then {PILOTS_DEAD = true; publicVariable ""PILOTS_DEAD"";}; hintSilent ""Alle Piloten eliminiert"";";
+			class Effects
+			{
+			};
 		};
 	};
 };

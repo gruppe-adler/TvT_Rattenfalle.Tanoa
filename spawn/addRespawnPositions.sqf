@@ -49,6 +49,10 @@ findRussianHQPos = {
 
 	if (DEBUG) then { diag_log format ["West Spawn position %1 found", westHQSpawnPos]; };
 
+
+	// trigger for pilot rescue area moved to right position
+	trg_pilots_rescued setPos westHQSpawnPos;
+
 	_barracks = createVehicle ["TK_WarfareBBarracks_Base_EP1", westHQSpawnPos, [], 0, "NONE"];
 	_veh2 = createVehicle ["FLAG_RED_F",  [westHQSpawnPos select 0, (westHQSpawnPos select 1) + 5,0], [], 0, "CAN_COLLIDE"];
 

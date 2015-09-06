@@ -10,6 +10,7 @@ publicVariable "mudschahedinRespawnTime";
 
 // functional variables - do not change!
 player_respawned = 0;
+checkObjectives = true;
 
 0 = [] execVM "helpers\spawnSiteList.sqf";
 0 = [] execVM "helpers\balancingPenalties.sqf";
@@ -30,6 +31,12 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 
 
 if (isServer) then {
+	PILOTS_DEAD = false;
+	publicVariable "PILOTS_DEAD";
+
+	PILOTS_RESCUED = false;
+	publicVariable "PILOTS_RESCUED";
+
 	CRASH_SITE_SELECTED = false;
 	publicVariable "CRASH_SITE_SELECTED";
 
