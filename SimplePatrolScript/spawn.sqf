@@ -41,6 +41,8 @@ _this addEventHandler ["FiredNear", {
 	 	_thisUnit = _this select 0;		 	
 	 	_thisShooter = _this select 1;
 
+	 	deleteWaypoint [group _thisUnit, all];
+
 	 	hintSilent format ["%1",_thisShooter];
 
 		 	sleep ((random 0.5) + 0.25);
@@ -48,20 +50,17 @@ _this addEventHandler ["FiredNear", {
 		 	_relDir = [_thisUnit,_thisShooter] call BIS_fnc_relativeDirTo;
 			_bla = ((nearestBuilding _thisUnit) call BIS_fnc_buildingPositions);
 
-		 	_rand = random 3;
+		 	_rand = random 2;
 		 	if (_rand < 1) exitWith {
 		 		
 				//hintSilent format ["%1",_bla select 0];
 				if (count _bla > 1) then {
 					_thisUnit setBehaviour "SAFE";
-					_pos = _bla select 0;
+					_pos = _bla select 1;
 					_thisUnit doMove _pos;
 					_thisUnit setSpeedMode "FULL";
-					_thisUnit forceSpeed 20;
-					_thisUnit playMove "AmovPercMevaSnonWnonDf";
-					sleep 0.6;
-					_thisUnit playMove "AmovPercMevaSnonWnonDf";
-					sleep 0.6;
+					_thisUnit forceSpeed 25;
+					_thisUnit playMove "AmovPercMevaSnonWnonDf";				
 					_thisUnit setVariable ["fleeing", "true"];
 					waitUntil {
 					  _thisUnit distance _pos < 2
@@ -72,8 +71,21 @@ _this addEventHandler ["FiredNear", {
 				 	_thisUnit removeEventHandler ["firedNear", 0];
 				};
 				
+				if (count _bla < 1) then {
+					_pos = [_thisUnit,[300,800],_relDir-180] call SHK_pos;
+					_thisUnit doMove _pos;
+					_thisUnit setSpeedMode "FULL";
+					_thisUnit forceSpeed 20;
+					_thisUnit playMove "AmovPercMevaSnonWnonDf";				
+					_thisUnit setVariable ["fleeing", "true"];
+					waitUntil {
+					  _thisUnit distance _pos < 2
+					};
+					_thisUnit setVariable ["fleeing", "false"];
+					0 = [_this, "CityMarker","limited","","",0] execVM "SimplePatrolScript\patrol.sqf";
+				};
 			};
-
+			/*
 		 	if (_rand > 1 && _rand < 2) exitWith {
 		 		_thisUnit setBehaviour "SAFE";
 		 		_thisUnit setSpeedMode "FULL";
@@ -81,8 +93,8 @@ _this addEventHandler ["FiredNear", {
 			 	_thisUnit playMoveNow 'AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon';
 			 	_thisUnit stop true;
 			 	_thisUnit removeEventHandler ["firedNear", 0];
-		 	};
-		 	if (_rand > 2) exitWith
+		 	};*/
+		 	if (_rand > 1) exitWith
 		 	{
 		 		_thisUnit setBehaviour "SAFE";
 		 		_thisUnit setSpeedMode "FULL";
@@ -114,7 +126,7 @@ _this addEventHandler ["FiredNear", {
 		};
 	} else {
 		(_this select 0) spawn {
-			_this playMoveNow 'Acts_CrouchingCoveringRifle01';
+			_this setBehaviour "AWARE";
 		};
 	};
 
