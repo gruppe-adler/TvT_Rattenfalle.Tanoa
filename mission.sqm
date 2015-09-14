@@ -54,7 +54,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			side="WEST";
@@ -904,10 +904,30 @@ class Mission
 				};
 			};
 		};
+		class Item18
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={-50.968044,637.76831,102.39563};
+					special="NONE";
+					id=42;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="headless";
+				};
+			};
+		};
 	};
 	class Markers
 	{
-		items=63;
+		items=64;
 		class Item0
 		{
 			position[]={620.83221,242.74055,2830.0474};
@@ -1326,6 +1346,15 @@ class Mission
 			name="mrk_crash_site_14";
 			type="hd_pickup";
 			colorName="ColorWEST";
+		};
+		class Item63
+		{
+			position[]={5253.0815,143.93033,6150.1396};
+			name="CityMarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=200;
+			b=200;
 		};
 	};
 	class Sensors

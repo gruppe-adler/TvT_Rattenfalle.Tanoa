@@ -1,3 +1,5 @@
+if (isServer || !hasInterface) exitWith {};
+
 _position_west = _this select 0;
 _position_east = _this select 1;
 

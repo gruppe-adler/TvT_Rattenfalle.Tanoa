@@ -25,7 +25,8 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 []execVM "helpers\selectSpawnMarker.sqf";
 
-
+null = [200,"CityMarker",1] execVM "SimplePatrolScript\initialize.sqf";
+"CityMarker" setMarkerAlphaLocal 0;
 // driving AI
 //[] execVM "VCOM_Driving\init.sqf";
 
