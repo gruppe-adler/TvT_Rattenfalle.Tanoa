@@ -65,8 +65,7 @@ if (isServer) then {
 	eastMinSpawnDistance = 1500;
 	eastMaxSpawnDistance = 2500;
 
-	russianCredits = 5000;
-	mudschahedinCredits = 5000;
+	
 
 	russianSpawnPos = [0,0,0];
 	publicVariable "russianSpawnPos";
@@ -74,6 +73,8 @@ if (isServer) then {
 	mudschahedinSpawnPos = [0,0,0];
 	publicVariable "mudschahedinSpawnPos";
 
+	russianCredits = 5000;
+	mudschahedinCredits = 5000;
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
 	
