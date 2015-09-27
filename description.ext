@@ -31,7 +31,7 @@ class CfgRespawnInventory
 
 		// Loadout definition, uses same entries as CfgVehicles classes
 		weapons[] = {
-			"rhs_weap_ak103_npz",
+			"rhs_weap_akm",
 			"hgun_Rook40_F",
 			"Binocular"
 		};
@@ -68,8 +68,8 @@ class CfgRespawnInventory
 			"ACE_Epipen"
 		};
 		linkedItems[] = {
-			"rhs_6b23_digi",
-			"rhs_6b27m_digi",
+			"rhs_6b23_ML_6sh92_headset",
+			"H_Hat_HelmetT",
 			"optic_Aco",
 			"acc_flashlight",
 			"ItemMap",
@@ -77,7 +77,7 @@ class CfgRespawnInventory
 			"ItemWatch",
 			"tf_anprc152"
 		};
-		uniformClass = "rhs_uniform_emr_patchless";
+		uniformClass = "rhs_uniform_flora_patchless_alt";
 		backpack = "rhs_sidor";
 	};
 	class Russian_Medic
@@ -87,7 +87,7 @@ class CfgRespawnInventory
 
 		// Loadout definition, uses same entries as CfgVehicles classes
 		weapons[] = {
-			"rhs_weap_ak103_npz",
+			"rhs_weap_akm",
 			"hgun_Rook40_F",
 			"Binocular"
 		};
@@ -160,8 +160,8 @@ class CfgRespawnInventory
 			"ACE_Epipen"
 		};
 		linkedItems[] = {
-			"rhs_6b23_digi_medic",
-			"rhs_6b27m_digi",
+			"rhs_6b23_ML_6sh92_headset",
+			"H_Hat_HelmetT",
 			"optic_Aco",
 			"acc_flashlight",
 			"ItemMap",
@@ -169,7 +169,7 @@ class CfgRespawnInventory
 			"ItemWatch",
 			"tf_anprc152"
 		};
-		uniformClass = "rhs_uniform_emr_patchless";
+		uniformClass = "rhs_uniform_flora_patchless_alt";
 		backpack = "rhs_sidor";
 	};
 	class Russian_Marksman
@@ -179,7 +179,7 @@ class CfgRespawnInventory
 
 		// Loadout definition, uses same entries as CfgVehicles classes
 		weapons[] = {
-			"rhs_weap_ak103_npz",
+			"rhs_weap_svdp_wd",
 			"hgun_Rook40_F",
 			"Binocular"
 		};
@@ -187,15 +187,15 @@ class CfgRespawnInventory
 			"16Rnd_9x21_Mag",
 			"16Rnd_9x21_Mag",
 			"16Rnd_9x21_Mag",
-			"rhs_30Rnd_762x39mm",
-			"rhs_30Rnd_762x39mm",
-			"rhs_30Rnd_762x39mm",
-			"rhs_30Rnd_762x39mm",
-			"rhs_30Rnd_762x39mm",
-			"rhs_30Rnd_762x39mm",
-			"rhs_30Rnd_762x39mm_tracer",
-			"rhs_30Rnd_762x39mm_tracer",
-			"rhs_30Rnd_762x39mm_tracer",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
+			"rhs_10Rnd_762x54mmR_7N1",
 			"SmokeShell",
 			"SmokeShell",
 			"SmokeShell",
@@ -216,16 +216,17 @@ class CfgRespawnInventory
 			"ACE_Epipen"
 		};
 		linkedItems[] = {
-			"rhs_6b23_digi_sniper",
-			"rhs_6b27m_digi_bala",
-			"optic_Hamr",
+			"rhs_6b23_ML_6sh92_headset",
+			"H_Hat_HelmetT",
+			"G_Balaclava_oli",
+			"rhs_acc_pso1m2"",
 			"acc_flashlight",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch",
 			"tf_anprc152"
 		};
-		uniformClass = "rhs_uniform_emr_patchless";
+		uniformClass = "rhs_uniform_flora_patchless_alt";
 		
 	};
 	class Russian_AT
@@ -235,7 +236,7 @@ class CfgRespawnInventory
 
 		// Loadout definition, uses same entries as CfgVehicles classes
 		weapons[] = {
-			"rhs_weap_ak103_npz",
+			"rhs_weap_akm",
 			"hgun_Rook40_F",
 			"rhs_weap_rpg7",
 			"Binocular"
@@ -254,7 +255,7 @@ class CfgRespawnInventory
 			"rhs_30Rnd_762x39mm_tracer",
 			"rhs_30Rnd_762x39mm_tracer",
 			"rhs_rpg7_PG7VL_mag",
-			"rhs_rpg7_PG7VR_mag",
+			"rhs_rpg7_PG7VL_mag",
 			"rhs_rpg7_PG7VR_mag",
 			"SmokeShell",
 			"SmokeShell",
@@ -276,16 +277,14 @@ class CfgRespawnInventory
 			"ACE_Epipen"
 		};
 		linkedItems[] = {
-			"rhs_6b23_digi",
-			"rhs_6b27m_digi_ess",
-			"optic_Aco",
+			"H_Hat_HelmetT",
 			"acc_flashlight",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch",
 			"tf_anprc152"
 		};
-		uniformClass = "rhs_uniform_emr_patchless";
+		uniformClass = "rhs_uniform_flora_patchless_alt";
 		backpack = "rhs_rpg_empty";
 	};
 	class Russian_MG
@@ -295,9 +294,8 @@ class CfgRespawnInventory
 
 		// Loadout definition, uses same entries as CfgVehicles classes
 		weapons[] = {
-			"rhs_weap_pkp",
+			"rhs_weap_pkm",
 			"hgun_Rook40_F",
-			"rhs_weap_rpg7",
 			"Binocular"
 		};
 		magazines[] = {
@@ -329,16 +327,15 @@ class CfgRespawnInventory
 			"ACE_Epipen"
 		};
 		linkedItems[] = {
-			"rhs_6b23_digi_6sh92_headset",
-			"rhs_6b28",
-			"rhs_acc_ekp1",
+			"H_Hat_HelmetT",
+			"rhs_6b23_ML_6sh92_headset"
 			"acc_flashlight",
 			"ItemMap",
 			"ItemCompass",
 			"ItemWatch",
 			"tf_anprc152"
 		};
-		uniformClass = "rhs_uniform_emr_patchless";
+		uniformClass = "rhs_uniform_flora_patchless_alt";
 		backpack = "rhs_rpg_empty";
 	};
 
