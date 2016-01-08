@@ -81,13 +81,23 @@ if (isServer) then {
 	mudschahedinCredits = 5000;
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
+
+	// loadout for AI units
+	[] spawn {
+ 		{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
+ 	};
 	
 };
 
 	// dont let west and east spawn too early
 	//waitUntil {CRASH_SITE_SELECTED};
 
-	
+if (hasInterface) then {
+	[] spawn {
+		sleep (random 10);
+		[player] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",player];
+	};
+};
 
 if (isServer) then {
 

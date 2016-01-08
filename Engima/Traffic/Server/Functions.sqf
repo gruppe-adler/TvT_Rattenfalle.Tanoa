@@ -417,17 +417,17 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            //_vehicleGroup = createGroup _side;
 	            //_vehicle = createVehicle [_vehicleType, _pos, [], 0, "NONE"];
 	            // Run spawn script and attach handle to vehicle
-	            _vehicleArray = [_pos,_vehicleType,_side] call createTakistaniVehicle;
-	            diag_log format ["vehicleArray I is %1",_vehicleArray];
+	            _vehicleArray = [[_pos,_vehicleType,_side] call createTakistaniVehicle];
+	            // diag_log format ["vehicleArray I is %1",_vehicleArray];
 	            waitUntil {count _vehicleArray > 0};
-	            diag_log format ["vehicleArray II is %1",_vehicleArray];
-				_vehicle = _vehicleArray select 0;
+	            // diag_log format ["vehicleArray II is %1",_vehicleArray];
+				_vehicle = (_vehicleArray select 0) select 0;
 	            
 		        //_result = [_pos, _direction, _vehicleType, _vehicleGroup] call BIS_fnc_spawnVehicle;
 
 				// = [_vehicleType] ... "createVehicle.sqf";
 				
-				_vehicleGroup = _vehicleArray select 1;
+				_vehicleGroup = (_vehicleArray select 0) select 1;
 				_vehiclesCrew = units _vehicleGroup;
 
 
@@ -510,6 +510,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            _scriptHandle = _vehicle getVariable "dre_scriptHandle";
 	            if (!(scriptDone _scriptHandle)) then {
 	                waitUntil {scriptDone _scriptHandle};
+
 	            };
 	            
 	            deleteVehicle _vehicle;
