@@ -56,6 +56,6 @@ createTakistaniVehicle = {
 	};
 
 
-	[_veh,_group] 
+	[_veh,_group]
 
 };
