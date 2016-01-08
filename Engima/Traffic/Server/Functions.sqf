@@ -417,14 +417,15 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            //_vehicleGroup = createGroup _side;
 	            //_vehicle = createVehicle [_vehicleType, _pos, [], 0, "NONE"];
 	            // Run spawn script and attach handle to vehicle
-	            _vehicle = [_pos,_vehicleType,_side] call createTakistaniVehicle;
+	            _vehicleArray = [_pos,_vehicleType,_side] call createTakistaniVehicle;
+				_vehicle = _vehicleArray select 0;
 	            
 		        //_result = [_pos, _direction, _vehicleType, _vehicleGroup] call BIS_fnc_spawnVehicle;
 
 				// = [_vehicleType] ... "createVehicle.sqf";
 				
-				_vehicleGroup = group _vehicle;
-				_vehiclesCrew = units group _vehicle;
+				_vehicleGroup = _vehicleArray select 1;
+				_vehiclesCrew = units _vehicleGroup;
 
 
 				_result = [_vehicle, _vehiclesCrew, _vehicleGroup];

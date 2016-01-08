@@ -7,30 +7,37 @@ createTakistaniVehicle = {
 
 
 	_createDriver = {
-		_crewDriver = (_this select 0) createUnit ["C_man_1", _pos, [], 0, "NONE"];
+		_grp0 = _this select 0;
+		_car0 = _this select 1;
 
-		_crewDriver assignAsDriver (_this select 1);
-		_crewDriver moveInDriver (_this select 1);
+		_crewDriver = _grp0 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
 		[_crewDriver] call randomTakistani; // takistani loadout
+
+		_crewDriver assignAsDriver _car0;
+		_crewDriver moveInDriver _car0;
+		hintsilent format ["ordered %1 to enter %2", _crewDriver,_car0];
 	};
 
 	_createCargo = {
-		_crewCargo = (_this select 0) createUnit ["C_man_1", _pos, [], 0, "NONE"];
+		_grp1 = _this select 0;
+		_car1 = _this select 1;
 
-		_crewCargo assignAsCargo (_this select 1);
-		_crewCargo moveInCargo (_this select 1);
+		_crewCargo = _grp1 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
 		[_crewCargo] call randomTakistani; // takistani loadout
+
+		_crewCargo assignAsCargo _car1;
+		_crewCargo moveInCargo _car1;
 	};
 
 	_veh = createVehicle [_vehicleType, _pos, [], 0, "NONE"];
-	sleep 0.01;
+	waitUntil {!isNull _veh};
 
 	_group = createGroup _side;
 
 
-	[_group] call _createDriver;
+	[_group,_veh] call _createDriver;
 
 	if (_vehicleType == "RDS_Ikarus_Civ_01" || _vehicleType == "RDS_Ikarus_Civ_02") exitWith {
 
@@ -49,6 +56,6 @@ createTakistaniVehicle = {
 	};
 
 
-	_veh 
+	[_veh,_group] 
 
 };
