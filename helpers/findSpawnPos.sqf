@@ -1,6 +1,9 @@
 findSpawnPos = {
 
 	_nearestPosition = [];
+
+	
+
 	_center = _this select 0;
 	_min_distance = _this select 1;
 	_max_distance = _this select 2;

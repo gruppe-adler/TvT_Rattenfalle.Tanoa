@@ -16,7 +16,12 @@ class Mission
 		"ace_respawn",
 		"ace_zeus",
 		"ace_weather",
-		"ace_medical"
+		"ace_medical",
+		"3DEN",
+		"a3_modules_f_curator_curator",
+		"rhs_c_cars",
+		"rhsusf_c_uav",
+		"A3_Props_F_Exp_A_Military_Equipment"
 	};
 	addOnsAuto[]=
 	{
@@ -33,6 +38,11 @@ class Mission
 		"ace_zeus",
 		"ace_weather",
 		"ace_medical",
+		"3DEN",
+		"a3_modules_f_curator_curator",
+		"rhs_c_cars",
+		"rhsusf_c_uav",
+		"A3_Props_F_Exp_A_Military_Equipment",
 		"aia_takistan_config"
 	};
 	randomSeed=380829;
@@ -54,7 +64,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			side="WEST";
@@ -321,7 +331,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={331.48303,653.7348,343.63797};
+					position[]={824.10852,235.07622,3053.7813};
 					special="NONE";
 					id=22;
 					side="GUER";
@@ -332,6 +342,8 @@ class Mission
 					text="crashpilot";
 					init="this linkItem ""ItemMap""";
 					description="Pilot";
+					syncId=0;
+					synchronizations[]={1};
 				};
 			};
 		};
@@ -465,13 +477,13 @@ class Mission
 						items=3;
 						class Item0
 						{
-							value="0";
+							value="1";
 							parentCls="ACE_ModuleBlueForceTracking";
 							typeName="Enabled";
 						};
 						class Item1
 						{
-							value="1";
+							value="10";
 							parentCls="ACE_ModuleBlueForceTracking";
 							typeName="Interval";
 						};
@@ -502,7 +514,7 @@ class Mission
 					position[]={611.00275,553.71515,372.58911};
 					class args
 					{
-						items=2;
+						items=3;
 						class Item0
 						{
 							value="0";
@@ -514,6 +526,12 @@ class Mission
 							value="1";
 							parentCls="ace_captives_moduleSettings";
 							typeName="allowSurrender";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="ace_captives_moduleSettings";
+							typeName="requireSurrender";
 						};
 					};
 					id=28;
@@ -536,12 +554,30 @@ class Mission
 					position[]={635.70062,548.21539,372.58911};
 					class args
 					{
-						items=1;
+						items=4;
 						class Item0
 						{
 							value="1";
 							parentCls="ACE_ModuleHearing";
 							typeName="EnableCombatDeafness";
+						};
+						class Item1
+						{
+							value="-1";
+							parentCls="ACE_ModuleHearing";
+							typeName="DisableEarRinging";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="ACE_ModuleHearing";
+							typeName="enabledForZeusUnits";
+						};
+						class Item3
+						{
+							value="1";
+							parentCls="ACE_ModuleHearing";
+							typeName="autoAddEarplugsToUnits";
 						};
 					};
 					id=29;
@@ -924,435 +960,131 @@ class Mission
 				};
 			};
 		};
+		class Item19
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={806.64221,235.28104,3055.0828};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="#adminLogged";
+							parentCls="ModuleCurator_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="";
+							parentCls="ModuleCurator_F";
+							typeName="Name";
+						};
+						class Item2
+						{
+							value="2";
+							parentCls="ModuleCurator_F";
+							typeName="Addons";
+						};
+						class Item3
+						{
+							value="0";
+							parentCls="ModuleCurator_F";
+							typeName="Forced";
+						};
+					};
+					id=43;
+					side="LOGIC";
+					vehicle="ModuleCurator_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=1;
+					synchronizations[]={0};
+				};
+			};
+		};
 	};
-	class Markers
+	class Vehicles
 	{
-		items=64;
+		items=3;
 		class Item0
 		{
-			position[]={620.83221,242.74055,2830.0474};
-			name="mrk_crash_site_01";
-			type="hd_pickup";
-			colorName="ColorWEST";
+			position[]={835.60303,234.75774,3059.8428};
+			azimut=54.828167;
+			id=44;
+			side="EMPTY";
+			vehicle="rhs_tigr_vdv";
+			skill=0.60000002;
 		};
 		class Item1
 		{
-			position[]={1740.3115,211.28996,3772.1372};
-			name="mrk_crash_site_02";
-			type="hd_pickup";
-			colorName="ColorWEST";
+			position[]={824.33197,234.98962,3055.9617};
+			id=45;
+			side="EMPTY";
+			vehicle="B_rhsusf_B_BACKPACK";
+			skill=0.60000002;
 		};
 		class Item2
 		{
-			position[]={2125.8481,262.52521,7702.7412};
-			name="mrk_crash_site_03";
-			type="hd_pickup";
-			colorName="ColorWEST";
+			position[]={824.41791,234.88899,3059.1919};
+			id=46;
+			side="EMPTY";
+			vehicle="Land_DataTerminal_01_F";
+			skill=0.60000002;
 		};
-		class Item3
+	};
+	class Markers
+	{
+		items=6;
+		class Item0
 		{
-			position[]={1879.1359,147.1904,11782.373};
-			name="mrk_crash_site_04";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item4
-		{
-			position[]={3816.5225,44.350525,10336.888};
-			name="mrk_crash_site_05";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item5
-		{
-			position[]={5644.3477,74.379669,9788.0742};
+			position[]={5849.9966,101.1928,8123.7109};
 			name="mrk_crash_site_06";
 			type="hd_pickup";
 			colorName="ColorWEST";
 		};
-		class Item6
+		class Item1
 		{
 			position[]={6855.1792,120.67165,8840.6797};
 			name="mrk_crash_site_07";
 			type="hd_pickup";
 			colorName="ColorWEST";
 		};
-		class Item7
+		class Item2
 		{
 			position[]={9013.1572,200.67775,6897.4253};
 			name="mrk_crash_site_08";
 			type="hd_pickup";
 			colorName="ColorWEST";
 		};
-		class Item8
-		{
-			position[]={8785.9316,271.88214,5195.0723};
-			name="mrk_crash_site_09";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item9
-		{
-			position[]={11615.905,382.03995,2542.4258};
-			name="mrk_crash_site_10";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item10
-		{
-			position[]={4751.3984,316.57669,781.5835};
-			name="mrk_west_site_01";
-			type="rhs_flag_Russia";
-		};
-		class Item11
-		{
-			position[]={3910.9976,333.48547,550.91339};
-			name="mrk_west_site_02";
-			type="rhs_flag_Russia";
-		};
-		class Item12
-		{
-			position[]={2112.3735,360.45502,324.52936};
-			name="mrk_west_site_03";
-			type="rhs_flag_Russia";
-		};
-		class Item13
-		{
-			position[]={1647.308,228.48743,5666.9839};
-			name="mrk_west_site_04";
-			type="rhs_flag_Russia";
-		};
-		class Item14
-		{
-			position[]={1328.0142,219.58737,3411.9619};
-			name="mrk_west_site_05";
-			type="rhs_flag_Russia";
-		};
-		class Item15
-		{
-			position[]={3535.8555,161.32257,8359.7529};
-			name="mrk_west_site_06";
-			type="rhs_flag_Russia";
-		};
-		class Item16
-		{
-			position[]={2160.2935,76.917686,12144.231};
-			name="mrk_west_site_07";
-			type="rhs_flag_Russia";
-		};
-		class Item17
-		{
-			position[]={3494.6721,48.77076,10182.635};
-			name="mrk_west_site_08";
-			type="rhs_flag_Russia";
-		};
-		class Item18
-		{
-			position[]={6168.5288,83.040001,11594.508};
-			name="mrk_west_site_09";
-			type="rhs_flag_Russia";
-		};
-		class Item19
-		{
-			position[]={5558.3706,74.336784,9735.0674};
-			name="mrk_west_site_10";
-			type="rhs_flag_Russia";
-		};
-		class Item20
-		{
-			position[]={3656.4792,219.51503,4661.8921};
-			name="mrk_west_site_11";
-			type="rhs_flag_Russia";
-		};
-		class Item21
-		{
-			position[]={4516.6855,162.62122,5748.3071};
-			name="mrk_west_site_12";
-			type="rhs_flag_Russia";
-		};
-		class Item22
-		{
-			position[]={5645.1011,147.67189,6436.3198};
-			name="mrk_west_site_13";
-			type="rhs_flag_Russia";
-		};
-		class Item23
-		{
-			position[]={7099.9399,280.52734,1081.6935};
-			name="mrk_west_site_14";
-			type="rhs_flag_Russia";
-		};
-		class Item24
-		{
-			position[]={7997.4468,296.16229,1954.7213};
-			name="mrk_west_site_15";
-			type="rhs_flag_Russia";
-		};
-		class Item25
-		{
-			position[]={11166.211,410.63409,2464.9668};
-			name="mrk_west_site_16";
-			type="rhs_flag_Russia";
-		};
-		class Item26
-		{
-			position[]={8792.5742,271.67007,5200.2612};
-			name="mrk_west_site_17";
-			type="rhs_flag_Russia";
-		};
-		class Item27
-		{
-			position[]={10431.085,257.16568,6420.4282};
-			name="mrk_west_site_18";
-			type="rhs_flag_Russia";
-		};
-		class Item28
-		{
-			position[]={6857.7661,120.58446,8850.0723};
-			name="mrk_west_site_19";
-			type="rhs_flag_Russia";
-		};
-		class Item29
-		{
-			position[]={8446.5215,231.04292,10902.705};
-			name="mrk_west_site_20";
-			type="rhs_flag_Russia";
-		};
-		class Item30
-		{
-			position[]={12253.368,133.32535,10638.74};
-			name="mrk_west_site_21";
-			type="rhs_flag_Russia";
-		};
-		class Item31
-		{
-			position[]={11440.827,276.76898,8200.7119};
-			name="mrk_west_site_22";
-			type="rhs_flag_Russia";
-		};
-		class Item32
-		{
-			position[]={583.60278,515.67981,7443.4272};
-			name="mrk_east_site_01";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item33
-		{
-			position[]={860.4563,545.59991,10468.315};
-			name="mrk_east_site_02";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item34
-		{
-			position[]={966.07581,281.18488,2053.9902};
-			name="mrk_east_site_03";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item35
-		{
-			position[]={6593.229,370.02313,4540.4585};
-			name="mrk_east_site_04";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item36
-		{
-			position[]={4761.6289,542.46472,3156.7808};
-			name="mrk_east_site_05";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item37
-		{
-			position[]={6430.5991,351.74207,1974.3521};
-			name="mrk_east_site_06";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item38
-		{
-			position[]={12099.764,315.70319,1378.7085};
-			name="mrk_east_site_07";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item39
-		{
-			position[]={5053.6245,301.07999,6885.481};
-			name="mrk_east_site_08";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item40
-		{
-			position[]={4349.9141,152.52946,9050.6064};
-			name="mrk_east_site_09";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item41
-		{
-			position[]={5024.6411,122.45238,9455.7637};
-			name="mrk_east_site_10";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item42
-		{
-			position[]={630.59143,416.24792,4525.4883};
-			name="mrk_east_site_11";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item43
-		{
-			position[]={1941.6573,52.835827,12585.387};
-			name="mrk_east_site_12";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item44
-		{
-			position[]={4402.9761,82.71048,11671.429};
-			name="mrk_east_site_13";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item45
-		{
-			position[]={3434.7307,93.311897,10914.545};
-			name="mrk_east_site_14";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item46
-		{
-			position[]={8139.1807,235.25169,11213.164};
-			name="mrk_east_site_15";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item47
-		{
-			position[]={7764.9678,228.68059,11553.456};
-			name="mrk_east_site_16";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item48
-		{
-			position[]={9226.8916,72.460922,12560.11};
-			name="mrk_east_site_17";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item49
-		{
-			position[]={10208.83,143.28539,10719.501};
-			name="mrk_east_site_18";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item50
-		{
-			position[]={12634.772,117.41306,10882.381};
-			name="mrk_east_site_19";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item51
-		{
-			position[]={8795.9697,247.38507,9047.2139};
-			name="mrk_east_site_20";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item52
-		{
-			position[]={9399.4688,497.05768,3293.9678};
-			name="mrk_east_site_21";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item53
-		{
-			position[]={10033.793,402.81528,1848.9565};
-			name="mrk_east_site_22";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item54
-		{
-			position[]={11473.387,276.60071,8189.063};
-			name="mrk_east_site_23";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item55
-		{
-			position[]={2955.3203,383.80756,1154.9526};
-			name="mrk_east_site_24";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item56
-		{
-			position[]={3735.0669,55.727787,12279.187};
-			name="mrk_east_site_25";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item57
-		{
-			position[]={10594.208,263.01782,6312.0762};
-			name="mrk_east_site_26";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item58
-		{
-			position[]={6141.4731,118.50089,9291.8779};
-			name="mrk_east_site_27";
-			type="hd_ambush";
-			colorName="ColorEAST";
-		};
-		class Item59
-		{
-			position[]={11529.837,176.43018,10676.647};
-			name="mrk_crash_site_11";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item60
-		{
-			position[]={8346.291,243.49199,11242.203};
-			name="mrk_crash_site_12";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item61
+		class Item3
 		{
 			position[]={5236.0972,216.44318,5018.5103};
 			name="mrk_crash_site_13";
 			type="hd_pickup";
 			colorName="ColorWEST";
 		};
-		class Item62
-		{
-			position[]={6446.728,316.94662,1567.7173};
-			name="mrk_crash_site_14";
-			type="hd_pickup";
-			colorName="ColorWEST";
-		};
-		class Item63
+		class Item4
 		{
 			position[]={5253.0815,143.93033,6150.1396};
 			name="CityMarker";
 			markerType="ELLIPSE";
 			type="Empty";
+			a=200;
+			b=200;
+		};
+		class Item5
+		{
+			position[]={-122.35188,510.68661,398.8335};
+			name="mrk_no_drive_area";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlack";
 			a=200;
 			b=200;
 		};
@@ -1369,7 +1101,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="trg_pilots_rescued";
-			expCond="(checkObjectives) && ({isPlayer _x && side _x == independent } count thislist == {isPlayer _x && side _x == independent} count allUnits)";
+			expCond="(checkObjectives) && {({isPlayer _x && side _x == independent } count thislist == {isPlayer _x && side _x == independent} count allUnits)}";
 			expActiv="if (isServer) then {PILOTS_RESCUED = true; publicVariable ""PILOTS_RESCUED"";}; hintSilent ""Alle lebenden Piloten gerettet"";";
 			class Effects
 			{
@@ -1383,7 +1115,7 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="trg_pilots_dead";
-			expCond="(checkObjectives) && ({isPlayer _x && side _x == independent} count allUnits == 0)";
+			expCond="(checkObjectives) && {({isPlayer _x && side _x == independent} count allUnits == 0)}";
 			expActiv="if (isServer) then {PILOTS_DEAD = true; publicVariable ""PILOTS_DEAD"";}; hintSilent ""Alle Piloten eliminiert"";";
 			class Effects
 			{

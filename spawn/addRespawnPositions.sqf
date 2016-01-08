@@ -56,7 +56,7 @@ findRussianHQPos = {
 	_barracks = createVehicle ["TK_WarfareBBarracks_Base_EP1", westHQSpawnPos, [], 0, "NONE"];
 	_veh2 = createVehicle ["FLAG_RED_F",  [westHQSpawnPos select 0, (westHQSpawnPos select 1) + 5,0], [], 0, "CAN_COLLIDE"];
 
-	_rusActionHelper = createVehicle ["Land_SatellitePhone_F", [getPos _barracks select 0, getPos _barracks select 1, 1.5], [], 0, "NONE"];
+	_rusActionHelper = createVehicle ["Land_SatellitePhone_F", [getPos _barracks select 0, getPos _barracks select 1, 0], [], 0, "NONE"];
 	_rusActionHelper attachTo [_barracks, [-1,0,1.5]];
 	_rusActionHelper setVectorDirAndUp [[1,0,0],[0,0,1]];
 	sleep 0.01;

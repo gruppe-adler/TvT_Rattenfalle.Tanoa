@@ -16,6 +16,10 @@ checkObjectives = true;
 0 = [] execVM "helpers\balancingPenalties.sqf";
 
 
+
+[] execVM "Engima\Traffic\Init.sqf";
+createRandomPassenger = [] execVM "Engima\Traffic\Custom_GruppeAdler\randomPassenger.sqf";
+
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
@@ -23,10 +27,9 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "spawn\gui\initGUI.sqf";
 []execVM "spawn\supplyDropOnMarker.sqf";
 []execVM "helpers\addActionMP.sqf";
-[]execVM "helpers\selectSpawnMarker.sqf";
 
-null = [200,"CityMarker",1] execVM "SimplePatrolScript\initialize.sqf";
-"CityMarker" setMarkerAlphaLocal 0;
+
+
 // driving AI
 //[] execVM "VCOM_Driving\init.sqf";
 
@@ -87,7 +90,7 @@ if (isServer) then {
 
 if (isServer) then {
 
-	0 = [] execVM "spawn\addRespawnPositions.sqf";
+	//	0 = [] execVM "spawn\addRespawnPositions.sqf";
 	
 	[crew1, CRASH_SITE] call BIS_fnc_addRespawnPosition;
 	[crew2, CRASH_SITE] call BIS_fnc_addRespawnPosition;
