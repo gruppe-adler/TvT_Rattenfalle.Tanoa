@@ -417,18 +417,18 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            //_vehicleGroup = createGroup _side;
 	            //_vehicle = createVehicle [_vehicleType, _pos, [], 0, "NONE"];
 	            // Run spawn script and attach handle to vehicle
-	            _vehicle = [_pos,_vehicleType,_side] execVM "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
+	            _vehicle = [_pos,_vehicleType,_side] call createTakistaniVehicle;
 	            
 		        //_result = [_pos, _direction, _vehicleType, _vehicleGroup] call BIS_fnc_spawnVehicle;
 
 				// = [_vehicleType] ... "createVehicle.sqf";
 				
-				
 				_vehicleGroup = group _vehicle;
+				_vehiclesCrew = units group _vehicle;
 
 
-				_result = [_pos, _direction, _vehicleType, _vehicleGroup];
-	            
+				_result = [_vehicle, _vehiclesCrew, _vehicleGroup];
+	            // Array - 0: created vehicle (Object), 1: all crew (Array of Objects), 2: vehicle's group (Group) 
 
 	            // Name vehicle
 	            sleep random 0.1;

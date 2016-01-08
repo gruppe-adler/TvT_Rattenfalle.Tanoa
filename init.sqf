@@ -16,9 +16,10 @@ checkObjectives = true;
 0 = [] execVM "helpers\balancingPenalties.sqf";
 
 
+call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
+call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\randomTakistani.sqf";
 
 [] execVM "Engima\Traffic\Init.sqf";
-createRandomPassenger = [] execVM "Engima\Traffic\Custom_GruppeAdler\randomPassenger.sqf";
 
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";

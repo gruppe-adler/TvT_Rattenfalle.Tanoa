@@ -19,9 +19,7 @@ class Mission
 		"ace_medical",
 		"3DEN",
 		"a3_modules_f_curator_curator",
-		"rhs_c_cars",
-		"rhsusf_c_uav",
-		"A3_Props_F_Exp_A_Military_Equipment"
+		"rhs_c_cars"
 	};
 	addOnsAuto[]=
 	{
@@ -41,8 +39,6 @@ class Mission
 		"3DEN",
 		"a3_modules_f_curator_curator",
 		"rhs_c_cars",
-		"rhsusf_c_uav",
-		"A3_Props_F_Exp_A_Military_Equipment",
 		"aia_takistan_config"
 	};
 	randomSeed=380829;
@@ -1011,7 +1007,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
 			position[]={835.60303,234.75774,3059.8428};
@@ -1019,22 +1015,6 @@ class Mission
 			id=44;
 			side="EMPTY";
 			vehicle="rhs_tigr_vdv";
-			skill=0.60000002;
-		};
-		class Item1
-		{
-			position[]={824.33197,234.98962,3055.9617};
-			id=45;
-			side="EMPTY";
-			vehicle="B_rhsusf_B_BACKPACK";
-			skill=0.60000002;
-		};
-		class Item2
-		{
-			position[]={824.41791,234.88899,3059.1919};
-			id=46;
-			side="EMPTY";
-			vehicle="Land_DataTerminal_01_F";
 			skill=0.60000002;
 		};
 	};

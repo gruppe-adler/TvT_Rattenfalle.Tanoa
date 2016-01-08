@@ -2,6 +2,7 @@
 takistani civ units made from thai warfare mod
 */
 
+randomTakistani = {
 _unit = _this select 0;
 
 _uniforms = [
@@ -113,16 +114,19 @@ _stripHim = {
 };
 
 _reclotheHim = {
-	_unit forceAddUniform _uniforms;
-	_unit addHeadgear _thaiHeadGear;
+	_guy = _this select 0;
+	_guy forceAddUniform _uniforms;
+	_guy addHeadgear _thaiHeadGear;
 
-	[[_unit,_taliFaces], "setCustomFace"] call BIS_fnc_MP;
+	[[_guy,_taliFaces], "setCustomFace"] call BIS_fnc_MP;
 	
 	if (isClass (configFile >> "CfgGlasses" >> "TRYK_Beard_BK")) then {
-	_unit addGoggles _taliBeards;
+		_guy addGoggles _taliBeards;
 	};
 };
 
 [_unit] call _stripHim;
 sleep 0.1;
 [_unit] call _reclotheHim;
+
+};
