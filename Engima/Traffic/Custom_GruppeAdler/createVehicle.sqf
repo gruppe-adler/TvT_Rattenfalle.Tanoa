@@ -28,7 +28,7 @@ _group = createGroup _side;
 
 [_group] call _createDriver;
 
-if (_vehicleType == "" || _vehicleType == "") exitWith {
+if (_vehicleType == "RDS_Ikarus_Civ_01" || _vehicleType == "RDS_Ikarus_Civ_02") exitWith {
 
 	_crewCount = floor (random 15);
 
