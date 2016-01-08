@@ -129,6 +129,6 @@ _reclotheHim = {
 sleep 0.1;
 [_unit] call _reclotheHim;
 
-// _unit addEventHandler ["killed", {_this execVM 'civilianOutrage\civilianKilled.sqf'}];
+_unit addEventHandler ["killed", {_this execVM 'civilianOutrage\civilianKilled.sqf'}];
 
 };
