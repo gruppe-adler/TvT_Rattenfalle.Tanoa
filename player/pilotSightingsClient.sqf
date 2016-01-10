@@ -1,0 +1,37 @@
+/*
+by nomisum for tvt rattrap @ gruppe adler
+
+should only be called from CLIENT!
+
+*/
+
+_publicVariable = _this select 0; // publicVariable location for Pilot
+
+_markerName = (str _publicVariable) + "_marker";
+_nil = createMarkerLocal [_markerName, [0, 0, 0]];
+_markerName setMarkerShapeLocal "ELLIPSE";
+_markerName setMarkerTypeLocal "mil_unknown";
+_markerName setMarkerColorLocal "ColorOpfor";
+_markerName setMarkerAlphaLocal 1;
+_markerName setMarkerSizeLocal [1, 1];
+_markerName setMarkerBrushLocal "SolidFull";
+
+
+newSightingAlert = {
+	_location = _this select 0; // geht das hier? select 0 = variablenname, select 1 = variablenwert?!
+
+	playSound "signal_lost";
+
+	disableSerialization;
+	1337 ctrlSetText (str _location); // todo : insert correct ID
+	
+	cutRsc ["gui_intel_pilotPaper","PLAIN",0];
+};
+
+
+_listener = {
+	_markerName setMarkerPosLocal (locationPosition (_this select 1));
+	[locationPosition (this select 1)] call newSightingAlert;
+};
+
+_publicVariable addPublicVariableEventHandler _listener;

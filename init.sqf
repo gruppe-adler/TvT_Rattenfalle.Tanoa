@@ -15,7 +15,6 @@ checkObjectives = true;
 0 = [] execVM "helpers\spawnSiteList.sqf";
 0 = [] execVM "helpers\balancingPenalties.sqf";
 
-
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\randomTakistani.sqf";
 
@@ -45,7 +44,7 @@ if (isServer) then {
 	CRASH_SITE_SELECTED = false;
 	publicVariable "CRASH_SITE_SELECTED";
 
-	CRASH_SITE = [0,0,0];
+	CRASH_SITE = [0,0];
 	publicVariable "CRASH_SITE";
 
 	VEHICLE_SUPPORT_WEST = [0,0,0];
@@ -63,6 +62,9 @@ if (isServer) then {
 	SETUP_DONE = false;
 	publicVariable "SETUP_DONE";
 
+	SIGHTING_DELAY = 10;
+	jipTime = 60000;
+
 	westMinSpawnDistance = 3500;
 	westMaxSpawnDistance = 4500;
 
@@ -71,10 +73,10 @@ if (isServer) then {
 
 	
 
-	russianSpawnPos = [0,0,0];
+	russianSpawnPos = [0,0];
 	publicVariable "russianSpawnPos";
 
-	mudschahedinSpawnPos = [0,0,0];
+	mudschahedinSpawnPos = [0,0];
 	publicVariable "mudschahedinSpawnPos";
 
 	russianCredits = 5000;
@@ -93,18 +95,69 @@ if (isServer) then {
 	//waitUntil {CRASH_SITE_SELECTED};
 
 if (hasInterface) then {
+	
+
+	checkJIP = {
+		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
+			player setDamage 1;
+			["forced"] spawn CSSA3_fnc_createSpectateDialog;
+		} else {
+		if (!didJIP) exitWith {[] call checkSpawnButton;};
+			if (playerSide == east) then {
+			[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
+			} else {
+			[BLUFOR_TELEPORT_TARGET, 50] execVM "helpers\teleportPlayer.sqf";
+			};
+		};
+	};
+
+
+	checkSpawnButton = {
+		
+		if (player != pilot) then {
+			0 = [[worldSize/2,worldSize/2,0],"",3000] execVM "helpers\establishingShot.sqf";
+		} else {
+		disableSerialization;
+		waitUntil {!(isNull ([] call BIS_fnc_displayMission))};
+			cheffeKeyEH = ([] call BIS_fnc_displayMission) displayAddEventHandler [
+				"KeyDown",
+				format ["	
+						if (CRASH_SITE select 0 != 0) then {
+							([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', cheffeKeyEH];
+							
+							playSound ['click', true];
+
+						};
+
+						if (_this select 1 == 57) then {0 = createDialog 'gui_spawn_pilot'; true};
+					"]
+			];
+			0 = createDialog "gui_spawn_pilot";
+			waitUntil {(CRASH_SITE select 0 != 0)};
+			([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', cheffeKeyEH];
+		};
+	};
+
+	// WEST is mudschahedin (!)
+	if (playerSide == west) then {
+		[] execVM "player\mudschahedinTeleportListener.sqf";
+		[] spawn checkJIP;
+		[] execVM  "player\pilotSightingsClient.sqf";
+	};
+
+	// EAST is russian
+	if (playerSide == east) then {
+		[] execVM "player\russianTeleportListener.sqf";
+		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
+	};	
+
+	if (playerSide == independent) then {
+		[] execVM "player\russianTeleportListener.sqf";
+		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
+	};	
+
 	[] spawn {
 		sleep (random 10);
 		[player] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",player];
 	};
-};
-
-if (isServer) then {
-
-	//	0 = [] execVM "spawn\addRespawnPositions.sqf";
-	
-	[crew1, CRASH_SITE] call BIS_fnc_addRespawnPosition;
-	[crew2, CRASH_SITE] call BIS_fnc_addRespawnPosition;
-	[crew3, CRASH_SITE] call BIS_fnc_addRespawnPosition;
-
 };

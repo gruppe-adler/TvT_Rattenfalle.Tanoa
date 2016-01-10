@@ -162,10 +162,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	_fnc_OnRemoveVehicle = [_this, "ON_REMOVE_CALLBACK", {}] call ENGIMA_TRAFFIC_GetParamValue;
 	_debug = [_this, "DEBUG", false] call ENGIMA_TRAFFIC_GetParamValue;
 	
-	//////////////////////////////////////////////
-	diag_log format ["Traffic started"];
-	hintsilent format ["Traffic started"];
-	//////////////////////////////////////////////
+	
 
 	if (_areaMarkerName != "" && _hideAreaMarker) then {
 		_areaMarkerName setMarkerAlpha 0;

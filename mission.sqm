@@ -18,8 +18,7 @@ class Mission
 		"ace_weather",
 		"ace_medical",
 		"3DEN",
-		"a3_modules_f_curator_curator",
-		"rhs_c_cars"
+		"a3_modules_f_curator_curator"
 	};
 	addOnsAuto[]=
 	{
@@ -38,7 +37,6 @@ class Mission
 		"ace_medical",
 		"3DEN",
 		"a3_modules_f_curator_curator",
-		"rhs_c_cars",
 		"aia_takistan_config"
 	};
 	randomSeed=380829;
@@ -60,7 +58,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=20;
+		items=19;
 		class Item0
 		{
 			side="WEST";
@@ -311,11 +309,10 @@ class Mission
 					id=21;
 					side="GUER";
 					vehicle="I_crew_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
-					text="crew2";
-					description="Crew";
+					description="Heli-Crew (optional)";
 				};
 			};
 		};
@@ -327,19 +324,15 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={824.10852,235.07622,3053.7813};
+					position[]={343.04721,653.41833,343.51196};
 					special="NONE";
 					id=22;
 					side="GUER";
 					vehicle="I_crew_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="crashpilot";
-					init="this linkItem ""ItemMap""";
-					description="Pilot";
-					syncId=0;
-					synchronizations[]={1};
+					description="Heli-Crew (optional)";
 				};
 			};
 		};
@@ -351,7 +344,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={343.04721,653.41833,343.51196};
+					position[]={339.24969,653.61975,343.53561};
 					special="NONE";
 					id=23;
 					side="GUER";
@@ -359,33 +352,14 @@ class Mission
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					text="crew3";
-					description="Crew";
+					text="pilot";
+					description="Pilot (must be selected)";
+					syncId=0;
+					synchronizations[]={1};
 				};
 			};
 		};
 		class Item6
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={339.24969,653.61975,343.53561};
-					special="NONE";
-					id=24;
-					side="GUER";
-					vehicle="I_crew_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					text="crew1";
-					description="Crew";
-				};
-			};
-		};
-		class Item7
 		{
 			side="LOGIC";
 			class Vehicles
@@ -404,7 +378,7 @@ class Mission
 							typeName="enable";
 						};
 					};
-					id=25;
+					id=24;
 					side="LOGIC";
 					vehicle="ACE_ModuleSitting";
 					leader=1;
@@ -413,7 +387,7 @@ class Mission
 				};
 			};
 		};
-		class Item8
+		class Item7
 		{
 			side="LOGIC";
 			class Vehicles
@@ -450,7 +424,7 @@ class Mission
 							typeName="MapShowCursorCoordinates";
 						};
 					};
-					id=26;
+					id=25;
 					side="LOGIC";
 					vehicle="ACE_ModuleMap";
 					leader=1;
@@ -459,7 +433,7 @@ class Mission
 				};
 			};
 		};
-		class Item9
+		class Item8
 		{
 			side="LOGIC";
 			class Vehicles
@@ -490,7 +464,7 @@ class Mission
 							typeName="HideAiGroups";
 						};
 					};
-					id=27;
+					id=26;
 					side="LOGIC";
 					vehicle="ACE_ModuleBlueForceTracking";
 					leader=1;
@@ -499,7 +473,7 @@ class Mission
 				};
 			};
 		};
-		class Item10
+		class Item9
 		{
 			side="LOGIC";
 			class Vehicles
@@ -530,7 +504,7 @@ class Mission
 							typeName="requireSurrender";
 						};
 					};
-					id=28;
+					id=27;
 					side="LOGIC";
 					vehicle="ace_captives_moduleSettings";
 					leader=1;
@@ -539,7 +513,7 @@ class Mission
 				};
 			};
 		};
-		class Item11
+		class Item10
 		{
 			side="LOGIC";
 			class Vehicles
@@ -576,7 +550,7 @@ class Mission
 							typeName="autoAddEarplugsToUnits";
 						};
 					};
-					id=29;
+					id=28;
 					side="LOGIC";
 					vehicle="ACE_ModuleHearing";
 					leader=1;
@@ -585,7 +559,7 @@ class Mission
 				};
 			};
 		};
-		class Item12
+		class Item11
 		{
 			side="LOGIC";
 			class Vehicles
@@ -604,7 +578,7 @@ class Mission
 							typeName="EnableTeamManagement";
 						};
 					};
-					id=30;
+					id=29;
 					side="LOGIC";
 					vehicle="ACE_ModuleInteraction";
 					leader=1;
@@ -613,7 +587,7 @@ class Mission
 				};
 			};
 		};
-		class Item13
+		class Item12
 		{
 			side="LOGIC";
 			class Vehicles
@@ -638,7 +612,7 @@ class Mission
 							typeName="RemoveDeadBodiesDisconnected";
 						};
 					};
-					id=31;
+					id=30;
 					side="LOGIC";
 					vehicle="ACE_ModuleRespawn";
 					leader=1;
@@ -647,7 +621,7 @@ class Mission
 				};
 			};
 		};
-		class Item14
+		class Item13
 		{
 			side="LOGIC";
 			class Vehicles
@@ -690,7 +664,7 @@ class Mission
 							typeName="revealMines";
 						};
 					};
-					id=32;
+					id=31;
 					side="LOGIC";
 					vehicle="ace_zeus_moduleSettings";
 					leader=1;
@@ -699,7 +673,7 @@ class Mission
 				};
 			};
 		};
-		class Item15
+		class Item14
 		{
 			side="LOGIC";
 			class Vehicles
@@ -748,7 +722,7 @@ class Mission
 							typeName="serverUpdateInterval";
 						};
 					};
-					id=33;
+					id=32;
 					side="LOGIC";
 					vehicle="ace_weather_ModuleSettings";
 					leader=1;
@@ -757,7 +731,7 @@ class Mission
 				};
 			};
 		};
-		class Item16
+		class Item15
 		{
 			side="EAST";
 			class Vehicles
@@ -767,7 +741,7 @@ class Mission
 				{
 					position[]={334.59686,625.00867,528.97797};
 					special="NONE";
-					id=34;
+					id=33;
 					side="EAST";
 					vehicle="O_officer_F";
 					player="PLAY CDG";
@@ -778,7 +752,7 @@ class Mission
 				{
 					position[]={335.52869,627.86884,515.72107};
 					special="NONE";
-					id=35;
+					id=34;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
@@ -788,7 +762,7 @@ class Mission
 				{
 					position[]={343.87216,625.35565,520.68939};
 					special="NONE";
-					id=36;
+					id=35;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
@@ -798,7 +772,7 @@ class Mission
 				{
 					position[]={340.20007,626.60986,517.84509};
 					special="NONE";
-					id=37;
+					id=36;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
@@ -808,7 +782,7 @@ class Mission
 				{
 					position[]={328.05606,627.32733,521.508};
 					special="NONE";
-					id=38;
+					id=37;
 					side="EAST";
 					vehicle="O_medic_F";
 					player="PLAY CDG";
@@ -818,7 +792,7 @@ class Mission
 				{
 					position[]={330.92151,627.93182,518.0954};
 					special="NONE";
-					id=39;
+					id=38;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
@@ -828,7 +802,7 @@ class Mission
 				{
 					position[]={346.81046,623.69312,524.7757};
 					special="NONE";
-					id=40;
+					id=39;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
@@ -836,7 +810,7 @@ class Mission
 				};
 			};
 		};
-		class Item17
+		class Item16
 		{
 			side="LOGIC";
 			class Vehicles
@@ -927,12 +901,32 @@ class Mission
 							typeName="keepLocalSettingsSynced";
 						};
 					};
-					id=41;
+					id=40;
 					side="LOGIC";
 					vehicle="ACE_moduleMedicalSettings";
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
+				};
+			};
+		};
+		class Item17
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={-50.968044,637.76831,102.39563};
+					special="NONE";
+					id=41;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="headless";
 				};
 			};
 		};
@@ -944,27 +938,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={-50.968044,637.76831,102.39563};
-					special="NONE";
-					id=42;
-					side="LOGIC";
-					vehicle="HeadlessClient_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					text="headless";
-				};
-			};
-		};
-		class Item19
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={806.64221,235.28104,3055.0828};
+					position[]={330.44724,653.97876,350.58136};
 					class args
 					{
 						items=4;
@@ -993,7 +967,7 @@ class Mission
 							typeName="Forced";
 						};
 					};
-					id=43;
+					id=42;
 					side="LOGIC";
 					vehicle="ModuleCurator_F";
 					leader=1;
@@ -1003,19 +977,6 @@ class Mission
 					synchronizations[]={0};
 				};
 			};
-		};
-	};
-	class Vehicles
-	{
-		items=1;
-		class Item0
-		{
-			position[]={835.60303,234.75774,3059.8428};
-			azimut=54.828167;
-			id=44;
-			side="EMPTY";
-			vehicle="rhs_tigr_vdv";
-			skill=0.60000002;
 		};
 	};
 	class Markers
