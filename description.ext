@@ -19,3 +19,18 @@ respawnTemplatesWest[] = {"Wave"};
 respawnTemplatesEast[] = {"Wave"};
 respawnTemplatesGuer[] = {"Spectator"};
 respawnTemplatesCiv[] = {"Spectator"};
+
+class CfgSounds
+{
+	sounds[] = {beam};
+	class beam
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "beam";
+		// filename, volume, pitch
+		sound[] = {"sounds\beam.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
+
+};

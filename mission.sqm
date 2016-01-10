@@ -309,7 +309,7 @@ class Mission
 					id=21;
 					side="GUER";
 					vehicle="I_crew_F";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 					description="Heli-Crew (optional)";
@@ -349,7 +349,7 @@ class Mission
 					id=23;
 					side="GUER";
 					vehicle="I_crew_F";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 					text="pilot";

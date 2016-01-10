@@ -24,7 +24,7 @@ findSimplePos = {
 	// found Position
 	//_returnValue = _nearestPosition;
 
-	//if (DEBUG) then { diag_log format ["findSpawnPos found: %1",_nearestPosition]; };
+	//if (DEBUG_MODE) then { diag_log format ["findSpawnPos found: %1",_nearestPosition]; };
 
 	// return
 

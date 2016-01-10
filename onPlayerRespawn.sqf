@@ -17,7 +17,6 @@ if (_identity == "crashpilot") exitWith {
 	switch (player_respawned) do {
 
 		case 0: {
-			0 = [_identity] execVM "spawn\crashPilot.sqf";
 			cutText ["Bitte warten, Spawnplätze werden berechnet...","PLAIN"];
 			waitUntil {SETUP_DONE};
 			cutText ["Missionssetup abgeschlossen, starte...","PLAIN",5];

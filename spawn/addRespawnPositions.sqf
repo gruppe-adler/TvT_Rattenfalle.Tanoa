@@ -26,7 +26,7 @@ findRussianSpawnPos = {
 	westSpawnPosition = [] call selectSpawnMarkerRussian;
 	["westSpawnPosition gefunden."] call EFUNC(common,displayTextStructured);
 
-	if (DEBUG) then { diag_log format ["westSpawnPosition is %1",westSpawnPosition]; };
+	if (DEBUG_MODE) then { diag_log format ["westSpawnPosition is %1",westSpawnPosition]; };
 
 	[west, westSpawnPosition] call BIS_fnc_addRespawnPosition;
 	[westSpawnPosition] call findRussianHQPos;
@@ -43,11 +43,11 @@ findRussianHQPos = {
 
 	westHQSpawnPos = [_center,2,40] call findSpawnPos;
 
-	if (DEBUG) then { diag_log format ["westHQSpawnPos %1 found", westHQSpawnPos]; };
+	if (DEBUG_MODE) then { diag_log format ["westHQSpawnPos %1 found", westHQSpawnPos]; };
 
 	["westHQSpawnPos gefunden."] call EFUNC(common,displayTextStructured);
 
-	if (DEBUG) then { diag_log format ["West Spawn position %1 found", westHQSpawnPos]; };
+	if (DEBUG_MODE) then { diag_log format ["West Spawn position %1 found", westHQSpawnPos]; };
 
 
 	// trigger for pilot rescue area moved to right position
@@ -79,7 +79,7 @@ findRussianHQPos = {
 
 	_helipad = createVehicle ["Land_HelipadCivil_F", russianSpawnPos, [], 0, "NONE"];
 
-	if (DEBUG) then { diag_log format ["findRussianHQPos done, russianSpawnPos is %1", russianSpawnPos]; };
+	if (DEBUG_MODE) then { diag_log format ["findRussianHQPos done, russianSpawnPos is %1", russianSpawnPos]; };
 
 	eastSpawnPosition = [westHQSpawnPos] call selectSpawnMarkerMudschahedin;
 

@@ -1,4 +1,4 @@
-DEBUG = true;
+DEBUG_MODE = true;
 //
 // customizable variables
 //
@@ -12,8 +12,7 @@ publicVariable "mudschahedinRespawnTime";
 player_respawned = 0;
 checkObjectives = true;
 
-0 = [] execVM "helpers\spawnSiteList.sqf";
-0 = [] execVM "helpers\balancingPenalties.sqf";
+
 
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\randomTakistani.sqf";
@@ -83,6 +82,7 @@ if (isServer) then {
 	mudschahedinCredits = 5000;
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
+	0 = [] execVM "server\serverTeleportListener.sqf";
 
 	// loadout for AI units
 	[] spawn {
@@ -126,6 +126,7 @@ if (hasInterface) then {
 							([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', cheffeKeyEH];
 							
 							playSound ['click', true];
+							
 
 						};
 
@@ -152,12 +153,9 @@ if (hasInterface) then {
 	};	
 
 	if (playerSide == independent) then {
-		[] execVM "player\russianTeleportListener.sqf";
+		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
 	};	
 
-	[] spawn {
-		sleep (random 10);
-		[player] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",player];
-	};
+	
 };
