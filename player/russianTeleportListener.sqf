@@ -8,7 +8,7 @@ createRussianMarker = {
 	_opfor_marker setMarkerAlpha 0;
 };
 
-_CRASH_SITE_listener = {
+_RUSSIAN_SPAWN_listener = {
 	debugLog("opfor teleport target listener running...");
 	_pos = _this select 1;
 
@@ -19,12 +19,12 @@ _CRASH_SITE_listener = {
 	closeDialog 0;
 };
 
-"CRASH_SITE" addPublicVariableEventHandler _CRASH_SITE_listener;
+"RUSSIAN_SPAWN" addPublicVariableEventHandler _RUSSIAN_SPAWN_listener;
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)
 if (!isMultiplayer) then {
-	_CRASH_SITE_listener spawn {
-		waitUntil {CRASH_SITE select 0 != 0};
-		[0, CRASH_SITE] call _this;
+	_RUSSIAN_SPAWN_listener spawn {
+		waitUntil {RUSSIAN_SPAWN select 0 != 0};
+		[0, RUSSIAN_SPAWN] call _this;
 	};
 };

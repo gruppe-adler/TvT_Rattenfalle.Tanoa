@@ -2,11 +2,8 @@ DEBUG_MODE = true;
 //
 // customizable variables
 //
-russianRespawnTime = 60;
-mudschahedinRespawnTime = 60;
 
-publicVariable "russianRespawnTime";
-publicVariable "mudschahedinRespawnTime";
+setViewDistance 3500;
 
 // functional variables - do not change!
 player_respawned = 0;
@@ -46,6 +43,13 @@ if (isServer) then {
 	CRASH_SITE = [0,0];
 	publicVariable "CRASH_SITE";
 
+	MUDSCHA_SPAWN = [0,0];
+	publicVariable "MUDSCHA_SPAWN";
+
+	RUSSIAN_SPAWN = [0,0];
+	publicVariable "RUSSIAN_SPAWN";
+
+
 	VEHICLE_SUPPORT_WEST = [0,0,0];
 	publicVariable "VEHICLE_SUPPORT_WEST";
 
@@ -61,14 +65,14 @@ if (isServer) then {
 	SETUP_DONE = false;
 	publicVariable "SETUP_DONE";
 
-	SIGHTING_DELAY = 10;
+	SIGHTING_DELAY = 120;
 	jipTime = 60000;
 
-	westMinSpawnDistance = 3500;
-	westMaxSpawnDistance = 4500;
+	russianMinSpawnDistance = 3500;
+	russianMaxSpawnDistance = 4500;
 
-	eastMinSpawnDistance = 1500;
-	eastMaxSpawnDistance = 2500;
+	mudschaMinSpawnDistance = 1500;
+	mudschaMaxSpawnDistance = 2500;
 
 	
 
@@ -83,6 +87,7 @@ if (isServer) then {
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
 	0 = [] execVM "server\serverTeleportListener.sqf";
+	0 = [] execVM "server\selectSpawnPosition.sqf";
 
 	// loadout for AI units
 	[] spawn {
@@ -96,48 +101,33 @@ if (isServer) then {
 
 if (hasInterface) then {
 	
+	titleCut ["", "WHITE IN", 3];
 
 	checkJIP = {
 		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
 			player setDamage 1;
 			["forced"] spawn CSSA3_fnc_createSpectateDialog;
 		} else {
-		if (!didJIP) exitWith {[] call checkSpawnButton;};
-			if (playerSide == east) then {
-			[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
-			} else {
-			[BLUFOR_TELEPORT_TARGET, 50] execVM "helpers\teleportPlayer.sqf";
+			if (!didJIP) exitWith {[] call callIntro;};
+			waitUntil {  (playerSide != civilian) && (CRASH_SITE select 0 != 0) && (MUDSCHA_SPAWN select 0 != 0) && (RUSSIAN_SPAWN select 0 != 0)};
+			if (playerSide == independent) then {
+				[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
+			};
+			if (playerSide == west) then {			
+				[MUDSCHA_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
+			};
+			if (playerSide == east) then {		
+				[RUSSIAN_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
 			};
 		};
 	};
 
 
-	checkSpawnButton = {
-		
-		if (player != pilot) then {
-			0 = [[worldSize/2,worldSize/2,0],"",3000] execVM "helpers\establishingShot.sqf";
-		} else {
-		disableSerialization;
-		waitUntil {!(isNull ([] call BIS_fnc_displayMission))};
-			cheffeKeyEH = ([] call BIS_fnc_displayMission) displayAddEventHandler [
-				"KeyDown",
-				format ["	
-						if (CRASH_SITE select 0 != 0) then {
-							([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', cheffeKeyEH];
-							
-							playSound ['click', true];
-							
-
-						};
-
-						if (_this select 1 == 57) then {0 = createDialog 'gui_spawn_pilot'; true};
-					"]
-			];
-			0 = createDialog "gui_spawn_pilot";
-			waitUntil {(CRASH_SITE select 0 != 0)};
-			([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', cheffeKeyEH];
-		};
+	callIntro = {		
+			0 = [[worldSize/2,worldSize/2,0],"",2000] execVM "helpers\establishingShot.sqf";
 	};
+
+	waitUntil {!isNull player};
 
 	// WEST is mudschahedin (!)
 	if (playerSide == west) then {
@@ -155,7 +145,5 @@ if (hasInterface) then {
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
-	};	
-
-	
+	};		
 };

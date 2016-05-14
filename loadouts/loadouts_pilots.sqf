@@ -21,10 +21,9 @@ pilots = {
 	this addVest _vests;
 	this addHeadgear _headgear;
 	
+	this addWeapon "hgun_P07_F";
 
-	[this, "rhs_30Rnd_762x39mm", 14] call addMagazinesToBackpack;
-	
-	[this, "16Rnd_9x21_Mag", 1] call addMagazinesToVest;
+	[this, "16Rnd_9x21_Mag", 2] call addMagazinesToVest;
 	[this, "SmokeShellRed", 1] call addMagazinesToVest;
 	[this, "ACE_Earplugs", 1] call addMagazinesToVest;
 	[this, "ACE_fieldDressing", 6] call addMagazinesToVest;
@@ -36,9 +35,6 @@ pilots = {
 	
 
 	this addWeapon "Binocular";
-	this addWeapon "hgun_P07_F";
-
 	this linkItem "ItemWatch";
-	
 
 };

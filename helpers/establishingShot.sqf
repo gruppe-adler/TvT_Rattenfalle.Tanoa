@@ -140,7 +140,7 @@ if (_mode == 1) then {
 		"KeyDown",
 		format [
 			"
-				if (BLUFOR_TELEPORT_TARGET select 0 != 0) then {
+				if (CRASH_SITE select 0 != 0) then {
 					([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', uiNamespace getVariable 'BIS_fnc_establishingShot_skipEH'];
 					uiNamespace setVariable ['BIS_fnc_establishingShot_skipEH', nil];
 
@@ -465,7 +465,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 					
 					private ["_time"];
 					_time = time + 999999;
-					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") || (BLUFOR_TELEPORT_TARGET select 0 != 0)};
+					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") || ((CRASH_SITE select 0 != 0) && (MUDSCHA_SPAWN select 0 != 0) && (RUSSIAN_SPAWN select 0 != 0))};
 
 					if (isNil "BIS_fnc_establishingShot_skip") then {
 						// Register the UAV finished

@@ -8,7 +8,7 @@ createMudschahedinMarker = {
 	_opfor_marker setMarkerAlpha 0;
 };
 
-_CRASH_SITE_listener = {
+_MUDSCHA_SPAWN_listener = {
 	debugLog("mudschahedin teleport target listener running...");
 	_pos = _this select 1;
 
@@ -19,12 +19,12 @@ _CRASH_SITE_listener = {
 	closeDialog 0;
 };
 
-"CRASH_SITE" addPublicVariableEventHandler _CRASH_SITE_listener;
+"MUDSCHA_SPAWN" addPublicVariableEventHandler _MUDSCHA_SPAWN_listener;
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)
 if (!isMultiplayer) then {
-	_CRASH_SITE_listener spawn {
-		waitUntil {CRASH_SITE select 0 != 0};
-		[0, CRASH_SITE] call _this;
+	_MUDSCHA_SPAWN_listener spawn {
+		waitUntil {MUDSCHA_SPAWN select 0 != 0};
+		[0, MUDSCHA_SPAWN] call _this;
 	};
 };

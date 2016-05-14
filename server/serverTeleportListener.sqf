@@ -3,8 +3,6 @@ createCrashSite=  {
 	crashSpawnPos = [CRASH_SITE,[20,70], random 360] call SHK_pos;
 
 	// find a spawn pos on given position
-
-
 	_veh1 = createVehicle ["RHS_Mi24Vt_vvs", crashSpawnPos, [], 0, "NONE"];
 	[_veh1,	nil,["exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;
 
@@ -28,11 +26,73 @@ createCrashSite=  {
 };
 
 
+checkInsideMap = {
+	// 0 = mapsize
+	// 1 = spawnpos
+	_maximumX = worldSize;
+	_maximumY = worldSize;
+	_positionX = (_this select 0) select 0;
+	_positionY = (_this select 0) select 1;
+	_resultInsideMap = true;
+
+	// diag_log format ["MapsizeX: %1, MapsizeY: %2, PositionX: %3, PositionY: %4",_maximumX,_maximumY,_positionX,_positionY];
+
+	if (_positionX < 0 || _positionX > _maximumX) then {_resultInsideMap = false;};
+	if (_positionY < 0 || _positionY > _maximumY) then {_resultInsideMap = false;};
+
+	if (!_resultInsideMap) then {
+		diag_log format ["Mapsize: Out of bounds."];
+	};
+	_resultInsideMap
+};
+
+
+createMudschaSpawn = {
+	_center = _this select 0;
+	_newPos = [];
+	while {(count _newPos) < 1} do { //Loop the following code so long as isFlatEmpty cannot find a valid position near the current _pos.
+		_pos = [_center,[russianMinSpawnDistance,russianMaxSpawnDistance], random 360, 0, [1,250],[100,"Land_Dome_Small_F"]] call SHK_pos;
+		_newPos = _pos isFlatEmpty[50, -1, 0.3, 40, 0, false, objNull];
+		if (count _newPos > 0) then {
+			if (!([_newPos] call checkInsideMap)) then {_newPos = [];};
+		};
+	};
+	MUDSCHA_SPAWN = _newPos;
+	publicVariable "MUDSCHA_SPAWN";
+
+	respawn_mudscha setPos [MUDSCHA_SPAWN select 0, MUDSCHA_SPAWN select 1, 0];
+
+	[{0 = [MUDSCHA_SPAWN,"MUDSCHA_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
+};
+
+createRussianSpawn = {
+	_center = _this select 0;
+	_newPos = [];
+	while {(count _newPos) < 1} do { //Loop the following code so long as isFlatEmpty cannot find a valid position near the current _pos.
+		_pos = [_center,[russianMinSpawnDistance,russianMaxSpawnDistance], random 360, 0, [1,250],[100,"Land_Dome_Small_F"]] call SHK_pos;
+		_newPos = _pos isFlatEmpty[50, -1, 0.3, 40, 0, false, objNull];
+		if (count _newPos > 0) then {
+			if (!([_newPos] call checkInsideMap)) then {_newPos = [];};
+		};
+	};
+	RUSSIAN_SPAWN = _newPos;
+	publicVariable "RUSSIAN_SPAWN";
+
+	respawn_russian setPos [RUSSIAN_SPAWN select 0, RUSSIAN_SPAWN select 1, 0];
+
+	[{0 = [RUSSIAN_SPAWN,"RUSSIAN_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
+};
+
+
+
 _CRASH_SITE_listener = {
 	_pos = _this select 1;
 	
 	publicVariable "CRASH_SITE";
 	[] call createCrashSite;
+
+	[_pos] call createMudschaSpawn;
+	[_pos] call createRussianSpawn;
 };
 
 

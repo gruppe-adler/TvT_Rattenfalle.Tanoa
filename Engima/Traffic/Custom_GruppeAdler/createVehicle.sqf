@@ -46,6 +46,7 @@ createTakistaniVehicle = {
 		for [{_i=0}, {_i<_crewCount}, {_i=_i+1}] do {
 		[_group,_veh] call _createCargo;
 		};
+		[_veh,_group]
 	};
 
 

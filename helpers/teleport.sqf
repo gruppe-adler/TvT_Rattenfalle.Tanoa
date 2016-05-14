@@ -8,6 +8,15 @@ checkWater = {
 	};
 };
 
+pilotTeleport = {
+	CRASH_SITE = _this;
+	publicVariableServer "CRASH_SITE";
+	debugLog("pilot published crash site");
+
+	CRASH_SITE_SELECTED = true;
+	publicVariable "CRASH_SITE_SELECTED";
+};
+
 if (str player == str pilot) then {
 	[
 		"teleportClickOpf",
@@ -23,14 +32,4 @@ if (str player == str pilot) then {
 			};
 		}
 	] call BIS_fnc_addStackedEventHandler;
-};
-
-
-pilotTeleport = {
-	CRASH_SITE = _this;
-	publicVariableServer "CRASH_SITE";
-	debugLog("pilot published crash site");
-
-	CRASH_SITE_SELECTED = true;
-	publicVariable "CRASH_SITE_SELECTED";
 };

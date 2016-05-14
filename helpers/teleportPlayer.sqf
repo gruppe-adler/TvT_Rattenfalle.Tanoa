@@ -5,6 +5,7 @@ _location = _this select 0;
 _distance = _this select 1;
 
 sleep (random 5);
+player allowDamage false;
 
 _spawn = _location findEmptyPosition[1, 20, "B_Soldier_F"];
 diag_log format ["teleporting %1 to %2.", player, _location];
