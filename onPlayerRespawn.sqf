@@ -1,93 +1,29 @@
-_identity = format ["%1",player];
+waitUntil {!isNil "originalSide"};
 
-
-
-
-
-// if player already spawned once, dont do anything
-if (player_respawned > 1) exitWith {};
-
-
-// CRASHPILOT
-
-if (_identity == "crashpilot") exitWith {
-
-	
-
-	switch (player_respawned) do {
-
-		case 0: {
-			cutText ["Bitte warten, Spawnplätze werden berechnet...","PLAIN"];
-			waitUntil {SETUP_DONE};
-			cutText ["Missionssetup abgeschlossen, starte...","PLAIN",5];
-		};
-		
-		default {};
-	};
+//get loadout
+switch (originalSide) do {
+  case "WEST": {
+    if (bluforLoadoutPath != "") then {
+      _params = parseText bluforLoadoutParams;
+      _params execVM bluforLoadoutPath;
+    };
+  };
+  case "EAST": {
+    if (opforLoadoutPath != "") then {
+      _params = parseText opforLoadoutParams;
+      _params execVM opforLoadoutPath;
+    };
+  };
+  case "GUER": {
+    if (indepLoadoutPath != "") then {
+      _params = parseText indepLoadoutParams;
+      _params execVM indepLoadoutPath;
+    };
+  };
 };
 
+//check JIP player is spawning for the first time
+if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "Player is JIP, not executing onPlayerRespawn.sqf"};
 
-// CREW OF CRASHPILOT
-
-if (_identity == "crew1" || _identity == "crew2" || _identity == "crew3") exitWith {
-
-	switch (player_respawned) do {
-
-		case 0: { 
-			0 = execVM "spawn\crew.sqf";
-			while {!CRASH_SITE_SELECTED} do {
-				cutText ["Bitte warten. Pilot wählt Startpunkt.","BLACK FADED"];
-			sleep 1;
-			};	
-			player_respawned = 1;
-			setPlayerRespawnTime 1;
-			forceRespawn player;
-		};
-		
-		case 1: {
-			cutText ["Bitte warten, Spawnplätze werden berechnet...","BLACK"];
-			while {!SETUP_DONE} do {
-					cutText ["Bitte warten, Spawnplätze werden berechnet...","BLACK FADED"];
-					sleep 1;
-				};
-			player_respawned = 2;
-			cutText ["Missionssetup abgeschlossen!","BLACK IN",5];
-			setPlayerRespawnTime mudschahedinRespawnTime;
-			
-		};
-
-		default {};
-	};
-};
-
-
-// INDEPENDENTS
-
-if (side player == west || side player == east) exitWith {
-	switch (player_respawned) do {
-
-		case 0: { 
-				//[] execVM "spawn\checkPlayerClass.sqf";
-				while {!CRASH_SITE_SELECTED} do {
-					cutText ["Bitte warten. Pilot wählt Startpunkt.","BLACK FADED"];
-					sleep 1;
-				};
-				player_respawned = 1;
-				setPlayerRespawnTime 1;
-				forceRespawn player;
-			};
-			
-		case 1: {
-				//[] execVM "spawn\checkPlayerClass.sqf";
-				while {!SETUP_DONE} do {
-					cutText ["Bitte warten, Spawnplätze werden berechnet...","BLACK FADED"];
-					sleep 1;
-				};
-				player_respawned = 2;
-				cutText ["Missionssetup abgeschlossen!","BLACK IN",5];
-				setPlayerRespawnTime mudschahedinRespawnTime;
-			};
-
-		default {}; // [] execVM "spawn\checkPlayerClass.sqf"; };
-	};
-};
+//notify server
+[profileName, originalSide] remoteExec ["mcd_fnc_removeRespawnedFromList",2,false];
