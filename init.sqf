@@ -1,4 +1,4 @@
-DEBUG_MODE = true;
+DEBUG = true;
 //
 // customizable variables
 //
@@ -9,10 +9,19 @@ setViewDistance 3500;
 player_respawned = 0;
 checkObjectives = true;
 
+// selectable teleport positions
+possibleSpawnPositions = 
+[
+	"mrk_crash_site_01",
+	"mrk_crash_site_02",
+	"mrk_crash_site_03",
+	"mrk_crash_site_04"
+];
+
 
 
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
-call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\randomTakistani.sqf";
+call compile preprocessfile "civilianOutrage\randomTakistani.sqf";
 
 [] execVM "Engima\Traffic\Init.sqf";
 
@@ -27,7 +36,7 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 
 
 // driving AI
-//[] execVM "VCOM_Driving\init.sqf";
+[] execVM "VCOM_Driving\init.sqf";
 
 
 if (isServer) then {
@@ -36,6 +45,11 @@ if (isServer) then {
 
 	PILOTS_RESCUED = false;
 	publicVariable "PILOTS_RESCUED";
+
+
+	LAST_PILOTS_POSITION = ["irgendwo",[0,0]];
+	publicVariable "LAST_PILOTS_POSITION";
+
 
 	CRASH_SITE_SELECTED = false;
 	publicVariable "CRASH_SITE_SELECTED";
@@ -66,13 +80,16 @@ if (isServer) then {
 	publicVariable "SETUP_DONE";
 
 	SIGHTING_DELAY = 120;
+	CHANCE_TO_REVEAL = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
+	publicVariable "CHANCE_TO_REVEAL";
+
 	jipTime = 60000;
 
-	russianMinSpawnDistance = 3500;
-	russianMaxSpawnDistance = 4500;
+	russianMinSpawnDistance = 5000;
+	russianMaxSpawnDistance = 5500;
 
-	mudschaMinSpawnDistance = 1500;
-	mudschaMaxSpawnDistance = 2500;
+	mudschaMinSpawnDistance = 2500;
+	mudschaMaxSpawnDistance = 3000;
 
 	
 
@@ -82,34 +99,58 @@ if (isServer) then {
 	mudschahedinSpawnPos = [0,0];
 	publicVariable "mudschahedinSpawnPos";
 
-	russianCredits = 5000;
-	mudschahedinCredits = 5000;
+	russianCredits = 1000;
+	mudschahedinCredits = 1000;
 
 	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
 	0 = [] execVM "server\serverTeleportListener.sqf";
 	0 = [] execVM "server\selectSpawnPosition.sqf";
 
-	// loadout for AI units
 	[] spawn {
+		waitUntil {(mudschahedinSpawnPos select 0 != 0) && (russianSpawnPos select 0 != 0)}; // wait until everything is neatly set up
+
+		SETUP_DONE = true;
+		publicVariable "SETUP_DONE";
+	};
+
+
+	// loadout for AI units
+	/* [] spawn {
  		{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
  	};
+ 	*/
 	
 };
 
-	// dont let west and east spawn too early
-	//waitUntil {CRASH_SITE_SELECTED};
+
 
 if (hasInterface) then {
 	
-	titleCut ["", "WHITE IN", 3];
+	titleCut ["", "WHITE IN", 1];
 
+	{_x setMarkerAlpha 0;} forEach possibleSpawnPositions;
+
+	// for local execution of interrogation actions
+	fnc_MPaddQuestioningAction = {
+		_this addAction ["<t color='#F24F0F'>Verhören</t>",'civilianOutrage\questionCivilian.sqf',
+		0, 100, true, true, '',
+		"player distance _target < 4 && !(_target getVariable ['revealed',false])"];
+	};
+
+	// JIP handling
 	checkJIP = {
 		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
 			player setDamage 1;
-			["forced"] spawn CSSA3_fnc_createSpectateDialog;
 		} else {
 			if (!didJIP) exitWith {[] call callIntro;};
-			waitUntil {  (playerSide != civilian) && (CRASH_SITE select 0 != 0) && (MUDSCHA_SPAWN select 0 != 0) && (RUSSIAN_SPAWN select 0 != 0)};
+
+			waitUntil {  
+				(playerSide != civilian) && 
+				(CRASH_SITE select 0 != 0) && 
+				(MUDSCHA_SPAWN select 0 != 0) && 
+				(RUSSIAN_SPAWN select 0 != 0)
+			};
+
 			if (playerSide == independent) then {
 				[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
 			};
@@ -124,7 +165,7 @@ if (hasInterface) then {
 
 
 	callIntro = {		
-			0 = [[worldSize/2,worldSize/2,0],"",2000] execVM "helpers\establishingShot.sqf";
+		0 = [[worldSize/2,worldSize/2,0],"",2000] execVM "helpers\establishingShot.sqf";
 	};
 
 	waitUntil {!isNull player};

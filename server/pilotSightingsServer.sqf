@@ -16,7 +16,7 @@ _crashPilots = [];
 {
    if ((side _x) == independent) then
    {
-      _crashPilots = _crashPilots + _x;
+      _crashPilots = _crashPilots + [_x];
    };
 } forEach allUnits;
 
@@ -29,30 +29,26 @@ _crashPilots = [];
 
 */
 
-setPilotPosition = {
-	_prev = _this select 0;
-	_pv = _this select 1;
-	if (_prev != _pv) then {
-		publicVariable _pv;
-	};
-};
 
 while {true} do {
 
 	{
-		if (alive _x && {_crashSitePos distance _x > _maxDistance}) then {
-			_nearbyLocations = nearestLocations [getPos _x, 
-			[
-				"NameCity",
-				"NameCityCapital",
-				"NameMarine",
-				"NameVillage",
-				"NameLocal"
-			],300 + (random 200)];
+		if (alive _x) then {
+			_nearbyLocations = (nearestLocations [getPos _x,  
+   			[ 
+		    "NameCity", 
+		    "NameCityCapital", 
+		    "NameMarine", 
+		    "NameVillage", 
+		    "NameLocal" 
+		   ],6000]);
 
 			if (count _nearbyLocations > 0) then {
-				[_nearbyLocations select 0, _publicVariable] call setPilotPosition;
+				_text = text (_nearbyLocations select 0);
+				LAST_PILOTS_POSITION = [_text, getPos _x];
+				publicVariable "LAST_PILOTS_POSITION";
 			};
+			
 		};
 		sleep (random 30);
 	} forEach _crashPilots;

@@ -8,7 +8,12 @@ opforLoadoutParams = "[]";
 indepLoadoutPath = "";
 indepLoadoutParams = "[]";
 
-[] execVM "initWaveRespawn.sqf";
+// exclude independents from wave respawn
+if (side player != independent) then {
+	[] execVM "initWaveRespawn.sqf";
+} else {
+	setplayerrespawntime 999999;
+};
 
 
 _identity = format ["%1",player];

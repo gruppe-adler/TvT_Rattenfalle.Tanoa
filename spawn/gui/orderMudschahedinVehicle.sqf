@@ -16,7 +16,7 @@ _newMoney = _oldMoney - _price;
 
 // dont fucking buy without money dude -> exit with hint
 if (_newMoney < 0) exitWith { 
-    [mudschahedinSupplies,true,0,"","",""] call refreshMudschahedinUI;
+    [mudschahedinSupplies,true,0,"","","",0] call refreshMudschahedinUI;
 };
 
 _selector = [_idc] call mudschahedin_IDC_to_selector;

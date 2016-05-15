@@ -125,10 +125,34 @@ _reclotheHim = {
 	};
 };
 
+_addFleeingBehaviour = {
+	
+};
+
 [_unit] call _stripHim;
 sleep 0.1;
 [_unit] call _reclotheHim;
 
 _unit addEventHandler ["killed", {_this execVM 'civilianOutrage\civilianKilled.sqf'}];
+
+_unit setVariable ["questioned",0];
+_unit setVariable ["revealed",false];
+
+if (random 1 < 0.8) then {
+	_unit setVariable ["knowsSomething",true];
+} else {
+	_unit setVariable ["knowsSomething",false];
+};
+
+_unit addEventHandler ["FiredNear", {
+		_this execVM 'civilianOutrage\civilianFiredNear.sqf';
+}];
+
+_unit addEventHandler ["Hit", {
+		_questioned = (_this select 0) getVariable ["questioned",0];
+		(_this select 0) setVariable ["questioned",_questioned + 0.4];
+}];
+
+[_unit,"fnc_MPaddQuestioningAction",nil,true] spawn BIS_fnc_MP;
 
 };

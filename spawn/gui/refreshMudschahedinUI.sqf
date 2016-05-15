@@ -65,7 +65,7 @@ refreshMudschahedinUI = {
 	_array = _this select 0;
 	_outOfMoney = _this select 1;
 	_outOfStockIndicator = _this select 2;
-	_vehicleOrdered = _this select 3;
+	_vehicleOrdered = _this select 3; // take a random vehicle variant from given array
 	_vehicleExtras = _this select 4;
 	_vehicleCalls = _this select 5;
 	_vehicleEta = _this select 6;
@@ -183,36 +183,36 @@ refreshMudschahedinUI = {
 
 	
 
-	_display displayCtrl 3101 ctrlSetStructuredText parseText ([_namedisplay_1] call centerString);
-	_display displayCtrl 3201 ctrlSetStructuredText parseText ([_countleft_1] call centerString);
-	_display displayCtrl 3301 ctrlSetStructuredText parseText ([_pricedisplay_1] call centerString);
+	_display displayCtrl 3101 ctrlSetStructuredText parseText ([_namedisplay_1] call centerAndConvertToString);
+	_display displayCtrl 3201 ctrlSetStructuredText parseText ([_countleft_1] call centerAndConvertToString);
+	_display displayCtrl 3301 ctrlSetStructuredText parseText ([_pricedisplay_1] call centerAndConvertToString);
 	//_display displayCtrl 1401 ctrlSetStructuredText parseText _eta_1;
 	// ctrlSetText [3501, _pleasewait];
 
 	
-	_display displayCtrl 3102 ctrlSetStructuredText parseText ([_namedisplay_2] call centerString);
-	_display displayCtrl 3202 ctrlSetStructuredText parseText ([_countleft_2] call centerString);
-	_display displayCtrl 3302 ctrlSetStructuredText parseText ([_pricedisplay_2] call centerString);
+	_display displayCtrl 3102 ctrlSetStructuredText parseText ([_namedisplay_2] call centerAndConvertToString);
+	_display displayCtrl 3202 ctrlSetStructuredText parseText ([_countleft_2] call centerAndConvertToString);
+	_display displayCtrl 3302 ctrlSetStructuredText parseText ([_pricedisplay_2] call centerAndConvertToString);
 	//_display displayCtrl 1402 ctrlSetStructuredText parseText _eta_2;
 	// ctrlSetText [3502, _pleasewait];
 
 	
-	_display displayCtrl 3103 ctrlSetStructuredText parseText ([_namedisplay_3] call centerString);
-	_display displayCtrl 3203 ctrlSetStructuredText parseText ([_countleft_3] call centerString);
-	_display displayCtrl 3303 ctrlSetStructuredText parseText ([_pricedisplay_3] call centerString);
+	_display displayCtrl 3103 ctrlSetStructuredText parseText ([_namedisplay_3] call centerAndConvertToString);
+	_display displayCtrl 3203 ctrlSetStructuredText parseText ([_countleft_3] call centerAndConvertToString);
+	_display displayCtrl 3303 ctrlSetStructuredText parseText ([_pricedisplay_3] call centerAndConvertToString);
 	//_display displayCtrl 1403 ctrlSetStructuredText parseText _eta_3;
 	// ctrlSetText [3503, _pleasewait];
 
 	
-	_display displayCtrl 3104 ctrlSetStructuredText parseText ([_namedisplay_4] call centerString);
-	_display displayCtrl 3204 ctrlSetStructuredText parseText ([_countleft_4] call centerString);
-	_display displayCtrl 3304 ctrlSetStructuredText parseText ([_pricedisplay_4] call centerString);
+	_display displayCtrl 3104 ctrlSetStructuredText parseText ([_namedisplay_4] call centerAndConvertToString);
+	_display displayCtrl 3204 ctrlSetStructuredText parseText ([_countleft_4] call centerAndConvertToString);
+	_display displayCtrl 3304 ctrlSetStructuredText parseText ([_pricedisplay_4] call centerAndConvertToString);
 	//_display displayCtrl 1404 ctrlSetStructuredText parseText _eta_4;
 	// ctrlSetText [3504, _pleasewait];
 
-	_display displayCtrl 3105 ctrlSetStructuredText parseText ([_namedisplay_5] call centerString);
-	_display displayCtrl 3205 ctrlSetStructuredText parseText ([_countleft_5] call centerString);
-	_display displayCtrl 3305 ctrlSetStructuredText parseText ([_pricedisplay_5] call centerString);
+	_display displayCtrl 3105 ctrlSetStructuredText parseText ([_namedisplay_5] call centerAndConvertToString);
+	_display displayCtrl 3205 ctrlSetStructuredText parseText ([_countleft_5] call centerAndConvertToString);
+	_display displayCtrl 3305 ctrlSetStructuredText parseText ([_pricedisplay_5] call centerAndConvertToString);
 
 	disableSerialization;
 	

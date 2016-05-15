@@ -1,9 +1,19 @@
 centerString = {
 	_string = _this select 0;
+	
+	_newstring = "<t align='center'>" + _string + "</t>";
+
+	_newstring
+};
+
+centerAndConvertToString = {
+	_string = _this select 0;
+	
 	_newstring = "<t align='center'>" + (str _string) + "</t>";
 
 	_newstring
 };
+
 
 
 headlineString = {
@@ -198,36 +208,36 @@ refreshRussianUI = {
 
 	
 
-	_display displayCtrl 1101 ctrlSetStructuredText parseText ([_namedisplay_1] call centerString);
-	_display displayCtrl 1201 ctrlSetStructuredText parseText ([_countleft_1] call centerString);
-	_display displayCtrl 1301 ctrlSetStructuredText parseText ([_pricedisplay_1] call centerString);
+	_display displayCtrl 1101 ctrlSetStructuredText parseText ([_namedisplay_1] call centerAndConvertToString);
+	_display displayCtrl 1201 ctrlSetStructuredText parseText ([_countleft_1] call centerAndConvertToString);
+	_display displayCtrl 1301 ctrlSetStructuredText parseText ([_pricedisplay_1] call centerAndConvertToString);
 	//_display displayCtrl 1401 ctrlSetStructuredText parseText _eta_1;
 	// ctrlSetText [1501, _pleasewait];
 
 	
-	_display displayCtrl 1102 ctrlSetStructuredText parseText ([_namedisplay_2] call centerString);
-	_display displayCtrl 1202 ctrlSetStructuredText parseText ([_countleft_2] call centerString);
-	_display displayCtrl 1302 ctrlSetStructuredText parseText ([_pricedisplay_2] call centerString);
+	_display displayCtrl 1102 ctrlSetStructuredText parseText ([_namedisplay_2] call centerAndConvertToString);
+	_display displayCtrl 1202 ctrlSetStructuredText parseText ([_countleft_2] call centerAndConvertToString);
+	_display displayCtrl 1302 ctrlSetStructuredText parseText ([_pricedisplay_2] call centerAndConvertToString);
 	//_display displayCtrl 1402 ctrlSetStructuredText parseText _eta_2;
 	// ctrlSetText [1502, _pleasewait];
 
 	
-	_display displayCtrl 1103 ctrlSetStructuredText parseText ([_namedisplay_3] call centerString);
-	_display displayCtrl 1203 ctrlSetStructuredText parseText ([_countleft_3] call centerString);
-	_display displayCtrl 1303 ctrlSetStructuredText parseText ([_pricedisplay_3] call centerString);
+	_display displayCtrl 1103 ctrlSetStructuredText parseText ([_namedisplay_3] call centerAndConvertToString);
+	_display displayCtrl 1203 ctrlSetStructuredText parseText ([_countleft_3] call centerAndConvertToString);
+	_display displayCtrl 1303 ctrlSetStructuredText parseText ([_pricedisplay_3] call centerAndConvertToString);
 	//_display displayCtrl 1403 ctrlSetStructuredText parseText _eta_3;
 	// ctrlSetText [1503, _pleasewait];
 
 	
-	_display displayCtrl 1104 ctrlSetStructuredText parseText ([_namedisplay_4] call centerString);
-	_display displayCtrl 1204 ctrlSetStructuredText parseText ([_countleft_4] call centerString);
-	_display displayCtrl 1304 ctrlSetStructuredText parseText ([_pricedisplay_4] call centerString);
+	_display displayCtrl 1104 ctrlSetStructuredText parseText ([_namedisplay_4] call centerAndConvertToString);
+	_display displayCtrl 1204 ctrlSetStructuredText parseText ([_countleft_4] call centerAndConvertToString);
+	_display displayCtrl 1304 ctrlSetStructuredText parseText ([_pricedisplay_4] call centerAndConvertToString);
 	//_display displayCtrl 1404 ctrlSetStructuredText parseText _eta_4;
 	// ctrlSetText [1504, _pleasewait];
 
-	_display displayCtrl 1105 ctrlSetStructuredText parseText ([_namedisplay_5] call centerString);
-	_display displayCtrl 1205 ctrlSetStructuredText parseText ([_countleft_5] call centerString);
-	_display displayCtrl 1305 ctrlSetStructuredText parseText ([_pricedisplay_5] call centerString);
+	_display displayCtrl 1105 ctrlSetStructuredText parseText ([_namedisplay_5] call centerAndConvertToString);
+	_display displayCtrl 1205 ctrlSetStructuredText parseText ([_countleft_5] call centerAndConvertToString);
+	_display displayCtrl 1305 ctrlSetStructuredText parseText ([_pricedisplay_5] call centerAndConvertToString);
 
 	disableSerialization;
 	

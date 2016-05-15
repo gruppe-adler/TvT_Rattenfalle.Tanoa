@@ -16,7 +16,7 @@ _newMoney = _oldMoney - _price;
 
 // dont fucking buy without money dude -> exit with hint
 if (_newMoney < 0) exitWith { 
-    [russianSupplies,true,0,"","",""] call refreshRussianUI;
+    [russianSupplies,true,0,"","","",0] call refreshRussianUI;
 };
 
 _selector = [_idc] call russian_IDC_to_selector;

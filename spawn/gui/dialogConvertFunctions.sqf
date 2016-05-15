@@ -40,11 +40,11 @@ russian_IDC_to_classname = {
 
 	switch (_idc) do {
 
-		case 1501: { _classname = ((russianSupplies select 1) select 0); };
-		case 1502: { _classname = ((russianSupplies select 2) select 0); };
-		case 1503: { _classname = ((russianSupplies select 3) select 0); };
-		case 1504: { _classname = ((russianSupplies select 4) select 0); };
-		case 1505: { _classname = ((russianSupplies select 5) select 0); };
+		case 1501: { _classname = ((russianSupplies select 1) select 0) call BIS_fnc_selectRandom; };
+		case 1502: { _classname = ((russianSupplies select 2) select 0) call BIS_fnc_selectRandom; };
+		case 1503: { _classname = ((russianSupplies select 3) select 0) call BIS_fnc_selectRandom; };
+		case 1504: { _classname = ((russianSupplies select 4) select 0) call BIS_fnc_selectRandom; };
+		case 1505: { _classname = ((russianSupplies select 5) select 0) call BIS_fnc_selectRandom; };
 		default {};
 	};
 
@@ -247,11 +247,11 @@ mudschahedin_IDC_to_classname = {
 
 	switch (_idc) do {
 
-		case 3501: { _classname = ((mudschahedinSupplies select 1) select 0); };
-		case 3502: { _classname = ((mudschahedinSupplies select 2) select 0); };
-		case 3503: { _classname = ((mudschahedinSupplies select 3) select 0); };
-		case 3504: { _classname = ((mudschahedinSupplies select 4) select 0); };
-		case 3505: { _classname = ((mudschahedinSupplies select 5) select 0); };
+		case 3501: { _classname = ((mudschahedinSupplies select 1) select 0) call BIS_fnc_selectRandom; };
+		case 3502: { _classname = ((mudschahedinSupplies select 2) select 0) call BIS_fnc_selectRandom; };
+		case 3503: { _classname = ((mudschahedinSupplies select 3) select 0) call BIS_fnc_selectRandom; };
+		case 3504: { _classname = ((mudschahedinSupplies select 4) select 0) call BIS_fnc_selectRandom; };
+		case 3505: { _classname = ((mudschahedinSupplies select 5) select 0) call BIS_fnc_selectRandom; };
 		default {};
 	};
 

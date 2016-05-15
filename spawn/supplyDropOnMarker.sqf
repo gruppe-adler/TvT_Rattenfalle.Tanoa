@@ -10,9 +10,9 @@
 
 		
 		spawnSupplyDrop = {
-			_vehicleType = _this select 0;	//ammocrate class for blufor, feel free to change to whichever box you desire
+			_vehicleType = _this select 0; // select random vehicle variant from array
 			_pos = _this select 1;
-	        _chuteType = "B_Parachute_02_F";	//parachute for blufor, for opfor and greenfor replace the 'B' with 'O' or 'G' respectively
+	        _chuteType = "B_Parachute_02_F"; //parachute for blufor, for opfor and greenfor replace the 'B' with 'O' or 'G' respectively
 
 	        _init = _this select 2;
 	        _calls = _this select 3;
@@ -79,7 +79,7 @@
 
 			if (DEBUG) then {diag_log format ["%1",_pos]; };
 
-			_chute = createVehicle [_chuteType, [100, 100, 200], [], 0, "FLY"];
+			_chute = createVehicle [_chuteType, [100, 100, 300], [], 0, "FLY"];
 			
 	        _chute setPos [_pos select 0, _pos select 1, 50];
 	        _chute setVelocity [0,0,0];

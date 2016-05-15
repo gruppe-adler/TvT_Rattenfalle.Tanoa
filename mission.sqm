@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=61;
+		nextID=64;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={342.99399,644.03333,516.89197};
-		dir[]={-0.478448,-0.69017094,0.54294717};
-		up[]={-0.45630279,0.7236405,0.51781666};
-		aside[]={0.75027746,-5.0158997e-007,0.66115212};
+		pos[]={368.81696,652.47369,481.23056};
+		dir[]={0.02489727,-0.55886012,0.82896203};
+		up[]={0.016779177,0.82925797,0.55863184};
+		aside[]={0.99961716,1.0711301e-007,-0.03001879};
 	};
 };
 binarizationWanted=0;
@@ -39,7 +39,9 @@ addons[]=
 	"ace_weather",
 	"ace_medical",
 	"A3_Modules_F_Curator_Curator",
-	"A3_Modules_F_Multiplayer"
+	"A3_Modules_F_Multiplayer",
+	"ace_spectator",
+	"ace_vehiclelock"
 };
 randomSeed=7385247;
 class ScenarioData
@@ -66,11 +68,11 @@ class Mission
 	};
 	class Entities
 	{
-		items=30;
+		items=32;
 		class Item0
 		{
 			dataType="Marker";
-			position[]={5849.9966,101.1928,8123.7109};
+			position[]={5823.1401,100.50487,8132.5117};
 			name="mrk_crash_site_02";
 			type="hd_pickup";
 			colorName="ColorWEST";
@@ -79,26 +81,26 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={6855.1792,120.67165,8840.6797};
+			position[]={6861.897,120.52933,8856.2969};
 			name="mrk_crash_site_01";
 			type="hd_pickup";
 			colorName="ColorWEST";
 			id=1;
-			atlOffset=7.6293945e-006;
 		};
 		class Item2
 		{
 			dataType="Marker";
-			position[]={9013.1572,200.67775,6897.4253};
+			position[]={8953.8115,201.57458,6890.6909};
 			name="mrk_crash_site_03";
 			type="hd_pickup";
 			colorName="ColorWEST";
 			id=2;
+			atlOffset=-0.58889771;
 		};
 		class Item3
 		{
 			dataType="Marker";
-			position[]={5236.0972,216.44318,5018.5103};
+			position[]={5260.8901,217.57042,5033.9517};
 			name="mrk_crash_site_04";
 			type="hd_pickup";
 			colorName="ColorWEST";
@@ -2285,6 +2287,168 @@ class Mission
 					};
 				};
 				nAttributes=5;
+			};
+		};
+		class Item30
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={689.76801,529.84131,335.03699};
+			};
+			id=62;
+			type="ace_spectator_moduleSettings";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_spectator_moduleSettings_sidesFilter";
+					expression="_this setVariable ['sidesFilter',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_spectator_moduleSettings_cameraModes";
+					expression="_this setVariable ['cameraModes',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ace_spectator_moduleSettings_unitsFilter";
+					expression="_this setVariable ['unitsFilter',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ace_spectator_moduleSettings_visionModes";
+					expression="_this setVariable ['visionModes',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item31
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={659.323,544.62482,397.27802};
+				angles[]={6.1874714,0,5.9822211};
+			};
+			id=63;
+			type="ACE_VehicleLock_ModuleSetup";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ACE_VehicleLock_ModuleSetup_DefaultLockpickStrength";
+					expression="_this setVariable ['DefaultLockpickStrength',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=10;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ACE_VehicleLock_ModuleSetup_VehicleStartingLockState";
+					expression="_this setVariable ['VehicleStartingLockState',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ACE_VehicleLock_ModuleSetup_LockVehicleInventory";
+					expression="_this setVariable ['LockVehicleInventory',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				nAttributes=3;
 			};
 		};
 	};

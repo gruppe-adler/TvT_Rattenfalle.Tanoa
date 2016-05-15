@@ -1,3 +1,7 @@
+#include "\z\ace\addons\main\script_component.hpp"
+#include "..\missionMacros.h"
+
+
 createCrashSite=  {
 	// find a random position in circle
 	crashSpawnPos = [CRASH_SITE,[20,70], random 360] call SHK_pos;
@@ -50,13 +54,18 @@ checkInsideMap = {
 createMudschaSpawn = {
 	_center = _this select 0;
 	_newPos = [];
+
 	while {(count _newPos) < 1} do { //Loop the following code so long as isFlatEmpty cannot find a valid position near the current _pos.
-		_pos = [_center,[russianMinSpawnDistance,russianMaxSpawnDistance], random 360, 0, [1,250],[100,"Land_Dome_Small_F"]] call SHK_pos;
+		_pos = [_center,[mudschaMinSpawnDistance,mudschaMaxSpawnDistance], random 360, 0, [0,0],[100,"Land_Dome_Small_F"]] call SHK_pos;
 		_newPos = _pos isFlatEmpty[50, -1, 0.3, 40, 0, false, objNull];
 		if (count _newPos > 0) then {
-			if (!([_newPos] call checkInsideMap)) then {_newPos = [];};
+			if (!([_newPos] call checkInsideMap)) then {_newPos = [];}; // should be inside map
 		};
+		if (count _newPos > 0) then {
+			if (count (_newPos nearRoads 10) > 0) then {_newPos = [];}; 
+		};		
 	};
+
 	MUDSCHA_SPAWN = _newPos;
 	publicVariable "MUDSCHA_SPAWN";
 
@@ -68,13 +77,18 @@ createMudschaSpawn = {
 createRussianSpawn = {
 	_center = _this select 0;
 	_newPos = [];
+
 	while {(count _newPos) < 1} do { //Loop the following code so long as isFlatEmpty cannot find a valid position near the current _pos.
-		_pos = [_center,[russianMinSpawnDistance,russianMaxSpawnDistance], random 360, 0, [1,250],[100,"Land_Dome_Small_F"]] call SHK_pos;
+		_pos = [_center,[russianMinSpawnDistance,russianMaxSpawnDistance], random 360, 0, [0,0],[100,"Land_Dome_Small_F"]] call SHK_pos;
 		_newPos = _pos isFlatEmpty[50, -1, 0.3, 40, 0, false, objNull];
 		if (count _newPos > 0) then {
-			if (!([_newPos] call checkInsideMap)) then {_newPos = [];};
+			if (!([_newPos] call checkInsideMap)) then {_newPos = [];}; // should be inside map
+		};
+		if (count _newPos > 0) then {
+			if (count (_newPos nearRoads 10) > 0) then {_newPos = [];}; 
 		};
 	};
+
 	RUSSIAN_SPAWN = _newPos;
 	publicVariable "RUSSIAN_SPAWN";
 
@@ -88,11 +102,32 @@ createRussianSpawn = {
 _CRASH_SITE_listener = {
 	_pos = _this select 1;
 	
+
 	publicVariable "CRASH_SITE";
 	[] call createCrashSite;
+	
+	["."] call EFUNC(common,displayTextStructured);
 
 	[_pos] call createMudschaSpawn;
+	_creatingMudschaSpawnHandle = [_pos] execVM "server\createMudschaHQ.sqf";
+	waitUntil { scriptDone _creatingMudschaSpawnHandle };
+
+	[".."] call EFUNC(common,displayTextStructured);
+
 	[_pos] call createRussianSpawn;
+	createRussianSpawnHandle = [_pos] execVM "server\createRussianHQ.sqf";
+	waitUntil { scriptDone createRussianSpawnHandle };
+	
+	["..."] call EFUNC(common,displayTextStructured);
+
+	0 = [_pos,1000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
+	0 = [] execVM "server\raiseMoneyCount.sqf";
+	
+	/*
+	_crashSitePos = _this select 0; // Helicopter crashSite Position
+	_maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted
+	_publicVariable = _this select 2; // publicVariable for this Pilot
+	*/
 };
 
 
