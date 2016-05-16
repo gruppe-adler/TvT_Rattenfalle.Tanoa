@@ -23,5 +23,5 @@ _unit addEventHandler ["FiredNear",{
 	if ((_this select 0) distance (_this select 1) < 15) then {
 	(_this select 0) setVariable ["questioned",
 		(_this select 0) getVariable ["questioned",0] + 0.1;
-	]
+	]};
 }];
