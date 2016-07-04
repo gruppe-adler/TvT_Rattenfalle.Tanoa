@@ -27,12 +27,12 @@ fillRussianSupplies = {
             120,
             ["light_hide", 1],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
-        ], 
+        ],
         [
             ["rhs_uaz_dshkm_MSV_01"],
             "UAZ Dshkm",
@@ -42,9 +42,9 @@ fillRussianSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ],
@@ -57,9 +57,9 @@ fillRussianSupplies = {
             60,
             [],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ],
@@ -72,9 +72,9 @@ fillRussianSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ],
@@ -87,9 +87,9 @@ fillRussianSupplies = {
             180,
             ["exhaust_hide", 1,"at_rack_hide", 0],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ]
@@ -126,7 +126,7 @@ fillMudschahedinSupplies = {
 
         _this select 0,
         [
-            [            
+            [
             "RHS_Ural_Civ_01",
             "RHS_Ural_Civ_02",
             "RHS_Ural_Civ_03",
@@ -141,9 +141,9 @@ fillMudschahedinSupplies = {
             60,
             ["light_hide", 1],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ],
@@ -156,9 +156,9 @@ fillMudschahedinSupplies = {
             60,
             ["light_hide", 1],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ],
@@ -171,9 +171,9 @@ fillMudschahedinSupplies = {
             60,
             ["light_hide", 1],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             }
         ],
@@ -186,10 +186,10 @@ fillMudschahedinSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
-            clearMagazineCargoGlobal (_this select 0);  
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
+            clearMagazineCargoGlobal (_this select 0);
             (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VR_mag',3];
             (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_PG7VL_mag',3];
             (_this select 0) addMagazineCargoGlobal ['rhs_rpg7_OG7V_mag',4];
@@ -204,11 +204,11 @@ fillMudschahedinSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
-            clearMagazineCargoGlobal (_this select 0); 
-            (_this select 0) addWeaponCargoGlobal ['IEDUrbanBig_F',2];  
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
+            clearMagazineCargoGlobal (_this select 0);
+            (_this select 0) addWeaponCargoGlobal ['IEDUrbanBig_F',2];
             (_this select 0) addWeaponCargoGlobal ['IEDLandBig_F',2];
             (_this select 0) addWeaponCargoGlobal ['IEDLandSmall_F',1];
             (_this select 0) addWeaponCargoGlobal ['IEDUrbanSmall_F',1];
@@ -224,9 +224,9 @@ fillMudschahedinSupplies = {
             180,
             [[]],
             {
-            clearWeaponCargoGlobal (_this select 0); 
-            clearItemCargoGlobal (_this select 0); 
-            clearBackpackCargoGlobal (_this select 0); 
+            clearWeaponCargoGlobal (_this select 0);
+            clearItemCargoGlobal (_this select 0);
+            clearBackpackCargoGlobal (_this select 0);
             clearMagazineCargoGlobal (_this select 0);
             (_this select 0) addWeaponCargoGlobal ['rhs_weap_fim92',2];
             (_this select 0) addWeaponCargoGlobal ['rhs_fim92_mag',4];

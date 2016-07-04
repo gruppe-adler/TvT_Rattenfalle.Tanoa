@@ -10,7 +10,7 @@ player_respawned = 0;
 checkObjectives = true;
 
 // selectable teleport positions
-possibleSpawnPositions = 
+possibleSpawnPositions =
 [
 	"mrk_crash_site_01",
 	"mrk_crash_site_02",
@@ -21,7 +21,7 @@ possibleSpawnPositions =
 
 
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
-call compile preprocessfile "civilianOutrage\randomTakistani.sqf";
+call compile preprocessfile "civilianOutrage\randomrebel.sqf";
 
 [] execVM "Engima\Traffic\Init.sqf";
 
@@ -91,7 +91,7 @@ if (isServer) then {
 	mudschaMinSpawnDistance = 2500;
 	mudschaMaxSpawnDistance = 3000;
 
-	
+
 
 	russianSpawnPos = [0,0];
 	publicVariable "russianSpawnPos";
@@ -119,13 +119,13 @@ if (isServer) then {
  		{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
  	};
  	*/
-	
+
 };
 
 
 
 if (hasInterface) then {
-	
+
 	titleCut ["", "WHITE IN", 1];
 
 	{_x setMarkerAlpha 0;} forEach possibleSpawnPositions;
@@ -144,27 +144,27 @@ if (hasInterface) then {
 		} else {
 			if (!didJIP) exitWith {[] call callIntro;};
 
-			waitUntil {  
-				(playerSide != civilian) && 
-				(CRASH_SITE select 0 != 0) && 
-				(MUDSCHA_SPAWN select 0 != 0) && 
+			waitUntil {
+				(playerSide != civilian) &&
+				(CRASH_SITE select 0 != 0) &&
+				(MUDSCHA_SPAWN select 0 != 0) &&
 				(RUSSIAN_SPAWN select 0 != 0)
 			};
 
 			if (playerSide == independent) then {
 				[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
 			};
-			if (playerSide == west) then {			
+			if (playerSide == west) then {
 				[MUDSCHA_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
 			};
-			if (playerSide == east) then {		
+			if (playerSide == east) then {
 				[RUSSIAN_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
 			};
 		};
 	};
 
 
-	callIntro = {		
+	callIntro = {
 		0 = [[worldSize/2,worldSize/2,0],"",2000] execVM "helpers\establishingShot.sqf";
 	};
 
@@ -181,10 +181,10 @@ if (hasInterface) then {
 	if (playerSide == east) then {
 		[] execVM "player\russianTeleportListener.sqf";
 		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
-	};	
+	};
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
-	};		
+	};
 };

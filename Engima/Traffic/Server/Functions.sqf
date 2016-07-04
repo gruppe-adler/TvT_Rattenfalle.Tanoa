@@ -414,7 +414,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            //_vehicleGroup = createGroup _side;
 	            //_vehicle = createVehicle [_vehicleType, _pos, [], 0, "NONE"];
 	            // Run spawn script and attach handle to vehicle
-	            _vehicleArray = [_pos,_vehicleType,_side] call createTakistaniVehicle;
+	            _vehicleArray = [_pos,_vehicleType,_side] call createrebelVehicle;
 				_vehicle = _vehicleArray select 0;
 	            diag_log format ["traffic: vehicle is %1",_vehicle];
 		        //_result = [_pos, _direction, _vehicleType, _vehicleGroup] call BIS_fnc_spawnVehicle;

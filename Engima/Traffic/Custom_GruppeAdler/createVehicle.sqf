@@ -1,4 +1,4 @@
-createTakistaniVehicle = {
+createrebelVehicle = {
 	_pos = _this select 0;
 	_vehicleType = _this select 1;
 	_side = _this select 2;
@@ -12,7 +12,7 @@ createTakistaniVehicle = {
 
 		_crewDriver = _grp0 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
-		[_crewDriver] call randomTakistani; // takistani loadout
+		[_crewDriver] call randomRebel; // rebel loadout
 
 		_crewDriver assignAsDriver _car0;
 		_crewDriver moveInDriver _car0;
@@ -25,7 +25,7 @@ createTakistaniVehicle = {
 
 		_crewCargo = _grp1 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
-		[_crewCargo] call randomTakistani; // takistani loadout
+		[_crewCargo] call randomRebel; // rebel loadout
 
 		_crewCargo assignAsCargo _car1;
 		_crewCargo moveInCargo _car1;

@@ -1,74 +1,49 @@
 /*
-takistani civ units made from thai warfare mod
+rebel civ units made from thai warfare mod
 */
 
-randomTakistani = {
+randomRebel = {
 _unit = _this select 0;
 
 _uniforms = [
-"U_CivilianCoat_D",
-"U_CivilianCoat_B",
-"U_CivilianCoat_C",
-"U_DressTKLocalUni_A_A",
-"U_DressTKLocalUni_A_B",
-"U_DressTKLocalUni_A_C",
-"U_DressTKLocalUni_A_D",
-"U_DressTKLocalUni_A_E",
-"U_DressTKLocalUni_B_A",
-"U_DressTKLocalUni_B_B",
-"U_DressTKLocalUni_B_C",
-"U_DressTKLocalUni_B_D",
-"U_DressTKLocalUni_B_E",
-"U_DressTKLocalUni_C_A",
-"U_DressTKLocalUni_C_B",
-"U_DressTKLocalUni_C_C",
-"U_DressTKLocalUni_C_D",
-"U_DressTKLocalUni_C_E",
-"U_DressTKLocalUni_D_A",
-"U_DressTKLocalUni_D_B",
-"U_DressTKLocalUni_D_C",
-"U_DressTKLocalUni_D_D",
-"U_DressTKLocalUni_D_E",
-"U_DressTKLocalUni_E_A",
-"U_DressTKLocalUni_E_B",
-"U_DressTKLocalUni_E_C",
-"U_DressTKLocalUni_E_D",
-"U_DressTKLocalUni_E_E",
-"U_TKLocalUni_A",
-"U_TKLocalUni_B",
-"U_TKLocalUni_C",
-"U_TKLocalUni_D",
-"U_TKLocalUni_E",
-"U_TKLocalUni_F",
-"U_TKLocalCombat_A",
-"U_TKLocalCombat_B",
-"U_TKLocalCombat_C",
-"U_TKLocalCombat_D",
-"U_TKLocalCombat_E",
-"U_CivilianSuit_A",
-"U_CivilianSuit_B",
-"U_CivilianSuit_C",
-"U_Office_A",
-"U_Office_B",
-"U_Office_C"
+"U_C_Man_casual_1_F",
+"U_C_Man_casual_2_F",
+"U_C_Man_casual_3_F",
+"U_C_Man_casual_4_F",
+"U_C_Man_casual_5_F",
+"U_C_man_sport_1_F",
+"U_C_man_sport_2_F",
+"U_C_man_sport_3_F",
+"U_I_C_Soldier_Bandit_1_F",
+"U_I_C_Soldier_Bandit_2_F",
+"U_I_C_Soldier_Bandit_3_F",
+"U_I_C_Soldier_Bandit_4_F",
+"U_I_C_Soldier_Bandit_5_F",
+"U_B_GEN_Soldier_F",
+"U_B_GEN_Commander_F",
+"U_Marshal"
 ] call BIS_fnc_selectRandom;
 
-_thaiHeadGear = [
-"H_Hat_Face_Wrap_Black",
-"H_Hat_Taqiyah_A",
-"H_Hat_Taqiyah_B",
-"H_Hat_Taqiyah_C",
-"H_Hat_Taqiyah_D",
-"H_Hat_Taqiyah_E",
-"H_Hat_Pagri",
-"H_Hat_Pagri_B",
-"H_Hat_Pagri_C",
-"H_Hat_Turban_A",
-"H_Hat_Turban_B",
-"H_Hat_Turban_C",
-"H_Hat_Turban_D",
-"H_Hat_Turban_E",
-"H_Hat_Pakol","H_Hat_Pakol","H_Hat_Pakol","H_Hat_Pakol","H_Hat_Pakol","H_Hat_Pakol"
+_vanillaHeadGear = [
+"H_Booniehat_tna_F",
+"H_Cap_blk",
+"H_Cap_red",
+"H_Cap_surfer",
+"H_Cap_tan",
+"H_Hat_blue",
+"H_Hat_brown",
+"H_Hat_checker",
+"H_Hat_tan",
+"H_Hat_grey",
+"H_StrawHat",
+"H_StrawHat_dark",
+"H_Bandanna_gry",
+"H_Bandanna_blu",
+"H_Bandanna_cbr",
+"H_Bandanna_surfer",
+"H_Bandanna_surfer_blk",
+"H_Bandanna_surfer_grn",
+"H_Booniehat_tan"
 ] call BIS_fnc_selectRandom;
 
 _taliFaces = [
@@ -110,23 +85,25 @@ _stripHim = {
 		removeVest _it;
 		removeBackpack _it;
 		removeHeadgear _it;
-		removeGoggles _it;	
+		removeGoggles _it;
 };
 
 _reclotheHim = {
 	_guy = _this select 0;
 	_guy forceAddUniform _uniforms;
-	_guy addHeadgear _thaiHeadGear;
+	_guy addHeadgear _vanillaHeadGear;
 
-	[[_guy,_taliFaces], "setCustomFace"] call BIS_fnc_MP;
-	
+	// [[_guy,_taliFaces], "setCustomFace"] call BIS_fnc_MP;
+
 	if (isClass (configFile >> "CfgGlasses" >> "TRYK_Beard_BK")) then {
-		_guy addGoggles _taliBeards;
+		if (random 10 > 9) then {
+			_guy addGoggles _taliBeards;
+		};
 	};
 };
 
 _addFleeingBehaviour = {
-	
+
 };
 
 [_unit] call _stripHim;
