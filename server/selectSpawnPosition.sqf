@@ -7,5 +7,5 @@ pilotTeleport = {
 	publicVariable "CRASH_SITE_SELECTED";
 };
 
-_selectedCrashSite = getMarkerPos (possibleSpawnPositions call BIS_fnc_selectRandom);
+_selectedCrashSite = getMarkerPos (selectRandom possibleCrashPositions);
 _selectedCrashSite call pilotTeleport;

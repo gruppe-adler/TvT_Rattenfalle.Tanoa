@@ -465,7 +465,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 					
 					private ["_time"];
 					_time = time + 999999;
-					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") || ((CRASH_SITE select 0 != 0) && (MUDSCHA_SPAWN select 0 != 0) && (RUSSIAN_SPAWN select 0 != 0))};
+					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") || ((CRASH_SITE select 0 != 0) && (REBEL_SPAWN select 0 != 0) && (US_SPAWN select 0 != 0))};
 
 					if (isNil "BIS_fnc_establishingShot_skip") then {
 						// Register the UAV finished

@@ -7,8 +7,9 @@ createCrashSite=  {
 	crashSpawnPos = [CRASH_SITE,[20,70], random 360] call SHK_pos;
 
 	// find a spawn pos on given position
-	_veh1 = createVehicle ["RHS_Mi24Vt_vvs", crashSpawnPos, [], 0, "NONE"];
+	_veh1 = createVehicle ["RHS_AH1Z_GS", crashSpawnPos, [], 0, "NONE"];
 	[_veh1,	nil,["exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;
+	_veh1 setAmmo 0;
 
 	_veh1 setObjectTextureGlobal [0, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo2_co.paa"];
 	_veh1 setObjectTextureGlobal [1, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa"];
@@ -51,78 +52,54 @@ checkInsideMap = {
 };
 
 
-createMudschaSpawn = {
-	_center = _this select 0;
-	_newPos = [];
+createRebelsSpawn = {
+	waitUntil {!isNil "spawnLocationOpforLand"};
 
-	while {(count _newPos) < 1} do { //Loop the following code so long as isFlatEmpty cannot find a valid position near the current _pos.
-		_pos = [_center,[mudschaMinSpawnDistance,mudschaMaxSpawnDistance], random 360, 0, [0,0],[100,"Land_Dome_Small_F"]] call SHK_pos;
-		_newPos = _pos isFlatEmpty[50, -1, 0.3, 40, 0, false, objNull];
-		if (count _newPos > 0) then {
-			if (!([_newPos] call checkInsideMap)) then {_newPos = [];}; // should be inside map
-		};
-		if (count _newPos > 0) then {
-			if (count (_newPos nearRoads 10) > 0) then {_newPos = [];}; 
-		};		
-	};
+	REBEL_SPAWN = spawnLocationOpforLand;
+	publicVariable "REBEL_SPAWN";
 
-	MUDSCHA_SPAWN = _newPos;
-	publicVariable "MUDSCHA_SPAWN";
+	respawn_rebels setPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0];
 
-	respawn_mudscha setPos [MUDSCHA_SPAWN select 0, MUDSCHA_SPAWN select 1, 0];
-
-	[{0 = [MUDSCHA_SPAWN,"MUDSCHA_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
+	[{0 = [REBEL_SPAWN,"REBEL_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 };
 
-createRussianSpawn = {
-	_center = _this select 0;
-	_newPos = [];
+createUSSpawn = {
+	waitUntil {!isNil "spawnLocationBluforLand"};
 
-	while {(count _newPos) < 1} do { //Loop the following code so long as isFlatEmpty cannot find a valid position near the current _pos.
-		_pos = [_center,[russianMinSpawnDistance,russianMaxSpawnDistance], random 360, 0, [0,0],[100,"Land_Dome_Small_F"]] call SHK_pos;
-		_newPos = _pos isFlatEmpty[50, -1, 0.3, 40, 0, false, objNull];
-		if (count _newPos > 0) then {
-			if (!([_newPos] call checkInsideMap)) then {_newPos = [];}; // should be inside map
-		};
-		if (count _newPos > 0) then {
-			if (count (_newPos nearRoads 10) > 0) then {_newPos = [];}; 
-		};
-	};
+	US_SPAWN = spawnLocationBluforLand;
+	publicVariable "US_SPAWN";
 
-	RUSSIAN_SPAWN = _newPos;
-	publicVariable "RUSSIAN_SPAWN";
+	respawn_us setPos [US_SPAWN select 0, US_SPAWN select 1, 0];
 
-	respawn_russian setPos [RUSSIAN_SPAWN select 0, RUSSIAN_SPAWN select 1, 0];
-
-	[{0 = [RUSSIAN_SPAWN,"RUSSIAN_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
+	[{0 = [US_SPAWN,"US_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 };
 
 
 
 _CRASH_SITE_listener = {
 	_pos = _this select 1;
-	
+
 
 	publicVariable "CRASH_SITE";
 	[] call createCrashSite;
-	
+
 	["."] call EFUNC(common,displayTextStructured);
 
-	[_pos] call createMudschaSpawn;
-	_creatingMudschaSpawnHandle = [_pos] execVM "server\createMudschaHQ.sqf";
-	waitUntil { scriptDone _creatingMudschaSpawnHandle };
+	[_pos] call createRebelsSpawn;
+	_creatingRebelsSpawnHandle = [_pos] execVM "server\createRebelsHQ.sqf";
+	waitUntil { scriptDone _creatingRebelsSpawnHandle };
 
 	[".."] call EFUNC(common,displayTextStructured);
 
-	[_pos] call createRussianSpawn;
-	createRussianSpawnHandle = [_pos] execVM "server\createRussianHQ.sqf";
-	waitUntil { scriptDone createRussianSpawnHandle };
-	
+	[_pos] call createUSSpawn;
+	createUSSpawnHandle = [_pos] execVM "server\createUSHQ.sqf";
+	waitUntil { scriptDone createUSSpawnHandle };
+
 	["..."] call EFUNC(common,displayTextStructured);
 
 	0 = [_pos,1000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
 	0 = [] execVM "server\raiseMoneyCount.sqf";
-	
+
 	/*
 	_crashSitePos = _this select 0; // Helicopter crashSite Position
 	_maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted

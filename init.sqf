@@ -9,19 +9,11 @@ setViewDistance 3500;
 player_respawned = 0;
 checkObjectives = true;
 
-// selectable teleport positions
-possibleSpawnPositions =
-[
-	"mrk_crash_site_01",
-	"mrk_crash_site_02",
-	"mrk_crash_site_03",
-	"mrk_crash_site_04"
-];
+{_x setMarkerAlpha 0;} forEach allMapMarkers;
 
-
-
+0 = [] execVM "grad_buymenu\buymenu_init.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
-call compile preprocessfile "civilianOutrage\randomrebel.sqf";
+call compile preprocessfile "civilianOutrage\randomRebel.sqf";
 
 [] execVM "Engima\Traffic\Init.sqf";
 
@@ -29,17 +21,22 @@ If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\findSpawnPos.sqf";
-[]execVM "spawn\gui\initGUI.sqf";
-[]execVM "spawn\supplyDropOnMarker.sqf";
 []execVM "helpers\addActionMP.sqf";
 
 
-
-// driving AI
-[] execVM "VCOM_Driving\init.sqf";
-
-
 if (isServer) then {
+
+	possibleCrashPositions =  [
+		"mrk_crash_site_01",
+		"mrk_crash_site_02",
+		"mrk_crash_site_03",
+		"mrk_crash_site_04",
+		"mrk_crash_site_05",
+		"mrk_crash_site_06",
+		"mrk_crash_site_07"
+	];
+
+
 	PILOTS_DEAD = false;
 	publicVariable "PILOTS_DEAD";
 
@@ -57,24 +54,12 @@ if (isServer) then {
 	CRASH_SITE = [0,0];
 	publicVariable "CRASH_SITE";
 
-	MUDSCHA_SPAWN = [0,0];
-	publicVariable "MUDSCHA_SPAWN";
+	REBEL_SPAWN = [0,0];
+	publicVariable "REBEL_SPAWN";
 
-	RUSSIAN_SPAWN = [0,0];
-	publicVariable "RUSSIAN_SPAWN";
+	US_SPAWN = [0,0];
+	publicVariable "US_SPAWN";
 
-
-	VEHICLE_SUPPORT_WEST = [0,0,0];
-	publicVariable "VEHICLE_SUPPORT_WEST";
-
-	VEHICLE_SUPPORT_EAST = [0,0,0];
-	publicVariable "VEHICLE_SUPPORT_WEST";
-
-	VEHICLE_ORDERED_WEST = [false,0];
-	publicVariable "VEHICLE_ORDERED_WEST";
-
-	VEHICLE_ORDERED_EAST = [false,0];
-	publicVariable "VEHICLE_ORDERED_EAST";
 
 	SETUP_DONE = false;
 	publicVariable "SETUP_DONE";
@@ -85,29 +70,14 @@ if (isServer) then {
 
 	jipTime = 60000;
 
-	russianMinSpawnDistance = 5000;
-	russianMaxSpawnDistance = 5500;
-
-	mudschaMinSpawnDistance = 2500;
-	mudschaMaxSpawnDistance = 3000;
 
 
 
-	russianSpawnPos = [0,0];
-	publicVariable "russianSpawnPos";
-
-	mudschahedinSpawnPos = [0,0];
-	publicVariable "mudschahedinSpawnPos";
-
-	russianCredits = 1000;
-	mudschahedinCredits = 1000;
-
-	0 = [russianCredits,mudschahedinCredits] execVM "spawn\gui\addPublicVariableEventhandler.sqf";
 	0 = [] execVM "server\serverTeleportListener.sqf";
 	0 = [] execVM "server\selectSpawnPosition.sqf";
 
 	[] spawn {
-		waitUntil {(mudschahedinSpawnPos select 0 != 0) && (russianSpawnPos select 0 != 0)}; // wait until everything is neatly set up
+		waitUntil {(REBEL_SPAWN select 0 != 0) && (US_SPAWN select 0 != 0)}; // wait until everything is neatly set up
 
 		SETUP_DONE = true;
 		publicVariable "SETUP_DONE";
@@ -128,13 +98,17 @@ if (hasInterface) then {
 
 	titleCut ["", "WHITE IN", 1];
 
-	{_x setMarkerAlpha 0;} forEach possibleSpawnPositions;
-
 	// for local execution of interrogation actions
 	fnc_MPaddQuestioningAction = {
 		_this addAction ["<t color='#F24F0F'>Verhören</t>",'civilianOutrage\questionCivilian.sqf',
 		0, 100, true, true, '',
 		"player distance _target < 4 && !(_target getVariable ['revealed',false])"];
+	};
+
+	fnc_showMarkers = {
+		if (playerSide == (_this select 0)) then {
+			{_x setMarkerAlpha 1;} forEach (_this select 1);
+		};
 	};
 
 	// JIP handling
@@ -147,44 +121,45 @@ if (hasInterface) then {
 			waitUntil {
 				(playerSide != civilian) &&
 				(CRASH_SITE select 0 != 0) &&
-				(MUDSCHA_SPAWN select 0 != 0) &&
-				(RUSSIAN_SPAWN select 0 != 0)
+				(REBEL_SPAWN select 0 != 0) &&
+				(US_SPAWN select 0 != 0)
 			};
 
 			if (playerSide == independent) then {
 				[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
 			};
 			if (playerSide == west) then {
-				[MUDSCHA_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
+				[REBEL_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
 			};
 			if (playerSide == east) then {
-				[RUSSIAN_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
+				[US_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
 			};
 		};
 	};
 
 
 	callIntro = {
-		0 = [[worldSize/2,worldSize/2,0],"",2000] execVM "helpers\establishingShot.sqf";
+		waitUntil {CRASH_SITE select 0 != 0};
+		0 = [CRASH_SITE,"",2000] execVM "helpers\establishingShot.sqf";
 	};
 
 	waitUntil {!isNull player};
 
-	// WEST is mudschahedin (!)
+	// WEST is US
 	if (playerSide == west) then {
 		[] execVM "player\mudschahedinTeleportListener.sqf";
+		[] spawn checkJIP;
+	};
+
+	// EAST is rebels
+	if (playerSide == east) then {
+		[] execVM "player\russianTeleportListener.sqf";
 		[] spawn checkJIP;
 		[] execVM  "player\pilotSightingsClient.sqf";
 	};
 
-	// EAST is russian
-	if (playerSide == east) then {
-		[] execVM "player\russianTeleportListener.sqf";
-		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
-	};
-
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
-		[] spawn checkJIP; diag_log format ["setup: createStartHints initiated"];
+		[] spawn checkJIP;
 	};
 };

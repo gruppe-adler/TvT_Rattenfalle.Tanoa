@@ -1,6 +1,3 @@
-#include "spawn\gui\_defines.hpp"
-#include "spawn\gui\_dialogs.hpp"
-
 OnLoadMission = "TvT_Rattrap";
 author = "Nomisum für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "Wettrennen um verschollene Piloten."; //appears in overview and loading screen
