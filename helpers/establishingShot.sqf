@@ -113,7 +113,7 @@ if (_mode == 1) then {
 	_date = format ["%1-%2-%3", str (date select 0), _month, _day];
 
 	//_SITREP = format [localize "STR_A3_BIS_fnc_establishingShot_SITREP" + "||%1|%2||" + localize "STR_A3_BIS_fnc_establishingShot_Time", toUpper _txt, _date, _time];
-	
+
 	/* _SITREP = [
 		[_date + " ", ""],
 		[_time, "font = 'PuristaMedium'"],
@@ -155,7 +155,7 @@ if (_mode == 1) then {
 		]
 	];
 
-	
+
 
 	uiNamespace setVariable ["BIS_fnc_establishingShot_skipEH", _skipEH];
 
@@ -247,7 +247,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 
 			BIS_fnc_establishingShot_fakeUAV camPreparePos _coords;
 			BIS_fnc_establishingShot_fakeUAV camCommitPrepared 0;
-			
+
 			_ang = if (_dir == 0) then {_ang - 0.5} else {_ang + 0.5};
 		};
 	};
@@ -389,7 +389,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 						_ctrlText ctrlCommit 0;
 					};
 				};
-				
+
 				private ["_time"];
 				_time = time + 2;
 				waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip")};
@@ -448,7 +448,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 
 						sleep 8;
 					};*/
-					
+
 					// Display SITREP
 					/* BIS_fnc_establishingShot_SITREP = [
 						_SITREP,
@@ -459,13 +459,14 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 					] spawn BIS_fnc_typeText2;*/
 
 					/* waitUntil {scriptDone BIS_fnc_establishingShot_SITREP || !(isNil "BIS_fnc_establishingShot_skip")};*/
-						
-					
+
+
 					cutRsc ["gui_pleasewait","PLAIN",0];
-					
+
 					private ["_time"];
 					_time = time + 999999;
 					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") || ((CRASH_SITE select 0 != 0) && (REBEL_SPAWN select 0 != 0) && (US_SPAWN select 0 != 0))};
+					cutText ["", "PLAIN"];
 
 					if (isNil "BIS_fnc_establishingShot_skip") then {
 						// Register the UAV finished
@@ -492,7 +493,7 @@ if (_mode == 0) then {
 	("BIS_layerStatic" call BIS_fnc_rscLayer) cutRsc ["RscStatic", "PLAIN"];
 	waitUntil {!(isNull (uiNamespace getVariable "RscStatic_display"))};
 	waitUntil {isNull (uiNamespace getVariable "RscStatic_display")};
-	
+
 	// Remove SITREP
 	if (!(isNil "BIS_fnc_establishingShot_SITREP")) then {
 		terminate BIS_fnc_establishingShot_SITREP;
@@ -521,9 +522,9 @@ if (_mode == 0) then {
 		_layer = _x call BIS_fnc_rscLayer;
 		_layer cutText ["", "PLAIN"];
 	} forEach ["BIS_layerEstShot", "BIS_layerStatic", "BIS_layerInterlacing"];
-	
+
 	enableEnvironment false;
-	
+
 	if (_fade) then {
 		("BIS_fnc_blackOut" call BIS_fnc_rscLayer) cutText ["","BLACK FADED",10e10];
 	} else {
@@ -545,11 +546,11 @@ if (_mode == 0) then {
 	BIS_fnc_establishingShot_spaceEH = nil;
 	BIS_fnc_establishingShot_skip = nil;
 	BIS_fnc_establishingShot_UAVDone = nil;
-	
+
 	if (_fade) then {
 		["BIS_fnc_establishingShot"] call BIS_fnc_blackIn;
 	};
-	
+
 	enableEnvironment true;
 
 	// Start mission

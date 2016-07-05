@@ -7,7 +7,7 @@ createCrashSite=  {
 	crashSpawnPos = [CRASH_SITE,[20,70], random 360] call SHK_pos;
 
 	// find a spawn pos on given position
-	_veh1 = createVehicle ["RHS_AH1Z_GS", crashSpawnPos, [], 0, "NONE"];
+	_veh1 = createVehicle ["RHS_AH1Z_GS", crashSpawnPos, [], 0, "CAN_COLLIDE"];
 	[_veh1,	nil,["exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;
 	_veh1 setVehicleAmmo 0;
 
@@ -31,26 +31,6 @@ createCrashSite=  {
 };
 
 
-checkInsideMap = {
-	// 0 = mapsize
-	// 1 = spawnpos
-	_maximumX = worldSize;
-	_maximumY = worldSize;
-	_positionX = (_this select 0) select 0;
-	_positionY = (_this select 0) select 1;
-	_resultInsideMap = true;
-
-	// diag_log format ["MapsizeX: %1, MapsizeY: %2, PositionX: %3, PositionY: %4",_maximumX,_maximumY,_positionX,_positionY];
-
-	if (_positionX < 0 || _positionX > _maximumX) then {_resultInsideMap = false;};
-	if (_positionY < 0 || _positionY > _maximumY) then {_resultInsideMap = false;};
-
-	if (!_resultInsideMap) then {
-		diag_log format ["Mapsize: Out of bounds."];
-	};
-	_resultInsideMap
-};
-
 
 createRebelsSpawn = {
 	waitUntil {!isNil "spawnLocationOpforLand"};
@@ -58,7 +38,7 @@ createRebelsSpawn = {
 	REBEL_SPAWN = spawnLocationOpforLand;
 	publicVariable "REBEL_SPAWN";
 
-	respawn_rebels setPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0];
+	respawn_east setPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0];
 
 	[{0 = [REBEL_SPAWN,"REBEL_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 };
@@ -69,7 +49,7 @@ createUSSpawn = {
 	US_SPAWN = spawnLocationBluforLand;
 	publicVariable "US_SPAWN";
 
-	respawn_us setPos [US_SPAWN select 0, US_SPAWN select 1, 0];
+	respawn_west setPos [US_SPAWN select 0, US_SPAWN select 1, 0];
 
 	[{0 = [US_SPAWN,"US_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 };
@@ -82,15 +62,16 @@ _CRASH_SITE_listener = {
 
 	publicVariable "CRASH_SITE";
 	[] call createCrashSite;
-
 	["."] call EFUNC(common,displayTextStructured);
 
+	[] call createUSSpawn;
 	[".."] call EFUNC(common,displayTextStructured);
 
+	[] call createRebelsSpawn;
 	["..."] call EFUNC(common,displayTextStructured);
 
-	0 = [_pos,1000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
 
+	0 = [_pos,1000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
 	/*
 	_crashSitePos = _this select 0; // Helicopter crashSite Position
 	_maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted

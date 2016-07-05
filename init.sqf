@@ -143,13 +143,13 @@ if (hasInterface) then {
 		0 = [CRASH_SITE,"",2000] execVM "helpers\establishingShot.sqf";
 	};
 
-	waitUntil {!isNull player};
+	waitUntil {playerSide == west || playerSide == east || playerSide == independent};
 
 	// WEST is US
 	if (playerSide == west) then {
 		[] execVM "player\USTeleportListener.sqf";
 		[] spawn checkJIP;
-		originalSide = "west";
+		// originalSide = "west";
 	};
 
 	// EAST is rebels
@@ -157,12 +157,12 @@ if (hasInterface) then {
 		[] execVM "player\rebelsTeleportListener.sqf";
 		[] spawn checkJIP;
 		["CRASH_SITE"] execVM  "player\pilotSightingsClient.sqf";
-		originalSide = "east";
+		// originalSide = "east";
 	};
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP;
-		originalSide = "independent";
+		// originalSide = "independent";
 	};
 };

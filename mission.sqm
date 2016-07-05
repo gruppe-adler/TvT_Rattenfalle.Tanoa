@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=147;
+		nextID=148;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1541.0707,209.01146,515.57672};
-		dir[]={0.42725646,-0.55467725,0.71401155};
-		up[]={0.28481781,0.83206332,0.47597528};
-		aside[]={0.85811359,-2.0960579e-007,-0.51348627};
+		pos[]={1483.1573,103.65765,948.38794};
+		dir[]={-0.51513869,-0.68245542,0.51857537};
+		up[]={-0.48096535,0.73092562,0.48417339};
+		aside[]={0.70946586,-8.1025064e-008,0.70476288};
 	};
 };
 binarizationWanted=0;
@@ -323,7 +323,7 @@ class Mission
 		class Item5
 		{
 			dataType="Marker";
-			position[]={1274.5543,454.60776,1545.6682};
+			position[]={232.48949,435.81885,1303.99};
 			name="mrk_no_drive_area";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -331,7 +331,7 @@ class Mission
 			a=200;
 			b=200;
 			id=5;
-			atlOffset=500.4856;
+			atlOffset=500.68176;
 		};
 		class Item6
 		{
@@ -389,6 +389,7 @@ class Mission
 						skill=0.60000002;
 						rank="CAPTAIN";
 						name="leader_west";
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=9;
@@ -979,8 +980,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1410.7803,10.292188,955.72516};
-						angles[]={0.077179953,0,6.2272439};
+						position[]={1410.78,10.292214,955.72498};
+						angles[]={0.077178456,0,6.2272477};
 					};
 					side="Independent";
 					flags=6;
@@ -993,6 +994,67 @@ class Mission
 					};
 					id=37;
 					type="I_crew_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 			};
 			class Attributes
@@ -2188,7 +2250,7 @@ class Mission
 			{
 				position[]={1791.683,-21.219629,459.16};
 			};
-			name="respawn_us";
+			name="respawn_west";
 			id=58;
 			type="ModuleRespawnPosition_F";
 			atlOffset=30.358;
@@ -2299,7 +2361,7 @@ class Mission
 			{
 				position[]={1829.9301,-37.838627,457.936};
 			};
-			name="respawn_rebels";
+			name="respawn_east";
 			id=59;
 			type="ModuleRespawnPosition_F";
 			atlOffset=13.019001;
@@ -2408,10 +2470,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1869.0947,-49.369808,457.01843};
-				angles[]={6.2778587,0,0.0080009829};
+				position[]={1869.095,-49.369812,457.01801};
+				angles[]={6.2778621,0,0.0079936078};
 			};
-			name="respawn_pilot";
+			name="respawn_independent";
 			id=60;
 			type="ModuleRespawnPosition_F";
 			class CustomAttributes
@@ -4244,8 +4306,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={982.13702,4.3928409,3078.0635};
-						angles[]={0.010669862,0,6.2458687};
+						position[]={982.13702,4.3928475,3078.063};
+						angles[]={0.010663962,0,6.2458701};
 					};
 					side="East";
 					flags=6;
@@ -4253,13 +4315,10 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="MAJOR";
-						name="leader_east_1";
-						isPlayer=1;
 						isPlayable=1;
 					};
 					id=146;
 					type="O_officer_F";
-					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4327,7 +4386,6 @@ class Mission
 			{
 			};
 			id=145;
-			atlOffset=4.7683716e-007;
 		};
 	};
 	class Connections

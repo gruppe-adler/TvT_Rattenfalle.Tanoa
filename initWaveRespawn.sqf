@@ -26,7 +26,6 @@ if (isServer) then {
     //wait until handleRespawns.sqf has declared dead player arrays
     waitUntil {!isNil "deadPlayersBlu"};
     waitUntil {!isNil "deadPlayersOpf"};
-    waitUntil {!isNil "deadPlayersInd"};
 
     //add player to array
     if (_deadPlayerSide == "west") then {
@@ -37,21 +36,14 @@ if (isServer) then {
         deadPlayersOpf pushBack _deadPlayer;
         diag_log format ["addDeadPlayerToWave - added player %1 to deadPlayersOpf. %2 dead opfor total.", _deadPlayer, count deadPlayersOpf];
       } else {
-        if (_deadPlayerSide == "independent") then {
-          deadPlayersInd pushBack _deadPlayer;
-          diag_log format ["addDeadPlayerToWave - added player %1 to deadPlayersInd. %2 dead independent total.", _deadPlayer, count deadPlayersInd];
-        } else {
           diag_log format ["addDeadPlayerToWave - ERROR, unknown side for player %1", _deadPlayer];
-        };
       };
     };
 
     WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count deadPlayersBlu);
     WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count deadPlayersOpf);
-    WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count deadPlayersInd);
     publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
     publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
-    publicVariable "WAVERESPAWNPLAYERSLEFTIND";
   };
 
   //REMOVE FROM WAVE FUNCTION ==================================================
@@ -79,14 +71,7 @@ if (isServer) then {
         };
       };
 
-      case "independent": {
-        if (_respawnedPlayer in deadPlayersInd) then {
-          deadPlayersInd = deadPlayersInd - [_respawnedPlayer];
-          diag_log format ["removeRespawnedFromList - Player %1 respawned and has been removed from deadPlayersInd.", _respawnedPlayer];
-        } else {
-          diag_log format ["removeRespawnedFromList - ERROR, player %1 is not in deadPlayersInd", _respawnedPlayer];
-        };
-      };
+
 
       case "unknown": {
         if (_respawnedPlayer in deadPlayersBlu) then {
@@ -115,16 +100,16 @@ if (isServer) then {
 
     WAVERESPAWNPLAYERSLEFTBLU = BLUFORWAVESIZE - (count deadPlayersBlu);
     WAVERESPAWNPLAYERSLEFTOPF = OPFORWAVESIZE - (count deadPlayersOpf);
-    WAVERESPAWNPLAYERSLEFTIND = INDEPWAVESIZE - (count deadPlayersInd);
+
     publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
     publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
-    publicVariable "WAVERESPAWNPLAYERSLEFTIND";
+
   };
 
   //WAVE SIZE ==================================================================
   _bluforWaveSize = "bluforwavesize" call BIS_fnc_getParamValue;
   _opforWaveSize = "opforwavesize" call BIS_fnc_getParamValue;
-  _indepWaveSize = "indepwavesize" call BIS_fnc_getParamValue;
+
 
   _allPlayers = [] call BIS_fnc_listPlayers;
 
@@ -142,19 +127,14 @@ if (isServer) then {
     OPFORWAVESIZE = _opforWaveSize;
   };
 
-  if (_indepWaveSize == 0) then {
-    _teamSize = resistance countside _allPlayers;
-    INDEPWAVESIZE = (ceil ((_teamSize / 3) - 0.5)) max 1;
-  } else {
-    INDEPWAVESIZE = _indepWaveSize;
-  };
+
 
   publicVariable "BLUFORWAVESIZE";
   publicVariable "OPFORWAVESIZE";
-  publicVariable "INDEPWAVESIZE";
+
   diag_log format ["Wave Respawn - Blufor wave size is %1", BLUFORWAVESIZE];
   diag_log format ["Wave Respawn - Opfor wave size is %1", OPFORWAVESIZE];
-  diag_log format ["Wave Respawn - Independent wave size is %1", INDEPWAVESIZE];
+
 
   //============================================================================
   addMissionEventHandler ["HandleDisconnect", {[_this select 3] spawn mcd_fnc_removeRespawnedFromList}];
