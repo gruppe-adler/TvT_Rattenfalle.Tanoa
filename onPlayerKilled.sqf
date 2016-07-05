@@ -2,7 +2,7 @@
 if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "Player is JIP, not executing onPlayerKilled.sqf"};
 private ["_timeleft","_waveLeft","_minutes","_seconds","_respawnIn", "_explanation"];
 
-if (originalSide == "GUER") exitWith {
+if (originalSide == "independent") exitWith {
   [true] call ace_spectator_fnc_setSpectator;
 };
 
@@ -20,19 +20,19 @@ _waveTimeLeft = {};
 _freeRespawn = {};
 _waveSize = {};
 
-if (originalSide == "WEST") then {
+if (originalSide == "west") then {
   _waitCondition = compile "!WAVERESPAWNBLU";
   _playersLeft = {WAVERESPAWNPLAYERSLEFTBLU};
   _waveTimeLeft = {WAVERESPAWNTIMELEFTBLU};
   _waveSize = BLUFORWAVESIZE;
-  diag_log "onPlayerKilled - player side is WEST";
+  diag_log "onPlayerKilled - player side is west";
 };
-if (originalSide == "EAST") then {
+if (originalSide == "east") then {
   _waitCondition = compile "!WAVERESPAWNOPF";
   _playersLeft = {WAVERESPAWNPLAYERSLEFTOPF};
   _waveTimeLeft = {WAVERESPAWNTIMELEFTOPF};
   _waveSize = OPFORWAVESIZE;
-  diag_log "onPlayerKilled - player side is EAST";
+  diag_log "onPlayerKilled - player side is east";
 };
 
 

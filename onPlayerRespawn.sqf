@@ -2,19 +2,19 @@ waitUntil {!isNil "originalSide"};
 
 //get loadout
 switch (originalSide) do {
-  case "WEST": {
+  case "west": {
     if (bluforLoadoutPath != "") then {
       _params = parseText bluforLoadoutParams;
       _params execVM bluforLoadoutPath;
     };
   };
-  case "EAST": {
+  case "east": {
     if (opforLoadoutPath != "") then {
       _params = parseText opforLoadoutParams;
       _params execVM opforLoadoutPath;
     };
   };
-  case "GUER": {
+  case "independent": {
     if (indepLoadoutPath != "") then {
       _params = parseText indepLoadoutParams;
       _params execVM indepLoadoutPath;

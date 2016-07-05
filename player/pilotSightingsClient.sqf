@@ -5,9 +5,7 @@ should only be called from CLIENT!
 
 */
 
-_publicVariable = _this select 0; // publicVariable location for Pilot
-
-_markerName = (str _publicVariable) + "_marker";
+_markerName = (str LAST_PILOTS_POSITION) + "_marker";
 _nil = createMarkerLocal [_markerName, [0, 0, 0]];
 _markerName setMarkerShapeLocal "ELLIPSE";
 _markerName setMarkerTypeLocal "mil_unknown";
@@ -24,7 +22,7 @@ newSightingAlert = {
 
 	disableSerialization;
 	1337 ctrlSetText (str _location); // todo : insert correct ID
-	
+
 	cutRsc ["gui_intel_pilotPaper","PLAIN",0];
 };
 
@@ -34,4 +32,4 @@ _listener = {
 	[locationPosition (this select 1)] call newSightingAlert;
 };
 
-_publicVariable addPublicVariableEventHandler _listener;
+"LAST_PILOTS_POSITION" addPublicVariableEventHandler _listener;

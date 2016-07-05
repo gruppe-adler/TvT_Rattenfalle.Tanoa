@@ -296,3 +296,26 @@ class GRAD_buy_menu_select_airdrop
 			colorBackground[] = {0,0,0,0.8};
 		};
 };
+
+class RscTitles {
+
+	class gui_pleasewait
+	{
+		idd = -1;
+		duration = 10e10;
+		name = "gui_pleasewait";
+		fadeIn = 1;
+
+	 	class controls {
+			class gui_pleasewait_pic: RscPicture
+			{
+				idc = -1;
+				x = 10 * GUI_GRID_W + GUI_GRID_X;
+				y = 10 * GUI_GRID_H + GUI_GRID_Y;
+				w = 18 * GUI_GRID_W;
+				h = 8 * GUI_GRID_H;
+				text = "pic\start_message.paa";
+			};
+		};
+	};
+};

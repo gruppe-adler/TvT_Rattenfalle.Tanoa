@@ -9,7 +9,7 @@ createCrashSite=  {
 	// find a spawn pos on given position
 	_veh1 = createVehicle ["RHS_AH1Z_GS", crashSpawnPos, [], 0, "NONE"];
 	[_veh1,	nil,["exhaust_hide", 1,	"at_rack_hide", 0]] call BIS_fnc_initVehicle;
-	_veh1 setAmmo 0;
+	_veh1 setVehicleAmmo 0;
 
 	_veh1 setObjectTextureGlobal [0, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_001_camo2_co.paa"];
 	_veh1 setObjectTextureGlobal [1, "\rhsafrf\addons\rhs_a2port_air\mi35\data\camo\mi24p_002_camo2_co.paa"];
@@ -85,20 +85,11 @@ _CRASH_SITE_listener = {
 
 	["."] call EFUNC(common,displayTextStructured);
 
-	[_pos] call createRebelsSpawn;
-	_creatingRebelsSpawnHandle = [_pos] execVM "server\createRebelsHQ.sqf";
-	waitUntil { scriptDone _creatingRebelsSpawnHandle };
-
 	[".."] call EFUNC(common,displayTextStructured);
-
-	[_pos] call createUSSpawn;
-	createUSSpawnHandle = [_pos] execVM "server\createUSHQ.sqf";
-	waitUntil { scriptDone createUSSpawnHandle };
 
 	["..."] call EFUNC(common,displayTextStructured);
 
 	0 = [_pos,1000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
-	0 = [] execVM "server\raiseMoneyCount.sqf";
 
 	/*
 	_crashSitePos = _this select 0; // Helicopter crashSite Position

@@ -1,3 +1,6 @@
+#include "grad_buymenu\definitions\_defines.hpp"
+#include "grad_buymenu\definitions\_dialogs.hpp"
+
 OnLoadMission = "TvT_Rattrap";
 author = "Nomisum für Gruppe Adler";  //appears as author in overview and loading screen
 overviewText = "Wettrennen um verschollene Piloten."; //appears in overview and loading screen
@@ -8,7 +11,7 @@ loadScreen = "pic\loading_pic.jpg";
 respawn = 3;
 respawnDelay = 9999;
 respawnTemplates[] = {"Base"};
-respawnOnStart = -1;
+respawnOnStart = 0;//Dont respawn on start.
 respawnDialog = 0;
 
 class Params

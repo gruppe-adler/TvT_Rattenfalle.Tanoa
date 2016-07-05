@@ -98,3 +98,5 @@ suppliesOpfor = [
             ]
         ]
 ];
+
+publicVariable "suppliesOpfor";

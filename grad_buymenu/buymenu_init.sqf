@@ -92,15 +92,18 @@ if (isServer) then {
 	publicVariable "spawnLocationOpforWater";
 	publicVariable "spawnLocationCivilianOpfor";
 
+	// broadcast supplies definitions
+	0 = [] execVM "grad_buymenu\definitions\suppliesBlufor.sqf";
+	0 = [] execVM "grad_buymenu\definitions\suppliesOpfor.sqf";
+
 };
 
 
 // arrays of menu content
 
-0 = [] execVM "grad_buymenu\definitions\suppliesBlufor.sqf";
-0 = [] execVM "grad_buymenu\definitions\suppliesOpfor.sqf";
 
-if (!isServer) then {
+
+if (hasInterface) then {
 		buyMenuOpen = false; // checks if player has gui open
 
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_addRefreshListener.sqf";
@@ -132,7 +135,8 @@ if (!isServer) then {
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_manageOrder.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_refreshCredits.sqf";
 
-		[] spawn fnc_hideMarkers;
+		// [] spawn fnc_hideMarkers;
+
 };
 
 

@@ -6,8 +6,8 @@ DEBUG = true;
 setViewDistance 3500;
 
 // functional variables - do not change!
-player_respawned = 0;
-checkObjectives = true;
+// player_respawned = 0;
+checkObjectives = false; // false is debug for playing without pilot
 
 {_x setMarkerAlpha 0;} forEach allMapMarkers;
 
@@ -147,19 +147,22 @@ if (hasInterface) then {
 
 	// WEST is US
 	if (playerSide == west) then {
-		[] execVM "player\mudschahedinTeleportListener.sqf";
+		[] execVM "player\USTeleportListener.sqf";
 		[] spawn checkJIP;
+		originalSide = "west";
 	};
 
 	// EAST is rebels
 	if (playerSide == east) then {
-		[] execVM "player\russianTeleportListener.sqf";
+		[] execVM "player\rebelsTeleportListener.sqf";
 		[] spawn checkJIP;
-		[] execVM  "player\pilotSightingsClient.sqf";
+		["CRASH_SITE"] execVM  "player\pilotSightingsClient.sqf";
+		originalSide = "east";
 	};
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP;
+		originalSide = "independent";
 	};
 };

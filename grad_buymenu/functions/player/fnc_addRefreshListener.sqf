@@ -23,7 +23,7 @@ _moneyOpforListener = {
 // supplies
 _suppliesBluforListener = {
 	if (buyMenuOpen) then {
-		// diag_log format ["supplies blufor listener triggered"];
+		diag_log format ["supplies blufor listener triggered"];
 		[suppliesBlufor, moneyBlufor] call fnc_refreshGUI;
 	};
 };
@@ -31,7 +31,7 @@ _suppliesBluforListener = {
 
 _suppliesOpforListener = {
 	if (buyMenuOpen) then {
-		// diag_log format ["supplies opfor listener triggered"];
+		diag_log format ["supplies opfor listener triggered"];
 		[suppliesOpfor, moneyOpfor] call fnc_refreshGUI;
 	};
 };
@@ -40,35 +40,33 @@ _suppliesOpforListener = {
 
 /* E M U L A T I O N  for singleplayer tests */
 // MONEY
-if (!isMultiplayer) then {
-	_moneyBluforListener spawn {
+if (isMultiplayer) exitWith {};
+waitUntil {!isNil "suppliesOpfor" && !isNil "suppliesBlufor"};
+
+diag_log "entering singleplayer PVEH emulation";
+
+_moneyBluforListener spawn {
 		_tempmoneyBlufor = moneyBlufor;
-		waitUntil {moneyBlufor != _tempmoneyBlufor};
+		waitUntil {[moneyBlufor, _tempmoneyBlufor] call BIS_fnc_areEqual};
 		[moneyBlufor] call _this;
-	};
 };
 
-if (!isMultiplayer) then {
-	_moneyOpforListener spawn {
+_moneyOpforListener spawn {
 		_tempmoneyOpfor = moneyOpfor;
-		waitUntil {moneyOpfor != _tempmoneyOpfor};
+		waitUntil {[moneyOpfor, _tempmoneyOpfor] call BIS_fnc_areEqual};
 		[moneyOpfor] call _this;
-	};
 };
+
 
 // SUPPLIES
-if (!isMultiplayer) then {
-	_suppliesBluforListener spawn {
+_suppliesBluforListener spawn {
 		_tempSuppliesBlufor = suppliesBlufor;
-		waitUntil {suppliesBlufor != _tempSuppliesBlufor};
+		waitUntil {[suppliesBlufor, _tempSuppliesBlufor] call BIS_fnc_areEqual};
 		[suppliesBlufor] call _this;
-	};
 };
 
-if (!isMultiplayer) then {
-	_suppliesOpforListener spawn {
+_suppliesOpforListener spawn {
 		_tempSuppliesOpfor = suppliesOpfor;
-		waitUntil {suppliesOpfor != _tempSuppliesOpfor};
+		waitUntil {[suppliesOpfor, _tempSuppliesOpfor] call BIS_fnc_areEqual};
 		[suppliesOpfor] call _this;
-	};
 };

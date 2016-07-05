@@ -3,7 +3,6 @@ RESPAWNTIME = "respawntime" call BIS_fnc_getParamValue;
 RESPAWNWAVEEXTRATIME = 30;
 
 if (hasInterface) then {
-  joinTime = serverTime;
 
   [] spawn {
     waitUntil {!isNull player};
@@ -30,15 +29,15 @@ if (isServer) then {
     waitUntil {!isNil "deadPlayersInd"};
 
     //add player to array
-    if (_deadPlayerSide == "WEST") then {
+    if (_deadPlayerSide == "west") then {
       deadPlayersBlu pushBack _deadPlayer;
       diag_log format ["addDeadPlayerToWave - added player %1 to deadPlayersBlu. %2 dead blufor total.", _deadPlayer, count deadPlayersBlu];
     } else {
-      if (_deadPlayerSide == "EAST") then {
+      if (_deadPlayerSide == "east") then {
         deadPlayersOpf pushBack _deadPlayer;
         diag_log format ["addDeadPlayerToWave - added player %1 to deadPlayersOpf. %2 dead opfor total.", _deadPlayer, count deadPlayersOpf];
       } else {
-        if (_deadPlayerSide == "GUER") then {
+        if (_deadPlayerSide == "independent") then {
           deadPlayersInd pushBack _deadPlayer;
           diag_log format ["addDeadPlayerToWave - added player %1 to deadPlayersInd. %2 dead independent total.", _deadPlayer, count deadPlayersInd];
         } else {
@@ -62,7 +61,7 @@ if (isServer) then {
 
     switch (_respawnedSide) do {
 
-      case "WEST": {
+      case "west": {
         if (_respawnedPlayer in deadPlayersBlu) then {
           deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
           diag_log format ["removeRespawnedFromList - Player %1 respawned and has been removed from deadPlayersBlu.", _respawnedPlayer];
@@ -71,7 +70,7 @@ if (isServer) then {
         };
       };
 
-      case "EAST": {
+      case "east": {
         if (_respawnedPlayer in deadPlayersOpf) then {
           deadPlayersOpf = deadPlayersOpf - [_respawnedPlayer];
           diag_log format ["removeRespawnedFromList - Player %1 respawned and has been removed from deadPlayersOpf.", _respawnedPlayer];
@@ -80,7 +79,7 @@ if (isServer) then {
         };
       };
 
-      case "GUER": {
+      case "independent": {
         if (_respawnedPlayer in deadPlayersInd) then {
           deadPlayersInd = deadPlayersInd - [_respawnedPlayer];
           diag_log format ["removeRespawnedFromList - Player %1 respawned and has been removed from deadPlayersInd.", _respawnedPlayer];
@@ -89,7 +88,7 @@ if (isServer) then {
         };
       };
 
-      case "UNKNOWN": {
+      case "unknown": {
         if (_respawnedPlayer in deadPlayersBlu) then {
           deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
           diag_log format ["removeRespawnedFromList - Player %1 disconnected and has been removed from deadPlayersBlu", _respawnedPlayer];
