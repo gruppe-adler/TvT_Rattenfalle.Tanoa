@@ -130,6 +130,8 @@ _unit addEventHandler ["Hit", {
 		(_this select 0) setVariable ["questioned",_questioned + 0.4];
 }];
 
+
+
 [_unit,"fnc_MPaddQuestioningAction",nil,true] spawn BIS_fnc_MP;
 
 };

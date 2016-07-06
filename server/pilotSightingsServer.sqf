@@ -31,7 +31,7 @@ waitUntil {time > 4};
 
 
 while {true} do {
-
+  for "_i" from 0 to 12 do {
 	{
 		if (alive _x) then {
 			_nearbyLocations = (nearestLocations [getPos _x,
@@ -48,12 +48,15 @@ while {true} do {
         _pos = locationPosition (_nearbyLocations select 0);
         _markerSize = ((getPos _x) distance _pos);
 
-				LAST_PILOTS_POSITION = [_text, _pos, _markerSize];
-				publicVariable "LAST_PILOTS_POSITION";
+        CURRENT_PILOTS_POSITION = [_text, _pos, _markerSize];
+				publicVariable "CURRENT_PILOTS_POSITION";
 			};
 
 		};
-		sleep (random 30);
+		sleep (random 10);
 	} forEach _crashPilots;
-	sleep SIGHTING_DELAY;
+	sleep 10;
+  };
+  LAST_PILOTS_POSITION = [_text, _pos, _markerSize];
+  publicVariable "LAST_PILOTS_POSITION";
 };

@@ -24,21 +24,25 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 
 ["Stop", {
-    _this spawn {
-        _unit = _this select 0;
-        sleep 0.1;
-        _unit disableAI "MOVE";
+		if (!(_unit getVariable ["GRAD_isPointedAt",false])) then {
+		    _this spawn {
+		        _unit = _this select 0;
+		        sleep 0.1;
+		        _unit disableAI "MOVE";
 
-				diag_log "civilian forced to stand still";
+						diag_log "civilian forced to stand still";
+						_unit setVariable ["GRAD_isPointedAt",true];
+							if (vehicle _unit != _unit) then {
+									doGetOut _unit;
+									// moveOut _unit;
+							};
 
-				if (vehicle _unit != _unit) then {
-						doGetOut _unit;
-						// moveOut _unit;
-				};
-        sleep 5;
+						sleep 3;
+						_unit setVariable ["GRAD_isPointedAt",false];
+						_unit enableAI "MOVE";
+						};
+        };
 
-        _unit enableAI "MOVE";
-    };
 }] call CBA_fnc_addEventHandler;
 
 if (isServer) then {
@@ -64,6 +68,8 @@ if (isServer) then {
 	LAST_PILOTS_POSITION = ["irgendwo",[0,0],0]; // name of nearest location, position of pilot, distance to location (becomes radius of marker)
 	publicVariable "LAST_PILOTS_POSITION";
 
+	CURRENT_PILOTS_POSITION = ["irgendwo",[0,0],0]; // name of nearest location, position of pilot, distance to location (becomes radius of marker)
+	publicVariable "CURRENT_PILOTS_POSITION";
 
 	CRASH_SITE_SELECTED = false;
 	publicVariable "CRASH_SITE_SELECTED";
@@ -87,9 +93,6 @@ if (isServer) then {
 
 	jipTime = 60000;
 
-
-
-
 	0 = [] execVM "server\serverTeleportListener.sqf";
 	0 = [] execVM "server\selectSpawnPosition.sqf";
 
@@ -102,10 +105,12 @@ if (isServer) then {
 
 
 	// loadout for AI units
-	/* [] spawn {
- 		{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
- 	};
- 	*/
+	if (!isMultiplayer) then {
+	 	[] spawn {
+ 			{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
+ 		};
+	};
+
 
 };
 
@@ -127,6 +132,8 @@ if (hasInterface) then {
 			{_x setMarkerAlpha 1;} forEach (_this select 1);
 		};
 	};
+
+	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 
 	// JIP handling
 	checkJIP = {

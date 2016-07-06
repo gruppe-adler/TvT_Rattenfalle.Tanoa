@@ -1,8 +1,5 @@
 pilots = {
 
-	_vests = ["rhs_vest_commander","rhs_vydra_3m"] call BIS_fnc_selectRandom;
-	_headgear = ["rhs_zsh7a_mike","rhs_gssh18"] call BIS_fnc_selectRandom;
-	
 	this = _this select 0;
 
 	comment "Remove existing items";
@@ -16,23 +13,21 @@ pilots = {
 	removeGoggles this;
 
 	comment "Add containers";
-	
-	this forceAddUniform "rhs_uniform_m88_patchless";
-	this addVest _vests;
-	this addHeadgear _headgear;
-	
-	this addWeapon "hgun_P07_F";
 
-	[this, "16Rnd_9x21_Mag", 2] call addMagazinesToVest;
-	[this, "SmokeShellRed", 1] call addMagazinesToVest;
-	[this, "ACE_Earplugs", 1] call addMagazinesToVest;
-	[this, "ACE_fieldDressing", 6] call addMagazinesToVest;
-	[this, "ACE_Morphine", 2] call addMagazinesToVest;
-	[this, "ACE_Epipen", 2] call addMagazinesToVest;
-	[this, "ACE_HandFlare_Red", 1] call addMagazinesToVest;
-	[this, "ACE_HandFlare_White", 1] call addMagazinesToVest;
-	[this, "Chemlight_blue", 1] call addMagazinesToVest;
-	
+	this forceAddUniform "rhs_uniform_g3_rgr";
+	for "_i" from 1 to 8 do {this addItemToUniform "ACE_fieldDressing";};
+	for "_i" from 1 to 2 do {this addItemToUniform "ACE_atropine";};
+	for "_i" from 1 to 2 do {this addItemToUniform "ACE_epinephrine";};
+	for "_i" from 1 to 2 do {this addItemToUniform "ACE_morphine";};
+	this addItemToUniform "ACE_SpraypaintRed";
+	this addVest "V_PlateCarrier1_rgr_noflag_F";
+	for "_i" from 1 to 3 do {this addItemToVest "rhsusf_mag_15Rnd_9x19_JHP";};
+	for "_i" from 1 to 2 do {this addItemToVest "rhs_mag_m18_yellow";};
+	for "_i" from 1 to 2 do {this addItemToVest "ACE_HandFlare_Yellow";};
+	this addHeadgear "rhsusf_hgu56p";
+
+	comment "Add weapons";
+	this addWeapon "rhsusf_weap_m9";
 
 	this addWeapon "Binocular";
 	this linkItem "ItemWatch";
