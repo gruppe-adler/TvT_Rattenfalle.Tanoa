@@ -71,7 +71,7 @@ _CRASH_SITE_listener = {
 	["..."] call EFUNC(common,displayTextStructured);
 
 
-	0 = [_pos,1000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
+	0 = [_pos,6000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
 	/*
 	_crashSitePos = _this select 0; // Helicopter crashSite Position
 	_maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted
