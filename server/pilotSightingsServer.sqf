@@ -41,7 +41,7 @@ while {true} do {
 		    "NameMarine", 
 		    "NameVillage", 
 		    "NameLocal" 
-		   ],6000]);
+		   ],_maxDistance]);
 
 			if (count _nearbyLocations > 0) then {
 				_text = text (_nearbyLocations select 0);
