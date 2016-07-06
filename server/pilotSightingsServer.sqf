@@ -12,7 +12,7 @@ _maxDistance = _this select 1; // if Pilot is < maxDistance from any location, h
 _publicVariable = _this select 2; // publicVariable for this Pilot
 _crashPilots = [];
 
-
+waitUntil {time > 4};
 {
    if ((side _x) == independent) then
    {
