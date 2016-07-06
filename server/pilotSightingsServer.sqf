@@ -45,7 +45,7 @@ while {true} do {
 
 			if (count _nearbyLocations > 0) then {
 				_text = text (_nearbyLocations select 0);
-				LAST_PILOTS_POSITION = [_text, getPos _x];
+				LAST_PILOTS_POSITION = [_text, getPos _x, getPos _x distance getPos (_nearbyLocations select 0)];
 				publicVariable "LAST_PILOTS_POSITION";
 			};
 			
