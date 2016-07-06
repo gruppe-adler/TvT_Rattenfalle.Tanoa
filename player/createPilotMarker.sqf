@@ -1,6 +1,5 @@
 _pos = _this select 0;
-
-trackingPrecision = 200;
+_trackingPrecision = _this select 1;
 
 randomize_coord = {
 	_this + random(trackingPrecision * 2) - trackingPrecision
@@ -19,13 +18,15 @@ randomize_pos =
 	_randomizedPos
 };
 
-_markerPos = _pos call randomize_pos;
+
+_markerPos = _pos;
+// _markerPos = _pos call randomize_pos;
 
 _marker = createMarkerLocal [format ["pilotmarker_%1", _markerPos],_markerPos];
 _marker setMarkerTypeLocal "mil_unknown";
 _marker setMarkerColorLocal "ColorRed";
 _marker setMarkerShapeLocal "ELLIPSE";
-_marker setMarkerSizeLocal [trackingPrecision, trackingPrecision];
+_marker setMarkerSizeLocal [_trackingPrecision, _trackingPrecision];
 _marker setMarkerBrushLocal "Solid";
 _marker setMarkerAlphaLocal 0.5;
 

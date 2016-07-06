@@ -17,7 +17,7 @@ _markerName setMarkerBrushLocal "SolidFull";
 
 newSightingAlert = {
 	_location = _this select 0; // geht das hier? select 0 = variablenname, select 1 = variablenwert?!
-        
+
 	playSound "signal_lost";
 
 	disableSerialization;
@@ -28,9 +28,9 @@ newSightingAlert = {
 
 
 _listener = {
-	_markerName setMarkerPosLocal (locationPosition (_this select 1));
-	_markerName setMarkerSizeLocal [(_this select 2),(_this select 2)];
-	[(this select 1)] call newSightingAlert;
+	_markerName setMarkerPosLocal (locationPosition (LAST_PILOTS_POSITION select 1));
+	_markerName setMarkerSizeLocal [LAST_PILOTS_POSITION select 2,LAST_PILOTS_POSITION select 2];
+	// [LAST_PILOTS_POSITION select 1] call newSightingAlert;
 };
 
 "LAST_PILOTS_POSITION" addPublicVariableEventHandler _listener;

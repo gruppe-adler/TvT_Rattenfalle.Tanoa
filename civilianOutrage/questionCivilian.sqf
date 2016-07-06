@@ -66,7 +66,7 @@ if (_knowsSomething) exitWith {
 	} else {
 		cutText [format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],"PLAIN"];
 		_civilian setVariable ["revealed",true];
-		0 = [LAST_PILOTS_POSITION select 1] execVM "player\createPilotMarker.sqf";
+		0 = [LAST_PILOTS_POSITION select 1, LAST_PILOTS_POSITION select 2] execVM "player\createPilotMarker.sqf";
 	};
 };
 
