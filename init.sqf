@@ -23,6 +23,23 @@ call compile preprocessfile "helpers\spf_createRelPos.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 
+["Stop", {
+    _this spawn {
+        _unit = _this select 0;
+        sleep 0.1;
+        _unit disableAI "MOVE";
+
+				diag_log "civilian forced to stand still";
+
+				if (vehicle _unit != _unit) then {
+						doGetOut _unit;
+						// moveOut _unit;
+				};
+        sleep 5;
+
+        _unit enableAI "MOVE";
+    };
+}] call CBA_fnc_addEventHandler;
 
 if (isServer) then {
 

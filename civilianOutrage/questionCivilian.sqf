@@ -7,7 +7,7 @@ _knowsSomething = _civilian getVariable ["knowsSomething",false];
 
 _sentenceDenyingCalm = [
 	"Ich weiß von nichts.",
-	"Ich habe niemand gesehen.",	
+	"Ich habe niemand gesehen.",
 	"Nein. Ich habe nichts gehört oder gesehen.",
 	"Nein. Ich habe nichts gehört.",
 	"Tut mir leid, davon weiß ich nichts.",
@@ -23,18 +23,18 @@ _sentenceDenyingSerious = [
 	"Ich weiß wirklich nichts!",
 	"Brüder, glaubt mir, ich weiß nichts!",
 	"Nein, ich habe wirklich niemand gesehen!",
-	"Allahu akhbar! Ich schwöre bei meiner Mutter, nein!",
-	"Bei den 47 Jungfrauen im Paradies: Ich weiß nichts!",
+	"Nein! Ich schwöre bei meiner Mutter, nein!",
+	"Ich weiß nichts!",
 	"Neeeein! Ich weiß nichts!"
 	] call BIS_fnc_selectRandom;
 
 _sentenceDenyingBegging = [
 	"Aaaah, bitte lasst mich doch gehen!",
-	"Allahu akhbar, allahu akhbar, allahu akhbar!",
+	"O Gott, o Gott, o Gott... Neiiin!",
 	"Bitte, bitte! Ich weiß doch nichts!",
 	"Bitte lasst mich! Ich weiß nichts!",
 	"Wenn ich es euch doch sage, ich kann euch nichts sagen! Ich weiß es nicht!",
-	"Allahu akhbar! Allah wird euch richten!",
+	"Gott wird euch richten!",
 	"Schmort in der Hölle ihr Sadisten!",
 	"Bitte nein, lasst mich leben! Bitte, ich bin unschuldig!"
 	] call BIS_fnc_selectRandom;
@@ -62,7 +62,7 @@ if (_knowsSomething) exitWith {
 		if (_questioned > 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
 		};
-		
+
 	} else {
 		cutText [format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],"PLAIN"];
 		_civilian setVariable ["revealed",true];
@@ -83,13 +83,13 @@ if (!_knowsSomething) exitWith {
 
 	// when someone questions too hard, reveal something random
 	if (_questioned > 3) then {
-		_location = ((nearestLocations [getPos _civilian,  
-   			[ 
-		    "NameCity", 
-		    "NameCityCapital", 
-		    "NameMarine", 
-		    "NameVillage", 
-		    "NameLocal" 
+		_location = ((nearestLocations [getPos _civilian,
+   			[
+		    "NameCity",
+		    "NameCityCapital",
+		    "NameMarine",
+		    "NameVillage",
+		    "NameLocal"
 		   ],6000]) call BIS_fnc_selectRandom);
 		_text = text _location;
 		cutText [format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],"PLAIN"];
