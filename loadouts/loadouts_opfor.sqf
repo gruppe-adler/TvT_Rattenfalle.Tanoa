@@ -32,10 +32,12 @@ opfor_default = {
 
 	this = _this select 0;
 
-	this addWeapon "rhs_weap_akms";
+	
 
 	[this] call stripHimNaked;
 
+
+this addWeapon "rhs_weap_akms";
 
 	comment "Add containers";
 	this forceAddUniform "U_I_C_Soldier_Camo_F";
@@ -109,6 +111,9 @@ opfor_ftl = {
 
 	[this, "rhs_mag_rgd5", 2] call addMagazinesToBackpack;
 
+
+		this addPrimaryWeaponItem "rhs_acc_2dpZenit";
+
 	[this] call set_opfor_basics;
 
 
@@ -122,6 +127,7 @@ opfor_medic = {
 
 	[this] call stripHimNaked;
 	this addWeapon "rhs_weap_akms";
+		this addPrimaryWeaponItem "rhs_acc_2dpZenit";
 
 	this forceAddUniform "U_I_C_Soldier_Camo_F";
 	[this] call set_uniform_items;
@@ -155,10 +161,11 @@ opfor_marksman = {
 
 	this = _this select 0;
 
-	this addWeapon "rhs_weap_m76";
+	
 
 	[this] call stripHimNaked;
 
+this addWeapon "rhs_weap_m76";
 	comment "Add containers";
 
 	this forceAddUniform "U_I_C_Soldier_Para_1_F";
