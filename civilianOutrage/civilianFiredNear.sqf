@@ -2,7 +2,9 @@ _unit = _this select 0;
 _firer = _this select 1;
 
 _surrenderAnimations = [
-"AinvPknlMstpSnonWnonDnon_1"
+"AinvPknlMstpSnonWnonDnon_healed_1",
+"AinvPknlMstpSnonWnonDnon_healed_2",
+"RHS_flashbang_cover"
 ];
 
 
@@ -25,3 +27,14 @@ _unit addEventHandler ["FiredNear",{
 	((_this select 0) getVariable ["questioned",0]) + 0.1
 	]};
 }];
+
+sleep 120; // 1min freeze
+
+_unit enableAI "ANIM";
+// restart the whole thing, so he can run away
+_unit removeAllEventHandlers "firedNear"; // EH cleanup
+_unit addEventHandler ["FiredNear", {
+		_this execVM 'civilianOutrage\civilianFiredNear.sqf';
+}];
+
+true
