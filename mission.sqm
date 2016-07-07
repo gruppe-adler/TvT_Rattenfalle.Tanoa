@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=148;
+		nextID=165;
 	};
 	class MarkerIDProvider
 	{
-		nextID=6;
+		nextID=7;
 	};
 	class Camera
 	{
-		pos[]={1659.426,193.37184,570.19122};
-		dir[]={-0.16223755,-0.48697752,0.85826612};
-		up[]={-0.090462141,0.87338495,0.4785606};
-		aside[]={0.9826408,-2.8908107e-007,0.18574734};
+		pos[]={1515.856,57.128227,979.82721};
+		dir[]={0.78143018,-0.60992652,-0.13215572};
+		up[]={0.60143459,0.79242069,-0.10171501};
+		aside[]={-0.16676211,-3.7997961e-007,-0.98604852};
 	};
 };
 binarizationWanted=0;
@@ -267,7 +267,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=78;
+		items=94;
 		class Item0
 		{
 			dataType="Marker";
@@ -3670,7 +3670,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=2;
 						};
 					};
 				};
@@ -3784,7 +3784,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=3.5;
 						};
 					};
 				};
@@ -4386,6 +4386,157 @@ class Mission
 			{
 			};
 			id=145;
+		};
+		class Item78
+		{
+			dataType="Marker";
+			position[]={2415.1736,12.95,3608.5242};
+			name="mrk_spawn_blufor_plane_1";
+			type="c_plane";
+			colorName="ColorWEST";
+			id=149;
+		};
+		class Item79
+		{
+			dataType="Marker";
+			position[]={2241.6863,12.95,3566.6287};
+			name="mrk_spawn_blufor_helicopter_1";
+			type="c_air";
+			colorName="ColorWEST";
+			id=150;
+		};
+		class Item80
+		{
+			dataType="Marker";
+			position[]={2080.5911,13.457507,13184.064};
+			name="mrk_spawn_blufor_plane_2";
+			type="c_plane";
+			colorName="ColorWEST";
+			id=151;
+		};
+		class Item81
+		{
+			dataType="Marker";
+			position[]={1950.1497,13.45,13085.527};
+			name="mrk_spawn_blufor_helicopter_2";
+			type="c_air";
+			colorName="ColorWEST";
+			id=152;
+		};
+		class Item82
+		{
+			dataType="Marker";
+			position[]={11843.205,6.9538288,2991.5276};
+			name="mrk_spawn_blufor_plane_3";
+			type="c_plane";
+			colorName="ColorWEST";
+			id=153;
+			atlOffset=2.0938287;
+		};
+		class Item83
+		{
+			dataType="Marker";
+			position[]={11892.623,3.9483643,2950.0344};
+			name="mrk_spawn_blufor_helicopter_3";
+			type="c_air";
+			colorName="ColorWEST";
+			id=154;
+			atlOffset=-0.91163588;
+		};
+		class Item84
+		{
+			dataType="Marker";
+			position[]={2723.5339,41.900024,7020.8384};
+			name="mrk_spawn_blufor_plane_4";
+			type="c_plane";
+			colorName="ColorWEST";
+			id=155;
+			atlOffset=-2.0616798;
+		};
+		class Item85
+		{
+			dataType="Marker";
+			position[]={2684.9915,43.561798,6990.6738};
+			name="mrk_spawn_blufor_helicopter_4";
+			type="c_air";
+			colorName="ColorWEST";
+			id=156;
+		};
+		class Item86
+		{
+			dataType="Marker";
+			position[]={7434.8467,7.3220778,13433.178};
+			name="mrk_spawn_opfor_plane_1";
+			type="c_plane";
+			colorName="ColorEAST";
+			id=157;
+		};
+		class Item87
+		{
+			dataType="Marker";
+			position[]={6889.3394,1.6308587e+021,13384.634};
+			name="mrk_spawn_opfor_helicopter_1";
+			type="c_air";
+			colorName="ColorEAST";
+			id=158;
+			atlOffset=1.6308587e+021;
+		};
+		class Item88
+		{
+			dataType="Marker";
+			position[]={11616.725,6.9499998,13218.52};
+			name="mrk_spawn_opfor_plane_2";
+			type="c_plane";
+			colorName="ColorEAST";
+			id=159;
+		};
+		class Item89
+		{
+			dataType="Marker";
+			position[]={11519.248,1.6308587e+021,13253.28};
+			name="mrk_spawn_opfor_helicopter_2";
+			type="c_air";
+			colorName="ColorEAST";
+			id=160;
+			atlOffset=1.6308587e+021;
+		};
+		class Item90
+		{
+			dataType="Marker";
+			position[]={12548.849,32.111496,6755.5386};
+			name="mrk_spawn_opfor_plane_3";
+			type="c_plane";
+			colorName="ColorEAST";
+			id=161;
+		};
+		class Item91
+		{
+			dataType="Marker";
+			position[]={12419.734,1.6308587e+021,6766.272};
+			name="mrk_spawn_opfor_helicopter_3";
+			type="c_air";
+			colorName="ColorEAST";
+			id=162;
+			atlOffset=1.6308587e+021;
+		};
+		class Item92
+		{
+			dataType="Marker";
+			position[]={13385.335,16.880117,11499.543};
+			name="mrk_spawn_opfor_plane_4";
+			type="c_plane";
+			colorName="ColorEAST";
+			id=163;
+		};
+		class Item93
+		{
+			dataType="Marker";
+			position[]={14157.555,1.6308587e+021,11753.962};
+			name="mrk_spawn_opfor_helicopter_4";
+			type="c_air";
+			colorName="ColorEAST";
+			id=164;
+			atlOffset=1.6308587e+021;
 		};
 	};
 	class Connections

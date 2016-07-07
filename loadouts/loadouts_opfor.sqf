@@ -32,7 +32,7 @@ opfor_default = {
 
 	this = _this select 0;
 
-	
+
 
 	[this] call stripHimNaked;
 
@@ -83,7 +83,7 @@ opfor_sql = {
 
 		[this] call set_opfor_basics;
 
-		player addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
+		this addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
 
 };
 
@@ -112,12 +112,12 @@ opfor_ftl = {
 	[this, "rhs_mag_rgd5", 2] call addMagazinesToBackpack;
 
 
-		this addPrimaryWeaponItem "rhs_acc_2dpZenit";
+	this addPrimaryWeaponItem "rhs_acc_2dpZenit";
 
 	[this] call set_opfor_basics;
 
 
-	player addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
+
 
 };
 
@@ -161,7 +161,7 @@ opfor_marksman = {
 
 	this = _this select 0;
 
-	
+
 
 	[this] call stripHimNaked;
 

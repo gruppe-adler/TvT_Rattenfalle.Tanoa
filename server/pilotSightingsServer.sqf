@@ -31,6 +31,10 @@ waitUntil {time > 4};
 
 
 while {true} do {
+  _text = "irgendwo";
+  _pos = [0,0];
+  _markerSize = 0;
+
   for "_i" from 0 to 12 do {
 	{
 		if (alive _x) then {

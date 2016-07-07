@@ -17,7 +17,7 @@ GRAD_fnc_stopCiv = {
     waitUntil {vehicle _civ == _civ};
     //};
 
-    _civ playMove (selectRandom GRAD_civInterrogationAnimations);
+    _civ switchmove (selectRandom GRAD_civInterrogationAnimations);
     sleep 1;
     _civ disableAI "MOVE";
     _civ disableAI "FSM";
@@ -26,7 +26,7 @@ GRAD_fnc_stopCiv = {
     diag_log format ["disabling AI"];
 
     waitUntil {sleep 1; _civ getVariable ["GRAD_isPointedAtBy",0] == 0};
-
+    _civ switchMove "";
     diag_log format ["reenabling AI"];
     _civ enableAI "MOVE";
     _civ enableAI "FSM";

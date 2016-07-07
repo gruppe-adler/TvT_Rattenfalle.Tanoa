@@ -18,7 +18,7 @@ _unit removeAllEventHandlers "firedNear"; // EH cleanup
 
 doStop _unit; _unit playMoveNow (_surrenderAnimations call BIS_fnc_selectRandom); // stop and surrender
 sleep 0.5;
-_unit disableAI "ANIM"; // stop running away
+_unit disableAI "MOVE"; // stop running away
 
 // shooting near the unit can improve negotiation skills
 _unit addEventHandler ["FiredNear",{
@@ -30,7 +30,7 @@ _unit addEventHandler ["FiredNear",{
 
 sleep 120; // 1min freeze
 
-_unit enableAI "ANIM";
+_unit enableAI "MOVE";
 // restart the whole thing, so he can run away
 _unit removeAllEventHandlers "firedNear"; // EH cleanup
 _unit addEventHandler ["FiredNear", {

@@ -36,6 +36,18 @@ if (isServer) then {
 		"mrk_spawn_blufor_water_3",
 		"mrk_spawn_blufor_water_4"
 		];
+	spawnArrayBluforPlane = [
+			"mrk_spawn_blufor_plane_1",
+			"mrk_spawn_blufor_plane_2",
+			"mrk_spawn_blufor_plane_3",
+			"mrk_spawn_blufor_plane_4"
+		];
+	spawnArrayBluforHelicopter = [
+				"mrk_spawn_blufor_helicopter_1",
+				"mrk_spawn_blufor_helicopter_2",
+				"mrk_spawn_blufor_helicopter_3",
+				"mrk_spawn_blufor_helicopter_4"
+		];
 	spawnArrayOpforLand = [
 		"mrk_spawn_opfor_land_1",
 		"mrk_spawn_opfor_land_2",
@@ -54,6 +66,18 @@ if (isServer) then {
 		"mrk_spawn_opfor_civilian_3",
 		"mrk_spawn_opfor_civilian_4"
 	];
+	spawnArrayOpforPlane = [
+			"mrk_spawn_opfor_plane_1",
+			"mrk_spawn_opfor_plane_2",
+			"mrk_spawn_opfor_plane_3",
+			"mrk_spawn_opfor_plane_4"
+		];
+	spawnArrayOpforHelicopter = [
+				"mrk_spawn_opfor_helicopter_1",
+				"mrk_spawn_opfor_helicopter_2",
+				"mrk_spawn_opfor_helicopter_3",
+				"mrk_spawn_opfor_helicopter_4"
+		];
 
 	civilianCarSupplier = "C_man_hunter_1_F"; // who will bring the cars if spawn method civilian is chosen
 
@@ -80,17 +104,26 @@ if (isServer) then {
 	spawnLocationBluforLand = getMarkerPos (spawnArrayBluforLand select _randBluInd);
 	spawnLocationBluforWater = getMarkerPos (spawnArrayBluforWater select _randBluInd);
 	spawnLocationCivilianBlufor = getMarkerPos (spawnArrayBluforCivilian select _randBluInd);
+	spawnLocationBluforPlane = getMarkerPos (spawnArrayBluforPlane select _randBluInd);
+	spawnLocationBluforHelicopter = getMarkerPos (spawnArrayBluforHelicopter select _randBluInd);
 
 	spawnLocationOpforLand = getMarkerPos (spawnArrayOpforLand select _randOpfInd);
 	spawnLocationOpforWater = getMarkerPos (spawnArrayOpforWater select _randOpfInd);
 	spawnLocationCivilianOpfor = getMarkerPos (spawnArrayOpforCivilian select _randOpfInd);
+	spawnLocationOpforPlane = getMarkerPos (spawnArrayOpforPlane select _randOpfInd);
+	spawnLocationOpforHelicopter = getMarkerPos (spawnArrayOpforHelicopter select _randOpfInd);
 
 	publicVariable "spawnLocationBluforLand";
 	publicVariable "spawnLocationBluforWater";
 	publicVariable "spawnLocationCivilianBlufor";
+	publicVariable "spawnLocationBluforPlane";
+	publicVariable "spawnLocationBluforHelicopter";
+
 	publicVariable "spawnLocationOpforLand";
 	publicVariable "spawnLocationOpforWater";
 	publicVariable "spawnLocationCivilianOpfor";
+	publicVariable "spawnLocationOpforPlane";
+	publicVariable "spawnLocationOpforHelicopter";
 
 	// broadcast supplies definitions
 	0 = [] execVM "grad_buymenu\definitions\suppliesBlufor.sqf";

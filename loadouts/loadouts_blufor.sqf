@@ -49,7 +49,7 @@ blufor_basic = {
 	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 10] call addMagazinesToBackpack;
 
 	this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
-	this addPrimaryWeaponItem "rhsusf_acc_compm4";
+	this addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
 	this addWeapon "rhsusf_weap_m9";
 
 	this addItemToUniform "ACE_microDAGR";
@@ -118,7 +118,7 @@ blufor_sql = {
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
 
-	player addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
+	this addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
 };
 
 blufor_ftl = {

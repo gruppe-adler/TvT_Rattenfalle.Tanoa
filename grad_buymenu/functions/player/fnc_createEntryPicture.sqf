@@ -21,7 +21,7 @@ fnc_createEntryPicture = {
 
 	_ctrlPicture ctrlSetBackgroundColor [0,0,0,0];
 
-	_ctrlPicture ctrlSetPosition [_xPos,3,0.25];
+	_ctrlPicture ctrlSetPosition [_xPos,3,0.25]; // 	_ctrlPicture ctrlSetPosition [_xPos,3,0.25];
 	[_ctrlPicture,[20,0,0]] call fnc_SetModelPitchBankYaw;
 	_ctrlPicture ctrlSetModel _model;
 	// [_ctrlPicture,[10,0,10]] call fnc_SetModelPitchBankYaw;

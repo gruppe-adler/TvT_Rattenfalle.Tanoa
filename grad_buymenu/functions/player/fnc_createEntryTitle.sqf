@@ -11,7 +11,7 @@ fnc_createEntryTitle = {
 
 	_ctrlTitle =  _display ctrlCreate ["RscStructuredText", _idc];
 
-	_ctrlTitle ctrlSetPosition [_xPos, safeZoneH/20*8, _width, safeZoneH/10];
+	_ctrlTitle ctrlSetPosition [_xPos, safeZoneH/20*7, _width, safeZoneH/10];
 	_ctrlTitle ctrlSetBackgroundColor [0,0,0,0];
 
 	_ctrlTitle ctrlSetStructuredText parseText ("<t size='1.6' color='#ffffff' shadow='0' align='center'>" + _title + "</t>");
