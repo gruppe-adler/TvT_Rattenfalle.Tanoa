@@ -1,2 +1,2 @@
 [] execVM "initWaveRespawn.sqf";
-[] execVM "civPointedAtListener.sqf";
+[] execVM "server\civPointedAtListener.sqf";

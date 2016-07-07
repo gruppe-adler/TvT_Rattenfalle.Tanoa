@@ -87,7 +87,8 @@ if (isServer) then {
 	// loadout for AI units
 	if (!isMultiplayer) then {
 	 	[] spawn {
- 			{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
+			sleep 10; // dont equip player multiple times
+ 			{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach (allUnits - allPlayers);
  		};
 	};
 

@@ -110,8 +110,8 @@ blufor_sql = {
 	removeBackpack this;
 	this addBackpack "tf_rt1523g_big_bwmod";
 
-	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addItemsToVest;
-	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addItemsToVest;
+	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addMagazinesToVest;
+	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addMagazinesToVest;
 
 	for "_i" from 1 to 2 do {this addItemToBackpack "rhs_mag_m67";};
 	this addItemToBackpack "SmokeShellRed";
