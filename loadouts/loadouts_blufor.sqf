@@ -48,9 +48,11 @@ blufor_basic = {
 	[this, "30Rnd_556x45_Stanag_Tracer_Red", 10] call addMagazinesToBackpack;
 	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 10] call addMagazinesToBackpack;
 
+
+	this addWeapon (selectRandom blufor_random_primaryweapon);
+	this addWeapon "rhsusf_weap_m9";
 	this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
 	this addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
-	this addWeapon "rhsusf_weap_m9";
 
 	this addItemToUniform "ACE_microDAGR";
 
@@ -110,8 +112,8 @@ blufor_sql = {
 	removeBackpack this;
 	this addBackpack "tf_rt1523g_big_bwmod";
 
-	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addMagazinesToVest;
-	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addMagazinesToVest;
+	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addMagazinesToBackpack;
+	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addMagazinesToBackpack;
 
 	for "_i" from 1 to 2 do {this addItemToBackpack "rhs_mag_m67";};
 	this addItemToBackpack "SmokeShellRed";
@@ -173,12 +175,12 @@ blufor_MG = {
 	comment "Add containers";
 
 
-	[this, "rhs_200rnd_556x45_T_SAW", 1] call addMagazinesToVest;
+	[this, "rhs_200rnd_556x45_T_SAW", 1] call addMagazinesToBackpack;
 	[this, "rhs_200rnd_556x45_M_SAW", 2] call addMagazinesToBackpack;
 
-	[this, "SmokeShell", 2] call addMagazinesToVest;
-	[this, "SmokeShellRed", 2] call addMagazinesToVest;
-	[this, "HandGrenade", 1] call addMagazinesToVest;
+	[this, "SmokeShell", 2] call addMagazinesToBackpack;
+	[this, "SmokeShellRed", 2] call addMagazinesToBackpack;
+	[this, "HandGrenade", 1] call addMagazinesToBackpack;
 
 
 	this addWeapon "Binocular";

@@ -37,16 +37,16 @@ if (isServer) then {
 		"mrk_spawn_blufor_water_4"
 		];
 	spawnArrayBluforPlane = [
-			"mrk_spawn_blufor_plane_1",
-			"mrk_spawn_blufor_plane_2",
-			"mrk_spawn_blufor_plane_3",
-			"mrk_spawn_blufor_plane_4"
+		"mrk_spawn_blufor_plane_1",
+		"mrk_spawn_blufor_plane_2",
+		"mrk_spawn_blufor_plane_3",
+		"mrk_spawn_blufor_plane_4"
 		];
 	spawnArrayBluforHelicopter = [
-				"mrk_spawn_blufor_helicopter_1",
-				"mrk_spawn_blufor_helicopter_2",
-				"mrk_spawn_blufor_helicopter_3",
-				"mrk_spawn_blufor_helicopter_4"
+		"mrk_spawn_blufor_helicopter_1",
+		"mrk_spawn_blufor_helicopter_2",
+		"mrk_spawn_blufor_helicopter_3",
+		"mrk_spawn_blufor_helicopter_4"
 		];
 	spawnArrayOpforLand = [
 		"mrk_spawn_opfor_land_1",
@@ -67,16 +67,16 @@ if (isServer) then {
 		"mrk_spawn_opfor_civilian_4"
 	];
 	spawnArrayOpforPlane = [
-			"mrk_spawn_opfor_plane_1",
-			"mrk_spawn_opfor_plane_2",
-			"mrk_spawn_opfor_plane_3",
-			"mrk_spawn_opfor_plane_4"
+		"mrk_spawn_opfor_plane_1",
+		"mrk_spawn_opfor_plane_2",
+		"mrk_spawn_opfor_plane_3",
+		"mrk_spawn_opfor_plane_4"
 		];
 	spawnArrayOpforHelicopter = [
-				"mrk_spawn_opfor_helicopter_1",
-				"mrk_spawn_opfor_helicopter_2",
-				"mrk_spawn_opfor_helicopter_3",
-				"mrk_spawn_opfor_helicopter_4"
+		"mrk_spawn_opfor_helicopter_1",
+		"mrk_spawn_opfor_helicopter_2",
+		"mrk_spawn_opfor_helicopter_3",
+		"mrk_spawn_opfor_helicopter_4"
 		];
 
 	civilianCarSupplier = "C_man_hunter_1_F"; // who will bring the cars if spawn method civilian is chosen
@@ -158,6 +158,7 @@ if (hasInterface) then {
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createEntryMouseOverArea.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createEntryETA.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createEntrySpawnMethod.sqf";
+		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createEntrySpawnMethodMouseOverArea.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createEntryBuyButton.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createEntryAmount.sqf";
 

@@ -1,5 +1,24 @@
 //test.sqf
 // https://forums.bistudio.com/topic/156858-dialogs-rsc-listbox-rsc-combo-box/
+_method = _this select 0;
+
+_side = str side player;
+_marker = "";
+
+if (_side == "west") then {
+	switch (_method) do {
+			case "plane": { _marker = spawnLocationBluforPlane;};
+			case "slingload": { _marker = spawnLocationBluforHelicopter;};
+			default {};
+	};
+} else {
+	switch (_method) do {
+			case "plane": { _marker = spawnLocationOpforPlane;};
+			case "slingload": { _marker = spawnLocationOpforHelicopter;};
+			default {};
+	};
+};
+
 disableSerialization;
 
 0 = createDialog "GRAD_buy_menu_select_airdrop";
