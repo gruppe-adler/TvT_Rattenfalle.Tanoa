@@ -21,7 +21,7 @@ fnc_createEntrySpawnMethodMouseOverArea = {
   if (_skip) exitWith {};
 
 
-  _ctrlMethodMouseOverArea =  _display ctrlCreate ["RscButton", _idc];
+  _ctrlMethodMouseOverArea =  _display ctrlCreate ["RscStructuredText", _idc];
 
   _ctrlMethodMouseOverArea ctrlSetPosition [_xPos, safeZoneH/20*11, _width, safeZoneH/15];
   _ctrlMethodMouseOverArea ctrlSetBackgroundColor [0,0,0,0];
@@ -44,10 +44,21 @@ fnc_createEntrySpawnMethodMouseOverArea = {
   }];
 
   if (_method == 1) then {
+      _ctrlMethodMouseOverArea ctrlAddEventHandler ["MouseButtonClick","
+        0 = ['plane'] execVM 'grad_buymenu\openMap.sqf';
+      "];
+  } else {
+      _ctrlMethodMouseOverArea ctrlAddEventHandler ["MouseButtonClick","
+        0 = ['slingload'] execVM 'grad_buymenu\openMap.sqf';
+      "];
+  };
+
+  /*
+  if (_method == 1) then {
     buttonSetAction [_idc, format["[%1] execVM 'grad_buymenu\openMap.sqf';",_method]];
   } else {
     buttonSetAction [_idc, format["[%1] execVM 'grad_buymenu\openMap.sqf';",_method]];
-  };
+  };*/
 
   _ctrlMethodMouseOverArea ctrlCommit 0;
 

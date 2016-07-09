@@ -12,7 +12,7 @@ fnc_createEntrySpawnMethod = {
 	_pic_w = safeZoneH/30;
 	_pic_h = _pic_w * 4 / 3;
 
-	_ctrlMethod ctrlSetPosition [_xPos + _width/2 - _pic_w/2, safeZoneH/20*11, _pic_w, _pic_h];
+	_ctrlMethod ctrlSetPosition [_xPos + _width/2 - _pic_w/2, safeZoneH/20*11.5, _pic_w, _pic_h];
 	_ctrlMethod ctrlSetBackgroundColor [0,0,0,0];
 
   _title = "";

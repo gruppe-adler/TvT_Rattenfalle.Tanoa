@@ -19,6 +19,12 @@ spawnChute = {
 		isDropped = false;
 		spawnChuteHeight = 400;
 
+		_airplanePos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+		_airplanePos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+		_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+		_airplanePos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+		_airplanePos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+
 		if (_side == west) then {
 					switch (SPAWN_APPROACH_BLUFOR) do {
 						case "NORTH": {
@@ -50,6 +56,7 @@ spawnChute = {
 							_airplanePos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 						};
 						default {
+							hintsilent "error: spawn direction not set!";
 							_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
@@ -88,6 +95,7 @@ spawnChute = {
 							_airplanePos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 						};
 						default {
+							hintsilent "error: spawn direction not set!";
 							_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;

@@ -5,7 +5,7 @@ fnc_addOrderListener = {
 	[] spawn {
 		while {true} do {
 		 waitUntil {count ordersBlufor > 0};
-		 // diag_log format ["ordersBlufor has received an order"];
+		  diag_log format ["ordersBlufor has received an order"];
 		  _nextorder = ordersBlufor select 0;
 
 		 // sleep (_nextorder select 0); // wait until eta is over
@@ -27,7 +27,7 @@ fnc_addOrderListener = {
 	[] spawn {
 		while {true} do {
 		 waitUntil {count ordersOpfor > 0};
-		 // diag_log format ["ordersOpfor has received an order"];
+		  diag_log format ["ordersOpfor has received an order"];
 		 _nextorder = ordersOpfor select 0;
 
 		 // sleep (_nextorder select 0); // wait until eta is over

@@ -247,7 +247,7 @@ class GRAD_buy_menu_select_airdrop
 		onLoad = "uiNamespace setVariable ['GRAD_buy_menu_select_airdrop', (_this select 0)];";
 		fadein = 0.25;
 		fadeout = 0.25;
-		controls[] = { RscCombo_AirDropDirection_txt, RscCombo_AirDropDirection_combo, RscText_map_headline };
+		controls[] = { RscCombo_AirDropDirection_txt, RscCombo_AirDropDirection_combo, RscText_map_headline, RscWindIntuitive };
 
 		class controlsBackground
 				{
@@ -263,6 +263,7 @@ class GRAD_buy_menu_select_airdrop
 
 
 				};
+
 
 	  class RscText_map_headline : RscStructuredText {
 			idc = -1;
@@ -295,6 +296,21 @@ class GRAD_buy_menu_select_airdrop
 			h = 1.5 * GUI_GRID_H;
 			colorBackground[] = {0,0,0,0.8};
 		};
+		class RscWindIntuitive {
+			idc=2339;
+			type=0;
+			style=48;
+			font="TahomaB";
+			colorBackground[]={0,0,0,0};
+			colorText[]={0,0,0,0};
+			x="SafeZoneX + 0.001";
+			y="SafeZoneY + 0.001";
+			w=0.2;
+			h=0.2*4/3;
+			size=0.034;
+			sizeEx=0.027;
+			text="";
+			};
 };
 
 class RscTitles {

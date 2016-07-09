@@ -41,6 +41,7 @@ spawnCiv = {
 		if (count _civInit > 0) then {
 				[_vehicle, nil, _civInit] call BIS_fnc_initVehicle;
 		};
+		_vehicle setVehicleLock "UNLOCKED";
 
 		_wp0 = _civGroup addWaypoint [_civPos, 0];
 		_wp0 setWaypointStatements ["true", "(vehicle (leader group this)) allowDamage true; group this leaveVehicle (vehicle (leader group this));"];

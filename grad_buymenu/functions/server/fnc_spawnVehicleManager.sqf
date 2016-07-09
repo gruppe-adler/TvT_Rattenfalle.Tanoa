@@ -13,11 +13,11 @@ fnc_spawnVehicleManager = {
 	_spawnObjectType = _this select 1; 	// classname of object to be spawned
 	_postinit = _this select 2; 		// vehicle init
 	_calls = _this select 3; 			// extra calls made after spawn
-	_spawnMethod = _this select 4;		
-	// 0 spawn at ground, 
-	// 1 spawn with chute, 
-	// 2 spawn with heli carrier, 
-	// 3 spawn with civilian driving it 
+	_spawnMethod = _this select 4;
+	// 0 spawn at ground,
+	// 1 spawn with chute,
+	// 2 spawn with heli carrier,
+	// 3 spawn with civilian driving it
 	// 4 spawn at water marker
 	_selector = _this select 5;
 	_side = _this select 6;
@@ -26,7 +26,7 @@ fnc_spawnVehicleManager = {
 	// diag_log format["spawnmethod is %1", _spawnMethod];
 
 
-	
+
 
 
 	switch (_spawnMethod) do {
@@ -36,7 +36,7 @@ fnc_spawnVehicleManager = {
 		case 2: { [_pos, _spawnObjectType, _postinit, _calls, _selector, _side] call spawnSlingLoad; };
 		case 3: { [_pos, _spawnObjectType, _postinit, _calls, _selector, _side] call spawnCiv; };
 		case 4: { [_pos, _spawnObjectType, _postinit, _calls, _selector, _side] call spawnWater; };
-		default {};
+		default { diag_log format ["FATAL ERROR , no spawn method"];};
 
 	};
 

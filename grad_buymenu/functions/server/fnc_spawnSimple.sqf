@@ -15,5 +15,8 @@ spawnSimple = {
 	if (count _init > 0) then {
 			[_vehicle, nil, _init] call BIS_fnc_initVehicle;
 	};
+
+	_vehicle setVehicleLock "UNLOCKED";
+	
 	[_side, _selector] call fnc_prepareAfterBuyRefresh;
 };

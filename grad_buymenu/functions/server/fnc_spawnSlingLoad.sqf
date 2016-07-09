@@ -14,6 +14,11 @@ spawnSlingLoad = {
 			case east: {_spawnVehicleClass = spawnSlingLoadVehicleClassOpfor};
 			default {};
 		};
+		_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+		_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+		_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+		_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+		_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 
 		if (_side == west) then {
 					switch (SPAWN_APPROACH_BLUFOR) do {
@@ -46,6 +51,7 @@ spawnSlingLoad = {
 							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 						};
 						default {
+							hintsilent "error: spawn direction not set!";
 							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
@@ -84,6 +90,7 @@ spawnSlingLoad = {
 							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 						};
 						default {
+							hintsilent "error: spawn direction not set!";
 							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
@@ -197,6 +204,8 @@ spawnSlingLoad = {
 
 		_vehicle setMass _origVehicleMass;
 		_vehicle allowDamage true;
+		_vehicle setVehicleLock "UNLOCKED";
+
 		if (count _ropecount > 0) then {} else {
 				detach _vehicle;
 				deleteVehicle _dummyVehicle;

@@ -10,7 +10,7 @@ cutText ["", "BLACK OUT", 0.1];
 if (isMultiplayer) then {
   sleep (random 10);
 };
-
+[player] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",player];
 _spawn = _location findEmptyPosition[2, 20, "B_Soldier_F"];
 diag_log format ["teleporting %1 to %2.", player, _location];
 

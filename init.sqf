@@ -9,7 +9,7 @@ setViewDistance 3500;
 // player_respawned = 0;
 checkObjectives = false; // false is debug for playing without pilot
 
-{_x setMarkerAlpha 0;} forEach allMapMarkers;
+{_x setMarkerAlphaLocal 0;} forEach allMapMarkers;
 
 0 = [] execVM "grad_buymenu\buymenu_init.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
@@ -108,11 +108,7 @@ if (hasInterface) then {
 		"player distance _target < 4 && !(_target getVariable ['revealed',false])"];
 	};
 
-	fnc_showMarkers = {
-		if (playerSide == (_this select 0)) then {
-			{_x setMarkerAlpha 1;} forEach (_this select 1);
-		};
-	};
+
 
 	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 

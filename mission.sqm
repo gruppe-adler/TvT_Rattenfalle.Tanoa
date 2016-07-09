@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={5171.6846,175.71548,2379.6292};
-		dir[]={-0.7762121,-0.35529193,0.52100545};
-		up[]={-0.29508969,0.93470538,0.19806795};
-		aside[]={0.55736208,2.0701555e-007,0.83037394};
+		pos[]={4177.1304,182.35573,3367.5554};
+		dir[]={-0.9466157,-0.19436558,0.25763011};
+		up[]={-0.18770793,0.98088199,0.05108434};
+		aside[]={0.26263732,7.1222894e-007,0.96500838};
 	};
 };
 binarizationWanted=0;
@@ -47,13 +47,14 @@ addons[]=
 	"ace_nightvision",
 	"ace_map_gestures",
 	"ace_explosives",
-	"A3_Air_F_Exp_Plane_Civil_01"
+	"A3_Air_F_Exp_Plane_Civil_01",
+	"A3_Air_F_Heli_Light_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=24;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -213,6 +214,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
+		class Item23
+		{
+			className="A3_Air_F";
+			name="Arma 3 Alpha - Aircrafts";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
 	};
 };
 randomSeed=7385247;
@@ -336,7 +344,7 @@ class Mission
 		class Item6
 		{
 			dataType="Trigger";
-			position[]={1478.4308,-48.919922,389.06689};
+			position[]={1599.2153,-14.158083,598.42896};
 			class Attributes
 			{
 				name="trg_pilots_rescued";
@@ -349,12 +357,11 @@ class Mission
 			};
 			id=6;
 			type="EmptyDetector";
-			atlOffset=3.9987488;
 		};
 		class Item7
 		{
 			dataType="Trigger";
-			position[]={1393.0513,-46.634087,384.50848};
+			position[]={1498.0861,-16.951118,599.25751};
 			class Attributes
 			{
 				name="trg_pilots_dead";
@@ -2124,13 +2131,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1410.0443,9.1260986,418.90851};
+				position[]={1500.1584,12.980422,699.97192};
 			};
 			name="headless";
 			isPlayable=1;
 			id=56;
 			type="HeadlessClient_F";
-			atlOffset=43.698582;
+			atlOffset=9.190896;
 		};
 		class Item24
 		{
