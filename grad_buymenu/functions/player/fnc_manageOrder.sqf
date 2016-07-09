@@ -16,9 +16,9 @@ fnc_addBluforOrder = {
 
 	_neworder = [];
 	if (_method != 4) then {
-		_neworder = [_eta, spawnLocationBluforLand, _classname, _init, _calls, _method, _selector];
+		_neworder = [_eta, getMarkerPos spawnMarkerBluforLand, _classname, _init, _calls, _method, _selector];
 	} else {
-		_neworder = [_eta, spawnLocationBluforWater, _classname, _init, _calls, _method, _selector];
+		_neworder = [_eta, getMarkerPos spawnMarkerBluforWater, _classname, _init, _calls, _method, _selector];
 	};
 
 	ordersBlufor = ordersBlufor + [_neworder];
@@ -41,9 +41,9 @@ fnc_addOpforOrder = {
 
 	_neworder = [];
 	if (_method != 4) then {
-		_neworder = [_eta, spawnLocationOpforLand, _classname, _init, _calls, _method, _selector];
+		_neworder = [_eta, getMarkerPos spawnMarkerOpforLand, _classname, _init, _calls, _method, _selector];
 	} else {
-		_neworder = [_eta, spawnLocationOpforWater, _classname, _init, _calls, _method, _selector];
+		_neworder = [_eta, getMarkerPos spawnMarkerOpforWater, _classname, _init, _calls, _method, _selector];
 	};
 
 	ordersOpfor = ordersOpfor + [_neworder];

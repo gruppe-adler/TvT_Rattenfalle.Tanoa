@@ -1,3 +1,5 @@
+if (!DEBUG) exitWith {};
+
 _pos = _this select 0;
 _text = _this select 1;
 _local_marker = createMarker [format["%1",_pos],_pos];

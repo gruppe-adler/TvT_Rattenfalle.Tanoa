@@ -11,8 +11,8 @@ fnc_createEntryMouseOverArea = {
 
 	_mouseOverArea =  _display ctrlCreate ["RscStructuredText", _idc];
 
-	_mouseOverArea ctrlSetPosition [_xPos, safeZoneY, _width, safeZoneY + safeZoneH];
-	_mouseOverArea ctrlSetBackgroundColor [1,0,0,0.5];
+	_mouseOverArea ctrlSetPosition [_xPos, safeZoneY, _width, (safeZoneY + safeZoneH)/2];
+	_mouseOverArea ctrlSetBackgroundColor [0,0,0,0];
 
 
 	_mouseOverArea ctrlAddEventHandler ["MouseEnter",{

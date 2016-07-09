@@ -33,9 +33,9 @@ createCrashSite=  {
 
 
 createRebelsSpawn = {
-	waitUntil {!isNil "spawnLocationOpforLand"};
+	waitUntil {!isNil "spawnMarkerOpforLand"};
 
-	REBEL_SPAWN = spawnLocationOpforLand;
+	REBEL_SPAWN = getMarkerPos spawnMarkerOpforLand;
 	publicVariable "REBEL_SPAWN";
 
 	respawn_east setPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0];
@@ -44,9 +44,9 @@ createRebelsSpawn = {
 };
 
 createUSSpawn = {
-	waitUntil {!isNil "spawnLocationBluforLand"};
+	waitUntil {!isNil "spawnMarkerBluforLand"};
 
-	US_SPAWN = spawnLocationBluforLand;
+	US_SPAWN = getMarkerPos spawnMarkerBluforLand;
 	publicVariable "US_SPAWN";
 
 	respawn_west setPos [US_SPAWN select 0, US_SPAWN select 1, 0];

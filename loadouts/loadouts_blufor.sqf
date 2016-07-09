@@ -52,7 +52,7 @@ blufor_basic = {
 	this addWeapon (selectRandom blufor_random_primaryweapon);
 	this addWeapon "rhsusf_weap_m9";
 	this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
-	this addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
+	this addPrimaryWeaponItem "rhsusf_acc_eotech_552";
 
 	this addItemToUniform "ACE_microDAGR";
 

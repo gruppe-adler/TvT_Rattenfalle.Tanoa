@@ -1,5 +1,5 @@
 spawnSlingLoad = {
-		_drop_pos = _this select 0;
+		_drop_pos = getMarkerPos spawnMarkerOpforHelicopter; // _this select 0;
 		_classname = _this select 1;
 		_init = _this select 2;
 		_call = _this select 3;
@@ -8,18 +8,92 @@ spawnSlingLoad = {
 		_spawnVehicleClass = spawnSlingLoadVehicleClassBlufor;
 
 
+
 		switch (_side) do {
 			case west: {_spawnVehicleClass = spawnSlingLoadVehicleClassBlufor};
 			case east: {_spawnVehicleClass = spawnSlingLoadVehicleClassOpfor};
 			default {};
 		};
 
+		if (_side == west) then {
+					switch (SPAWN_APPROACH_BLUFOR) do {
+						case "NORTH": {
+							_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+						};
+						case "WEST": {
+							_chopperPos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+						};
+						case "SOUTH": {
+							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+						case "EAST": {
+							_chopperPos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+						};
+						default {
+							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+					};
+		} else {
+					switch (SPAWN_APPROACH_OPFOR) do {
+						case "NORTH": {
+							_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+						};
+						case "WEST": {
+							_chopperPos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+						};
+						case "SOUTH": {
+							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+						case "EAST": {
+							_chopperPos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+						};
+						default {
+							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+					};
+		};
 
-		_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
-		_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
-		_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-		_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
-		_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+
 
 
 		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 50], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;

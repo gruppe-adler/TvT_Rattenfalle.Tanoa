@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2108.3596,30.532606,3457.7544};
-		dir[]={0.69070107,-0.39513439,-0.60577607};
-		up[]={0.29714105,0.91857612,-0.26060554};
-		aside[]={-0.65942901,2.1944288e-007,-0.75187212};
+		pos[]={5171.6846,175.71548,2379.6292};
+		dir[]={-0.7762121,-0.35529193,0.52100545};
+		up[]={-0.29508969,0.93470538,0.19806795};
+		aside[]={0.55736208,2.0701555e-007,0.83037394};
 	};
 };
 binarizationWanted=0;
@@ -47,14 +47,13 @@ addons[]=
 	"ace_nightvision",
 	"ace_map_gestures",
 	"ace_explosives",
-	"A3_Air_F_Exp_Plane_Civil_01",
-	"A3_Air_F_Heli_Light_01"
+	"A3_Air_F_Exp_Plane_Civil_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=24;
+		items=23;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -211,13 +210,6 @@ class AddonsMetaData
 		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircrafts";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item23
-		{
-			className="A3_Air_F";
-			name="Arma 3 Alpha - Aircrafts";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};

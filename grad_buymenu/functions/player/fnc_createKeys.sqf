@@ -12,7 +12,7 @@ fnc_createKeys = {
   	_ctrlPriceKey ctrlSetTextColor [1,1,1,0.5];
 
     _ctrlAmountKey =  _display ctrlCreate ["RscStructuredText", _idc];
-    _ctrlAmountKey ctrlSetPosition [_xPos,safeZoneH/20*10, safeZoneW/20, safeZoneH/10];
+    _ctrlAmountKey ctrlSetPosition [_xPos,safeZoneH/20*9.5, safeZoneW/20, safeZoneH/10];
     _ctrlAmountKey ctrlSetBackgroundColor [0,0,0,0];
     _ctrlAmountKey ctrlSetStructuredText parseText ("<t color='#c0c0c0' shadow='0' align='left'>Amount</t>");
     _ctrlAmountKey ctrlSetTextColor [1,1,1,0.5];

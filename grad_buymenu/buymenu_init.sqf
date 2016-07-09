@@ -101,29 +101,35 @@ if (isServer) then {
 	_randBluInd = ceil (random 3);
 	_randOpfInd = ceil (random 3);
 
-	spawnLocationBluforLand = getMarkerPos (spawnArrayBluforLand select _randBluInd);
-	spawnLocationBluforWater = getMarkerPos (spawnArrayBluforWater select _randBluInd);
-	spawnLocationCivilianBlufor = getMarkerPos (spawnArrayBluforCivilian select _randBluInd);
-	spawnLocationBluforPlane = getMarkerPos (spawnArrayBluforPlane select _randBluInd);
-	spawnLocationBluforHelicopter = getMarkerPos (spawnArrayBluforHelicopter select _randBluInd);
+	spawnMarkerBluforLand = (spawnArrayBluforLand select _randBluInd);
+	spawnMarkerBluforWater = (spawnArrayBluforWater select _randBluInd);
+	spawnMarkerCivilianBlufor = (spawnArrayBluforCivilian select _randBluInd);
+	spawnMarkerBluforPlane = (spawnArrayBluforPlane select _randBluInd);
+	spawnMarkerBluforHelicopter = (spawnArrayBluforHelicopter select _randBluInd);
 
-	spawnLocationOpforLand = getMarkerPos (spawnArrayOpforLand select _randOpfInd);
-	spawnLocationOpforWater = getMarkerPos (spawnArrayOpforWater select _randOpfInd);
-	spawnLocationCivilianOpfor = getMarkerPos (spawnArrayOpforCivilian select _randOpfInd);
-	spawnLocationOpforPlane = getMarkerPos (spawnArrayOpforPlane select _randOpfInd);
-	spawnLocationOpforHelicopter = getMarkerPos (spawnArrayOpforHelicopter select _randOpfInd);
+	spawnMarkerOpforLand = (spawnArrayOpforLand select _randOpfInd);
+	spawnMarkerOpforWater = (spawnArrayOpforWater select _randOpfInd);
+	spawnMarkerCivilianOpfor = (spawnArrayOpforCivilian select _randOpfInd);
+	spawnMarkerOpforPlane = (spawnArrayOpforPlane select _randOpfInd);
+	spawnMarkerOpforHelicopter = (spawnArrayOpforHelicopter select _randOpfInd);
 
-	publicVariable "spawnLocationBluforLand";
-	publicVariable "spawnLocationBluforWater";
-	publicVariable "spawnLocationCivilianBlufor";
-	publicVariable "spawnLocationBluforPlane";
-	publicVariable "spawnLocationBluforHelicopter";
+	publicVariable "spawnMarkerBluforLand";
+	publicVariable "spawnMarkerBluforWater";
+	publicVariable "spawnMarkerCivilianBlufor";
+	publicVariable "spawnMarkerBluforPlane";
+	publicVariable "spawnMarkerBluforHelicopter";
 
-	publicVariable "spawnLocationOpforLand";
-	publicVariable "spawnLocationOpforWater";
-	publicVariable "spawnLocationCivilianOpfor";
-	publicVariable "spawnLocationOpforPlane";
-	publicVariable "spawnLocationOpforHelicopter";
+	publicVariable "spawnMarkerOpforLand";
+	publicVariable "spawnMarkerOpforWater";
+	publicVariable "spawnMarkerCivilianOpfor";
+	publicVariable "spawnMarkerOpforPlane";
+	publicVariable "spawnMarkerOpforHelicopter";
+
+	SPAWN_APPROACH_BLUFOR = "NORTH";
+	SPAWN_APPROACH_OPFOR = "NORTH";
+
+	publicVariable "SPAWN_APPROACH_BLUFOR";
+	publicVariable "SPAWN_APPROACH_OPFOR";
 
 	// broadcast supplies definitions
 	0 = [] execVM "grad_buymenu\definitions\suppliesBlufor.sqf";
@@ -142,7 +148,7 @@ if (hasInterface) then {
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_addRefreshListener.sqf";
 
 		// G U I   f u n c t i o n s // do not edit below
-		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_hideMarkers.sqf";
+		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_showMarkers.sqf";
 
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_SetModelPitchBankYaw.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_calculateValuesColumn.sqf";
@@ -169,7 +175,9 @@ if (hasInterface) then {
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_manageOrder.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_refreshCredits.sqf";
 
-		// [] spawn fnc_hideMarkers;
+		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_moveDropMarker.sqf";
+
+		[] spawn fnc_showMarkers;
 
 };
 
@@ -189,5 +197,6 @@ if (isServer) then {
 	[] spawn fnc_raiseBluforMoney;
 	[] spawn fnc_raiseOpforMoney;
 	[] spawn fnc_addOrderListener;
+
 
 };

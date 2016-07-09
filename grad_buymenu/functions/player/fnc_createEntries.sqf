@@ -33,7 +33,7 @@ fnc_createEntries = {
 			_width = _valueMeasurements select 1;
 			_picXCoord = _picMeasurements select 0;
 
-			/*
+
 			 randIDC = [randIDC] call fnc_getNextIDC;
 			 _btn = [randIDC, _createdGui, _xCoord, _width] spawn fnc_createEntryMouseOverArea;
 
@@ -56,13 +56,13 @@ fnc_createEntries = {
 
 			 randIDC = [randIDC] call fnc_getNextIDC;
 			 _amount = [randIDC, _createdGui, _xCoord, _width,_x select 2] spawn fnc_createEntryAmount;
-			 */
 
-			 randIDC = [randIDC] call fnc_getNextIDC;
-			 _amount = [randIDC, _createdGui, _xCoord, _width,_x select 8] spawn fnc_createEntrySpawnMethodMouseOverArea;
 
 			 randIDC = [randIDC] call fnc_getNextIDC;
 			 _amount = [randIDC, _createdGui, _xCoord, _width,_x select 8] spawn fnc_createEntrySpawnMethod;
+
+			 randIDC = [randIDC] call fnc_getNextIDC;
+			 _amount = [randIDC, _createdGui, _xCoord, _width,_x select 8] spawn fnc_createEntrySpawnMethodMouseOverArea;
 
 			 // randIDC = [randIDC] call fnc_getNextIDC;
 			 // _eta = [randIDC, _createdGui, _xCoord, _width,_x select 4] spawn fnc_createEntryETA;

@@ -9,7 +9,7 @@ fnc_createEntryAmount = {
 
 	_ctrlAmount =  _display ctrlCreate ["RscStructuredText", _idc];
 
-	_ctrlAmount ctrlSetPosition [_xPos,safeZoneH/20*10, _width, safeZoneH/10];
+	_ctrlAmount ctrlSetPosition [_xPos,safeZoneH/20*9.5, _width, safeZoneH/10];
 	_ctrlAmount ctrlSetBackgroundColor [0,0,0,0];
 
 	_ctrlAmount ctrlSetStructuredText parseText ("<t shadow='0' align='center'>" + str _title + "</t>");

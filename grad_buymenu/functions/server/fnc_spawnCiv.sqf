@@ -12,9 +12,9 @@ spawnCiv = {
 
 
 		if (_civSide == west) then {
-			_spawnLocationVehicle = spawnLocationCivilianBlufor;
+			_spawnLocationVehicle = spawnMarkerCivilianBlufor;
 		} else {
-			_spawnLocationVehicle = spawnLocationCivilianOpfor;
+			_spawnLocationVehicle = spawnMarkerCivilianOpfor;
 		};
 
 

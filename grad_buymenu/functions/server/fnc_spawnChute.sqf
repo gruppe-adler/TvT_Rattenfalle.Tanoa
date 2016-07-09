@@ -19,11 +19,85 @@ spawnChute = {
 		isDropped = false;
 		spawnChuteHeight = 400;
 
-		_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
-		_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
-		_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-		_airplanePos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
-		_airplanePos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+		if (_side == west) then {
+					switch (SPAWN_APPROACH_BLUFOR) do {
+						case "NORTH": {
+							_airplanePos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+						};
+						case "WEST": {
+							_airplanePos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+						};
+						case "SOUTH": {
+							_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+						case "EAST": {
+							_airplanePos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+						};
+						default {
+							_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+					};
+		} else {
+					switch (SPAWN_APPROACH_OPFOR) do {
+						case "NORTH": {
+							_airplanePos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+						};
+						case "WEST": {
+							_airplanePos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+						};
+						case "SOUTH": {
+							_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+						case "EAST": {
+							_airplanePos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+						};
+						default {
+							_airplanePos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_airplanePos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_airplanePos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
+							_airplanePos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_airplanePos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+						};
+					};
+		};
+
+
 
 		_carrierPlaneArray = [[_airplanePos0 select 0, _airplanePos0 select 1, spawnChuteHeight], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
 		_carrierPlane = _carrierPlaneArray select 0;
