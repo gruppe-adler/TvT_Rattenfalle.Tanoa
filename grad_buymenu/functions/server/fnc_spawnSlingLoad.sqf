@@ -1,19 +1,27 @@
 spawnSlingLoad = {
-		_drop_pos = getMarkerPos spawnMarkerOpforHelicopter; // _this select 0;
+
 		_classname = _this select 1;
 		_init = _this select 2;
 		_call = _this select 3;
 		_selector = _this select 4;
 		_side = _this select 5;
+
+		_drop_pos = [0,0];
 		_spawnVehicleClass = spawnSlingLoadVehicleClassBlufor;
 
 
-
 		switch (_side) do {
-			case west: {_spawnVehicleClass = spawnSlingLoadVehicleClassBlufor};
-			case east: {_spawnVehicleClass = spawnSlingLoadVehicleClassOpfor};
+			case west: {
+				_spawnVehicleClass = spawnSlingLoadVehicleClassBlufor;
+				_drop_pos = getMarkerPos spawnMarkerBluforHelicopter; // _this select 0;
+			};
+			case east: {
+				_spawnVehicleClass = spawnSlingLoadVehicleClassOpfor;
+				_drop_pos = getMarkerPos spawnMarkerOpforHelicopter; // _this select 0;
+			};
 			default {};
 		};
+
 		_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 		_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
 		_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;

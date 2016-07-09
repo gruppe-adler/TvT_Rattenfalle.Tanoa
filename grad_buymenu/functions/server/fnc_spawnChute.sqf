@@ -1,17 +1,25 @@
 spawnChute = {
 
-		_drop_pos = _this select 0;
+		// _drop_pos = _this select 0;
 		_classname = _this select 1;
 		_init = _this select 2;
 		_call = _this select 3;
 		_selector = _this select 4;
 		_side = _this select 5;
 
+		_drop_pos = [0,0];
 		_spawnVehicleClass = spawnSlingLoadVehicleClassBlufor;
 
+
 		switch (_side) do {
-			case west: {_spawnVehicleClass = spawnChuteVehicleClassBlufor};
-			case east: {_spawnVehicleClass = spawnChuteVehicleClassOpfor};
+			case west: {
+				_spawnVehicleClass = spawnChuteVehicleClassBlufor;
+				_drop_pos = getMarkerPos spawnMarkerBluforPlane; // _this select 0;
+			};
+			case east: {
+				_spawnVehicleClass = spawnChuteVehicleClassOpfor;
+				_drop_pos = getMarkerPos spawnMarkerOpforPlane; // _this select 0;
+			};
 			default {};
 		};
 

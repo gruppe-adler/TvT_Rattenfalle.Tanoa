@@ -289,7 +289,7 @@ class GRAD_buy_menu_select_airdrop
 		class RscCombo_AirDropDirection_txt: RscStructuredText
 		{
 			idc = 2340;
-			text = "Anflugrichtung"; //--- ToDo: Localize;
+			text = "to be done"; //--- ToDo: Localize;
 			x = safeZoneW + safeZoneX - (8.5 * GUI_GRID_W);
 			y = 5 * GUI_GRID_H + GUI_GRID_Y;
 			w = 8.5 * GUI_GRID_W;

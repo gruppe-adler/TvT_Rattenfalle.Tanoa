@@ -25,7 +25,7 @@ disableSerialization;
 waitUntil {dialog};
 
 //display ace wind info
-[] call fnc_displayWindInfo;
+[] spawn fnc_displayWindInfo;
 
 _createdGui = uiNamespace getVariable ['GRAD_buy_menu_select_airdrop',0];
 
@@ -35,11 +35,11 @@ _comboA = 2339;
 {
 	_index = lbAdd [_comboA, _x];
 	_data = (_createdGui displayCtrl _comboA) lbSetData [_forEachIndex, _x];
-	hintsilent format ["adding %1 to list with index %2",_x,_forEachIndex];
-} forEach ["NORTH","EAST","SOUTH","WEST"];
+	// hintsilent format ["adding %1 to list with index %2",_x,_forEachIndex];
+} forEach ["NORTH"];
 
 
-
+/*
 if (side player == west) then {
 	switch (SPAWN_APPROACH_BLUFOR) do {
 		case "NORTH": { (_createdGui displayCtrl _comboA) lbSetCurSel 0; };
@@ -57,21 +57,23 @@ if (side player == west) then {
 		default {(_createdGui displayCtrl _comboA) lbSetCurSel 0;  diag_log "resetting listbox to north"; };
 	};
 };
-
+*/
 //set an event to fire when a selection is made in comboA
+/*
 if (side player == west) then {
 	(_createdGui displayCtrl _comboA) ctrlAddEventHandler ["LBSelChanged",{
-	SPAWN_APPROACH_BLUFOR = lbData (_this select 1);
+	SPAWN_APPROACH_BLUFOR = (uiNamespace getVariable ['GRAD_buy_menu_select_airdrop',0] displayCtrl _comboA) lbData (_this select 1);
 	publicVariable "SPAWN_APPROACH_BLUFOR";
 	diag_log format ["changing blufor approach to %1", SPAWN_APPROACH_BLUFOR];
 	}];
 } else {
 	(_createdGui displayCtrl _comboA) ctrlAddEventHandler ["LBSelChanged",{
-	SPAWN_APPROACH_OPFOR = lbData (_this select 1);
+	SPAWN_APPROACH_OPFOR = (uiNamespace getVariable ['GRAD_buy_menu_select_airdrop',0] displayCtrl _comboA) lbData (_this select 1);
 	publicVariable "SPAWN_APPROACH_OPFOR";
 	diag_log format ["changing opfor approach to %1", SPAWN_APPROACH_OPFOR];
 	}];
 };
+*/
 //"hintsilent format ['%1',(_this select 0) lbText (_this select 1)];
 
 _createdGui displayCtrl 2338 ctrlMapCursor ["","HC_overFriendly"];

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4177.1304,182.35573,3367.5554};
-		dir[]={-0.9466157,-0.19436558,0.25763011};
-		up[]={-0.18770793,0.98088199,0.05108434};
-		aside[]={0.26263732,7.1222894e-007,0.96500838};
+		pos[]={4235.5122,203.9359,3360.4648};
+		dir[]={-0.25842708,-0.36218616,-0.8956964};
+		up[]={-0.10043902,0.93203741,-0.3481243};
+		aside[]={-0.9609136,9.482028e-007,0.2772454};
 	};
 };
 binarizationWanted=0;
@@ -1582,11 +1582,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1874.2708,-45.96051,520.69287};
+				position[]={1874.271,-45.960106,520.69299};
 			};
 			id=46;
 			type="ace_weather_ModuleSettings";
-			atlOffset=1.6626129;
+			atlOffset=1.663002;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1604,7 +1604,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -1661,7 +1661,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -1680,7 +1680,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -1699,7 +1699,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};

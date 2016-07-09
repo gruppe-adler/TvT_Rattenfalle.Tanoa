@@ -1,6 +1,6 @@
 while {alive player} do {
      if (!weaponLowered player) then {
-         if ( (side cursorTarget) == civilian) then {
+         if ( (side cursorTarget) == civilian && player distance cursorTarget < 50) then {
            _civ = cursorTarget;
 
            if (_civ getVariable ["GRAD_isPointedAtBy",0] == 0) then {

@@ -24,7 +24,7 @@ fnc_displayWindInfo = {
 
     #define _mapcontrol (__dsp displayCtrl 2338)
 
-    _mousePositionOnWorld = [0,0];
+    mousePositionOnWorld = [0,0];
     // _mapdisplay = uiNamespace getVariable ['GRAD_buy_menu_select_airdrop',0];
 
     /*
@@ -58,36 +58,39 @@ fnc_displayWindInfo = {
             [
             	"MouseMoving",
             	{
-            		_mousePositionOnWorld = (_this select 0) ctrlMapScreenToWorld [_this select 1,_this select 2];
-                diag_log format ["_mousePositionOnWorld %1", _mousePositionOnWorld];
+            		mousePositionOnWorld = (_this select 0) ctrlMapScreenToWorld [_this select 1,_this select 2];
+                // diag_log format ["mousePositionOnWorld %1", mousePositionOnWorld];
             	}
             ];
 
         //Keeps the display open:
         // (["RscWindIntuitive"] call BIS_fnc_rscLayer) cutRsc ["RscWindIntuitive", "PLAIN", 1, false];
-
-        private _windSpeed = if (missionNamespace getVariable [QEGVAR(advanced_ballistics,enabled), false]) then {
-
-            // With wind gradient
-             [
-              _mousePositionOnWorld,
-             true, true, true
-             ] call FUNC(calculateWindSpeed); // [eyePos ACE_player, true, true, true] call FUNC(calculateWindSpeed);
-            // diag_log format ["mapposition is %1",_mapdisplay displayctrl 2338 ctrlMapScreenToWorld getMousePosition];
-        } else {
-
-            // Without wind gradient
-            [
-            _mousePositionOnWorld,
-            false, true, true
-            ] call FUNC(calculateWindSpeed);
-            // diag_log format ["mapposition is %1",_mapdisplay displayctrl 2338 ctrlMapScreenToWorld getMousePosition];
-        };
+        _windSpeed = vectorMagnitude ACE_wind;
 
 
         private _playerDir = 0; // always north // (ACE_player call CBA_fnc_headDir) select 0;
         private _windDir = (ACE_wind select 0) atan2 (ACE_wind select 1);
         _windDir = 30 * (round(((_windDir - _playerDir + 360) % 360) / 30));
+
+        _windDirString = localize ([
+              LSTRING(S),
+              LSTRING(SSW),
+              LSTRING(SW),
+              LSTRING(WSW),
+              LSTRING(W),
+              LSTRING(WNW),
+              LSTRING(NW),
+              LSTRING(NNW),
+              LSTRING(N),
+              LSTRING(NNE),
+              LSTRING(NE),
+              LSTRING(ENE),
+              LSTRING(E),
+              LSTRING(ESE),
+              LSTRING(SE),
+              LSTRING(SSE),
+              LSTRING(S)
+          ] select (round (_windDir / 360 * 16)));
 
         // Color Codes from https://en.wikipedia.org/wiki/Beaufort_scale#Modern_scale
         private _beaufortNumber = 0;
@@ -105,7 +108,15 @@ fnc_displayWindInfo = {
         if (_windSpeed > 28.4) then { _windColor = [1, 0.22, 0.027, 1]; _beaufortNumber = 11; };
         if (_windSpeed > 32.6) then { _windColor = [1, 0.078, 0.027, 1]; _beaufortNumber = 12; };
 
+        if (_beaufortNumber < 1) then {
+          hintSilent "No Wind";
+        }
+          else {
 
+          hintSilent parseText format ["Wind Force - <t size='2'>%1</t>
+            <br/>Wind Angle - <t size='2'>%2</t>",_beaufortNumber,_windDirString];
+          };
+        /*
         TRACE_3("update display",_beaufortNumber,_windDir,_windSpeed);
         __ctrl ctrlSetTextColor _windColor;
         if (_beaufortNumber > 0) then {
@@ -119,6 +130,7 @@ fnc_displayWindInfo = {
         __ctrl ctrlCommit 0;
 
         //Update the beaufort balls:
+
         (ctrlPosition __ctrl) params ["_ctrlX", "_ctrlY", "_ctrlWidth", "_ctrlHeight"];
         private _centerX = _ctrlX + _ctrlWidth / 2;
         private _centerY = _ctrlY + _ctrlHeight / 2;
@@ -134,6 +146,7 @@ fnc_displayWindInfo = {
             _ball ctrlSetPosition [_ballCenterX, _ballCenterY, _ballWidth, _ballHeight];
             _ball ctrlCommit 0;
         };
+        */
 
     }, 0.5, []] call CBA_fnc_addPerFrameHandler;
 
