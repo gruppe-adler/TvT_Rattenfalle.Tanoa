@@ -20,7 +20,7 @@ set_uniform_items = {
 
 set_opfor_basics = {
 		this = _this select 0;
-		this linkItem "ACE_NVG_Gen1";
+		this addItemToUniform "ACE_NVG_Gen1";
 		this linkItem "ItemWatch";
 		this linkItem "tf_fadak";
 		this linkItem "ItemMap";

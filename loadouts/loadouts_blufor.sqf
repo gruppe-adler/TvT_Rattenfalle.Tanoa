@@ -74,9 +74,9 @@ blufor_basic = {
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
 
-	if (random 2 > 1) then {
-		this addHeadgear (selectRandom blufor_random_helmet);
-	};
+
+	this addHeadgear (selectRandom blufor_random_helmet);
+
 	if (random 2 > 1) then {
 			this addGoggles (selectRandom blufor_random_goggles);
 	};
@@ -87,7 +87,7 @@ blufor_basic = {
 	this linkItem "ItemCompass";
 	this linkItem "ItemWatch";
 	this linkItem "tf_anprc148jem";
-	this linkItem "ACE_NVG_Gen1";
+	this addItemToUniform "ACE_NVG_Gen1";
 	this linkItem "itemGPS";
 };
 
@@ -240,9 +240,10 @@ blufor_ammobearer = {
 
 
 	this addVest "rhsusf_spc_crewman";
-	if (random 2 > 1) then {
-		this addHeadgear (selectRandom blufor_random_helmet);
-	};
+	this addHeadgear (selectRandom blufor_random_helmet);
+
+
+
 	this addBackpack "B_Carryall_khk";
 
 
