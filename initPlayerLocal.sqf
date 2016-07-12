@@ -22,3 +22,6 @@ if (side player != independent) then {
 } else {
 	setplayerrespawntime 999999;
 };
+
+0 = execVM "player\animations\addWavingInteraction.sqf";
+mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoadout.sqf";

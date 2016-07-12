@@ -1,21 +1,24 @@
 _unit = _this select 0;
 
 call compile preprocessFile "loadouts\loadout_fillfunctions.sqf";
-call compile preprocessFile "loadouts\loadouts_opfor.sqf";
-call compile preprocessFile "loadouts\loadouts_blufor.sqf";
-call compile preprocessFile "loadouts\loadouts_pilots.sqf";
+call compile preprocessFile "loadouts\opforLoadouts.sqf";
+call compile preprocessFile "loadouts\bluforLoadouts.sqf";
+call compile preprocessFile "loadouts\pilotLoadouts.sqf";
 
 waitUntil { !isNull _unit };
 
       if (local _unit) then {
-        
-       
-            //["loadouts processed for _unit %1",typeOf _unit] call BIS_fnc_logFormat;
-           
 
-            
-            
-            switch (typeOf _unit) do {
+            diag_log format ["role is %1", roleDescription _unit];
+            if (roleDescription _unit == "") exitWith {diag_log format ["loadoutInit.sqf - %1 HAS NO ROLE DESCRIPTION OR SP!",_unit]};
+
+            _role = [roleDescription _unit] call mcd_fnc_strToLoadout;
+            if (isNil _role) exitWith {diag_log format ["loadoutInit.sqf - LOADOUT FOR %1 NOT FOUND!", _role]};
+            call compile ("call " + _role);
+
+            //["loadouts processed for _unit %1",typeOf _unit] call BIS_fnc_logFormat;
+
+            /*switch (typeOf _unit) do {
 
             case "B_G_officer_F": {[_unit] call blufor_sql;};
             case "B_officer_F": {[_unit] call blufor_sql;};
@@ -25,7 +28,7 @@ waitUntil { !isNull _unit };
             case "B_recon_TL_F": {[_unit] call blufor_ftl;};
             case "B_Soldier_SL_F": {[_unit] call blufor_sql;};
             case "B_G_Soldier_SL_F": {[_unit] call blufor_sql;};
-            
+
 
             case "B_G_Soldier_GL_F": {[_unit] call blufor_default;};
             case "B_Soldier_GL_F": {[_unit] call blufor_default;};
@@ -45,9 +48,9 @@ waitUntil { !isNull _unit };
             case "B_soldier_M_F": {[_unit] call blufor_marksman;};
             case "B_recon_M_F": {[_unit] call blufor_marksman;};
             case "B_G_Soldier_M_F": {[_unit] call blufor_marksman;};
-            
+
             case "B_Helipilot_F": {[_unit] call blufor_crew;};
-            
+
 
             case "B_Soldier_04_F": {[_unit] call blufor_default;};
             case "B_Soldier_03_F": {[_unit] call blufor_default;};
@@ -121,8 +124,8 @@ waitUntil { !isNull _unit };
             case "I_crew_F": {[_unit] call pilots;};
 
             default {  ["class %1 not found in matching list",typeOf _unit] call BIS_fnc_logFormat;};
-    
+
      };
+     */
 
      } else { ["player %1 is not local to itself -.-", _unit] call BIS_fnc_logFormat;};
-    

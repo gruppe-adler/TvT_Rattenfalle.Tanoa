@@ -9,9 +9,9 @@ suppliesBlufor = [
       [
 	      [
                   "I_C_Boat_Transport_02_F",
-                  ["LKW GAZ66"],
-                  3,
-                  0,
+                  [],
+                  14,
+                  100,
                   1,
                   [],
                   {
@@ -27,7 +27,7 @@ suppliesBlufor = [
             [
                   "B_T_LSV_01_unarmed_F",
                   [],
-                  3,
+                  12,
                   200,
                   1,
                   [],
@@ -44,8 +44,8 @@ suppliesBlufor = [
             [
                   "rhsusf_m1025_w_m2",
                   [],
-                  3,
-                  200,
+                  6,
+                  1000,
                   1,
                   [],
                   {
@@ -63,8 +63,8 @@ suppliesBlufor = [
             [
                   "RHS_MELB_MH6M",
                   [],
-                  3,
-                  200,
+                  4,
+                  2500,
                   1,
                   [],
                   {
@@ -84,7 +84,7 @@ suppliesBlufor = [
                   "rhsusf_m113_usarmy",
                   [],
                   3,
-                  200,
+                  1500,
                   1,
                   [],
                   {
@@ -102,8 +102,8 @@ suppliesBlufor = [
             [
                   "rhsusf_m109_usarmy",
                   [],
-                  3,
-                  200,
+                  1,
+                  2500,
                   1,
                   [],
                   {
@@ -121,8 +121,8 @@ suppliesBlufor = [
             [
                   "RHS_AH1Z_wd_CS",
                   [],
-                  3,
-                  200,
+                  2,
+                  3000,
                   1,
                   [],
                   {

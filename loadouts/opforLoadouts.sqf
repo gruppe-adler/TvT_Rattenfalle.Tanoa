@@ -28,7 +28,7 @@ set_opfor_basics = {
 };
 
 
-opfor_default = {
+opfor_rifleman = {
 
 	this = _this select 0;
 
@@ -83,7 +83,7 @@ opfor_sql = {
 
 		[this] call set_opfor_basics;
 
-		this addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
+		0 = execVM "player\animations\addBuyInteraction.sqf";
 
 };
 
@@ -115,6 +115,7 @@ opfor_ftl = {
 	this addPrimaryWeaponItem "rhs_acc_2dpZenit";
 
 	[this] call set_opfor_basics;
+	0 = execVM "player\animations\addBuyInteraction.sqf";
 
 
 
@@ -182,7 +183,7 @@ this addWeapon "rhs_weap_m76";
 
 };
 
-opfor_AT = {
+opfor_at = {
 
 	this = _this select 0;
 
@@ -218,7 +219,7 @@ opfor_AT = {
 
 };
 
-opfor_MG = {
+opfor_mg = {
 
 	this = _this select 0;
 
@@ -245,7 +246,7 @@ opfor_MG = {
 };
 
 // AA!
-opfor_engineer = {
+opfor_aa = {
 
 	this = _this select 0;
 

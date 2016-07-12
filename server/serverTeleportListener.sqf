@@ -61,14 +61,14 @@ _CRASH_SITE_listener = {
 
 
 	publicVariable "CRASH_SITE";
-	[] call createCrashSite;
-	["."] call EFUNC(common,displayTextStructured);
+	[] spawn createCrashSite;
+	// ["."] call EFUNC(common,displayTextStructured);
 
-	[] call createUSSpawn;
-	[".."] call EFUNC(common,displayTextStructured);
+	[] spawn createUSSpawn;
+	// [".."] call EFUNC(common,displayTextStructured);
 
-	[] call createRebelsSpawn;
-	["..."] call EFUNC(common,displayTextStructured);
+	[] spawn createRebelsSpawn;
+	// ["..."] call EFUNC(common,displayTextStructured);
 
 
 	0 = [_pos,6000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";

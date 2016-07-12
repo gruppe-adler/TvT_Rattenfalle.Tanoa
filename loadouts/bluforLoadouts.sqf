@@ -91,7 +91,7 @@ blufor_basic = {
 	this linkItem "itemGPS";
 };
 
-blufor_default = {
+blufor_rifleman = {
 
 	this = _this select 0;
 
@@ -119,8 +119,8 @@ blufor_sql = {
 	this addItemToBackpack "SmokeShellRed";
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
+	0 = execVM "player\animations\addBuyInteraction.sqf";
 
-	this addAction["Open Buy Menu", {		0 = [] execVM "grad_buymenu\openMenu.sqf";	}];
 };
 
 blufor_ftl = {
@@ -130,6 +130,7 @@ blufor_ftl = {
 	[this] call stripHimNaked;
 	[this] call blufor_basic;
 	comment "Add containers";
+	0 = execVM "player\animations\addBuyInteraction.sqf";
 
 };
 
@@ -154,7 +155,7 @@ blufor_marksman = {
 
 };
 
-blufor_AT = {
+blufor_at = {
 
 	this = _this select 0;
 
@@ -166,7 +167,7 @@ blufor_AT = {
 
 };
 
-blufor_MG = {
+blufor_mg = {
 
 	this = _this select 0;
 

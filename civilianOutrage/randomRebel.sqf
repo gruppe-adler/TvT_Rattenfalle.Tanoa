@@ -112,13 +112,14 @@ sleep 0.1;
 
 _unit addEventHandler ["killed", {_this execVM 'civilianOutrage\civilianKilled.sqf'}];
 
-_unit setVariable ["questioned",0];
-_unit setVariable ["revealed",false];
+_unit setVariable ["civ_questioned",0];
+_unit setVariable ["civ_revealed",false];
+_unit setVariable ["civ_occupied",false];
 
 if (random 1 < 0.8) then {
-	_unit setVariable ["knowsSomething",true];
+	_unit setVariable ["civ_knowsSomething",true];
 } else {
-	_unit setVariable ["knowsSomething",false];
+	_unit setVariable ["civ_knowsSomething",false];
 };
 
 _unit addEventHandler ["FiredNear", {
@@ -126,8 +127,8 @@ _unit addEventHandler ["FiredNear", {
 }];
 
 _unit addEventHandler ["Hit", {
-		_questioned = (_this select 0) getVariable ["questioned",0];
-		(_this select 0) setVariable ["questioned",_questioned + 0.4];
+		_questioned = (_this select 0) getVariable ["civ_questioned",0];
+		(_this select 0) setVariable ["civ_questioned",_questioned + 0.4];
 }];
 
 

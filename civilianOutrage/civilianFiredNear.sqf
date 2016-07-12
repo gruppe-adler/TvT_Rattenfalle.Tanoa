@@ -23,8 +23,8 @@ _unit disableAI "MOVE"; // stop running away
 // shooting near the unit can improve negotiation skills
 _unit addEventHandler ["FiredNear",{
 	if ((_this select 0) distance (_this select 1) < 15) then {
-	(_this select 0) setVariable ["questioned",
-	((_this select 0) getVariable ["questioned",0]) + 0.1
+	(_this select 0) setVariable ["civ_questioned",
+	((_this select 0) getVariable ["civ_questioned",0]) + 0.1
 	]};
 }];
 

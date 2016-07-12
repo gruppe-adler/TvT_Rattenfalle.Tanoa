@@ -1,4 +1,4 @@
-pilots = {
+independent_pilot = {
 
 	this = _this select 0;
 

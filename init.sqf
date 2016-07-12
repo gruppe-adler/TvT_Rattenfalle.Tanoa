@@ -88,8 +88,10 @@ if (isServer) then {
 	if (!isMultiplayer) then {
 	 	[] spawn {
 			sleep 10; // dont equip player multiple times
- 			{if (!isPlayer _x) then {sleep 0.5; [_x] execVM "loadouts\_client.sqf"};} forEach (allUnits - allPlayers);
+ 			{if (!isPlayer _x) then {0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
  		};
+	} else {
+			{if (!isPlayer _x) then {sleep 0.5; 0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
 	};
 
 
@@ -105,7 +107,7 @@ if (hasInterface) then {
 	fnc_MPaddQuestioningAction = {
 		_this addAction ["<t color='#F24F0F'>Verhören</t>",'civilianOutrage\questionCivilian.sqf',
 		0, 100, true, true, '',
-		"player distance _target < 4 && !(_target getVariable ['revealed',false])"];
+		"player distance _target < 4 && !(_target getVariable ['civ_revealed',false]) && !(_target getVariable ['civ_occupied',false])"];
 	};
 
 
@@ -150,7 +152,7 @@ if (hasInterface) then {
 	if (playerSide == west) then {
 		[] execVM "player\USTeleportListener.sqf";
 		[] spawn checkJIP;
-		// originalSide = "west";
+
 	};
 
 	// EAST is rebels
@@ -158,12 +160,12 @@ if (hasInterface) then {
 		[] execVM "player\rebelsTeleportListener.sqf";
 		[] spawn checkJIP;
 		["CRASH_SITE"] execVM  "player\pilotSightingsClient.sqf";
-		// originalSide = "east";
+
 	};
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP;
-		// originalSide = "independent";
+
 	};
 };

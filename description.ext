@@ -16,6 +16,22 @@ respawnDialog = 0;
 
 class Params
 {
+  class TimeOfDay
+  {
+    title = "Time of Day";
+    values[] = {0,1,2,3,4,5,6,6.5,7,8,9,10,11,12,13,14,15,16,16.5,17,17.5,18,19,20,21,22,23};
+    texts[] = {"00:00","01:00","02:00","03:00","04:00","05:00 - Full Moon","06:00","06:30 - Dawn","07:00 - Sunrise","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","16:30 - Sunset will arrive","17:00 - Sunset","17:30 - Dusk","18:00 - really dark already","19:00","20:00","21:00","22:00","23:00 - Moon Rise"};
+    default = 8;
+  };
+
+  class WeatherSetting
+  {
+    title = "Weather Settings";
+    values[] = {0,1,2,3};
+    texts[] = {"SUNNY DAY","CLOUDY DAY","RAINY DAY","RANDOM WEATHER"};
+    default = 0;
+  };
+
   class bluforwavesize
   {
     title = "BLUFOR Respawn Wave Size";
@@ -59,7 +75,7 @@ class Params
 
 class CfgSounds
 {
-	sounds[] = {beam};
+	sounds[] = {beam, smack1, smack2, smack3, ouch1, ouch2, ouch3};
 	class beam
 	{
 		// how the sound is referred to in the editor (e.g. trigger effects)
@@ -69,5 +85,58 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text
 		titles[] = {1, ""};
 	};
-
+  class smack1
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "smack1";
+		// filename, volume, pitch
+		sound[] = {"sounds\smack1.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
+  class smack2
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "smack2";
+		// filename, volume, pitch
+		sound[] = {"sounds\smack2.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
+  class smack3
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "smack3";
+		// filename, volume, pitch
+		sound[] = {"sounds\smack3.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
+  class ouch1
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "ouch1";
+		// filename, volume, pitch
+		sound[] = {"sounds\ouch1.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
+  class ouch2
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "ouch2";
+		// filename, volume, pitch
+		sound[] = {"sounds\ouch2.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
+  class ouch3
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "ouch3";
+		// filename, volume, pitch
+		sound[] = {"sounds\ouch3.ogg", 1, 1};
+		// subtitle delay in seconds, subtitle text
+		titles[] = {1, ""};
+	};
 };
