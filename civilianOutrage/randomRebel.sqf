@@ -137,6 +137,17 @@ _unit setVariable ["sentenceDenyingSerious", [
 	"Ich weiß nichts!"]];
 
 
+_unit setVariable ["sentenceDenyingBegging", [
+	"Aaaah, bitte lasst mich doch gehen!",
+	"O Gott, o Gott, o Gott... Neiiin!",
+	"Bitte, bitte! Ich weiß doch nichts!",
+	"Bitte lasst mich! Ich weiß nichts!",
+	"Wenn ich es euch doch sage, ich kann euch nichts sagen! Ich weiß es nicht!",
+	"Gott wird euch richten!",
+	"Schmort in der Hölle ihr Sadisten!",
+	"Bitte nein, lasst mich leben! Bitte, ich bin unschuldig!"
+	]];
+
 _unit setVariable ["civ_questioned",0];
 _unit setVariable ["civ_revealed",false];
 _unit setVariable ["civ_occupied",false];
