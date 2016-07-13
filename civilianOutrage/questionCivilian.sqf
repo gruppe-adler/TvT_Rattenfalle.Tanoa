@@ -34,11 +34,11 @@ if (_knowsSomething) exitWith {
 	if (random 1 > _chanceToReveal) then {
 		if (_civ_questioned < 0.4) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
-			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm];
+			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
 		};
 		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious];
+			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
 			player switchMove ["Acts_Executioner_Forehand"];
 			sleep 0.5;
 			_civ say3D (selectRandom ["smack1","smack2","smack3"]);
@@ -50,7 +50,7 @@ if (_knowsSomething) exitWith {
 		};
 		if (_civ_questioned > 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
-			_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging];
+			_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
 			player switchMove ["Acts_Executioner_Backhand"];
 			sleep 0.5;
 			_civ say3D (selectRandom ["smack1","smack2","smack3"]);
@@ -71,9 +71,11 @@ if (_knowsSomething) exitWith {
 if (!_knowsSomething) exitWith {
 	if (_civ_questioned < 0.4) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
 	};
 	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
+		_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
 		player switchMove ["Acts_Executioner_Forehand"];
 		sleep 0.5;
 		_civ say3D (selectRandom ["smack1","smack2","smack3"]);
@@ -84,6 +86,7 @@ if (!_knowsSomething) exitWith {
 	};
 	if (_civ_questioned > 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
+		_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
 		player switchMove ["Acts_Executioner_Backhand"];
 		sleep 0.5;
 		_civ say3D (selectRandom ["smack1","smack2","smack3"]);
