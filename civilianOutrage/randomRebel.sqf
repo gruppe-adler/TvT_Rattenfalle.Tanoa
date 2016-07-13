@@ -112,6 +112,22 @@ sleep 0.1;
 
 _unit addEventHandler ["killed", {_this execVM 'civilianOutrage\civilianKilled.sqf'}];
 
+
+_unit setVariable ["sentenceDenyingCalm", [
+    "Ich weiß von nichts.",
+    "Ich habe niemand gesehen.",
+    "Nein. Ich habe nichts gehört oder gesehen.",
+    "Nein. Ich habe nichts gehört.",
+    "Tut mir leid, davon weiß ich nichts.",
+    "Wirklich keine Ahnung, tut mir leid.",
+    "Keinen blassen Schimmer.",
+    "Ich habe nichts gehört.",
+    "Davon wüsste ich."
+    ]];
+
+//_unit setVariable 
+
+
 _unit setVariable ["civ_questioned",0];
 _unit setVariable ["civ_revealed",false];
 _unit setVariable ["civ_occupied",false];
