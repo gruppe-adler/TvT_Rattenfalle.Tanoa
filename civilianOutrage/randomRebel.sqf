@@ -127,7 +127,7 @@ _unit setVariable ["sentenceDenyingCalm", [
 
 
 
-_unit setVariable [sentenceDenyingSerious", [
+_unit setVariable ["sentenceDenyingSerious", [
 	"Bitte lasst mich laufen, ich habe keine Ahnung.",
 	"Ich bin unschuldig, glaubt mir.",
 	"Ich weiß wirklich nichts!",
