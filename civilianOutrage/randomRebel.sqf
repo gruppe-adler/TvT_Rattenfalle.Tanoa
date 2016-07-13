@@ -125,7 +125,16 @@ _unit setVariable ["sentenceDenyingCalm", [
     "Davon wüsste ich."
     ]];
 
-//_unit setVariable 
+
+
+_unit setVariable [sentenceDenyingSerious", [
+	"Bitte lasst mich laufen, ich habe keine Ahnung.",
+	"Ich bin unschuldig, glaubt mir.",
+	"Ich weiß wirklich nichts!",
+	"Brüder, glaubt mir, ich weiß nichts!",
+	"Nein, ich habe wirklich niemand gesehen!",
+	"Nein! Ich schwöre bei meiner Mutter, nein!",
+	"Ich weiß nichts!"]];
 
 
 _unit setVariable ["civ_questioned",0];
