@@ -10,40 +10,14 @@ _civilian setVariable ["civ_questioned",_civ_questioned + 0.1];
 
 _knowsSomething = _civilian getVariable ["civ_knowsSomething",false];
 
+_sentenceDenyingCalmArray = _civilian getVariable ["sentenceDenyingCalm", ["No"]];
+_sentenceDenyingCalm = selectRandom _sentenceDenyingCalmArray;
 
-_sentenceDenyingCalm = [
-	"Ich weiß von nichts.",
-	"Ich habe niemand gesehen.",
-	"Nein. Ich habe nichts gehört oder gesehen.",
-	"Nein. Ich habe nichts gehört.",
-	"Tut mir leid, davon weiß ich nichts.",
-	"Wirklich keine Ahnung, tut mir leid.",
-	"Keinen blassen Schimmer.",
-	"Ich habe nichts gehört.",
-	"Davon wüsste ich."
-	] call BIS_fnc_selectRandom;
+_sentenceDenyingSeriousArray = _civilian getVariable ["sentenceDenyingSerious", ["No"]];
+_sentenceDenyingSerious = selectRandom _sentenceDenyingSeriousArray;
 
-_sentenceDenyingSerious = [
-	"Bitte lasst mich laufen, ich habe keine Ahnung.",
-	"Ich bin unschuldig, inschallah.",
-	"Ich weiß wirklich nichts!",
-	"Brüder, glaubt mir, ich weiß nichts!",
-	"Nein, ich habe wirklich niemand gesehen!",
-	"Nein! Ich schwöre bei meiner Mutter, nein!",
-	"Ich weiß nichts!",
-	"Neeeein! Ich weiß nichts!"
-	] call BIS_fnc_selectRandom;
-
-_sentenceDenyingBegging = [
-	"Aaaah, bitte lasst mich doch gehen!",
-	"O Gott, o Gott, o Gott... Neiiin!",
-	"Bitte, bitte! Ich weiß doch nichts!",
-	"Bitte lasst mich! Ich weiß nichts!",
-	"Wenn ich es euch doch sage, ich kann euch nichts sagen! Ich weiß es nicht!",
-	"Gott wird euch richten!",
-	"Schmort in der Hölle ihr Sadisten!",
-	"Bitte nein, lasst mich leben! Bitte, ich bin unschuldig!"
-	] call BIS_fnc_selectRandom;
+_sentenceDenyingBeggingArray = _civilian getVariable ["sentenceDenyingBegging", ["No"]];
+_sentenceDenyingBegging = selectRandom _sentenceDenyingBeggingArray;
 
 _sentenceReveal = [
 	"Ja, ja.. ich sag es ja. Ich hab jemanden gesehen bei ",
@@ -61,11 +35,20 @@ if (_knowsSomething) exitWith {
 	if (random 5 > _chanceToReveal) then {
 		if (_civ_questioned < 0.4) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+<<<<<<< HEAD
 			sleep 3;
 		};
 		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
 			player switchMove "Acts_Executioner_Forehand";
+=======
+			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
+		};
+		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
+			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
+			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
+			player switchMove ["Acts_Executioner_Forehand"];
+>>>>>>> origin/master
 			sleep 0.5;
 			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 			sleep 0.1;
@@ -76,7 +59,12 @@ if (_knowsSomething) exitWith {
 		};
 		if (_civ_questioned > 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
+<<<<<<< HEAD
 			player switchMove "Acts_Executioner_Backhand";
+=======
+			_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+			player switchMove ["Acts_Executioner_Backhand"];
+>>>>>>> origin/master
 			sleep 0.5;
 			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 			sleep 0.1;
@@ -96,11 +84,20 @@ if (_knowsSomething) exitWith {
 if (!_knowsSomething) exitWith {
 	if (_civ_questioned < 0.4) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+<<<<<<< HEAD
 		sleep 3;
 	};
 	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
 		player switchMove "Acts_Executioner_Forehand";
+=======
+			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
+	};
+	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
+		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
+		_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
+		player switchMove ["Acts_Executioner_Forehand"];
+>>>>>>> origin/master
 		sleep 0.5;
 		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 		sleep 0.1;
@@ -110,7 +107,12 @@ if (!_knowsSomething) exitWith {
 	};
 	if (_civ_questioned > 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
+<<<<<<< HEAD
 		player switchMove "Acts_Executioner_Backhand";
+=======
+		_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+		player switchMove ["Acts_Executioner_Backhand"];
+>>>>>>> origin/master
 		sleep 0.5;
 		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 		sleep 0.1;

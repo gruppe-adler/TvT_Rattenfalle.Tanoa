@@ -112,6 +112,42 @@ sleep 0.1;
 
 _unit addEventHandler ["killed", {_this execVM 'civilianOutrage\civilianKilled.sqf'}];
 
+
+_unit setVariable ["sentenceDenyingCalm", [
+    "Ich weiß von nichts.",
+    "Ich habe niemand gesehen.",
+    "Nein. Ich habe nichts gehört oder gesehen.",
+    "Nein. Ich habe nichts gehört.",
+    "Tut mir leid, davon weiß ich nichts.",
+    "Wirklich keine Ahnung, tut mir leid.",
+    "Keinen blassen Schimmer.",
+    "Ich habe nichts gehört.",
+    "Davon wüsste ich."
+    ]];
+
+
+
+_unit setVariable ["sentenceDenyingSerious", [
+	"Bitte lasst mich laufen, ich habe keine Ahnung.",
+	"Ich bin unschuldig, glaubt mir.",
+	"Ich weiß wirklich nichts!",
+	"Brüder, glaubt mir, ich weiß nichts!",
+	"Nein, ich habe wirklich niemand gesehen!",
+	"Nein! Ich schwöre bei meiner Mutter, nein!",
+	"Ich weiß nichts!"]];
+
+
+_unit setVariable ["sentenceDenyingBegging", [
+	"Aaaah, bitte lasst mich doch gehen!",
+	"O Gott, o Gott, o Gott... Neiiin!",
+	"Bitte, bitte! Ich weiß doch nichts!",
+	"Bitte lasst mich! Ich weiß nichts!",
+	"Wenn ich es euch doch sage, ich kann euch nichts sagen! Ich weiß es nicht!",
+	"Gott wird euch richten!",
+	"Schmort in der Hölle ihr Sadisten!",
+	"Bitte nein, lasst mich leben! Bitte, ich bin unschuldig!"
+	]];
+
 _unit setVariable ["civ_questioned",0];
 _unit setVariable ["civ_revealed",false];
 _unit setVariable ["civ_occupied",false];
