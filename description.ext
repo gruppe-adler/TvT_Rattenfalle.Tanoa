@@ -83,7 +83,7 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\beam.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
   class smack1
 	{
@@ -92,7 +92,7 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\smack1.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
   class smack2
 	{
@@ -101,7 +101,7 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\smack2.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
   class smack3
 	{
@@ -110,7 +110,7 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\smack3.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
   class ouch1
 	{
@@ -119,7 +119,7 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\ouch1.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
   class ouch2
 	{
@@ -128,7 +128,7 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\ouch2.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
   class ouch3
 	{
@@ -137,6 +137,6 @@ class CfgSounds
 		// filename, volume, pitch
 		sound[] = {"sounds\ouch3.ogg", 1, 1};
 		// subtitle delay in seconds, subtitle text
-		titles[] = {1, ""};
+		titles[] = {0, ""};
 	};
 };

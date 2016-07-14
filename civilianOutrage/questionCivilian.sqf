@@ -1,5 +1,9 @@
+// to be deleted
+
 _civilian = _this select 0;
 _player = _this select 1;
+
+// todo refactor to server only
 
 // dont do anything if the civilian is already in 'use'
 if (_civilian getVariable ["civ_occupied",false]) exitWith {};
@@ -9,14 +13,14 @@ _civ_questioned = _civilian getVariable ["civ_questioned",0];
 _civilian setVariable ["civ_questioned",_civ_questioned + 0.1];
 
 _knowsSomething = _civilian getVariable ["civ_knowsSomething",false];
+_alreadyRevealed = _civilian getVariable ["civ_revealed",false];
 
-_sentenceDenyingCalmArray = _civilian getVariable ["sentenceDenyingCalm", ["No"]];
+_sentenceDenyingCalmArray = _civilian getVariable ["sentenceDenyingCalm","Ich weiß nichts."];
+_sentenceDenyingSeriousArray = _civilian getVariable ["sentenceDenyingSerious","Bitte, ich weiß nichts."];
+_sentenceDenyingBeggingArray = _civilian getVariable ["sentenceDenyingBegging","Aaaaaah..."];
+
 _sentenceDenyingCalm = selectRandom _sentenceDenyingCalmArray;
-
-_sentenceDenyingSeriousArray = _civilian getVariable ["sentenceDenyingSerious", ["No"]];
 _sentenceDenyingSerious = selectRandom _sentenceDenyingSeriousArray;
-
-_sentenceDenyingBeggingArray = _civilian getVariable ["sentenceDenyingBegging", ["No"]];
 _sentenceDenyingBegging = selectRandom _sentenceDenyingBeggingArray;
 
 _sentenceReveal = [
@@ -31,52 +35,48 @@ _sentenceReveal = [
 
 _chanceToReveal = CHANCE_TO_REVEAL + _civ_questioned;
 
-if (_knowsSomething) exitWith {
-	if (random 5 > _chanceToReveal) then {
+if (_knowsSomething && !_alreadyRevealed) exitWith {
+	if (random 1 > _chanceToReveal) then {
 		if (_civ_questioned < 0.4) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
-<<<<<<< HEAD
-			sleep 3;
+			_civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
+			sleep 2;
 		};
 		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-			player switchMove "Acts_Executioner_Forehand";
-=======
-			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
-		};
-		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
-			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
-			player switchMove ["Acts_Executioner_Forehand"];
->>>>>>> origin/master
+			_civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
+			_player switchMove "Acts_Executioner_Forehand";
 			sleep 0.5;
 			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 			sleep 0.1;
 			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 			sleep 1.9;
-			player switchMove "";
+			_player switchMove "";
 
 		};
+
+		if (_civ_questioned > 0.4) then {
+				_damage = (_civilian getHitPointDamage "head") + (random 1);
+				  [_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit
+				_civilian setVariable ["ACE_medical_lastDamageSource",_player];
+		};
+		
 		if (_civ_questioned > 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
-<<<<<<< HEAD
-			player switchMove "Acts_Executioner_Backhand";
-=======
-			_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
-			player switchMove ["Acts_Executioner_Backhand"];
->>>>>>> origin/master
+			_civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+			_player switchMove "Acts_Executioner_Backhand";
 			sleep 0.5;
 			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 			sleep 0.1;
 			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 			sleep 3.1;
-			player switchMove "";
+			_player switchMove "";
 		};
 
 	} else {
 		cutText [format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],"PLAIN"];
 		_civilian setVariable ["civ_revealed",true];
-		0 = [CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2] execVM "player\createPilotMarker.sqf";
+		0 = [CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2] execVM "_player\createPilotMarker.sqf";
 	};
 	_civilian setVariable ["civ_occupied",false];
 };
@@ -84,45 +84,40 @@ if (_knowsSomething) exitWith {
 if (!_knowsSomething) exitWith {
 	if (_civ_questioned < 0.4) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
-<<<<<<< HEAD
-		sleep 3;
+		_civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
+		sleep 2;
 	};
 	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-		player switchMove "Acts_Executioner_Forehand";
-=======
-			_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
-	};
-	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
-		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-		_civilian setVariable ["sentenceDenyingCalm",_sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
-		player switchMove ["Acts_Executioner_Forehand"];
->>>>>>> origin/master
+		_civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
+		_player switchMove "Acts_Executioner_Forehand";
 		sleep 0.5;
 		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 		sleep 0.1;
 		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 		sleep 1.9;
-		player switchMove "";
+		_player switchMove "";
 	};
 	if (_civ_questioned > 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
-<<<<<<< HEAD
-		player switchMove "Acts_Executioner_Backhand";
-=======
-		_civilian setVariable ["sentenceDenyingBegging",_sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
-		player switchMove ["Acts_Executioner_Backhand"];
->>>>>>> origin/master
+		_civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+		_player switchMove "Acts_Executioner_Backhand";
 		sleep 0.5;
 		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 		sleep 0.1;
 		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 		sleep 3.1;
-		player switchMove "";
+		_player switchMove "";
+	};
+
+	if (_civ_questioned > 0.4) then {
+			_damage = (_civilian getHitPointDamage "head") + (random 1);
+			  [_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit
+			_civilian setVariable ["ACE_medical_lastDamageSource",_player];
 	};
 
 	// when someone questions too hard, reveal something random
-	if (_civ_questioned > 3) then {
+	if (_civ_questioned > 3 && alive _civilian) then {
 		_location = ((nearestLocations [getPos _civilian,
    			[
 		    "NameCity",
@@ -134,7 +129,7 @@ if (!_knowsSomething) exitWith {
 		_text = text _location;
 		cutText [format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],"PLAIN"];
 		_civilian setVariable ["civ_revealed",true];
-		0 = [getpos _location] execVM "player\createPilotMarker.sqf";
+		0 = [getpos _location] execVM "player\createPilotMarker.sqf"; // todo broadcast
 	};
 
 	_civilian setVariable ["civ_occupied",false];
