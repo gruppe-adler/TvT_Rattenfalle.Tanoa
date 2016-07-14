@@ -1,4 +1,5 @@
 _civilian = _this select 0;
+_player = _this select 1;
 
 // dont do anything if the civilian is already in 'use'
 if (_civilian getVariable ["civ_occupied",false]) exitWith {};
@@ -57,28 +58,29 @@ _sentenceReveal = [
 _chanceToReveal = CHANCE_TO_REVEAL + _civ_questioned;
 
 if (_knowsSomething) exitWith {
-	if (random 1 > _chanceToReveal) then {
+	if (random 5 > _chanceToReveal) then {
 		if (_civ_questioned < 0.4) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+			sleep 3;
 		};
 		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-			player switchMove ["Acts_Executioner_Forehand"];
+			player switchMove "Acts_Executioner_Forehand";
 			sleep 0.5;
-			_civ say3D (selectRandom ["smack1","smack2","smack3"]);
+			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 			sleep 0.1;
-			_civ say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 			sleep 1.9;
 			player switchMove "";
 
 		};
 		if (_civ_questioned > 0.7) then {
 			cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
-			player switchMove ["Acts_Executioner_Backhand"];
+			player switchMove "Acts_Executioner_Backhand";
 			sleep 0.5;
-			_civ say3D (selectRandom ["smack1","smack2","smack3"]);
+			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 			sleep 0.1;
-			_civ say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 			sleep 3.1;
 			player switchMove "";
 		};
@@ -94,24 +96,25 @@ if (_knowsSomething) exitWith {
 if (!_knowsSomething) exitWith {
 	if (_civ_questioned < 0.4) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+		sleep 3;
 	};
 	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
-		player switchMove ["Acts_Executioner_Forehand"];
+		player switchMove "Acts_Executioner_Forehand";
 		sleep 0.5;
-		_civ say3D (selectRandom ["smack1","smack2","smack3"]);
+		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 		sleep 0.1;
-		_civ say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 		sleep 1.9;
 		player switchMove "";
 	};
 	if (_civ_questioned > 0.7) then {
 		cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
-		player switchMove ["Acts_Executioner_Backhand"];
+		player switchMove "Acts_Executioner_Backhand";
 		sleep 0.5;
-		_civ say3D (selectRandom ["smack1","smack2","smack3"]);
+		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
 		sleep 0.1;
-		_civ say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 		sleep 3.1;
 		player switchMove "";
 	};

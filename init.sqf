@@ -105,9 +105,10 @@ if (hasInterface) then {
 
 	// for local execution of interrogation actions
 	fnc_MPaddQuestioningAction = {
-		_this addAction ["<t color='#F24F0F'>Verhören</t>",'civilianOutrage\questionCivilian.sqf',
+		_id = _this addAction ["<t color='#F24F0F'>Verhören</t>",'civilianOutrage\questionCivilian.sqf',
 		0, 100, true, true, '',
 		"player distance _target < 4 && !(_target getVariable ['civ_revealed',false]) && !(_target getVariable ['civ_occupied',false])"];
+		_this setUserActionText [_id, "<t color='#F24F0F'>Verhören</t>"];
 	};
 
 

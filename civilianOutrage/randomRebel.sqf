@@ -46,7 +46,7 @@ _vanillaHeadGear = [
 "H_Booniehat_tan"
 ] call BIS_fnc_selectRandom;
 
-_taliFaces = [
+_taliFaces = selectRandom [
 "PersianHead_A3_01",
 "PersianHead_A3_02",
 "PersianHead_A3_03",
@@ -62,7 +62,7 @@ _taliFaces = [
 "GreekHead_A3_02",
 "GreekHead_A3_03",
 "GreekHead_A3_04"
-] call BIS_fnc_selectRandom;
+];
 
 _taliBeards = [
 "TRYK_Beard_BK","TRYK_Beard_BK","TRYK_Beard_BK","TRYK_Beard_BK",

@@ -1,5 +1,5 @@
 
-_victim = _this select 0;
+_victim = _this select 0 select 0;
 
 _shooter = _victim getVariable ["ACE_medical_lastDamageSource",_victim];
 diag_log format ["%1 killed by %2",_victim,_shooter];
