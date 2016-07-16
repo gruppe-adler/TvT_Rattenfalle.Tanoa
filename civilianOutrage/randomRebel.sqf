@@ -125,8 +125,6 @@ _unit setVariable ["sentenceDenyingCalm", [
     "Davon wüsste ich."
     ]];
 
-
-
 _unit setVariable ["sentenceDenyingSerious", [
 	"Bitte lasst mich laufen, ich habe keine Ahnung.",
 	"Ich bin unschuldig, glaubt mir.",
@@ -134,8 +132,8 @@ _unit setVariable ["sentenceDenyingSerious", [
 	"Brüder, glaubt mir, ich weiß nichts!",
 	"Nein, ich habe wirklich niemand gesehen!",
 	"Nein! Ich schwöre bei meiner Mutter, nein!",
-	"Ich weiß nichts!"]];
-
+	"Ich weiß nichts!"
+	]];
 
 _unit setVariable ["sentenceDenyingBegging", [
 	"Aaaah, bitte lasst mich doch gehen!",
@@ -146,6 +144,30 @@ _unit setVariable ["sentenceDenyingBegging", [
 	"Gott wird euch richten!",
 	"Schmort in der Hölle ihr Sadisten!",
 	"Bitte nein, lasst mich leben! Bitte, ich bin unschuldig!"
+	]];
+
+_unit setVariable ["questionCalm", [
+	"Hast du einen fremden Piloten gesehen?",
+	"Wir suchen abgeschossene Piloten.",
+	"Hast du von den abgeschossenen Piloten gehört?",
+	"Wir brauchen deine Hilfe - wir suchen einen Piloten!",
+	"Den Piloten suchen wir. Schon von ihm gehört?",
+	"Wir wollen mal nett sein und fragen erst höflich: Wo ist der Pilot?",
+	"Den oder die Piloten, die wir abgeschossen haben.. wo sind die?",
+	"Wir suchen einen oder mehrere Piloten."
+	]];
+
+_unit setVariable ["questionSerious", [
+	"Nochmal: Wo ist der Pilot?",
+	"Hör auf zu lügen!",
+	"Wir wissen, wo deine Familie wohnt!",
+	"Du und nichts wissen, willst du uns verarschen?",
+	"Schon mal gegen ne Faust gerannt?",
+	"Pass bloß auf, erzähl uns keinen Scheiß!",
+	"Noch ein letztes Mal: Wo ist der verdammte Pilot?",
+	"Wo ist der Pilot, verdammte Kacke! Rücks raus!",
+	"Du kannst uns nicht zum Narren halten!",
+	"Rücks raus, aber plötzlich!"
 	]];
 
 _unit setVariable ["civ_questioned",0];

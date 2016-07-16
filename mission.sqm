@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=207;
+		nextID=211;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1474.7349,13.514262,1041.4797};
+		pos[]={1472.8606,29.219603,1062.6246};
 		dir[]={-0.16754504,-0.43442884,-0.88500834};
 		up[]={-0.080810234,0.90069783,-0.42686099};
 		aside[]={-0.98256499,-2.2353197e-007,0.18601364};
@@ -276,7 +276,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=87;
+		items=88;
 		class Item0
 		{
 			dataType="Marker";
@@ -332,15 +332,15 @@ class Mission
 		class Item5
 		{
 			dataType="Marker";
-			position[]={232.48949,435.81885,1303.99};
-			name="mrk_no_drive_area";
+			position[]={9725.2402,3.5602481e+010,9852.0449};
+			name="mrk_drive_area";
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorBlack";
-			a=200;
-			b=200;
+			a=5500;
+			b=4500;
 			id=5;
-			atlOffset=500.68176;
+			atlOffset=3.5602481e+010;
 		};
 		class Item6
 		{
@@ -5503,6 +5503,22 @@ class Mission
 			};
 			id=206;
 			atlOffset=-0.032009125;
+		};
+		class Item87
+		{
+			dataType="Trigger";
+			position[]={1711.246,-15.461677,603.29303};
+			class Attributes
+			{
+				name="trg_intromusic";
+				text="intro music";
+				condition="true";
+				sizeA=0;
+				sizeB=0;
+				effectMusic="LeadTrack01b_F_EXP";
+			};
+			id=209;
+			type="EmptyDetector";
 		};
 	};
 	class Connections

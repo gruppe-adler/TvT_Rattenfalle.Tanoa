@@ -30,9 +30,9 @@ mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoad
 GRAD_fnc_addQuestioningAction = {
 	_id = _this addAction ["<t color='#F24F0F'>Verhören</t>",{
 		[_this select 0, _this select 1] remoteExec ["GRAD_fnc_questionCiv", [2,0] select (isMultiplayer && isDedicated), false];
-	},
+	[player] call ace_weaponselect_fnc_putWeaponAway;},
 	0, 100, true, true, '',
-	"player distance _target < 3.5 && !(_target getVariable ['civ_occupied',false])"];
+	"player distance _target < 3 && !(_target getVariable ['civ_occupied',false])"];
 	_this setUserActionText [_id, "<t color='#F24F0F'>Verhören</t>"];
 };
 
@@ -41,13 +41,13 @@ GRAD_fnc_showQuestioningAnswer = {
 		_answer = _this select 1;
 		_markerPositionArray = _this select 2;
 
-		if (count _markerArray > 0) then {
-				0 = [getpos _markerPositionArray select 0] execVM "player\createPilotMarker.sqf";
+		if (count _markerPositionArray > 0) then {
+				0 = [(_markerPositionArray select 0), 250] execVM "player\createPilotMarker.sqf";
 		};
 
 		// dont display if too far away
-		if (position player distance _pos > 5) exitWith {};
+		if (position player distance _pos > 8) exitWith {};
 
-		cutText [format ["Zivilist: %1",_answer],"PLAIN"];
+		cutText [format ["%1",_answer],"PLAIN"];
 
 };

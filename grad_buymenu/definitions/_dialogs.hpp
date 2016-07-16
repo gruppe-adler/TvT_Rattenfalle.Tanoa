@@ -321,6 +321,8 @@ class RscTitles {
 		duration = 10e10;
 		name = "gui_pleasewait";
 		fadeIn = 1;
+		fadeOut = 1;
+		onLoad = "uiNamespace setVariable ['GRAD_rattrap_loading', (_this select 0)];";
 
 	 	class controls {
 			class gui_pleasewait_pic: RscPicture
@@ -328,9 +330,19 @@ class RscTitles {
 				idc = -1;
 				x = 10 * GUI_GRID_W + GUI_GRID_X;
 				y = 10 * GUI_GRID_H + GUI_GRID_Y;
-				w = 18 * GUI_GRID_W;
-				h = 8 * GUI_GRID_H;
-				text = "pic\start_message.paa";
+				w = 20 * GUI_GRID_W;
+				h = (10 * GUI_GRID_H) * 3/4;
+				text = "pic\loading_pic.jpg";
+			};
+			class gui_pleasewait_txt : RscStructuredText {
+				idc = 4444;
+				text = "<t size='1' shadow='0' align='center'>Emergency Landing Zone Search.</t>";
+				color[] = {1,1,1,0.3};
+				x = 10 * GUI_GRID_W + GUI_GRID_X;
+				y = 19 * GUI_GRID_H + GUI_GRID_Y;
+				w = 20 * GUI_GRID_W;
+				h = 1 * GUI_GRID_H;
+				colorBackground[] = {0,0,0,0.7};
 			};
 		};
 	};

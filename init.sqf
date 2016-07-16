@@ -114,23 +114,6 @@ if (hasInterface) then {
 			player setDamage 1;
 		} else {
 			if (!didJIP) exitWith {[] call callIntro;};
-
-			waitUntil {
-				(playerSide != civilian) &&
-				(CRASH_SITE select 0 != 0) &&
-				(REBEL_SPAWN select 0 != 0) &&
-				(US_SPAWN select 0 != 0)
-			};
-
-			if (playerSide == independent) then {
-				[CRASH_SITE, 50] execVM "helpers\teleportPlayer.sqf";
-			};
-			if (playerSide == west) then {
-				[REBEL_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
-			};
-			if (playerSide == east) then {
-				[US_SPAWN, 50] execVM "helpers\teleportPlayer.sqf";
-			};
 		};
 	};
 
@@ -146,20 +129,17 @@ if (hasInterface) then {
 	if (playerSide == west) then {
 		[] execVM "player\USTeleportListener.sqf";
 		[] spawn checkJIP;
-
 	};
 
 	// EAST is rebels
 	if (playerSide == east) then {
 		[] execVM "player\rebelsTeleportListener.sqf";
 		[] spawn checkJIP;
-		["CRASH_SITE"] execVM  "player\pilotSightingsClient.sqf";
-
+		["CRASH_SITE"] execVM "player\pilotSightingsClient.sqf";
 	};
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
 		[] spawn checkJIP;
-
 	};
 };

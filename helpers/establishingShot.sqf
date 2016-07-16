@@ -144,8 +144,6 @@ if (_mode == 1) then {
 					([] call BIS_fnc_displayMission) displayRemoveEventHandler ['KeyDown', uiNamespace getVariable 'BIS_fnc_establishingShot_skipEH'];
 					uiNamespace setVariable ['BIS_fnc_establishingShot_skipEH', nil];
 
-					playSound ['click', true];
-
 					BIS_fnc_establishingShot_skip = true;
 				};
 
@@ -257,6 +255,9 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 	if (isNil "BIS_fnc_establishingShot_skip") then {
 		enableEnvironment true;
 		2 fadeSound 1;
+
+		// display loading image
+		cutRsc ["gui_pleasewait","PLAIN",0];
 
 		// Static fade-in
 		("BIS_layerStatic" call BIS_fnc_rscLayer) cutRsc ["RscStatic", "PLAIN"];
@@ -461,11 +462,11 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 					/* waitUntil {scriptDone BIS_fnc_establishingShot_SITREP || !(isNil "BIS_fnc_establishingShot_skip")};*/
 
 
-					cutRsc ["gui_pleasewait","PLAIN",0];
+
 
 					private ["_time"];
 					_time = time + 999999;
-					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") || ((CRASH_SITE select 0 != 0) && (REBEL_SPAWN select 0 != 0) && (US_SPAWN select 0 != 0))};
+					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip")};
 					cutText ["", "PLAIN"];
 
 					if (isNil "BIS_fnc_establishingShot_skip") then {
