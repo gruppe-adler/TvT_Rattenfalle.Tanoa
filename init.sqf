@@ -6,6 +6,8 @@ DEBUG = true;
 setViewDistance 3500;
 enableSentences false;
 enableRadio false;
+0 fadeRadio 0;
+showChat false;
 // functional variables - do not change!
 // player_respawned = 0;
 checkObjectives = false; // false is debug for playing without pilot
@@ -103,7 +105,7 @@ if (isServer) then {
 if (hasInterface) then {
 
 	titleCut ["", "WHITE IN", 1];
-	
+
 	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 
 	// JIP handling

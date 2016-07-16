@@ -31,19 +31,23 @@ _sentenceReveal = [
 	"Ich habe gehört bei "
 	] call BIS_fnc_selectRandom;
 
-
+_startTalkLips = {
+		(_this select 0) setRandomLip true;
+		sleep (random 3);
+		(_this select 0) setRandomLip false;
+};
 
 _chanceToReveal = CHANCE_TO_REVEAL + _civ_questioned;
 
 if (_knowsSomething && !_alreadyRevealed) exitWith {
 	if (random 1 > _chanceToReveal) then {
 		if (_civ_questioned < 0.4) then {
-			[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 			_civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
 			sleep 2;
+			[_civilian] spawn startTalkLips;
+			[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		};
 		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
-			[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 			_civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
 			_player switchMove "Acts_Executioner_Forehand";
 			sleep 0.5;
@@ -52,6 +56,9 @@ if (_knowsSomething && !_alreadyRevealed) exitWith {
 			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 			sleep 1.9;
 			_player switchMove "";
+			[_civilian] spawn startTalkLips;
+			[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
+
 
 		};
 
@@ -62,7 +69,6 @@ if (_knowsSomething && !_alreadyRevealed) exitWith {
 		};
 
 		if (_civ_questioned > 0.7) then {
-			[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 			_civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
 			_player switchMove "Acts_Executioner_Backhand";
 			sleep 0.5;
@@ -71,9 +77,13 @@ if (_knowsSomething && !_alreadyRevealed) exitWith {
 			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 			sleep 3.1;
 			_player switchMove "";
+			[_civilian] spawn startTalkLips;
+			[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		};
 
 	} else {
+		sleep 1;
+		[_civilian] spawn startTalkLips;
 		[position _civilian,format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],[CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2]] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["civ_revealed",true];
 	};
@@ -82,12 +92,13 @@ if (_knowsSomething && !_alreadyRevealed) exitWith {
 
 if (!_knowsSomething) exitWith {
 	if (_civ_questioned < 0.4) then {
-		[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
 		sleep 2;
+		[_civilian] spawn startTalkLips;
+		[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
+
 	};
 	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
-		[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
 		_player switchMove "Acts_Executioner_Forehand";
 		sleep 0.5;
@@ -96,9 +107,10 @@ if (!_knowsSomething) exitWith {
 		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 		sleep 1.9;
 		_player switchMove "";
+		[_civilian] spawn startTalkLips;
+		[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 	};
 	if (_civ_questioned > 0.7) then {
-		[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
 		_player switchMove "Acts_Executioner_Backhand";
 		sleep 0.5;
@@ -107,6 +119,8 @@ if (!_knowsSomething) exitWith {
 		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
 		sleep 3.1;
 		_player switchMove "";
+		[_civilian] spawn startTalkLips;
+		[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 	};
 
 	if (_civ_questioned > 0.4) then {
@@ -126,6 +140,7 @@ if (!_knowsSomething) exitWith {
 		    "NameLocal"
 		   ],6000]) call BIS_fnc_selectRandom);
 		_text = text _location;
+		[_civilian] spawn startTalkLips;
 		[position _civilian,format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],[getpos _location]] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["civ_revealed",true];
 
