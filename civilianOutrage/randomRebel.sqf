@@ -152,6 +152,8 @@ _unit setVariable ["civ_questioned",0];
 _unit setVariable ["civ_revealed",false];
 _unit setVariable ["civ_occupied",false];
 
+_unit setVariable ["BIS_noCoreConversations", true];
+
 if (random 1 < 0.8) then {
 	_unit setVariable ["civ_knowsSomething",true];
 } else {
@@ -169,6 +171,6 @@ _unit addEventHandler ["Hit", {
 
 
 
-[_unit,"fnc_MPaddQuestioningAction",nil,true] spawn BIS_fnc_MP;
+[_unit,"GRAD_fnc_addQuestioningAction",nil,true] spawn BIS_fnc_MP;
 
 };

@@ -38,12 +38,12 @@ _chanceToReveal = CHANCE_TO_REVEAL + _civ_questioned;
 if (_knowsSomething && !_alreadyRevealed) exitWith {
 	if (random 1 > _chanceToReveal) then {
 		if (_civ_questioned < 0.4) then {
-			cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+			[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 			_civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
 			sleep 2;
 		};
 		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
-			cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
+			[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 			_civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
 			_player switchMove "Acts_Executioner_Forehand";
 			sleep 0.5;
@@ -60,9 +60,9 @@ if (_knowsSomething && !_alreadyRevealed) exitWith {
 				  [_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit
 				_civilian setVariable ["ACE_medical_lastDamageSource",_player];
 		};
-		
+
 		if (_civ_questioned > 0.7) then {
-			cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
+			[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 			_civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
 			_player switchMove "Acts_Executioner_Backhand";
 			sleep 0.5;
@@ -74,21 +74,20 @@ if (_knowsSomething && !_alreadyRevealed) exitWith {
 		};
 
 	} else {
-		cutText [format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],"PLAIN"];
+		[position _civilian,format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],[CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2]] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["civ_revealed",true];
-		0 = [CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2] execVM "_player\createPilotMarker.sqf";
 	};
 	_civilian setVariable ["civ_occupied",false];
 };
 
 if (!_knowsSomething) exitWith {
 	if (_civ_questioned < 0.4) then {
-		cutText [format ["Zivilist: %1",_sentenceDenyingCalm],"PLAIN"];
+		[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
 		sleep 2;
 	};
 	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
-		cutText [format ["Zivilist: %1",_sentenceDenyingSerious],"PLAIN"];
+		[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
 		_player switchMove "Acts_Executioner_Forehand";
 		sleep 0.5;
@@ -99,7 +98,7 @@ if (!_knowsSomething) exitWith {
 		_player switchMove "";
 	};
 	if (_civ_questioned > 0.7) then {
-		cutText [format ["Zivilist: %1",_sentenceDenyingBegging],"PLAIN"];
+		[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
 		_player switchMove "Acts_Executioner_Backhand";
 		sleep 0.5;
@@ -127,9 +126,9 @@ if (!_knowsSomething) exitWith {
 		    "NameLocal"
 		   ],6000]) call BIS_fnc_selectRandom);
 		_text = text _location;
-		cutText [format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],"PLAIN"];
+		[position _civilian,format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],[getpos _location]] remoteExec ["GRAD_fnc_showQuestioningAnswer", -2, false];
 		_civilian setVariable ["civ_revealed",true];
-		0 = [getpos _location] execVM "player\createPilotMarker.sqf"; // todo broadcast
+
 	};
 
 	_civilian setVariable ["civ_occupied",false];
