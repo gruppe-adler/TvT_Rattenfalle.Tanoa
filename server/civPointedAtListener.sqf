@@ -180,3 +180,4 @@ GRAD_fnc_questionCiv = {
   	_civilian setVariable ["civ_occupied",false];
   };
 	_civilian setVariable ["civ_occupied",false];
+};
