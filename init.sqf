@@ -104,7 +104,7 @@ if (isServer) then {
 
 if (hasInterface) then {
 
-	titleCut ["", "WHITE IN", 1];
+	// titleCut ["", "WHITE IN", 1];
 
 	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 

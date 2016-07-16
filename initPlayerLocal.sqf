@@ -28,7 +28,9 @@ mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoad
 
 // for local execution of interrogation actions
 GRAD_fnc_addQuestioningAction = {
-	_id = _this addAction ["<t color='#F24F0F'>Verhören</t>",{[_this select 0, _this select 1] remoteExec ["GRAD_fnc_questionCiv", 2, false];},
+	_id = _this addAction ["<t color='#F24F0F'>Verhören</t>",{
+		[_this select 0, _this select 1] remoteExec ["GRAD_fnc_questionCiv", [2,0] select (isMultiplayer && isDedicated), false];
+	},
 	0, 100, true, true, '',
 	"player distance _target < 3.5 && !(_target getVariable ['civ_occupied',false])"];
 	_this setUserActionText [_id, "<t color='#F24F0F'>Verhören</t>"];

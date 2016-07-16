@@ -5,9 +5,9 @@ while {alive player} do {
 
            if (_civ getVariable ["GRAD_isPointedAtBy",0] == 0) then {
              if (isMultiplayer) then {
-               [_civ] remoteExec ["GRAD_fnc_stopCiv", 2, false];
+               [_civ] remoteExec ["GRAD_fnc_stopCiv", [2,0] select (isMultiplayer && isDedicated), false];
              } else {
-               [_civ] remoteExec ["GRAD_fnc_stopCiv", 0, false];
+               [_civ] remoteExec ["GRAD_fnc_stopCiv", [2,0] select (isMultiplayer && isDedicated), false];
              };
            };
 
