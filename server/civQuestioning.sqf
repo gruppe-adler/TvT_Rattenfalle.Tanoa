@@ -176,7 +176,7 @@ GRAD_fnc_questionCiv = {
       _civilian setVariable ["ACE_medical_lastDamageSource",_player];
   };
 
-  
+
   [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
   _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious]];
   _player switchMove "Acts_Executioner_Backhand";
