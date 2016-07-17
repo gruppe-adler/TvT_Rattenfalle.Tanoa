@@ -11,7 +11,7 @@ createRebelsMarker = {
 _REBEL_SPAWN_listener = {
 	#include "\z\ace\addons\main\script_component.hpp"
 	// debugLog("rebels teleport target listener running...");
-	_pos = _this select 0;
+	_pos = _this select 1;
 
 	diag_log format ["rebel spawn is %1",_pos];
 
