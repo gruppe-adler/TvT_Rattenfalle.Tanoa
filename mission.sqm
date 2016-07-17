@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=212;
+		nextID=218;
 	};
 	class MarkerIDProvider
 	{
@@ -49,13 +49,15 @@ addons[]=
 	"ace_explosives",
 	"A3_Air_F_Exp_Plane_Civil_01",
 	"ace_realisticnames",
-	"A3_Air_F_Heli_Light_01"
+	"A3_Air_F_Heli_Light_01",
+	"rhsusf_c_troops",
+	"RHS_US_A2_AirImport"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=24;
+		items=26;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -222,6 +224,16 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
+		class Item24
+		{
+			className="rhsusf_c_troops";
+			name="rhsusf_c_troops";
+		};
+		class Item25
+		{
+			className="RHS_US_A2_AirImport";
+			name="RHS_US_A2_AirImport";
+		};
 	};
 };
 randomSeed=7385247;
@@ -276,7 +288,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=88;
+		items=90;
 		class Item0
 		{
 			dataType="Marker";
@@ -5506,19 +5518,124 @@ class Mission
 		};
 		class Item87
 		{
-			dataType="Trigger";
-			position[]={1711.246,-15.461677,603.29303};
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2140.2703,4.88937,4599.5513};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=213;
+					type="rhsusf_army_ocp_aa";
+				};
+			};
 			class Attributes
 			{
-				name="trg_intromusic";
-				text="intro music";
-				condition="true";
-				sizeA=0;
-				sizeB=0;
-				effectMusic="LeadTrack01b_F_EXP";
 			};
-			id=209;
-			type="EmptyDetector";
+			id=212;
+		};
+		class Item88
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=2;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1313.2317,-19.774435,6105.1533};
+						angles[]={0.021331646,0,0.090419561};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+					};
+					id=216;
+					type="rhsusf_usmc_marpat_d_helipilot";
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1313.0691,-17.981722,6105.1914};
+						angles[]={0.021331646,0,0.090419561};
+					};
+					side="West";
+					class Attributes
+					{
+					};
+					id=217;
+					type="rhsusf_usmc_marpat_d_helipilot";
+					atlOffset=1.8082676;
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=2;
+				};
+				class Links
+				{
+					items=2;
+					class Item0
+					{
+						linkID=0;
+						item0=216;
+						item1=215;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=217;
+						item1=215;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+				};
+			};
+			id=214;
+		};
+		class Item89
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1313.0691,-17.98316,6105.1416};
+				angles[]={0.021331646,0,0.090419561};
+			};
+			side="West";
+			flags=6;
+			class Attributes
+			{
+			};
+			id=215;
+			type="RHS_AH1Z";
 		};
 	};
 	class Connections
