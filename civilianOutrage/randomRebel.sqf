@@ -176,9 +176,9 @@ _unit setVariable ["sentenceQuestionRage", [
 	"Wo ist der Pilot, verdammte Kacke! Rücks raus!"
 	]];
 
-_unit setVariable ["civ_questioned",0];
-_unit setVariable ["civ_revealed",false];
-_unit setVariable ["civ_occupied",false];
+_unit setVariable ["civ_questioned",0,true];
+_unit setVariable ["civ_revealed",false,true];
+_unit setVariable ["civ_occupied",false,true];
 
 _unit setVariable ["BIS_noCoreConversations", true];
 
@@ -194,7 +194,7 @@ _unit addEventHandler ["FiredNear", {
 
 _unit addEventHandler ["Hit", {
 		_questioned = (_this select 0) getVariable ["civ_questioned",0];
-		(_this select 0) setVariable ["civ_questioned",_questioned + 0.4];
+		(_this select 0) setVariable ["civ_questioned",_questioned + 0.4,true];
 }];
 
 [_unit,"GRAD_fnc_addQuestioningAction",nil,true] spawn BIS_fnc_MP;

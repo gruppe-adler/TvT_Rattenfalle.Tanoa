@@ -12,10 +12,10 @@ GRAD_fnc_questionCiv = {
 
   // dont do anything if the civilian is already in 'use'
   if (_civilian getVariable ["civ_occupied",false]) exitWith {};
-  _civilian setVariable ["civ_occupied",true];
+  _civilian setVariable ["civ_occupied",true,true];
 
   _civ_questioned = _civilian getVariable ["civ_questioned",0];
-  _civilian setVariable ["civ_questioned",_civ_questioned + 0.1];
+  _civilian setVariable ["civ_questioned",_civ_questioned + 0.1,true];
 
   _knowsSomething = _civilian getVariable ["civ_knowsSomething",false];
   _alreadyRevealed = _civilian getVariable ["civ_revealed",false];
@@ -50,25 +50,25 @@ GRAD_fnc_questionCiv = {
   	if (random 1 > _chanceToReveal) then {
   		if (_civ_questioned < 0.4) then {
         [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["sentenceQuestionCalm", _sentenceQuestionCalmArray - [_sentenceQuestionCalm]];
+        _civilian setVariable ["sentenceQuestionCalm", _sentenceQuestionCalmArray - [_sentenceQuestionCalm],true];
   			sleep 2;
   			[_civilian] spawn GRAD_fnc_startTalkLips;
   			[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
+        _civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm],true];
   		};
   		if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
         [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious]];
-  			_player switchMove "Acts_Executioner_Forehand";
+        _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
+        [_player, "Acts_Executioner_Forehand"] remoteExec ["playMoveNow", _player];
   			sleep 0.5;
-  			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
+  			_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
   			sleep 0.1;
-  			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+  			_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
   			sleep 1.9;
   			_player switchMove "";
   			[_civilian] spawn GRAD_fnc_startTalkLips;
   			[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
+        _civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious],true];
   		};
 
   		if (_civ_questioned > 0.4) then {
@@ -79,17 +79,17 @@ GRAD_fnc_questionCiv = {
 
   		if (_civ_questioned > 0.7) then {
         [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious]];
-  			_player switchMove "Acts_Executioner_Backhand";
+        _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
+  			[_player, "Acts_Executioner_Backhand"] remoteExec ["playMoveNow", _player];
   			sleep 0.5;
-  			_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
+  			_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
   			sleep 0.1;
-  			_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+  			_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
   			sleep 3.1;
   			_player switchMove "";
   			[_civilian] spawn GRAD_fnc_startTalkLips;
   			[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+        _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging],true];
   		};
 
   	} else {
@@ -97,52 +97,52 @@ GRAD_fnc_questionCiv = {
   		sleep 1;
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,format ["Zivilist: %1",_sentenceReveal + (LAST_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],[CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2]] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-  		_civilian setVariable ["civ_revealed",true];
+  		_civilian setVariable ["civ_revealed",true,true];
   	};
-  	_civilian setVariable ["civ_occupied",false];
+  	_civilian setVariable ["civ_occupied",false,true];
   };
 
   if (!_knowsSomething) exitWith {
   	if (_civ_questioned < 0.4) then {
       [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["sentenceQuestionCalm", _sentenceQuestionCalmArray - [_sentenceQuestionCalm]];
+      _civilian setVariable ["sentenceQuestionCalm", _sentenceQuestionCalmArray - [_sentenceQuestionCalm],true];
   		sleep 2;
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,_sentenceDenyingCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm]];
+      _civilian setVariable ["sentenceDenyingCalm", _sentenceDenyingCalmArray - [_sentenceDenyingCalm],true];
 
   	};
   	if (_civ_questioned >= 0.4 && _civ_questioned <= 0.7) then {
       [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious]];
-  		_player switchMove "Acts_Executioner_Forehand";
+      _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
+  		[_player, "Acts_Executioner_Forehand"] remoteExec ["playMoveNow", _player];
   		sleep 0.5;
-  		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
+  		_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
   		sleep 0.1;
-  		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+  		_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
   		sleep 1.9;
   		_player switchMove "";
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,_sentenceDenyingSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious]];
+      _civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious],true];
   	};
   	if (_civ_questioned > 0.7) then {
       [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious]];
-  		_player switchMove "Acts_Executioner_Backhand";
+      _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
+  		[_player, "Acts_Executioner_Backhand"] remoteExec ["playMoveNow", _player];
   		sleep 0.5;
-  		_civilian say3D (selectRandom ["smack1","smack2","smack3"]);
+  		_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
   		sleep 0.1;
-  		_civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+  		_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
   		sleep 3.1;
   		_player switchMove "";
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+      _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging],true];
   	};
 
   	if (_civ_questioned > 0.4) then {
-  			_damage = (_civilian getHitPointDamage "hithead") + (random 1);
+  			_damage = (_civilian getHitPointDamage "hithead") + (random 0.7);
   			[_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
   			_civilian setVariable ["ACE_medical_lastDamageSource",_player];
   	};
@@ -161,34 +161,34 @@ GRAD_fnc_questionCiv = {
   		_text = text _location;
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],[getpos _location]] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-  		_civilian setVariable ["civ_revealed",true];
+  		_civilian setVariable ["civ_revealed",true,true];
 
   	};
 
-  	_civilian setVariable ["civ_occupied",false];
+  	_civilian setVariable ["civ_occupied",false,true];
   };
 
   // if you just go on hitting him...
 
   if (_civ_questioned > 0.4) then {
-      _damage = (_civilian getHitPointDamage "hithead") + (random 1);
+      _damage = (_civilian getHitPointDamage "hithead") + (random 0.7);
       [_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
       _civilian setVariable ["ACE_medical_lastDamageSource",_player];
   };
 
 
   [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-  _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious]];
-  _player switchMove "Acts_Executioner_Backhand";
+  _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
+  [_player, "Acts_Executioner_Forehand"] remoteExec ["playMoveNow", _player];
   sleep 0.5;
-  _civilian say3D (selectRandom ["smack1","smack2","smack3"]);
+  _civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
   sleep 0.1;
-  _civilian say3D (selectRandom ["ouch1","ouch2","ouch3"]);
+  _civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
   sleep 3.1;
   _player switchMove "";
   [_civilian] spawn GRAD_fnc_startTalkLips;
   [position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-  _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging]];
+  _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging],true];
 
-	_civilian setVariable ["civ_occupied",false];
+	_civilian setVariable ["civ_occupied",false,true];
 };

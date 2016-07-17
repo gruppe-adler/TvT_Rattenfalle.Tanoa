@@ -11,6 +11,7 @@ showChat false;
 // functional variables - do not change!
 // player_respawned = 0;
 checkObjectives = false; // false is debug for playing without pilot
+jipTime = 60000;
 
 {_x setMarkerAlphaLocal 0;} forEach allMapMarkers;
 
@@ -74,7 +75,6 @@ if (isServer) then {
 	CHANCE_TO_REVEAL = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
 	publicVariable "CHANCE_TO_REVEAL";
 
-	jipTime = 60000;
 
 	0 = [] execVM "server\serverTeleportListener.sqf";
 	0 = [] execVM "server\selectSpawnPosition.sqf";
