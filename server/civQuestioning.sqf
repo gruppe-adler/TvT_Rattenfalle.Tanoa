@@ -61,9 +61,10 @@ GRAD_fnc_questionCiv = {
         _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
         [_player, "Acts_Executioner_Forehand"] remoteExec ["playMoveNow", _player];
   			sleep 0.5;
-  			_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
+
+        [_civilian, selectRandom ["smack1","smack2","smack3"]] remoteExec ["say3D",0,false];
   			sleep 0.1;
-  			_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
+        [_civilian, selectRandom ["ouch1","ouch2","ouch3"]] remoteExec ["say3D",0,false];
   			sleep 1.9;
   			_player switchMove "";
   			[_civilian] spawn GRAD_fnc_startTalkLips;
@@ -82,9 +83,9 @@ GRAD_fnc_questionCiv = {
         _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
   			[_player, "Acts_Executioner_Backhand"] remoteExec ["playMoveNow", _player];
   			sleep 0.5;
-  			_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
+  			[_civilian, selectRandom ["smack1","smack2","smack3"]] remoteExec ["say3D",0,false];
   			sleep 0.1;
-  			_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
+  			[_civilian, selectRandom ["ouch1","ouch2","ouch3"]] remoteExec ["say3D",0,false];
   			sleep 3.1;
   			_player switchMove "";
   			[_civilian] spawn GRAD_fnc_startTalkLips;
@@ -117,9 +118,9 @@ GRAD_fnc_questionCiv = {
       _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
   		[_player, "Acts_Executioner_Forehand"] remoteExec ["playMoveNow", _player];
   		sleep 0.5;
-  		_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
+  		[_civilian, selectRandom ["smack1","smack2","smack3"]] remoteExec ["say3D",0,false];
   		sleep 0.1;
-  		_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
+  		[_civilian, selectRandom ["ouch1","ouch2","ouch3"]] remoteExec ["say3D",0,false];
   		sleep 1.9;
   		_player switchMove "";
   		[_civilian] spawn GRAD_fnc_startTalkLips;
@@ -131,9 +132,9 @@ GRAD_fnc_questionCiv = {
       _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
   		[_player, "Acts_Executioner_Backhand"] remoteExec ["playMoveNow", _player];
   		sleep 0.5;
-  		_civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
+  		[_civilian, selectRandom ["smack1","smack2","smack3"]] remoteExec ["say3D",0,false];
   		sleep 0.1;
-  		_civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
+  		[_civilian, selectRandom ["ouch1","ouch2","ouch3"]] remoteExec ["say3D",0,false];
   		sleep 3.1;
   		_player switchMove "";
   		[_civilian] spawn GRAD_fnc_startTalkLips;
@@ -181,9 +182,9 @@ GRAD_fnc_questionCiv = {
   _civilian setVariable ["sentenceQuestionSerious", _sentenceQuestionSeriousArray - [_sentenceQuestionSerious],true];
   [_player, "Acts_Executioner_Forehand"] remoteExec ["playMoveNow", _player];
   sleep 0.5;
-  _civilian playSound3D [selectRandom ["smack1","smack2","smack3"],_civilian];
+  [_civilian, selectRandom ["smack1","smack2","smack3"]] remoteExec ["say3D",0,false];
   sleep 0.1;
-  _civilian playSound3D [selectRandom ["ouch1","ouch2","ouch3"],_civilian];
+  [_civilian, selectRandom ["ouch1","ouch2","ouch3"]] remoteExec ["say3D",0,false];
   sleep 3.1;
   _player switchMove "";
   [_civilian] spawn GRAD_fnc_startTalkLips;
