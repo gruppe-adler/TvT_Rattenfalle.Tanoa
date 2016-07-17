@@ -197,8 +197,6 @@ _unit addEventHandler ["Hit", {
 		(_this select 0) setVariable ["civ_questioned",_questioned + 0.4];
 }];
 
-
-
 [_unit,"GRAD_fnc_addQuestioningAction",nil,true] spawn BIS_fnc_MP;
 
 };

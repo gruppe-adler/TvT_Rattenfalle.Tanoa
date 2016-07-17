@@ -13,6 +13,8 @@ createrebelVehicle = {
 		_crewDriver = _grp0 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
 		[_crewDriver] call randomRebel; // rebel loadout
+		[_crewDriver, _car0, true] call ACE_VehicleLock_fnc_addKeyForVehicle;
+		_car0 setFuel 0.1;
 
 		_crewDriver assignAsDriver _car0;
 		_crewDriver moveInDriver _car0;

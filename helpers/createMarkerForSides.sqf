@@ -1,9 +1,6 @@
 // side is array
-_side = _this select 0;
-_position = _this select 1;
-
-
-if (!(side player in _side)) exitWith {};
+// _side = [west,east,independent];
+_position = _this select 0;
 
 _position = [_position select 0, _position select 1];
 
@@ -32,7 +29,7 @@ pulseMarker = {
 			};
 			pulseMarkerSize = pulseMarkerSize + pulseMarkerModifier;
 			pulseMarkerModifier = pulseMarkerModifier + 0.3;
-		
+
 		"mrk_crash_site" setMarkerSizeLocal [pulseMarkerSize,pulseMarkerSize];
 		if (pulseMarkerSize > 150) then {
 			"mrk_crash_site" setMarkerAlphaLocal (pulseMarkerAlpha - 0.05);
@@ -44,7 +41,7 @@ pulseMarker = {
 
 checkMapOpen = {
 	while {true} do {
-			
+
 			if (visibleMap) exitWith {[] call pulseMarker;};
 
 			sleep 1;
