@@ -123,7 +123,7 @@ if (hasInterface) then {
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
 	};
 
-	waitUntil {playerSide == west || playerSide == east || playerSide == independent};
+	sleep 5;
 
 	// WEST is US
 	if (playerSide == west) then {

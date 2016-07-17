@@ -30,10 +30,17 @@ _REBEL_SPAWN_listener = {
 	closeDialog 0;
 };
 
-"REBEL_SPAWN" addPublicVariableEventHandler _REBEL_SPAWN_listener;
+// "REBEL_SPAWN" addPublicVariableEventHandler _REBEL_SPAWN_listener;
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)
 if (!isMultiplayer) then {
+	_REBEL_SPAWN_listener spawn {
+		waitUntil {REBEL_SPAWN select 0 != 0};
+		[0, REBEL_SPAWN] call _this;
+	};
+};
+
+if (isMultiplayer) then {
 	_REBEL_SPAWN_listener spawn {
 		waitUntil {REBEL_SPAWN select 0 != 0};
 		[0, REBEL_SPAWN] call _this;

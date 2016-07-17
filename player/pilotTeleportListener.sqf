@@ -31,10 +31,17 @@ _CRASH_SITE_listener = {
 	closeDialog 0;
 };
 
-"CRASH_SITE" addPublicVariableEventHandler _CRASH_SITE_listener;
+// "CRASH_SITE" addPublicVariableEventHandler _CRASH_SITE_listener;
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)
 if (!isMultiplayer) then {
+	_CRASH_SITE_listener spawn {
+		waitUntil {CRASH_SITE select 0 != 0};
+		[0, CRASH_SITE] call _this;
+	};
+};
+
+if (isMultiplayer) then {
 	_CRASH_SITE_listener spawn {
 		waitUntil {CRASH_SITE select 0 != 0};
 		[0, CRASH_SITE] call _this;

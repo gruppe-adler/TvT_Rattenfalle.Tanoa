@@ -30,10 +30,17 @@ _US_SPAWN_listener = {
 	closeDialog 0;
 };
 
-"US_SPAWN" addPublicVariableEventHandler _US_SPAWN_listener;
+// "US_SPAWN" addPublicVariableEventHandler _US_SPAWN_listener;
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)
 if (!isMultiplayer) then {
+	_US_SPAWN_listener spawn {
+		waitUntil {US_SPAWN select 0 != 0};
+		[0, US_SPAWN] call _this;
+	};
+};
+
+if (isMultiplayer) then {
 	_US_SPAWN_listener spawn {
 		waitUntil {US_SPAWN select 0 != 0};
 		[0, US_SPAWN] call _this;
