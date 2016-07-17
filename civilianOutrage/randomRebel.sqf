@@ -183,9 +183,9 @@ _unit setVariable ["civ_occupied",false,true];
 _unit setVariable ["BIS_noCoreConversations", true];
 
 if (random 1 < 0.8) then {
-	_unit setVariable ["civ_knowsSomething",true];
+	_unit setVariable ["civ_knowsSomething",true,true];
 } else {
-	_unit setVariable ["civ_knowsSomething",false];
+	_unit setVariable ["civ_knowsSomething",false,true];
 };
 
 _unit addEventHandler ["FiredNear", {
