@@ -1,9 +1,10 @@
 grad_player_waving = false;
 
-_waveLoop = {
+GRAD_fnc_waveLoop = {
 	grad_player_waving = true;
 	while {grad_player_waving} do {
-		player playMoveNow "Acts_PercMstpSlowWrflDnon_handup2";
+		[player] call ace_weaponselect_fnc_putWeaponAway;
+		player playMove "Acts_PercMstpSlowWrflDnon_handup2";
 		sleep 4.5;
 	};
 	player playMoveNow "";
@@ -12,7 +13,7 @@ _waveLoop = {
 _waveAction =
 [
 	'Wave both arms','Wave both arms','',
-	{[] spawn _waveLoop;},
+	{[] spawn GRAD_fnc_waveLoop;},
 	{!grad_player_waving}
 ] call ace_interact_menu_fnc_createAction;
 [
