@@ -3,24 +3,24 @@
 
 _location = _this select 0;
 _distance = _this select 1;
-
+_unit = _this select 2;
 
 if (isMultiplayer) then { sleep (random 10);}; // balance loadout load in MP
 ["..."] call EFUNC(common,displayTextStructured);
-[player] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",player];
+[_unit] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",_unit];
 _spawn = _location findEmptyPosition[2, 20, "B_Soldier_F"];
-diag_log format ["teleporting %1 to %2.", player, _location];
+diag_log format ["teleporting %1 to %2.", _unit, _location];
 
 sleep 1;
 // playSound "beam";
-_nul = player setPos _spawn;
+_nul = _unit setPos _spawn;
 [".."] call EFUNC(common,displayTextStructured);
 hintSilent "";
 sleep 1;
 // cutText ["", "BLACK IN", 1];
 ["."] call EFUNC(common,displayTextStructured);
-// make player vulnerable again
-player allowDamage true;
+// make _unit vulnerable again
+_unit allowDamage true;
 // 3 call fn_sthud_usermenu_changeMode;
 sleep 1;
 ["+"] call EFUNC(common,displayTextStructured);

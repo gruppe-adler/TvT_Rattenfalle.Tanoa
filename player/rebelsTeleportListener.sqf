@@ -21,7 +21,7 @@ _REBEL_SPAWN_listener = {
 	waituntil {US_SPAWN select 0 != 0};
 	["..."] call EFUNC(common,displayTextStructured);
 
-	[_pos, 50] execVM "player\teleportPlayer.sqf";
+	[_pos, 50, player] execVM "player\teleportPlayer.sqf";
 
 	_pos call createRebelsMarker;
 
