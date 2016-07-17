@@ -11,7 +11,9 @@ createUSMarker = {
 _US_SPAWN_listener = {
 	#include "\z\ace\addons\main\script_component.hpp"
 	//debugLog("opfor teleport target listener running...");
-	_pos = _this select 1;
+	_pos = _this select 0;
+
+	diag_log format ["us spawn is %1",_pos];
 
 	["......"] call EFUNC(common,displayTextStructured);
 	waituntil {CRASH_SITE select 0 != 0};

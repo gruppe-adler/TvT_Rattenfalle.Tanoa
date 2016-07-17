@@ -11,7 +11,9 @@ createPilotMarker = {
 _CRASH_SITE_listener = {
 	#include "\z\ace\addons\main\script_component.hpp"
 	//debugLog("pilot teleport target listener running...");
-	_pos = _this select 1;
+	_pos = _this select 0;
+
+	diag_log format ["pilot spawn is %1",_pos];
 
 	["......"] call EFUNC(common,displayTextStructured);
 	waituntil {CRASH_SITE select 0 != 0};

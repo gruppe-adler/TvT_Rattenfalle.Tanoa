@@ -42,11 +42,13 @@ createRebelsSpawn = {
 
 	[{0 = [REBEL_SPAWN,"REBEL_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
-	{
-		if ((!isPlayer _x) && side _x == east) then {
-			[REBEL_SPAWN, 50, _x] execVM "player\teleportPlayer.sqf";
-		};
-	} forEach allUnits;
+	[] spawn {
+			{
+			if ((!isPlayer _x) && side _x == east) then {
+				[REBEL_SPAWN, 50, _x] execVM "player\teleportPlayer.sqf";
+			};
+		} forEach allUnits;
+	};
 };
 
 createUSSpawn = {
@@ -59,11 +61,13 @@ createUSSpawn = {
 
 	[{0 = [US_SPAWN,"US_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
-	{
-		if ((!isPlayer _x) && side _x == west) then {
-			[US_SPAWN, 50, _x] execVM "player\teleportPlayer.sqf";
-		};
-	} forEach allUnits;
+	[] spawn {
+		{
+			if ((!isPlayer _x) && side _x == west) then {
+				[US_SPAWN, 50, _x] execVM "player\teleportPlayer.sqf";
+			};
+		} forEach allUnits;
+	};
 
 };
 
@@ -85,12 +89,13 @@ _CRASH_SITE_listener = {
 
 
 	0 = [_pos,6000,LAST_PILOTS_POSITION] execVM "server\pilotSightingsServer.sqf";
-
-	{
-		if ((!isPlayer _x) && side _x == independent) then {
-			[CRASH_SITE, 50, _x] execVM "player\teleportPlayer.sqf";
-		};
-	} forEach allUnits;
+	[] spawn {
+		{
+			if ((!isPlayer _x) && side _x == independent) then {
+				[CRASH_SITE, 50, _x] execVM "player\teleportPlayer.sqf";
+			};
+		} forEach allUnits;
+	};
 	/*
 	_crashSitePos = _this select 0; // Helicopter crashSite Position
 	_maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted
