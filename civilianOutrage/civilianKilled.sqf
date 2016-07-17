@@ -19,7 +19,7 @@ increaseSightingDelay = {
 };
 
 
-switch (str side _shooter) do {
+switch (str (side _shooter)) do {
 
 	case "west": {
 		SIGHTING_DELAY = [SIGHTING_DELAY] call reduceSightingDelay;
@@ -45,5 +45,5 @@ switch (str side _shooter) do {
 		diag_log format ["civilian %1 killed by civilian %2",_victim,_shooter];
 	};
 
-	default {};
+	default { 	diag_log format ["str side shooter is %1, penalty not executed",str (side _shooter)]; };
 };
