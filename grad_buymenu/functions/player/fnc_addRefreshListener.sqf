@@ -1,41 +1,48 @@
 /* client side */
 
 // money
-_moneyBluforListener = {
-	if (buyMenuOpen) then {
-		// diag_log format ["money blufor listener triggered"];
-		[_this select 1] spawn fnc_refreshCredits;
-	};
+if (side player == west) then {
+		_moneyBluforListener = {
+			if (buyMenuOpen) then {
+				// diag_log format ["money blufor listener triggered"];
+				[_this select 1] spawn fnc_refreshCredits;
+			};
+		};
+		"moneyBlufor" addPublicVariableEventHandler _moneyBluforListener;
 };
 
-"moneyBlufor" addPublicVariableEventHandler _moneyBluforListener;
-
-_moneyOpforListener = {
-	if (buyMenuOpen) then {
-		// diag_log format ["money opfor listener triggered"];
-			[_this select 1] spawn fnc_refreshCredits;
-	};
+if (side player == east) then {
+		_moneyOpforListener = {
+			if (buyMenuOpen) then {
+				// diag_log format ["money opfor listener triggered"];
+					[_this select 1] spawn fnc_refreshCredits;
+			};
+		};
+		"moneyOpfor" addPublicVariableEventHandler _moneyOpforListener;
 };
-
-"moneyOpfor" addPublicVariableEventHandler _moneyOpforListener;
 
 
 // supplies
-_suppliesBluforListener = {
-	if (buyMenuOpen) then {
-		diag_log format ["supplies blufor listener triggered"];
-		[suppliesBlufor, moneyBlufor] call fnc_refreshGUI;
-	};
+if (side player == west) then {
+		_suppliesBluforListener = {
+			if (buyMenuOpen) then {
+				diag_log format ["supplies blufor listener triggered"];
+				[suppliesBlufor, moneyBlufor] call fnc_refreshGUI;
+			};
+		};
+		"suppliesBlufor" addPublicVariableEventHandler _suppliesBluforListener;
 };
-"suppliesBlufor" addPublicVariableEventHandler _suppliesBluforListener;
 
-_suppliesOpforListener = {
-	if (buyMenuOpen) then {
-		diag_log format ["supplies opfor listener triggered"];
-		[suppliesOpfor, moneyOpfor] call fnc_refreshGUI;
-	};
+if (side player == east) then {
+		_suppliesOpforListener = {
+			if (buyMenuOpen) then {
+				diag_log format ["supplies opfor listener triggered"];
+				[suppliesOpfor, moneyOpfor] call fnc_refreshGUI;
+			};
+		};
+		"suppliesOpfor" addPublicVariableEventHandler _suppliesOpforListener;
 };
-"suppliesOpfor" addPublicVariableEventHandler _suppliesOpforListener;
+
 
 
 /* E M U L A T I O N  for singleplayer tests */

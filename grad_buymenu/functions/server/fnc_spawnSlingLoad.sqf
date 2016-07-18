@@ -111,7 +111,7 @@ spawnSlingLoad = {
 
 
 
-		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 50], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
+		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 100], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
 		_chopper = _chopperArray select 0;
 		createVehicleCrew _chopper;
 		chopperGroup = group _chopper;
@@ -132,12 +132,13 @@ spawnSlingLoad = {
 
 
 
-		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, 30], [], 0, "NONE"];
+		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, 70], [], 0, "NONE"];
 		_vehicle allowDamage false;
 		_vehicle disableCollisionWith _chopper;
 
-		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [_chopperPos0 select 0, _chopperPos0 select 1, 100], [], 0, "NONE"];
+		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [_chopperPos0 select 0, _chopperPos0 select 1, 85], [], 0, "NONE"];
 		_dummyVehicle allowDamage false;
+		_dummyVehicle disableCollisionWith _chopper;
 
 		[_vehicle] call _call;
 		sleep 0.1;
@@ -181,7 +182,7 @@ spawnSlingLoad = {
 		//hintSilent format ["1%",_isloaded];
 
 		_wp0 = chopperGroup addWaypoint [[_chopperPos1 select 0, _chopperPos1 select 1], 0];
-		_wp0 setWaypointStatements ["true", "this flyInHeight 50;"];
+		_wp0 setWaypointStatements ["true", "this flyInHeight 70;"];
 		_wp0 setWaypointCompletionRadius 100;
 		_wp0 setWaypointType "MOVE";
 
@@ -192,7 +193,7 @@ spawnSlingLoad = {
 		_wp1 setWaypointType "UNHOOK";
 
 		_wp2 = chopperGroup addWaypoint [[_chopperPos3 select 0, _chopperPos3 select 1], 2];
-		_wp2 setWaypointStatements ["true", "this flyInHeight 50;"];
+		_wp2 setWaypointStatements ["true", "this flyInHeight 70;"];
 		_wp2 setWaypointCompletionRadius 100;
 		_wp2 setWaypointType "MOVE";
 

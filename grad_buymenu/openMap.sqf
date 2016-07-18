@@ -77,11 +77,10 @@ if (side player == west) then {
 //"hintsilent format ['%1',(_this select 0) lbText (_this select 1)];
 
 _createdGui displayCtrl 2338 ctrlMapCursor ["","HC_overFriendly"];
-_createdGui displayCtrl 2338 ctrlAddEventHandler ["onDestroy",{onMapSingleClick "";}];
 
 // _createdGui displayCtrl 2338 ctrlAddEventHandler ["onMouseButtonDown","0 = [_this] execVM 'grad_buymenu\createDropMarker.sqf'; "];
 // onMapSingleClick "0 = [_pos,currentMarkerToMove] execVM 'grad_buymenu\moveDropMarker.sqf;'";
-onMapSingleClick "[_pos,currentMarkerToMove] spawn fnc_moveDropMarker;true";
+onMapSingleClick "[_pos,currentMarkerToMove] spawn fnc_moveDropMarker;onMapSingleClick "";true";
 
 // onMapSingleClick "[_pos,_marker] call fnc_moveDropMarker; false";
 
