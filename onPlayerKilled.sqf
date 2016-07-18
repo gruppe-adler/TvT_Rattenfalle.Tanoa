@@ -93,6 +93,10 @@ hint composeText [_rule, _respawning, _lineBreak, _rule];
 setPlayerRespawnTime 0;
 forceRespawn player;
 
+// read loadout
+_role = [roleDescription _unit] call mcd_fnc_strToLoadout;
+if (isNil _role) exitWith {diag_log format ["loadoutInit.sqf - LOADOUT FOR %1 NOT FOUND!", _role]};
+call compile ("call " + _role);
 //close hint
 sleep 4;
 hint "";

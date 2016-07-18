@@ -37,7 +37,7 @@ opfor_rifleman = {
 	[this] call stripHimNaked;
 
 
-this addWeapon "rhs_weap_akms";
+	this addWeapon "rhs_weap_akms";
 
 	comment "Add containers";
 	this forceAddUniform "U_I_C_Soldier_Camo_F";
@@ -102,7 +102,7 @@ opfor_ftl = {
 	[this] call set_uniform_items;
 	this addVest "V_TacVest_camo";
 	this addHeadgear "H_Watchcap_khk";
-	this addBackpack "rhs_assault_umbts";
+	this addBackpack "tf_rt1523g_bwmod";
 
 	[this] call set_akm_ammo;
 

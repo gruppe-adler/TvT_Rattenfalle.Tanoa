@@ -48,14 +48,12 @@ blufor_basic = {
 	[this, "30Rnd_556x45_Stanag_Tracer_Red", 10] call addMagazinesToBackpack;
 	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 10] call addMagazinesToBackpack;
 
-
 	this addWeapon (selectRandom blufor_random_primaryweapon);
 	this addWeapon "rhsusf_weap_m9";
 	this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
 	this addPrimaryWeaponItem "rhsusf_acc_eotech_552";
 
 	this addItemToUniform "ACE_microDAGR";
-
 
 	for "_i" from 1 to 10 do {this addItemToBackpack "ACE_elasticBandage";};
 	this addItemToBackpack "ACE_bloodIV_250";
@@ -74,13 +72,11 @@ blufor_basic = {
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
 
-
 	this addHeadgear (selectRandom blufor_random_helmet);
 
 	if (random 2 > 1) then {
 			this addGoggles (selectRandom blufor_random_goggles);
 	};
-
 
 	comment "Add items";
 	this linkItem "ItemMap";
@@ -102,7 +98,6 @@ blufor_rifleman = {
 };
 
 blufor_sql = {
-
 	this = _this select 0;
 
 	[this] call stripHimNaked;
@@ -111,25 +106,37 @@ blufor_sql = {
 
 	removeBackpack this;
 	this addBackpack "tf_rt1523g_big_bwmod";
+	this addVest "V_TacVest_oli";
 
-	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addMagazinesToBackpack;
-	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addMagazinesToBackpack;
+	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addMagazinesToVest;
+	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addMagazinesToVest;
 
 	for "_i" from 1 to 2 do {this addItemToBackpack "rhs_mag_m67";};
 	this addItemToBackpack "SmokeShellRed";
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
 	0 = execVM "player\animations\addBuyInteraction.sqf";
-
 };
 
 blufor_ftl = {
 
 	this = _this select 0;
-
+	
 	[this] call stripHimNaked;
 	[this] call blufor_basic;
 	comment "Add containers";
+
+	removeBackpack this;
+	this addBackpack "tf_rt1523g_big_bwmod";
+	this addVest "V_TacVest_oli";
+
+	[this, "30Rnd_556x45_Stanag_Tracer_Red", 5] call addMagazinesToVest;
+	[this, "rhs_mag_30Rnd_556x45_Mk262_Stanag", 5] call addMagazinesToVest;
+
+	for "_i" from 1 to 2 do {this addItemToBackpack "rhs_mag_m67";};
+	this addItemToBackpack "SmokeShellRed";
+	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
+	this addItemToBackpack "ACE_HandFlare_Red";
 	0 = execVM "player\animations\addBuyInteraction.sqf";
 
 };
