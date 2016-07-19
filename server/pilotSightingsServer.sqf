@@ -10,15 +10,8 @@ if (!isServer) exitWith {}; // just to make sure!
 _crashSitePos = _this select 0; // Helicopter crashSite Position
 _maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted
 _publicVariable = _this select 2; // publicVariable for this Pilot
-_crashPilots = [];
 
-waitUntil {time > 4};
-{
-   if ((side _x) == independent) then
-   {
-      _crashPilots = _crashPilots + [_x];
-   };
-} forEach allUnits;
+
 
 
 /*
@@ -58,7 +51,7 @@ while {true} do {
 
 		};
 		sleep (random 10);
-	} forEach _crashPilots;
+	} forEach CRASH_PILOTS;
 	sleep 10;
   };
   LAST_PILOTS_POSITION = [_text, _pos, _markerSize];
