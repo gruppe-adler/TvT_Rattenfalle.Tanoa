@@ -96,7 +96,16 @@ if (isServer) then {
 	} else {
 			{if (!isPlayer _x) then {sleep 0.5; 0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
 	};
-
+	
+	
+	{
+		if (_x getVariable ["GRAD_isCrashPilot",false]) then {
+			// add unit to crash pilots
+			CRASH_PILOTS = CRASH_PILOTS + [_x];
+			publicVariable "CRASH_PILOTS";
+		};
+	}
+	forEach allUnits;
 
 };
 
