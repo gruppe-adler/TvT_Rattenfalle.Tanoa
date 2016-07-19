@@ -58,7 +58,7 @@ createrebelVehicle = {
 		};
 	};
 	
-	_veh addEventhandler ["HandleDamage",{if () then {};}]; // add eventhandler damage for vehicle
+	_veh addEventhandler ["HandleDamage",{if ((_this select 4 == "") then {0;};}]; // add eventhandler damage for vehicle
 
 
 	[_veh,_group]
