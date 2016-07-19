@@ -38,7 +38,7 @@ createRebelsSpawn = {
 	REBEL_SPAWN = getMarkerPos spawnMarkerOpforLand;
 	publicVariable "REBEL_SPAWN";
 
-	respawn_east setPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0];
+	respawn_east setMarkerPos [REBEL_SPAWN select 0, REBEL_SPAWN select 1, 0];
 
 	[{0 = [REBEL_SPAWN,"REBEL_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
@@ -57,7 +57,7 @@ createUSSpawn = {
 	US_SPAWN = getMarkerPos spawnMarkerBluforLand;
 	publicVariable "US_SPAWN";
 
-	respawn_west setPos [US_SPAWN select 0, US_SPAWN select 1, 0];
+	respawn_west setMarkerPos [US_SPAWN select 0, US_SPAWN select 1, 0];
 
 	[{0 = [US_SPAWN,"US_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
 
