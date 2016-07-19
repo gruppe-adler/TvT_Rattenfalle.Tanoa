@@ -53,7 +53,7 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 
 		_road = ENGIMA_TRAFFIC_allRoadSegments select _i;
 
-		_roadPos = getPos _road;
+		_roadPos = getPosATL _road;
 
 		_index = 0;
 
@@ -140,7 +140,7 @@ ENGIMA_TRAFFIC_MoveVehicle = {
     else {
 		_roadSegments = ENGIMA_TRAFFIC_roadSegments select _currentInstanceIndex;
         _destinationSegment = _roadSegments select floor random count _roadSegments;
-        _destinationPos = getPos _destinationSegment;
+        _destinationPos = getPosATL _destinationSegment;
     };
 
     _speed = "NORMAL";
@@ -231,7 +231,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
                 _insideMarker = true;
                 _tooCloseToAnotherVehicle = false;
 
-                if (_areaMarkerName != "" && !([getPos _roadSegment, _areaMarkerName] call ENGIMA_TRAFFIC_PositionIsInsideMarker)) then {
+                if (_areaMarkerName != "" && !([getPosATL _roadSegment, _areaMarkerName] call ENGIMA_TRAFFIC_PositionIsInsideMarker)) then {
                 	_insideMarker = false;
                 };
 
@@ -241,10 +241,10 @@ ENGIMA_TRAFFIC_StartTraffic = {
 
 		                _tooFarAway = false;
 
-		                if (_x distance (getPos _roadSegment) < _minSpawnDistance) then {
+		                if (_x distance (getPosATL _roadSegment) < _minSpawnDistance) then {
 		                    _tooClose = true;
 		                };
-		                if (_x distance (getPos _roadSegment) > _maxSpawnDistance) then {
+		                if (_x distance (getPosATL _roadSegment) > _maxSpawnDistance) then {
 		                    _tooFarAway = true;
 		                };
 		                if (!_tooFarAway) then {
@@ -258,7 +258,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	                    private ["_vehicle"];
 	                    _vehicle = _x select 0;
 
-	                    if ((getPos _roadSegment) distance _vehicle < 100) then {
+	                    if ((getPosATL _roadSegment) distance _vehicle < 100) then {
 	                        _tooCloseToAnotherVehicle = true;
 	                    };
 
@@ -371,17 +371,17 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            // Get first destination
 	            _trafficLocation = floor random 5;
 	            switch (_trafficLocation) do {
-	                case 0: { _roadSegments = (getPos (ENGIMA_TRAFFIC_edgeBottomLeftRoads select _currentInstanceIndex)) nearRoads 100; };
-	                case 1: { _roadSegments = (getPos (ENGIMA_TRAFFIC_edgeTopLeftRoads select _currentInstanceIndex)) nearRoads 100; };
-	                case 2: { _roadSegments = (getPos (ENGIMA_TRAFFIC_edgeTopRightRoads select _currentInstanceIndex)) nearRoads 100; };
-	                case 3: { _roadSegments = (getPos (ENGIMA_TRAFFIC_edgeBottomRightRoads select _currentInstanceIndex)) nearRoads 100; };
+	                case 0: { _roadSegments = (getPosATL (ENGIMA_TRAFFIC_edgeBottomLeftRoads select _currentInstanceIndex)) nearRoads 100; };
+	                case 1: { _roadSegments = (getPosATL (ENGIMA_TRAFFIC_edgeTopLeftRoads select _currentInstanceIndex)) nearRoads 100; };
+	                case 2: { _roadSegments = (getPosATL (ENGIMA_TRAFFIC_edgeTopRightRoads select _currentInstanceIndex)) nearRoads 100; };
+	                case 3: { _roadSegments = (getPosATL (ENGIMA_TRAFFIC_edgeBottomRightRoads select _currentInstanceIndex)) nearRoads 100; };
 	                default { _roadSegments = ENGIMA_TRAFFIC_roadSegments select _currentInstanceIndex };
 	            };
 
 	            _destinationSegment = _roadSegments select floor random count _roadSegments;
-	            _destinationPos = getPos _destinationSegment;
+	            _destinationPos = getPosATL _destinationSegment;
 
-	            _direction = ((_destinationPos select 0) - (getPos _spawnSegment select 0)) atan2 ((_destinationPos select 1) - (getpos _spawnSegment select 1));
+	            _direction = ((_destinationPos select 0) - (getPosATL _spawnSegment select 0)) atan2 ((_destinationPos select 1) - (getposATL _spawnSegment select 1));
 	            _roadSegmentDirection = getDir _spawnSegment;
 
 	            while {_roadSegmentDirection < 0} do {
@@ -419,8 +419,8 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	                _direction = _roadSegmentDirection;
 	            };
 
-	            _posX = (getPos _spawnSegment) select 0;
-	            _posY = (getPos _spawnSegment) select 1;
+	            _posX = (getPosATL _spawnSegment) select 0;
+	            _posY = (getPosATL _spawnSegment) select 1;
 
 	            _posX = _posX + 2.5 * sin (_direction + 90);
 	            _posY = _posY + 2.5 * cos (_direction + 90);
@@ -563,7 +563,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 		                _debugMarkerColor = "ColorGreen";
 		            };
 
-		            [_debugMarkerName, getPos (_vehicle), "mil_dot", _debugMarkerColor, "Traffic"] call ENGIMA_TRAFFIC_SetDebugMarkerAllClients;
+		            [_debugMarkerName, getPosATL (_vehicle), "mil_dot", _debugMarkerColor, "Traffic"] call ENGIMA_TRAFFIC_SetDebugMarkerAllClients;
 
 		        } foreach _activeVehiclesAndGroup;
 
