@@ -149,7 +149,7 @@ ENGIMA_TRAFFIC_MoveVehicle = {
     };
 
     _waypoint = group _vehicle addWaypoint [_destinationPos, 10];
-    _waypoint setWaypointBehaviour "SAFE";
+    _waypoint setWaypointBehaviour "CARELESS";
     _waypoint setWaypointSpeed _speed;
     _waypoint setWaypointCompletionRadius 10;
     _waypoint setWaypointStatements ["true", "_nil = [" + str _currentInstanceIndex + ", " + vehicleVarName _vehicle + ", [], " + str _debug + "] spawn ENGIMA_TRAFFIC_MoveVehicle;"];
