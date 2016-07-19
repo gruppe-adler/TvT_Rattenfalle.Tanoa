@@ -57,6 +57,8 @@ createrebelVehicle = {
 		[_group,_veh] call _createCargo;
 		};
 	};
+	
+	_veh addEventhandler ["HandleDamage",{if () then {};}]; // add eventhandler damage for vehicle
 
 
 	[_veh,_group]
