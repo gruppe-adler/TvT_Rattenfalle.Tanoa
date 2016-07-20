@@ -8,6 +8,7 @@ _timeOfDay = "TimeOfDay" call BIS_fnc_getParamValue;
 _weatherSetting = "WeatherSetting" call BIS_fnc_getParamValue;
 
 
+
 setCustomWeather = {
 	skipTime -24;
 	0 setOvercast (_this select 0);

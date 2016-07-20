@@ -71,6 +71,14 @@ class Params
     texts[] = {"0.5 min","1 min","1.5 min", "2 min", "2.5 min", "3 min", "3.5 min", "4 min", "4.5 min", "5 min", "5.5 min", "6 min", "6.5 min", "7 min", "7.5 min", "8 min", "8.5 min", "9 min", "9.5 min", "10 min"};
     default = 270;
   };
+
+  class debugMode
+  {
+    title = "Debug Mode";
+    values[] = {0,1};
+    texts[] = {"Off", "On"};
+    default = 1;
+  };
 };
 
 class CfgSounds

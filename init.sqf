@@ -1,4 +1,4 @@
-DEBUG = true;
+DEBUG = ("debugMode" call BIS_fnc_getParamValue == 1);
 //
 // customizable variables
 //
