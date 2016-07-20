@@ -144,7 +144,7 @@ GRAD_fnc_questionCiv = {
   	};
 
   	if (_civ_questioned > 0.4) then {
-  			_damage = (_civilian getHitPointDamage "hithead") + (random 0.7);
+  			_damage = (_civilian getHitPointDamage "hithead") + (random 0.3);
   			[_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
   			_civilian setVariable ["ACE_medical_lastDamageSource",_player];
   	};
@@ -173,7 +173,7 @@ GRAD_fnc_questionCiv = {
   // if you just go on hitting him...
 
   if (_civ_questioned > 0.4) then {
-      _damage = (_civilian getHitPointDamage "hithead") + (random 0.7);
+      _damage = (_civilian getHitPointDamage "hithead") + (random 0.3);
       [_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
       _civilian setVariable ["ACE_medical_lastDamageSource",_player];
   };

@@ -1,48 +1,42 @@
 /* client side */
 
 // money
-if (side player == west) then {
-		_moneyBluforListener = {
-			if (buyMenuOpen) then {
-				// diag_log format ["money blufor listener triggered"];
-				[_this select 1] spawn fnc_refreshCredits;
-			};
-		};
-		"moneyBlufor" addPublicVariableEventHandler _moneyBluforListener;
+_moneyBluforListener = {
+	if (buyMenuOpen) then {
+		[_this select 1] spawn fnc_refreshCredits;
+	};
 };
 
-if (side player == east) then {
-		_moneyOpforListener = {
-			if (buyMenuOpen) then {
-				// diag_log format ["money opfor listener triggered"];
-					[_this select 1] spawn fnc_refreshCredits;
-			};
-		};
-		"moneyOpfor" addPublicVariableEventHandler _moneyOpforListener;
+_moneyOpforListener = {
+	if (buyMenuOpen) then {
+			[_this select 1] spawn fnc_refreshCredits;
+	};
 };
-
 
 // supplies
+_suppliesBluforListener = {
+	if (buyMenuOpen) then {
+		diag_log format ["supplies blufor listener triggered"];
+		[suppliesBlufor, moneyBlufor] call fnc_refreshGUI;
+	};
+};
+
+_suppliesOpforListener = {
+	if (buyMenuOpen) then {
+		diag_log format ["supplies opfor listener triggered"];
+		[suppliesOpfor, moneyOpfor] call fnc_refreshGUI;
+	};
+};
+
 if (side player == west) then {
-		_suppliesBluforListener = {
-			if (buyMenuOpen) then {
-				diag_log format ["supplies blufor listener triggered"];
-				[suppliesBlufor, moneyBlufor] call fnc_refreshGUI;
-			};
-		};
-		"suppliesBlufor" addPublicVariableEventHandler _suppliesBluforListener;
+			"moneyBlufor" addPublicVariableEventHandler _moneyBluforListener;
+			"suppliesBlufor" addPublicVariableEventHandler _suppliesBluforListener;
 };
 
 if (side player == east) then {
-		_suppliesOpforListener = {
-			if (buyMenuOpen) then {
-				diag_log format ["supplies opfor listener triggered"];
-				[suppliesOpfor, moneyOpfor] call fnc_refreshGUI;
-			};
-		};
+		"moneyOpfor" addPublicVariableEventHandler _moneyOpforListener;
 		"suppliesOpfor" addPublicVariableEventHandler _suppliesOpforListener;
 };
-
 
 
 /* E M U L A T I O N  for singleplayer tests */
