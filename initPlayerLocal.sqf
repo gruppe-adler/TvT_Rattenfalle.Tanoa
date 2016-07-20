@@ -23,6 +23,20 @@ if (side player != independent) then {
 	setplayerrespawntime 999999;
 };
 
+if (didJIP) then {
+	 _loadout = player getVariable ["GRAD_loadout","none"];
+		if (_loadout != "none") then {
+				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+				diag_log format ["calling loadout %1",_stringLoadout];
+				player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
+		};
+};
+
+// _codeLoadout = compile _stringLoadout;
+// call compile ("setUnitLoadout " + [_codeLoadout,true]);
+//call compile format ["%2 call setUnitLoadout [GRAD_getUnitLoadout_%1,true]", _stringLoadout, player];
+// player setUnitLoadout [_codeLoadout, true];
+
 0 = execVM "player\animations\addWavingInteraction.sqf";
 mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoadout.sqf";
 

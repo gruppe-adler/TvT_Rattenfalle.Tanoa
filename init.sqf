@@ -100,13 +100,12 @@ if (isServer) then {
 			{if (!isPlayer _x) then {sleep 0.5; 0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
 	};*/
 
+
 	{
 		_loadout = _x getVariable ["GRAD_loadout","none"];
 		if (_loadout != "none") then {
 			_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-			diag_log format ["calling loadout %1",_stringLoadout];
-			_codeLoadout = call compile _stringLoadout;
-			_x setUnitLoadout [_codeLoadout, true];
+			_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 		};
 	} forEach playableUnits;
 
@@ -114,9 +113,7 @@ if (isServer) then {
 		_loadout = _x getVariable ["GRAD_loadout","none"];
 		if (_loadout != "none") then {
 			_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-			diag_log format ["calling loadout %1",_stringLoadout];
-			_codeLoadout = call compile _stringLoadout;
-			_x setUnitLoadout [_codeLoadout, true];
+			_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 		};
 	} forEach switchableUnits;
 

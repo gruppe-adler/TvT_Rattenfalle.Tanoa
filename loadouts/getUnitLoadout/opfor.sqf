@@ -56,3 +56,5 @@ GRAD_getUnitLoadout_opfor_rifleman = [["rhs_weap_akms","","rhs_acc_2dpZenit","",
 ["V_TacVest_oli",[["rhs_30Rnd_762x39mm",30,7]]],[],
 "H_Bandanna_khk_hs","",[],
 ["ItemMap","","tf_fadak","ItemCompass","ItemWatch",""]];
+
+GRAD_loadoutOpforLoaded = true;
