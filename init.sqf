@@ -24,6 +24,8 @@ call compile preprocessfile "civilianOutrage\randomRebel.sqf";
 If(isNil "spawn_help_fnc_compiled")then{call compile preprocessFileLineNumbers "helpers\findPos.sqf"};
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
+call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\blufor.sqf";
+call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\opfor.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 
@@ -88,6 +90,7 @@ if (isServer) then {
 
 
 	// loadout for AI units
+	/*
 	if (!isMultiplayer) then {
 	 	[] spawn {
 			sleep 10; // dont equip player multiple times
@@ -95,7 +98,29 @@ if (isServer) then {
  		};
 	} else {
 			{if (!isPlayer _x) then {sleep 0.5; 0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
-	};
+	};*/
+
+	{
+		_loadout = _x getVariable ["GRAD_loadout","none"];
+		if (_loadout != "none") then {
+			_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+			diag_log format ["calling loadout %1",_stringLoadout];
+			_codeLoadout = call compile _stringLoadout;
+			_x setUnitLoadout [_codeLoadout, true];
+		};
+	} forEach playableUnits;
+
+	{
+		_loadout = _x getVariable ["GRAD_loadout","none"];
+		if (_loadout != "none") then {
+			_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+			diag_log format ["calling loadout %1",_stringLoadout];
+			_codeLoadout = call compile _stringLoadout;
+			_x setUnitLoadout [_codeLoadout, true];
+		};
+	} forEach switchableUnits;
+
+
 
 	CRASH_PILOTS = [];
 	{

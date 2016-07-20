@@ -7,7 +7,7 @@ _unit = _this select 2;
 
 if (isMultiplayer) then { sleep (random 10);}; // balance loadout load in MP
 ["..."] call EFUNC(common,displayTextStructured);
-[_unit] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",_unit];
+// [_unit] execVM "loadouts\_client.sqf"; diag_log format ["setup: loadout %1 initiated",_unit];
 _spawn = _location findEmptyPosition[2, 20, "B_Soldier_F"];
 diag_log format ["teleporting %1 to %2.", _unit, _location];
 
