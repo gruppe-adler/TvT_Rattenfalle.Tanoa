@@ -39,5 +39,3 @@ GRAD_getUnitLoadout_blufor_mg = [["rhs_weap_m249_pip_L_para","","","rhsusf_acc_e
 ["B_ViperLightHarness_oli_F",[["ACE_elasticBandage",8],["ACE_CableTie",3],["ACE_epinephrine",2],["ACE_morphine",3],["ACE_quikclot",8],["ACE_Flashlight_MX991",1],["rhs_mag_m67",1,1],["rhs_200rnd_556x45_T_SAW",200,3]]],
 "rhsusf_opscore_fg","",["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_anprc148jem","ItemCompass","ItemWatch",""]];
-
-GRAD_loadoutBluforLoaded = true;

@@ -1,25 +1,10 @@
 waitUntil {!isNil "originalSide"};
 
-//get loadout
-switch (originalSide) do {
-  case "west": {
-    if (bluforLoadoutPath != "") then {
-      _params = parseText bluforLoadoutParams;
-      _params execVM bluforLoadoutPath;
-    };
-  };
-  case "east": {
-    if (opforLoadoutPath != "") then {
-      _params = parseText opforLoadoutParams;
-      _params execVM opforLoadoutPath;
-    };
-  };
-  case "independent": {
-    if (indepLoadoutPath != "") then {
-      _params = parseText indepLoadoutParams;
-      _params execVM indepLoadoutPath;
-    };
-  };
+_loadout = player getVariable ["GRAD_loadout","none"];
+if (_loadout != "none") then {
+		_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+		diag_log format ["calling loadout %1",_stringLoadout];
+		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
 
 //check JIP player is spawning for the first time

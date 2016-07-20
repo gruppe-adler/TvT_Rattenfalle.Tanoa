@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1499.5437,36.525803,1106.1172};
-		dir[]={-0.041727174,-0.54371512,-0.83825809};
-		up[]={-0.027032603,0.83925897,-0.54305965};
-		aside[]={-0.99878281,-2.1878259e-007,0.049718022};
+		pos[]={1812.8494,36.525803,969.69116};
+		dir[]={0.79812425,-0.29486167,-0.5254584};
+		up[]={0.24630414,0.95553082,-0.16215838};
+		aside[]={-0.54990578,-3.5969424e-007,-0.83525693};
 	};
 };
 binarizationWanted=0;
@@ -1060,8 +1060,8 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setVariable [""GRAD_isCrashPilot"",true];";
-						description="independent_pilot";
+						init="this setVariable [""GRAD_isCrashPilot"",true]; this setVariable [""GRAD_loadout"",""independent_pilot""];";
+						description="Abgeschossener Pilot";
 						isPlayable=1;
 					};
 					id=33;
@@ -1154,9 +1154,9 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setVariable [""GRAD_isCrashPilot"",true];";
+						init="this setVariable [""GRAD_isCrashPilot"",true]; this setVariable [""GRAD_loadout"",""independent_pilot""];";
 						name="pilot";
-						description="independent_pilot";
+						description="Abgeschossener Pilot";
 						isPlayable=1;
 					};
 					id=37;

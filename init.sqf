@@ -26,6 +26,7 @@ call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 call compile preprocessfile "helpers\spf_createRelPos.sqf";
 call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\blufor.sqf";
 call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\opfor.sqf";
+call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\independent.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 
