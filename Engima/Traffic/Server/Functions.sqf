@@ -4,7 +4,11 @@ if (!isNil "ENGIMA_TRAFFIC_functionsInitialized") exitWith {};
 GRAD_fnc_filterJungleRoad = {
 	_array = _this select 0;
 	{
-		 if (!isOnRoad (getPos _x)) then {
+		_node = _x;
+    _mkr = createMarkerLocal[ str _node, getPos _node ];
+    _mkr setMarkerShapeLocal "ELLIPSE";
+    _mkr setMarkerSizeLocal [ 10, 10 ];
+    if ( isOnRoad getPos _node || [ "bridge", getModelInfo _node select 0 ] call BIS_fnc_inString ) then {
 
 			_array =  _array + [_x];
 		 };
