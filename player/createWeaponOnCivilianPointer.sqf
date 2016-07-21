@@ -4,11 +4,7 @@ while {alive player} do {
            _civ = cursorTarget;
 
            if (_civ getVariable ["GRAD_isPointedAtBy",0] == 0) then {
-             if (isMultiplayer) then {
-               [_civ] remoteExec ["GRAD_fnc_stopCiv", [2,0] select (isMultiplayer && isDedicated), false];
-             } else {
-               [_civ] remoteExec ["GRAD_fnc_stopCiv", [2,0] select (isMultiplayer && isDedicated), false];
-             };
+            [_civ] remoteExec ["GRAD_fnc_stopCiv", [2,0] select (isMultiplayer && isDedicated), false];
            };
 
            _pointCounter = _civ getVariable ["GRAD_isPointedAtBy",0];
