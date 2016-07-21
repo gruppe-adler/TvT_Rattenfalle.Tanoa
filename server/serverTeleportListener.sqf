@@ -57,6 +57,8 @@ createUSSpawn = {
 	US_SPAWN = getMarkerPos spawnMarkerBluforLand;
 	publicVariable "US_SPAWN";
 
+	// trigger for pilot rescue area moved to right position
+	trg_pilots_rescued setPos US_SPAWN;
 	"respawn_west" setMarkerPos [US_SPAWN select 0, US_SPAWN select 1, 0];
 
 	[{0 = [US_SPAWN,"US_SPAWN"] execVM "player\createLocalDebugMarker.sqf";},"BIS_fnc_spawn",true,true] call BIS_fnc_MP;
@@ -103,10 +105,17 @@ _CRASH_SITE_listener = {
 	*/
 };
 
-
-
-
 "CRASH_SITE" addPublicVariableEventHandler _CRASH_SITE_listener;
+
+
+[] spawn {
+		checkingObjectives = true;
+		while {checkingObjectives} do {
+				if (PILOTS_RESCUED) exitWith {checkingObjectives=false; BLUFOR_WINS = true; publicVariable "BLUFOR_WINS";};
+				if (PILOTS_DEAD) exitWith {checkingObjectives=false; OPFOR_WINS = true; publicVariable "OPFOR_WINS";};
+		};
+};
+
 
 // runs in SP to emulate addPublicVariableEventHandler (which doesnt work in SP)
 if (!isMultiplayer) then {

@@ -99,7 +99,7 @@ suppliesOpfor = [
                 0
           ],
           [
-                "rhs_gaz66_zu23_vmf",
+                "rhsgref_cdf_gaz66_zu23",
                 [],
                 3,
                 3000,
@@ -110,6 +110,13 @@ suppliesOpfor = [
                 clearItemCargoGlobal (_this select 0);
                 clearBackpackCargoGlobal (_this select 0);
                 clearMagazineCargoGlobal (_this select 0);
+                (_this select 0) setObjectTextureGlobal [0,"rhsafrf\addons\rhs_gaz66\data\gaz66ru_co.paa"];
+                (_this select 0) setObjectTextureGlobal [1,"rhsafrf\addons\rhs_gaz66\data\tentru_co.paa"];
+                (_this select 0) setObjectTextureGlobal [2,"rhsafrf\addons\rhs_decals\data\numbers\boldred\1_ca.paa"];
+                (_this select 0) setObjectTextureGlobal [3,"rhsafrf\addons\rhs_decals\data\numbers\boldred\3_ca.paa"];
+                (_this select 0) setObjectTextureGlobal [4,"rhsafrf\addons\rhs_decals\data\numbers\boldred\3_ca.paa"];
+                (_this select 0) setObjectTextureGlobal [5,"rhsafrf\addons\rhs_decals\data\numbers\boldred\7_ca.paa"];
+                (_this select 0) setVehicleLock 'UNLOCKED';
                 (_this select 0) addItemCargoGlobal ['ItemGPS',1];
                 ['AddCargoByClass', _this select 0, ['ACE_wheel', _this select 0, 2]] call ace_common_fnc_targetEvent;
                 },

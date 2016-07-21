@@ -80,7 +80,10 @@ _createdGui displayCtrl 2338 ctrlMapCursor ["","HC_overFriendly"];
 
 // _createdGui displayCtrl 2338 ctrlAddEventHandler ["onMouseButtonDown","0 = [_this] execVM 'grad_buymenu\createDropMarker.sqf'; "];
 // onMapSingleClick "0 = [_pos,currentMarkerToMove] execVM 'grad_buymenu\moveDropMarker.sqf;'";
-onMapSingleClick "[_pos,currentMarkerToMove] spawn fnc_moveDropMarker;onMapSingleClick "";true";
+["GRAD_mapClickListener", "onMapSingleClick", {
+	[_pos,currentMarkerToMove] spawn fnc_moveDropMarker;
+	["GRAD_mapClickListener", "onMapSingleClick"] call BIS_fnc_removeStackedEventHandler;
+}] call BIS_fnc_addStackedEventHandler;
 
 // onMapSingleClick "[_pos,_marker] call fnc_moveDropMarker; false";
 

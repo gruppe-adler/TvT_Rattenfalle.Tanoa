@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=248;
+		nextID=250;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1812.8494,36.525803,969.69116};
-		dir[]={0.75195974,-0.31765017,-0.57767481};
-		up[]={0.25192255,0.94819862,-0.19353335};
-		aside[]={-0.60922551,-3.6065467e-007,-0.79302943};
+		pos[]={1813.3904,79.480759,865.86066};
+		dir[]={0.22110228,-0.42023018,0.88010925};
+		up[]={0.1023953,0.90740997,0.40758991};
+		aside[]={0.96989846,-2.5471672e-007,-0.2436593};
 	};
 };
 binarizationWanted=0;
@@ -343,16 +343,17 @@ class Mission
 		class Item6
 		{
 			dataType="Trigger";
-			position[]={1599.2153,-14.158083,598.42896};
+			position[]={1599.215,-14.15814,598.42902};
 			class Attributes
 			{
 				name="trg_pilots_rescued";
 				condition="(checkObjectives) && {({isPlayer _x && side _x == independent } count thislist == {isPlayer _x && side _x == independent} count allUnits)}";
-				onActivation="if (isServer) then {PILOTS_RESCUED = true; publicVariable ""PILOTS_RESCUED"";}; hintSilent ""Alle lebenden Piloten gerettet"";";
+				onActivation="PILOTS_RESCUED = true; publicVariable ""PILOTS_RESCUED""; diag_log format [""alle lebenden Piloten gerettet""];";
 				sizeA=30;
 				sizeB=30;
 				interuptable=1;
 				activationBy="ANY";
+				isServerOnly=1;
 			};
 			id=6;
 			type="EmptyDetector";
@@ -360,18 +361,20 @@ class Mission
 		class Item7
 		{
 			dataType="Trigger";
-			position[]={1498.0861,-16.951118,599.25751};
+			position[]={1498.0861,-16.950993,599.258};
 			class Attributes
 			{
 				name="trg_pilots_dead";
 				condition="(checkObjectives) && {({isPlayer _x && side _x == independent} count allUnits == 0)}";
-				onActivation="if (isServer) then {PILOTS_DEAD = true; publicVariable ""PILOTS_DEAD"";}; hintSilent ""Alle Piloten eliminiert"";";
+				onActivation="PILOTS_DEAD = true; publicVariable ""PILOTS_DEAD""; diag_log format [""alle Piloten eliminiert""];";
 				sizeA=0;
 				sizeB=0;
 				interuptable=1;
+				isServerOnly=1;
 			};
 			id=7;
 			type="EmptyDetector";
+			atlOffset=-1.9073486e-006;
 		};
 		class Item8
 		{
@@ -394,7 +397,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
-						init="this setVariable [""GRAD_loadout"",""blufor_sql""];";
+						init="this setVariable [""GRAD_loadout"",""blufor_sql""]; this setVariable [""GRAD_canBuy"", true];";
 						name="leader_west";
 						description="SQL";
 						isPlayable=1;
@@ -557,7 +560,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setVariable [""GRAD_loadout"",""blufor_ftl""];";
+						init="this setVariable [""GRAD_loadout"",""blufor_ftl""]; this setVariable [""GRAD_canBuy"", true];";
 						description="FTL";
 						isPlayable=1;
 					};
@@ -4071,7 +4074,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setVariable [""GRAD_loadout"",""opfor_sql""];";
+						init="this setVariable [""GRAD_loadout"",""opfor_sql""]; this setVariable [""GRAD_canBuy"", true];";
 						description="SQL";
 						isPlayer=1;
 						isPlayable=1;
@@ -4226,7 +4229,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1520.0081,4.1453395,1029.2941};
+						position[]={1520.0081,4.145339,1029.2941};
 						angles[]={0.0026529003,0,0.026668631};
 					};
 					side="East";
@@ -4234,13 +4237,13 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
-						init="this setVariable [""GRAD_loadout"",""opfor_ftl""];";
+						init="this setVariable [""GRAD_loadout"",""opfor_ftl""]; this setVariable [""GRAD_canBuy"", true];";
 						description="FTL";
 						isPlayable=1;
 					};
 					id=221;
 					type="O_Soldier_TL_F";
-					atlOffset=0.0050005913;
+					atlOffset=0.0050001144;
 					class CustomAttributes
 					{
 						class Attribute0

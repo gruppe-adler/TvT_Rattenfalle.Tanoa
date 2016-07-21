@@ -1,4 +1,9 @@
-DEBUG = ("debugMode" call BIS_fnc_getParamValue == 1);
+_isDebug = "debugMode" call BIS_fnc_getParamValue;
+if (_isDebug == 0) then {
+	DEBUG = false;
+} else {
+	DEBUG = true;
+};
 //
 // customizable variables
 //
@@ -10,7 +15,13 @@ enableRadio false;
 showChat false;
 // functional variables - do not change!
 // player_respawned = 0;
+waitUntil {!isNil "DEBUG"};
+diag_log format ["DEBUG IS %1"];
+if (DEBUG) then {
 checkObjectives = false; // false is debug for playing without pilot
+} else {
+checkObjectives = true;
+};
 jipTime = 60000;
 
 {_x setMarkerAlphaLocal 0;} forEach allMapMarkers;
@@ -69,6 +80,11 @@ if (isServer) then {
 
 	US_SPAWN = [0,0];
 	publicVariable "US_SPAWN";
+
+	BLUFOR_WINS = false;
+	publicVariable "BLUFOR_WINS";
+	OPFOR_WINS = false;
+	publicVariable "OPFOR_WINS";
 
 
 	SETUP_DONE = false;
@@ -136,7 +152,7 @@ if (isServer) then {
 
 if (hasInterface) then {
 
-	// titleCut ["", "WHITE IN", 1];
+	 cutText ["", "BLACK FADED",1000];
 
 	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 
@@ -153,7 +169,9 @@ if (hasInterface) then {
 	callIntro = {
 		waitUntil {CRASH_SITE select 0 != 0};
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
+		cutText ["", "PLAIN"];
 		playMusic "LeadTrack01b_F_EXP";
+		1 fademusic 1;
 	};
 
 	sleep 5;

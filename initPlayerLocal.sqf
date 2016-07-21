@@ -23,13 +23,22 @@ if (side player != independent) then {
 	setplayerrespawntime 999999;
 };
 
-
+// get loadout for the first time
 _loadout = player getVariable ["GRAD_loadout","none"];
 if (_loadout != "none") then {
 		_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
 		diag_log format ["calling loadout %1",_stringLoadout];
 		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
+
+if (player getVariable ["GRAD_canBuy",false]) then {
+		0 = execVM "player\animations\addBuyInteraction.sqf";
+};
+
+// reset any attempt to raise or lower rating
+player addEventhandler ["HandleRating", {
+		0
+	}];
 
 
 // _codeLoadout = compile _stringLoadout;
@@ -38,6 +47,7 @@ if (_loadout != "none") then {
 // player setUnitLoadout [_codeLoadout, true];
 
 0 = execVM "player\animations\addWavingInteraction.sqf";
+0 = execVM "player\addObjectiveListener.sqf";
 mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoadout.sqf";
 
 // for local execution of interrogation actions

@@ -7,6 +7,10 @@ if (_loadout != "none") then {
 		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
 
+if (player getVariable ["GRAD_canBuy",false]) then {
+		0 = execVM "player\animations\addBuyInteraction.sqf";
+};
+
 //check JIP player is spawning for the first time
 if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "Player is JIP, not executing onPlayerRespawn.sqf"};
 

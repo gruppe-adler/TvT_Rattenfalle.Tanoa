@@ -57,8 +57,8 @@ createrebelVehicle = {
 		[_group,_veh] call _createCargo;
 		};
 	};
-	
-	_veh addEventhandler ["HandleDamage",{if ((_this select 4) == "") then {0;};}]; // ignore crash damage
+
+	_veh addEventhandler ["HandleDamage",{if ((_this select 4) == "") then {0};}]; // ignore crash damage
 
 
 	[_veh,_group]

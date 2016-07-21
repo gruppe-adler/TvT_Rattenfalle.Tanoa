@@ -28,7 +28,7 @@ fnc_createEntrySpawnMethod = {
       case 0: { _title = _prefix + "c_car.paa"; _ctrlMethod ctrlSetTextColor [0.2,0.2,0.2,0.5];};
       case 1: { _title = _prefix + "c_plane.paa"; _ctrlMethod ctrlSetTextColor [0.2,0.2,0.2,1];};
       case 2: { _title = _prefix + "c_air.paa"; _ctrlMethod ctrlSetTextColor [0.2,0.2,0.2,1];};
-      case 3: { _title = _prefix + "c_civ.paa"; _ctrlMethod ctrlSetTextColor [0.2,0.2,0.2,0.5];};
+      case 3: { _title = _prefix + "c_car.paa"; _ctrlMethod ctrlSetTextColor [0.2,0.2,0.2,0.5];};
       case 4: { _title = _prefix + "c_ship.paa"; _ctrlMethod ctrlSetTextColor [0.2,0.2,0.2,0.5];};
       default {};
   };

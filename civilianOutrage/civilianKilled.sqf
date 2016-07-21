@@ -21,27 +21,27 @@ increaseSightingDelay = {
 
 switch (str (side _shooter)) do {
 
-	case "west": {
+	case "WEST": {
 		SIGHTING_DELAY = [SIGHTING_DELAY] call reduceSightingDelay;
 
 		diag_log format ["civilian %1 killed by US %2, increasing delay to %3",_victim,_shooter,SIGHTING_DELAY];
 		publicVariable "SIGHTING_DELAY";
 	};
 
-	case "east": {
+	case "EAST": {
 
 		SIGHTING_DELAY = [SIGHTING_DELAY] call increaseSightingDelay;
 		diag_log format ["civilian %1 killed by rebels %2, reducing delay to %3",_victim,_shooter,SIGHTING_DELAY];
 		publicVariable "SIGHTING_DELAY";
 	};
 
-	case "independent": {
+	case "INDEPENDENT": {
 		SIGHTING_DELAY = [SIGHTING_DELAY] call reduceSightingDelay;
 		diag_log format ["civilian %1 killed by pilot %2, reducing delay to %3",_victim,_shooter,SIGHTING_DELAY];
 		publicVariable "SIGHTING_DELAY";
 	};
 
-	case "civilian": {
+	case "CIVILIAN": {
 		diag_log format ["civilian %1 killed by civilian %2",_victim,_shooter];
 	};
 
