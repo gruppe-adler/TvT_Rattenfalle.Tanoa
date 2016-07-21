@@ -16,21 +16,15 @@ _markerName setMarkerBrushLocal "SolidFull";
 
 
 newSightingAlert = {
-	_location = _this select 0; // geht das hier? select 0 = variablenname, select 1 = variablenwert?!
-
-	playSound "signal_lost";
-
-	disableSerialization;
-	1337 ctrlSetText (str _location); // todo : insert correct ID
-
-	cutRsc ["gui_intel_pilotPaper","PLAIN",0];
+	playSound "beep";
+	cutRsc ["gui_intel","PLAIN",0];
 };
 
 
 _listener = {
 	_markerName setMarkerPosLocal (locationPosition (LAST_PILOTS_POSITION select 1));
 	_markerName setMarkerSizeLocal [LAST_PILOTS_POSITION select 2,LAST_PILOTS_POSITION select 2];
-	[LAST_PILOTS_POSITION select 1] call newSightingAlert;
+	[] call newSightingAlert;
 };
 
 "LAST_PILOTS_POSITION" addPublicVariableEventHandler _listener;

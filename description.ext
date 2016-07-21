@@ -83,7 +83,7 @@ class Params
 
 class CfgSounds
 {
-	sounds[] = {beam, smack1, smack2, smack3, ouch1, ouch2, ouch3};
+	sounds[] = {beam, smack1, smack2, smack3, ouch1, ouch2, ouch3, beep};
 	class beam
 	{
 		// how the sound is referred to in the editor (e.g. trigger effects)
@@ -147,4 +147,13 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text
 		titles[] = {0, ""};
 	};
+  class beep
+  {
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "beep";
+    // filename, volume, pitch
+    sound[] = {"sounds\beep.ogg", 1, 1};
+    // subtitle delay in seconds, subtitle text
+    titles[] = {0, ""};
+  };
 };

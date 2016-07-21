@@ -50,9 +50,9 @@ while {true} do {
 			};
 
 		};
-		sleep (random 10);
+		sleep (10 + (random 10)); // 120-240 (+10) s between server updates // 10-20 between civ updates
 	} forEach CRASH_PILOTS;
-	sleep 10;
+	sleep 10; // 10 between pilots
   };
   LAST_PILOTS_POSITION = [_text, _pos, _markerSize];
   publicVariable "LAST_PILOTS_POSITION";
