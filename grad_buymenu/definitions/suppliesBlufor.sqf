@@ -64,12 +64,12 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "RHS_MELB_MH6M",
+                  "RHS_UH1Y_UNARMED",
                   [],
                   4,
                   2500,
                   1,
-                  [],
+                  ["DoorRB",0,"DoorLB",0,"hide_mg",1,"mainRotor_folded",0],
                   {
                   clearWeaponCargoGlobal (_this select 0);
                   clearItemCargoGlobal (_this select 0);
@@ -78,6 +78,7 @@ suppliesBlufor = [
                   (_this select 0) addItemCargoGlobal ['ItemGPS',1];
                   [(_this select 0)] call ace_fastroping_fnc_equipFRIES;
                   (_this select 0) disableTIEquipment true;
+                  (_this select 0) addItemCargoGlobal ["ACE_NVG_Wide",2];
                   },
                   format[''],
                   2,
@@ -127,12 +128,13 @@ suppliesBlufor = [
                   2,
                   3000,
                   1,
-                  [],
+                  ["mainRotor_folded",0],
                   {
                   clearWeaponCargoGlobal (_this select 0);
                   clearItemCargoGlobal (_this select 0);
                   clearBackpackCargoGlobal (_this select 0);
                   clearMagazineCargoGlobal (_this select 0);
+                  (_this select 0) addItemCargoGlobal ["ACE_NVG_Wide",2];
                   },
                   format[''],
                   2,

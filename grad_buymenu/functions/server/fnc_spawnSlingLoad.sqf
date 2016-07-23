@@ -212,7 +212,8 @@ spawnSlingLoad = {
 		};
 
 		_vehicle setMass _origVehicleMass;
-		_vehicle allowDamage true;
+
+
 		_vehicle setVehicleLock "UNLOCKED";
 
 		if (count _ropecount > 0) then {} else {
@@ -220,6 +221,11 @@ spawnSlingLoad = {
 				deleteVehicle _dummyVehicle;
 		};
 		_chopper flyInHeight 100;
+
+		sleep 1;
+		_vehicle setDamage 0;
+		_vehicle allowDamage true;
+		_vehicle setFuel 1;
 
 		[_side, _selector] call fnc_prepareAfterBuyRefresh;
 

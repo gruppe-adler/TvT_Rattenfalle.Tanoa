@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=250;
+		nextID=252;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1813.3904,79.480759,865.86066};
-		dir[]={0.22110228,-0.42023018,0.88010925};
-		up[]={0.1023953,0.90740997,0.40758991};
-		aside[]={0.96989846,-2.5471672e-007,-0.2436593};
+		pos[]={1654.7013,13.851419,699.76361};
+		dir[]={0.44101426,-0.24224482,0.86424243};
+		up[]={0.11012647,0.9702087,0.21581241};
+		aside[]={0.89077145,2.4097972e-008,-0.4545508};
 	};
 };
 binarizationWanted=0;
@@ -48,14 +48,13 @@ addons[]=
 	"A3_Air_F_Exp_Plane_Civil_01",
 	"ace_realisticnames",
 	"A3_Air_F_Heli_Light_01",
-	"rhsusf_c_troops",
 	"Unlocked_Uniforms"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=24;
+		items=23;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -212,11 +211,6 @@ class AddonsMetaData
 		};
 		class Item22
 		{
-			className="rhsusf_c_troops";
-			name="rhsusf_c_troops";
-		};
-		class Item23
-		{
 			className="Unlocked_Uniforms";
 			name="Unlocked_Uniforms";
 		};
@@ -274,7 +268,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=84;
+		items=83;
 		class Item0
 		{
 			dataType="Marker";
@@ -2301,7 +2295,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=3;
+							value=0;
 						};
 					};
 				};
@@ -2320,7 +2314,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0;
+							value=3;
 						};
 					};
 				};
@@ -4027,36 +4021,6 @@ class Mission
 		class Item79
 		{
 			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2140.2703,4.88937,4599.5513};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=213;
-					type="rhsusf_army_ocp_aa";
-					atlOffset=4.7683716e-007;
-				};
-			};
-			class Attributes
-			{
-			};
-			id=212;
-			atlOffset=4.7683716e-007;
-		};
-		class Item80
-		{
-			dataType="Group";
 			side="East";
 			class Entities
 			{
@@ -4882,7 +4846,7 @@ class Mission
 			};
 			id=218;
 		};
-		class Item81
+		class Item80
 		{
 			dataType="Marker";
 			position[]={1869.8445,12.201199,901.46411};
@@ -4893,7 +4857,7 @@ class Mission
 			id=239;
 			atlOffset=1.6845808;
 		};
-		class Item82
+		class Item81
 		{
 			dataType="Marker";
 			position[]={1899.3894,8.89536,902.74908};
@@ -4903,7 +4867,7 @@ class Mission
 			alpha=0;
 			id=240;
 		};
-		class Item83
+		class Item82
 		{
 			dataType="Marker";
 			position[]={1931.5034,7.5659289,900.61011};

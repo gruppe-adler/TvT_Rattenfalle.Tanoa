@@ -82,7 +82,7 @@ if (isServer) then {
 	civilianCarSupplier = "C_man_hunter_1_F"; // who will bring the cars if spawn method civilian is chosen
 
 	spawnChuteVehicleClassBlufor = "RHS_C130J";
-	spawnSlingLoadVehicleClassBlufor = "RHS_CH_47F_light";
+	spawnSlingLoadVehicleClassBlufor = "rhsusf_CH53E_USMC_D";
 
 	spawnChuteVehicleClassOpfor = "RHS_C130J";
 	spawnSlingLoadVehicleClassOpfor = "RHS_Mi8mt_Cargo_vdv";

@@ -81,9 +81,24 @@ class Params
   };
 };
 
+class ACE_Settings {
+    class ace_map_BFT_Interval {
+    value = 1;
+    typeName = "SCALAR";
+	};
+class ace_map_BFT_Enabled {
+    value = 0;
+    typeName = "BOOL";
+	};
+class ace_map_BFT_HideAiGroups {
+    value = 0;
+    typeName = "BOOL";
+	};
+};
+
 class CfgSounds
 {
-	sounds[] = {beam, smack1, smack2, smack3, ouch1, ouch2, ouch3, beep};
+	sounds[] = {beam, smack1, smack2, smack3, ouch1, ouch2, ouch3, beep, march_hell};
 	class beam
 	{
 		// how the sound is referred to in the editor (e.g. trigger effects)
@@ -153,6 +168,15 @@ class CfgSounds
     name = "beep";
     // filename, volume, pitch
     sound[] = {"sounds\beep.ogg", 1, 1};
+    // subtitle delay in seconds, subtitle text
+    titles[] = {0, ""};
+  };
+  class march_hell
+  {
+    // how the sound is referred to in the editor (e.g. trigger effects)
+    name = "march_hell";
+    // filename, volume, pitch
+    sound[] = {"sounds\march_hell.ogg", 1, 1};
     // subtitle delay in seconds, subtitle text
     titles[] = {0, ""};
   };

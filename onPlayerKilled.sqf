@@ -2,9 +2,12 @@
 if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "Player is JIP, not executing onPlayerKilled.sqf"};
 private ["_timeleft","_waveLeft","_minutes","_seconds","_respawnIn", "_explanation"];
 
-if (originalSide == "independent") exitWith {
+_handle = execVM "player\createDeathCam.sqf";
+waitUntil {_handle};
+
+// if (originalSide == "independent") exitWith {
   [true] call ace_spectator_fnc_setSpectator;
-};
+// };
 
 //keep player from respawning
 setPlayerRespawnTime 9999;

@@ -186,7 +186,11 @@ spawnChute = {
 		};
 		detach _vehicle;
 		_vehicle setPos [position _vehicle select 0, position _vehicle select 1, 0];
+		sleep 1;
+		_vehicle setDamage 0;
+		_vehicle setFuel 1;
 		_vehicle allowDamage true;
+
 		// 0 setWindForce _origWindForce;
 		// setWind [_origWind select 0, _origWind select 1, true];
 

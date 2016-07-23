@@ -8,10 +8,12 @@ GRAD_fnc_filterJungleRoad = {
     _mkr = createMarkerLocal[ str _node, getPos _node ];
     _mkr setMarkerShapeLocal "ELLIPSE";
     _mkr setMarkerSizeLocal [ 10, 10 ];
+		_mkr setMarkerAlphaLocal 0;
     if ( isOnRoad getPos _node || [ "bridge", getModelInfo _node select 0 ] call BIS_fnc_inString ) then {
 
 			_array =  _array + [_x];
 		 };
+		sleep 0.002;
 	} forEach _array;
 	_array;
 };
