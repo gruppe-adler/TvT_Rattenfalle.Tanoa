@@ -8,12 +8,14 @@ GRAD_fnc_filterJungleRoad = {
     _mkr = createMarkerLocal[ str _node, getPos _node ];
     _mkr setMarkerShapeLocal "ELLIPSE";
     _mkr setMarkerSizeLocal [ 10, 10 ];
-		_mkr setMarkerAlphaLocal 0;
-    if ( isOnRoad getPos _node || [ "bridge", getModelInfo _node select 0 ] call BIS_fnc_inString ) then {
+    if (!DEBUG) then {
+    	_mrk setMarkerAlphaLocal 0;
+	};
+    if ( isOnRoad getPos _node ) then {
 
 			_array =  _array + [_x];
 		 };
-		sleep 0.002;
+	sleep 0.0001;
 	} forEach _array;
 	_array;
 };
@@ -45,7 +47,7 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 		_minBottomLeftDistances pushBack 1000000;
 	};
 
-
+	
 	ENGIMA_TRAFFIC_allRoadSegments = [0,0,0] nearRoads 1000000;
 	ENGIMA_TRAFFIC_allRoadSegments = [ENGIMA_TRAFFIC_allRoadSegments] call GRAD_fnc_filterJungleRoad;
 	sleep 0.01;
@@ -325,6 +327,8 @@ ENGIMA_TRAFFIC_StartTraffic = {
 
 		if (count _allPlayerPositionsTemp > 0) then {
 			_allPlayerPositions = _allPlayerPositionsTemp;
+		} else {
+			_allPlayerPositions = [0,0,0];
 		};
 
 	    // If there are few vehicles, add a vehicle

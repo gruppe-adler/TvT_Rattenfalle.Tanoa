@@ -4,10 +4,13 @@ private ["_timeleft","_waveLeft","_minutes","_seconds","_respawnIn", "_explanati
 
 _handle = execVM "player\createDeathCam.sqf";
 waitUntil {scriptdone _handle};
-
+cutText ["", "BLACK IN", 1];
  if (originalSide == "independent") exitWith {
     // todo: add free cams for dead pilots
+    [allUnits,true] call ace_spectator_fnc_updateUnits;
+    [[west,east,independent,civilian], []] call ace_spectator_fnc_updateSpectatableSides;
     [true] call ace_spectator_fnc_setSpectator;
+
  };
 
 [true] call ace_spectator_fnc_setSpectator;
@@ -99,7 +102,7 @@ hint composeText [_rule, _respawning, _lineBreak, _rule];
 //respawn player
 setPlayerRespawnTime 0;
 forceRespawn player;
-
+[false] call ace_spectator_fnc_setSpectator;
 
 //close hint
 sleep 4;

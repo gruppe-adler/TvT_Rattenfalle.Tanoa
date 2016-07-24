@@ -25,8 +25,8 @@ spawnSlingLoad = {
 		_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 		_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
 		_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-		_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
-		_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+		_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+		_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 
 		if (_side == west) then {
 					switch (SPAWN_APPROACH_BLUFOR) do {
@@ -34,37 +34,37 @@ spawnSlingLoad = {
 							_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 						};
 						case "WEST": {
 							_chopperPos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 						};
 						case "SOUTH": {
 							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 						};
 						case "EAST": {
 							_chopperPos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
 						};
 						default {
 							hintsilent "error: spawn direction not set!";
 							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 						};
 					};
 		} else {
@@ -73,37 +73,37 @@ spawnSlingLoad = {
 							_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 						};
 						case "WEST": {
 							_chopperPos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
 						};
 						case "SOUTH": {
 							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 						};
 						case "EAST": {
 							_chopperPos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
 						};
 						default {
 							hintsilent "error: spawn direction not set!";
 							_chopperPos0 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 							_chopperPos1 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
-							_chopperPos3 = [_drop_pos, 1000, 0] call BIS_fnc_relPos;
-							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
+							_chopperPos3 = [_drop_pos, 1000, 180] call BIS_fnc_relPos;
+							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 						};
 					};
 		};
@@ -187,8 +187,8 @@ spawnSlingLoad = {
 		_wp0 setWaypointType "MOVE";
 
 		_wp1 = chopperGroup addWaypoint [[_chopperPos2 select 0, _chopperPos2 select 1], 1];
-		_wp1 setWaypointStatements ["true", ""];
-		_wp1 setWaypointCompletionRadius 20;
+		_wp1 setWaypointStatements ["true", "this flyInHeight 10;"];
+		_wp1 setWaypointCompletionRadius 50;
 		_wp1 setWaypointForceBehaviour true;
 		_wp1 setWaypointType "UNHOOK";
 
@@ -220,9 +220,10 @@ spawnSlingLoad = {
 				detach _vehicle;
 				deleteVehicle _dummyVehicle;
 		};
+		sleep 0.5;
 		_chopper flyInHeight 100;
 
-		sleep 1;
+		sleep 0.5;
 		_vehicle setDamage 0;
 		_vehicle allowDamage true;
 		_vehicle setFuel 1;
