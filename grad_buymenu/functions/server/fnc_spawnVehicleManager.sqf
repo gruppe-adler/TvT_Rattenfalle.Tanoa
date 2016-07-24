@@ -23,9 +23,8 @@ fnc_spawnVehicleManager = {
 	_side = _this select 6;
 
 
-	// diag_log format["spawnmethod is %1", _spawnMethod];
-
-
+	// convert vehicle array to vehicle (if more than one is possible)
+	_spawnObjectType = selectRandom _spawnObjectType;
 
 
 

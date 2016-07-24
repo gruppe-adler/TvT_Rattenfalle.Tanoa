@@ -35,20 +35,20 @@ fnc_createEntries = {
 
 
 			 randIDC = [randIDC] call fnc_getNextIDC;
-			 _btn = [randIDC, _createdGui, _xCoord, _width] spawn fnc_createEntryMouseOverArea;
+			 _btn = [randIDC, _createdGui, _xCoord, _width,_forEachIndex,_displayName] spawn fnc_createEntryMouseOverArea;
 
 
 			 randIDC = [randIDC] call fnc_getNextIDC;
-			 _pic = [picIDC, _createdGui, _picXCoord,_width, _x select 0,_amountOfVehicles] spawn fnc_createEntryPicture;
+			 _pic = [picIDC, _createdGui, _picXCoord,_width, _x select 0 select 0,_amountOfVehicles] spawn fnc_createEntryPicture;
 			 picIDC = [picIDC] call fnc_getNextIDC;
 
 
 			 randIDC = [randIDC] call fnc_getNextIDC;
-			 _title = [randIDC, _createdGui, _xCoord, _width,_x select 0, _forEachIndex] spawn fnc_createEntryTitle;
+			 _title = [randIDC, _createdGui, _xCoord, _width,_x select 0 select 0, _forEachIndex] spawn fnc_createEntryTitle;
 
 
 			 randIDC = [randIDC] call fnc_getNextIDC;
-			 _btn = [randIDC, _createdGui, _xCoord, _width,_x select 7,_x select 0] spawn fnc_createEntryMouseOver;
+			 _btn = [randIDC, _createdGui, _xCoord, _width,_x select 7, _x select 0 select 0] spawn fnc_createEntryMouseOver;
 
 
 			 randIDC = [randIDC] call fnc_getNextIDC;

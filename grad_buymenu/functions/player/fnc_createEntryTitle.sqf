@@ -6,6 +6,9 @@ fnc_createEntryTitle = {
 	_xPos = _this select 2;
 	_width = _this select 3;
 	_class = _this select 4;
+
+	
+
 	_title = getText ( configFile >> "CfgVehicles" >> _class >> "DisplayName" ); // _this select 4; // wont be used anymore - config now
 	_mouseOverSelector = _this select 5;
 

@@ -12,6 +12,8 @@ fnc_createEntryPicture = {
 
 	//diag_log format ["Picture xPos = %1",_xPos];
 
+	
+
 	_model = getText ( configFile >> "CfgVehicles" >> _class >> "Model" );
 
 	ctrlShow [_idc,true];

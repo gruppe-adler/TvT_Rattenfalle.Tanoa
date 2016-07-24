@@ -17,6 +17,7 @@
 		_this select 8 (Optional): BOOL - Fade in after completion (default: true)
 */
 
+
 private ["_tgt", "_txt", "_alt", "_rad", "_ang", "_dir"];
 _tgt = [_this, 0, objNull, [objNull, []]] call BIS_fnc_param;
 _txt = [_this, 1, "", [""]] call BIS_fnc_param;
@@ -79,6 +80,9 @@ _ppGrain = ppEffectCreate ["filmGrain", 2012];
 _ppGrain ppEffectEnable true;
 _ppGrain ppEffectAdjust [0.1, 1, 1, 0, 1];
 _ppGrain ppEffectCommit 0;
+
+// end black screen
+cutText ["", "PLAIN"];
 
 // Disable stuff after simulation starts
 [] spawn

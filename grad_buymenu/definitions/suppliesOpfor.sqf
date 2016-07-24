@@ -8,9 +8,9 @@ suppliesOpfor = [
     "suppliesOpfor",
     [
       [
-                "C_Scooter_Transport_01_F",
+                ["C_Scooter_Transport_01_F"],
                 [],
-                14,
+                30,
                 100,
                 1,
                 [],
@@ -25,9 +25,16 @@ suppliesOpfor = [
                 0
           ],
           [
-                "C_Offroad_02_unarmed_F",
+                ["C_Offroad_02_unarmed_F",
+                "RDS_Lada_Civ_02",
+                "RDS_Lada_Civ_03",
+                "RDS_Lada_Civ_04",
+                "C_SUV_01_F",
+                "C_Offroad_01_repair_F",
+                "B_G_Offroad_01_repair_F",
+                "C_Offroad_01_F"],
                 [],
-                14,
+                20,
                 200,
                 1,
                 [],
@@ -42,7 +49,30 @@ suppliesOpfor = [
                 0
           ],
           [
-                "rhsgref_cdf_reg_uaz_dshkm",
+                ["RHS_Ural_Open_Civ_01",
+                "RHS_Ural_Open_Civ_02",
+                "RHS_Ural_Open_Civ_03",
+                "RHS_Ural_Civ_01",
+                "RHS_Ural_Civ_02",
+                "RHS_Ural_Civ_03",
+                "C_Van_01_transport_F"],
+                [],
+                10,
+                250,
+                1,
+                [],
+                {
+                clearWeaponCargoGlobal (_this select 0);
+                clearItemCargoGlobal (_this select 0);
+                clearBackpackCargoGlobal (_this select 0);
+                clearMagazineCargoGlobal (_this select 0);
+                },
+                format[''],
+                3,
+                0
+          ],
+          [
+                ["rhsgref_cdf_reg_uaz_dshkm"],
                 [],
                 10,
                 1000,
@@ -61,7 +91,7 @@ suppliesOpfor = [
                 0
           ],
           [
-                "rhsgref_cdf_reg_uaz_spg9",
+                ["rhsgref_cdf_reg_uaz_spg9"],
                 [],
                 10,
                 1000,
@@ -80,7 +110,7 @@ suppliesOpfor = [
                 0
           ],
           [
-                "rhsgref_BRDM2_ins_g",
+                ["rhsgref_BRDM2_ins_g"],
                 [],
                 3,
                 1500,
@@ -99,7 +129,7 @@ suppliesOpfor = [
                 0
           ],
           [
-                "rhsgref_cdf_gaz66_zu23",
+                ["rhsgref_cdf_gaz66_zu23"],
                 [],
                 3,
                 3000,

@@ -9,6 +9,8 @@ fnc_createEntryMouseOver = {
 	_title = _this select 4;
 	_class = _this select 5;
 
+	
+
 	_crew1 = [_class,false] call BIS_fnc_crewCount;
 	_crew2 = [_class,true] call BIS_fnc_crewCount;
 	_crew =	_crew2 - _crew1;

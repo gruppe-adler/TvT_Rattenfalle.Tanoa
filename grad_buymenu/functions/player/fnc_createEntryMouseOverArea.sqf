@@ -8,6 +8,8 @@ fnc_createEntryMouseOverArea = {
 	_display = _this select 1;
 	_xPos = _this select 2;
 	_width = _this select 3;
+	_vehiclePositionInArray = _this select 4;
+	_arrayDisplayName = _this select 5;
 
 	_mouseOverArea =  _display ctrlCreate ["RscStructuredText", _idc];
 
@@ -21,6 +23,12 @@ fnc_createEntryMouseOverArea = {
 	_mouseOverArea ctrlAddEventHandler ["MouseExit",{
 		ctrlShow [ctrlidc (_this select 0) + 3,false]; false
 	}];
+
+	_mouseOverArea ctrlAddEventHandler ["MouseButtonClick", compile format [
+            "[%1, %2] call fnc_selectNextVehicleInArray;",
+            str _arrayDisplayName,_vehiclePositionInArray
+        ];
+    ];
 
 
 

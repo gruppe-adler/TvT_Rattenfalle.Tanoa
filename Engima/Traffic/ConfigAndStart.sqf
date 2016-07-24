@@ -21,6 +21,9 @@ _parameters = [
 	"C_Van_01_box_F",
 	"C_Van_01_fuel_F",
 
+	"C_Truck_02_fuel_F",
+	"C_Truck_02_box_F",
+
 
 	"RDS_Gaz24_Civ_01",
 	"RDS_Gaz24_Civ_02",

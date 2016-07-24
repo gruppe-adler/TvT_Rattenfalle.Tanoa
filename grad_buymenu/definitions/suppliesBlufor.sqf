@@ -8,7 +8,7 @@ suppliesBlufor = [
       "suppliesBlufor",
       [
 	      [
-                  "I_C_Boat_Transport_02_F",
+                  ["I_C_Boat_Transport_02_F"],
                   [],
                   14,
                   100,
@@ -28,7 +28,7 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "B_T_LSV_01_unarmed_F",
+                  ["B_T_LSV_01_unarmed_F"],
                   [],
                   12,
                   200,
@@ -45,7 +45,7 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "rhsusf_m1025_w_m2",
+                  ["rhsusf_m1025_w_m2"],
                   [],
                   6,
                   1000,
@@ -64,7 +64,7 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "RHS_UH1Y_UNARMED",
+                  ["RHS_UH1Y_UNARMED"],
                   [],
                   4,
                   2500,
@@ -85,7 +85,7 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "rhsusf_m113_usarmy",
+                  ["rhsusf_m113_usarmy"],
                   [],
                   3,
                   1500,
@@ -104,7 +104,7 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "rhsusf_m109_usarmy",
+                  ["rhsusf_m109_usarmy"],
                   [],
                   1,
                   2500,
@@ -123,7 +123,7 @@ suppliesBlufor = [
                   0
             ],
             [
-                  "RHS_AH1Z_wd_CS",
+                  ["RHS_AH1Z_wd_CS"],
                   [],
                   2,
                   3000,

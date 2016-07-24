@@ -8,8 +8,10 @@ GRAD_fnc_filterJungleRoad = {
     _mkr = createMarkerLocal[ str _node, getPos _node ];
     _mkr setMarkerShapeLocal "ELLIPSE";
     _mkr setMarkerSizeLocal [ 10, 10 ];
-    if (!DEBUG) then {
-    	_mrk setMarkerAlphaLocal 0;
+    if (DEBUG) then {
+    	_mkr setMarkerAlphaLocal 1;
+	} else {
+		_mkr setMarkerAlphaLocal 0;
 	};
     if ( isOnRoad getPos _node ) then {
 
