@@ -23,12 +23,13 @@ fnc_createEntryMouseOverArea = {
 	_mouseOverArea ctrlAddEventHandler ["MouseExit",{
 		ctrlShow [ctrlidc (_this select 0) + 3,false]; false
 	}];
+	
+	_mouseOverArea setVariable ["GRAD_vehicleIndex",_vehiclePositionInArray];
+	_mouseOverArea setVariable ["GRAD_supplyArray",_arrayDisplayName];
 
-	_mouseOverArea ctrlAddEventHandler ["MouseButtonClick", compile format [
-            "[%1, %2] call fnc_selectNextVehicleInArray;",
-            str _arrayDisplayName,_vehiclePositionInArray
-        ];
-    ];
+	_mouseOverArea ctrlAddEventHandler ["MouseButtonClick",{
+            [_this] call fnc_selectNextVehicleInArray;
+        }];
 
 
 
