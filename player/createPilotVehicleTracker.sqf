@@ -1,7 +1,7 @@
 
 {
-    _name = format ["pilotmarker_%1",[(getPosATL _x select 0),(getPosATL _x select 1)];
-    _vipmark = createMarkerLocal [_name,[(getPosATL _x select 0),(getPosATL _x select 1)];
+    _name = format ["pilotmarker_%1",[(getPosATL _x select 0),(getPosATL _x select 1)]];
+    _vipmark = createMarkerLocal [_name,[(getPosATL _x select 0),(getPosATL _x select 1)]];
     _vipmark setMarkerShapeLocal "ICON";
     _vipmark setMarkerTypeLocal "mil_box";
     _vipmark setMarkerColorLocal "ColorBlufor";
