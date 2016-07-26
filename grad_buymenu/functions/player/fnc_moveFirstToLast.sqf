@@ -1,7 +1,11 @@
 fnc_selectNextVehicleInArray = {
 
-	_supplies = _this select 0;
-	_vehicleIndex = _this select 1;
+	_supplies = (_this select 0) getVariable ["GRAD_supplyArray","ERROR"];
+	_vehicleIndex = (_this select 0) getVariable ["GRAD_vehicleIndex",0];
+	
+	if (DEBUG) then {
+		diag_log format ["SELECT_NEXT_VEHICLE_IN_ARRAY: supplyarray is %1, vehicle index is %2", _supplies, _vehicleIndex];
+	};
 
 	_vehicleArray = _supplies select 1 select _vehicleIndex select 0;
 	_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
