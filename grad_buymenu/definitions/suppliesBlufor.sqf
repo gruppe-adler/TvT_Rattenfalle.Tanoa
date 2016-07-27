@@ -135,6 +135,7 @@ suppliesBlufor = [
                   clearBackpackCargoGlobal (_this select 0);
                   clearMagazineCargoGlobal (_this select 0);
                   (_this select 0) addItemCargoGlobal ["ACE_NVG_Wide",2];
+                  (_this select 0) disableTIEquipment true;
                   },
                   format[''],
                   2,

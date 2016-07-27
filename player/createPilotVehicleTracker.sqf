@@ -5,10 +5,13 @@
     _vipmark setMarkerShapeLocal "ICON";
     _vipmark setMarkerTypeLocal "mil_box";
     _vipmark setMarkerColorLocal "ColorBlufor";
-    _vipmark spawn { while {alive _x} do {
-        _this setMarkerPosLocal (getPos _x);
-        sleep 5;
-        if (vehicle _x == _x) then {_this setMarkerAlphaLocal 0;} else {_this setMarkerAlphaLocal 1;};
+    [_vipmark, _x] spawn {
+        _mrk = (_this select 0);
+        _unit = (_this select 1);
+        while {alive _unit} do {
+            _mrk setMarkerPosLocal (getPos _unit);
+            sleep 5;
+            if (vehicle _unit == _unit) then {_mrk setMarkerAlphaLocal 0;} else {_mrk setMarkerAlphaLocal 1;};
         };
     };
 } forEach CRASH_PILOTS;

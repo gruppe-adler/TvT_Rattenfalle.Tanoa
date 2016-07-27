@@ -6,7 +6,7 @@ if (_loadout != "none") then {
 		diag_log format ["calling loadout %1",_stringLoadout];
 		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
-
+[player, false] call TFAR_fnc_forceSpectator;
 /*
 if (player getVariable ["GRAD_canBuy",false]) then {
 		0 = execVM "player\animations\addBuyInteraction.sqf";

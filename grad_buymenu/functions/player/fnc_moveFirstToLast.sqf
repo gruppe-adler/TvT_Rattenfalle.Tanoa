@@ -1,19 +1,43 @@
 fnc_selectNextVehicleInArray = {
 
-	_supplies = (_this select 0) getVariable ["GRAD_supplyArray","ERROR"];
-	_vehicleIndex = (_this select 0) getVariable ["GRAD_vehicleIndex",0];
+	if (DEBUG) then {
+		diag_log format ["SELECT_NEXT_VEHICLE_IN_ARRAY : %1", (_this select 0) select 0];
+	};
+
+	_supplies = (_this select 0) select 0 getVariable ["GRAD_supplyArray","ERROR"];
+	_vehicleIndex = (_this select 0) select 0 getVariable ["GRAD_vehicleIndex",0];
 	
 	if (DEBUG) then {
 		diag_log format ["SELECT_NEXT_VEHICLE_IN_ARRAY: supplyarray is %1, vehicle index is %2", _supplies, _vehicleIndex];
 	};
 
-	_vehicleArray = _supplies select 1 select _vehicleIndex select 0;
-	_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
+	switch (_supplies) do {
+		case "suppliesBlufor": {
+			_vehicleArray = suppliesBlufor select 1 select _vehicleIndex select 0;
+			_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
 
-	((_supplies select 1) select _vehicleIndexset) set [0, _vehicleArrayResorted];
-	publicVariableServer _supplies;
+			((suppliesBlufor select 1) select _vehicleIndexset) set [0, _vehicleArrayResorted];
+			publicVariableServer "suppliesBlufor";
 
-	diag_log format ["Resorting Array %1 to %2",_vehicleArray,_vehicleArrayResorted];
+			diag_log format ["Resorting Array %1 to %2",_vehicleArray,_vehicleArrayResorted];
+		};
+
+		case "suppliesOpfor": {
+			_vehicleArray = suppliesOpfor select 1 select _vehicleIndex select 0;
+			_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
+
+			((suppliesOpfor select 1) select _vehicleIndexset) set [0, _vehicleArrayResorted];
+			publicVariableServer "suppliesOpfor";
+
+			diag_log format ["Resorting Array %1 to %2",_vehicleArray,_vehicleArrayResorted];
+		};
+
+		default {
+			diag_log format ["_supplies is neither opfor nor blufor"];
+		}
+	};
+
+	
 };
 
 
