@@ -111,7 +111,7 @@ spawnSlingLoad = {
 
 
 
-		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 100], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
+		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 150], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
 		_chopper = _chopperArray select 0;
 		createVehicleCrew _chopper;
 		chopperGroup = group _chopper;
@@ -132,11 +132,11 @@ spawnSlingLoad = {
 
 
 
-		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, 70], [], 0, "NONE"];
+		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, 500], [], 0, "NONE"];
 		_vehicle allowDamage false;
 		_vehicle disableCollisionWith _chopper;
 
-		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [_chopperPos0 select 0, _chopperPos0 select 1, 85], [], 0, "NONE"];
+		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [_chopperPos0 select 0, _chopperPos0 select 1, 140], [], 0, "NONE"];
 		_dummyVehicle allowDamage false;
 		_dummyVehicle disableCollisionWith _chopper;
 
