@@ -1,3 +1,5 @@
+// FILE CURRENTLY NOT IN USE
+
 
 // add eventhandler to check if
 player addEventHandler ["InventoryOpened", {
