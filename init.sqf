@@ -173,7 +173,7 @@ if (hasInterface) then {
 		waitUntil {CRASH_SITE select 0 != 0};
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
 		playMusic "LeadTrack01b_F_EXP";
-		1 fademusic 1;
+		0 fademusic 1;
 	};
 
 	sleep 5;

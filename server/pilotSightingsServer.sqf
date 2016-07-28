@@ -42,11 +42,12 @@ while {true} do {
 
 			if (count _nearbyLocations > 0) then {
 				_text = text (_nearbyLocations select 0);
-        _pos = locationPosition (_nearbyLocations select 0);
-        _markerSize = ((getPos _x) distance _pos);
+        		_pos = locationPosition (_nearbyLocations select 0);
+        		_markerSize = ((getPos _x) distance _pos);
 
-        CURRENT_PILOTS_POSITION = [_text, _pos, _markerSize];
+        		CURRENT_PILOTS_POSITION = [_text, _pos, _markerSize];
 				publicVariable "CURRENT_PILOTS_POSITION";
+				diag_log format ["CURRENT_PILOTS_POSITION changed to %1", CURRENT_PILOTS_POSITION];
 			};
 
 		};
@@ -54,6 +55,8 @@ while {true} do {
 	} forEach CRASH_PILOTS;
 	sleep 10; // 10 between pilots
   };
+
+  diag_log format ["LAST_PILOTS_POSITION changed to %1", LAST_PILOTS_POSITION];
   LAST_PILOTS_POSITION = [_text, _pos, _markerSize];
   publicVariable "LAST_PILOTS_POSITION";
 };
