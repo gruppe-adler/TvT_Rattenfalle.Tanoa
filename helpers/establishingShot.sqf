@@ -397,7 +397,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 
 				private ["_time"];
 				_time = time + 2;
-				waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") && !(isNil "GRAD_player_teleported")};
+				waitUntil {time >= _time || !(isNil "ENGIMA_TRAFFIC_edgeRoadsInitialized") && !(isNil "GRAD_player_teleported")};
 
 				if (isNil "BIS_fnc_establishingShot_skip") then {
 					/*((uiNamespace getVariable "RscEstablishingShot") displayCtrl 2500) ctrlSetPosition [

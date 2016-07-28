@@ -35,7 +35,7 @@ fnc_selectNextVehicleInArray = {
 			// diag_log format ["Resorting Array %1 to %2",_vehicleArray,_vehicleArrayResorted];
 			{ 
 				diag_log format ["%1 ..... supplies are now %2",_forEachIndex,_x];
-			} forEach (suppliesBlufor select 1);
+			} forEach (suppliesOpfor select 1);
 		};
 
 		default {

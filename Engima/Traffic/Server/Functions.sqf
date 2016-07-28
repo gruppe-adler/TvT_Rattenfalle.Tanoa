@@ -55,9 +55,9 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 	sleep 0.01;
 	_segmentsCount = count ENGIMA_TRAFFIC_allRoadSegments;
 
-	if (DEBUG) then {
-			diag_log format ["ENGIMA found %1 road segments.",_segmentsCount];
-	};
+	
+	diag_log format ["ENGIMA found %1 road segments.",_segmentsCount];
+	
 
 	// Find all edge road segments
 	_i = 0;
@@ -131,7 +131,8 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 	};
 
 	ENGIMA_TRAFFIC_edgeRoadsInitialized = true;
-	
+	publicVariable "ENGIMA_TRAFFIC_edgeRoadsInitialized";
+
 };
 
 ENGIMA_TRAFFIC_MoveVehicle = {
