@@ -7,6 +7,7 @@ mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoad
 _timeOfDay = "TimeOfDay" call BIS_fnc_getParamValue;
 _weatherSetting = "WeatherSetting" call BIS_fnc_getParamValue;
 
+["Initialize"] call BIS_fnc_dynamicGroups;
 
 setCustomWeather = {
 	skipTime -24;

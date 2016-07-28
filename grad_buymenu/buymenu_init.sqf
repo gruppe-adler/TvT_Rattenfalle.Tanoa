@@ -125,7 +125,7 @@ if (isServer) then {
 	publicVariable "spawnMarkerOpforPlane";
 	publicVariable "spawnMarkerOpforHelicopter";
 
-	SPAWN_APPROACH_BLUFOR = "NORTH";
+	SPAWN_APPROACH_BLUFOR = "SOUTH";
 	SPAWN_APPROACH_OPFOR = "NORTH";
 
 	publicVariable "SPAWN_APPROACH_BLUFOR";

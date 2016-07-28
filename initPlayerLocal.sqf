@@ -9,7 +9,8 @@ indepLoadoutPath = "";
 indepLoadoutParams = "[]";
 
 
-
+ ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
+ 
 if (isMultiplayer) then {
 	joinTime = serverTime;
 } else {
