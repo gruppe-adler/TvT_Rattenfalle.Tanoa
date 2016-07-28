@@ -397,7 +397,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 
 				private ["_time"];
 				_time = time + 2;
-				waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip")};
+				waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") && !(isNil "GRAD_player_teleported")};
 
 				if (isNil "BIS_fnc_establishingShot_skip") then {
 					/*((uiNamespace getVariable "RscEstablishingShot") displayCtrl 2500) ctrlSetPosition [
@@ -470,7 +470,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 
 					private ["_time"];
 					_time = time + 999999;
-					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") && !(isNil "ENGIMA_TRAFFIC_edgeRoadsInitialized")};
+					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip")};
 					cutText ["", "PLAIN"];
 
 					if (isNil "BIS_fnc_establishingShot_skip") then {
@@ -557,6 +557,7 @@ if (_mode == 0) then {
 	};
 
 	enableEnvironment true;
+	cutText ["", "PLAIN"]; // just repeat once more
 
 	// Start mission
 	BIS_missionStarted = true;

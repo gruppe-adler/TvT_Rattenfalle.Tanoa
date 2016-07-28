@@ -22,7 +22,7 @@ newSightingAlert = {
 
 
 _listener = {
-	_markerName setMarkerPosLocal (locationPosition (LAST_PILOTS_POSITION select 1));
+	_markerName setMarkerPosLocal (LAST_PILOTS_POSITION select 1);
 	_markerName setMarkerSizeLocal [LAST_PILOTS_POSITION select 2,LAST_PILOTS_POSITION select 2];
 	[] call newSightingAlert;
 };
