@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=253;
+		nextID=255;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1654.7013,304.96494,699.76361};
-		dir[]={0.66406488,-0.6669122,0.33819148};
-		up[]={0.59429365,0.74512827,0.30265883};
-		aside[]={0.45383981,-2.514571e-008,-0.89114815};
+		pos[]={1627.4253,181.92558,635.47711};
+		dir[]={0.35796556,-0.40023264,0.84368479};
+		up[]={0.15634134,0.91639751,0.3684791};
+		aside[]={0.9206208,1.1903467e-007,-0.39060819};
 	};
 };
 binarizationWanted=0;
@@ -268,7 +268,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=83;
+		items=84;
 		class Item0
 		{
 			dataType="Marker";
@@ -1360,11 +1360,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1813.5468,-17.642639,561.54834};
+				position[]={1813.547,-17.642708,561.54797};
 			};
 			id=40;
 			type="ACE_ModuleBlueForceTracking";
-			atlOffset=25.320976;
+			atlOffset=25.320999;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1420,7 +1420,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=0;
+							value=1;
 						};
 					};
 				};
@@ -1868,11 +1868,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1795.4982,-21.539734,523.87744};
+				position[]={1795.498,-21.539547,523.87701};
 			};
 			id=55;
 			type="ACE_moduleMedicalSettings";
-			atlOffset=26.026821;
+			atlOffset=26.027;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1947,7 +1947,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=2;
 						};
 					};
 				};
@@ -2061,7 +2061,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=3;
 						};
 					};
 				};
@@ -2080,7 +2080,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=2;
 						};
 					};
 				};
@@ -3498,7 +3498,7 @@ class Mission
 									"BOOL"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};
@@ -4876,6 +4876,20 @@ class Mission
 			colorName="ColorGUER";
 			alpha=0;
 			id=241;
+		};
+		class Item83
+		{
+			dataType="Trigger";
+			position[]={1691.667,-7.1650681,627.258};
+			class Attributes
+			{
+				condition="true";
+				sizeA=0;
+				sizeB=0;
+				effectMusic="LeadTrack01b_F_EXP";
+			};
+			id=254;
+			type="EmptyDetector";
 		};
 	};
 };
