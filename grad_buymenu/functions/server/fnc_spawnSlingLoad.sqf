@@ -129,14 +129,14 @@ spawnSlingLoad = {
 
 
 
+		sleep 5;
 
 
-
-		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, 500], [], 0, "NONE"];
+		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, (_chopperPos0 select 2)-20], [], 0, "NONE"];
 		_vehicle allowDamage false;
 		_vehicle disableCollisionWith _chopper;
 
-		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [_chopperPos0 select 0, _chopperPos0 select 1, 140], [], 0, "NONE"];
+		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [0, 0, 0], [], 0, "NONE"];
 		_dummyVehicle allowDamage false;
 		_dummyVehicle disableCollisionWith _chopper;
 

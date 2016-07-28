@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={1654.7013,304.96494,699.76361};
-		dir[]={0.056353305,-0.81126475,0.58206373};
-		up[]={0.078177117,0.58469439,0.80747998};
-		aside[]={0.99540329,-2.6775524e-008,-0.096370555};
+		dir[]={0.66406488,-0.6669122,0.33819148};
+		up[]={0.59429365,0.74512827,0.30265883};
+		aside[]={0.45383981,-2.514571e-008,-0.89114815};
 	};
 };
 binarizationWanted=0;
@@ -2668,12 +2668,12 @@ class Mission
 		class Item48
 		{
 			dataType="Marker";
-			position[]={2699.1106,0,7421.3262};
+			position[]={2699.5439,-1.0634766,7429.73};
 			name="mrk_spawn_blufor_water_4";
 			type="c_ship";
 			colorName="ColorWEST";
 			id=109;
-			atlOffset=0.52304626;
+			atlOffset=0.57620358;
 		};
 		class Item49
 		{

@@ -24,7 +24,8 @@ fnc_spawnVehicleManager = {
 
 
 	// convert vehicle array to vehicle (if more than one is possible)
-	_spawnObjectType = selectRandom _spawnObjectType;
+	_spawnObjectType = _spawnObjectType select 0;
+	diag_log format ["spawnVehicleManager received order for %1",_spawnObjectType];
 
 
 

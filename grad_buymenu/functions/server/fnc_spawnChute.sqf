@@ -190,6 +190,7 @@ spawnChute = {
 		_vehicle setDamage 0;
 		_vehicle setFuel 1;
 		_vehicle allowDamage true;
+		_vehicle setVehicleLock "UNLOCKED";
 
 		// 0 setWindForce _origWindForce;
 		// setWind [_origWind select 0, _origWind select 1, true];

@@ -7,6 +7,9 @@ if (_isDebug == 0) then {
 //
 // customizable variables
 //
+if (hasInterface) then {
+	cutText ["", "BLACK FADED",1000];
+};
 
 setViewDistance 3500;
 enableSentences false;
@@ -152,7 +155,7 @@ if (isServer) then {
 
 if (hasInterface) then {
 
-	 cutText ["", "BLACK FADED",1000];
+	 
 
 	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 

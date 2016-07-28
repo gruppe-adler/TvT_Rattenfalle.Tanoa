@@ -470,7 +470,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 
 					private ["_time"];
 					_time = time + 999999;
-					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip")};
+					waitUntil {time >= _time || !(isNil "BIS_fnc_establishingShot_skip") && !(isNil "ENGIMA_TRAFFIC_edgeRoadsInitialized")};
 					cutText ["", "PLAIN"];
 
 					if (isNil "BIS_fnc_establishingShot_skip") then {
