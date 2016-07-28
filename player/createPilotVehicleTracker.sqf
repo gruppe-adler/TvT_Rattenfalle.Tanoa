@@ -13,11 +13,11 @@
             _mrk setMarkerPosLocal (getPos _unit);
             sleep 5;
             if (vehicle _unit == _unit) then {
-                if (_currentlyOn) then { hintsilent format ["Pilot exited Vehicle"];};
+                if (_currentlyOn) then { hint format ["Pilot hat Fahrzeug verlassen."];};
                 _mrk setMarkerAlphaLocal 0;
                 _currentlyOn = false;
             } else {
-                if (!_currentlyOn) then { hintsilent format ["Pilot entered Vehicle"];};
+                if (!_currentlyOn) then { hint format ["Pilot hat Fahrzeug bestiegen."];};
                 _mrk setMarkerAlphaLocal 1;
                 _currentlyOn = true;
 
