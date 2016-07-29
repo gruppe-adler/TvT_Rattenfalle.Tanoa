@@ -34,7 +34,7 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 	sleep 2; // Wait for all traffic instances to be registered
 
 	_worldTrigger = call BIS_fnc_worldArea;
-	_worldSize = triggerArea _worldTrigger;
+	_worldSize = triggerArea trg_drive_area; // triggerArea _worldTrigger;
 	_mapTopLeftPos = [0, 2 * (_worldSize select 1)];
 	_mapTopRightPos = [2 * (_worldSize select 0), 2 * (_worldSize select 1)];
 	_mapBottomRightPos = [2 * (_worldSize select 0), 0];
@@ -115,13 +115,13 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 				if (!(ENGIMA_TRAFFIC_edgeRoadsUseful select _index)) then {
 					ENGIMA_TRAFFIC_edgeRoadsUseful set [_index, true];
 				};
-				sleep 0.01;
+				sleep 0.001;
 			};
 
 			_index = _index + 1;
 		};
 
-		sleep 0.01;
+		sleep 0.001;
 		_i = _i + 50;
 		if (_i >= _segmentsCount) then {
 			_i = _nextStartPos;
