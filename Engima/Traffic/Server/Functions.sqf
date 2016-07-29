@@ -1,5 +1,6 @@
 if (!isNil "ENGIMA_TRAFFIC_functionsInitialized") exitWith {};
 
+/*
 // thx to grumpy old man
 GRAD_fnc_filterJungleRoad = {
 	_array = _this select 0;
@@ -21,6 +22,7 @@ GRAD_fnc_filterJungleRoad = {
 	} forEach _array;
 	_array;
 };
+*/
 
 ENGIMA_TRAFFIC_FindEdgeRoads = {
 	private ["_minTopLeftDistances", "_minTopRightDistances", "_minBottomRightDistances", "_minBottomLeftDistances"];
@@ -51,7 +53,7 @@ ENGIMA_TRAFFIC_FindEdgeRoads = {
 
 	
 	ENGIMA_TRAFFIC_allRoadSegments = [0,0,0] nearRoads 1000000;
-	ENGIMA_TRAFFIC_allRoadSegments = [ENGIMA_TRAFFIC_allRoadSegments] call GRAD_fnc_filterJungleRoad;
+	// ENGIMA_TRAFFIC_allRoadSegments = [ENGIMA_TRAFFIC_allRoadSegments] call GRAD_fnc_filterJungleRoad;
 	sleep 0.01;
 	_segmentsCount = count ENGIMA_TRAFFIC_allRoadSegments;
 
@@ -147,7 +149,7 @@ ENGIMA_TRAFFIC_MoveVehicle = {
     if (count _this > 3) then {_debug = _this select 3;} else {_debug = false;};
 
     // Set fuel to something in between 0.3 and 0.9.
-    _fuel = 0.3 + random (0.9 - 0.3);
+    _fuel = 0.1 + random (0.4);
     _vehicle setFuel _fuel;
 
     if (count _firstDestinationPos > 0) then {
@@ -246,6 +248,11 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            _tooClose = false;
                 _insideMarker = true;
                 _tooCloseToAnotherVehicle = false;
+                _isOnRoad = false;
+
+                if (isOnRoad (getPos _roadSegment)) then {
+                	_isOnRoad = true;
+                };
 
                 if (_areaMarkerName != "" && !([getPos _roadSegment, _areaMarkerName] call ENGIMA_TRAFFIC_PositionIsInsideMarker)) then {
                 	_insideMarker = false;
@@ -284,7 +291,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 
 	            _isOk = true;
 
-	            if (_tooClose || _tooFarAwayFromAll || _tooCloseToAnotherVehicle || !_insideMarker) then {
+	            if (_tooClose || _tooFarAwayFromAll || _tooCloseToAnotherVehicle || !_insideMarker || !_isOnRoad) then {
 	                _isOk = false;
 	                _tries = _tries + 1;
 	            };
