@@ -180,7 +180,7 @@ if (hasInterface) then {
 	if (playerSide == west) then {
 		[] execVM "player\USTeleportListener.sqf";
 		[] spawn checkJIP;
-		[] execVM "player\createPilotVehicleTracker.sqf";
+		// [] execVM "player\createPilotVehicleTracker.sqf";
 	};
 
 	// EAST is rebels
