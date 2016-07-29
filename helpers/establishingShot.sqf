@@ -42,7 +42,7 @@ _fade = [_this, 8, true, [true]] call BIS_fnc_param;
 if (_fade) then {
 	["BIS_fnc_establishingShot",false] call BIS_fnc_blackOut;
 } else {
-	0 fadeSound 0;
+	// 0 fadeSound 0;
 	titleCut ["", "BLACK FADED", 10e10];
 };
 

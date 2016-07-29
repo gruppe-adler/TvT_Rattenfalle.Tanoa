@@ -33,6 +33,7 @@ spawnCiv = {
 		_civilian setBehaviour "CARELESS";
 		_civilian disableAI "TARGET";
 		_civilian disableAI "AUTOTARGET";
+		_civilian action ["lightOn", _vehicle];
 
 		[_vehicle] call _civCall;
 		sleep 0.1;

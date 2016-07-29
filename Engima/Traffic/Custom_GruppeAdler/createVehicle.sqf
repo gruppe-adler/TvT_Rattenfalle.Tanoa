@@ -18,6 +18,7 @@ createrebelVehicle = {
 
 		_crewDriver assignAsDriver _car0;
 		_crewDriver moveInDriver _car0;
+		_crewDriver action ["lightOn", _car0];
 		// hintsilent format ["ordered %1 to enter %2", _crewDriver,_car0];
 	};
 

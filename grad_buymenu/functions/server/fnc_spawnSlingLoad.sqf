@@ -111,7 +111,7 @@ spawnSlingLoad = {
 
 
 
-		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 150], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
+		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 200], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
 		_chopper = _chopperArray select 0;
 		createVehicleCrew _chopper;
 		chopperGroup = group _chopper;
@@ -126,13 +126,13 @@ spawnSlingLoad = {
 		_chopper disableAI "TARGET";
 		_chopper disableAI "AUTOTARGET";
 		_chopper setPilotLight true;
-
+		leader group _chopper action ["lightOn", _chopper];
 
 
 		sleep 5;
 
 
-		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, (_chopperPos0 select 2)-20], [], 0, "NONE"];
+		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, (_chopperPos0 select 2)-25], [], 0, "NONE"];
 		_vehicle allowDamage false;
 		_vehicle disableCollisionWith _chopper;
 
