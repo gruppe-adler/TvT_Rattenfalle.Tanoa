@@ -10,7 +10,7 @@ _nil = createMarkerLocal [GRAD_last_pilots_position, [0, 0, 0]];
 GRAD_last_pilots_position setMarkerShapeLocal "ELLIPSE";
 GRAD_last_pilots_position setMarkerTypeLocal "mil_unknown";
 GRAD_last_pilots_position setMarkerColorLocal "ColorOpfor";
-GRAD_last_pilots_position setMarkerAlphaLocal 1;
+GRAD_last_pilots_position setMarkerAlphaLocal 0.3;
 GRAD_last_pilots_position setMarkerSizeLocal [1, 1];
 GRAD_last_pilots_position setMarkerBrushLocal "SolidFull";
 

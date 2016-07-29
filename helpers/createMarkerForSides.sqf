@@ -8,7 +8,7 @@ _inner_marker = createMarkerLocal ["mrk_crash_site", _position];
 "mrk_crash_site" setMarkerShapeLocal "ELLIPSE";
 "mrk_crash_site" setMarkerTypeLocal "mil_unknown";
 "mrk_crash_site" setMarkerColorLocal "ColorRed";
-"mrk_crash_site" setMarkerAlphaLocal 1;
+"mrk_crash_site" setMarkerAlphaLocal 0.5;
 "mrk_crash_site" setMarkerSizeLocal [100, 100];
 "mrk_crash_site" setMarkerBrushLocal "SolidBorder";
 

@@ -24,7 +24,7 @@ _markerPos = _pos;
 
 _marker = createMarkerLocal [format ["pilotmarker_%1", _markerPos],_markerPos];
 _marker setMarkerTypeLocal "mil_unknown";
-_marker setMarkerColorLocal "ColorRed";
+_marker setMarkerColorLocal "ColorBlufor";
 _marker setMarkerShapeLocal "ELLIPSE";
 _marker setMarkerSizeLocal [_trackingPrecision, _trackingPrecision];
 _marker setMarkerBrushLocal "Solid";
@@ -33,4 +33,4 @@ _marker setMarkerAlphaLocal 0.5;
 _marker2 = createMarkerLocal [format["pilotmarker_icon_%1",_markerPos],_markerPos];
 _marker2 setMarkerShapeLocal "ICON";
 _marker2 setMarkerTypeLocal "hd_warning";
-_marker2 setMarkerColorLocal "ColorRed";
+_marker2 setMarkerColorLocal "ColorBlufor";
