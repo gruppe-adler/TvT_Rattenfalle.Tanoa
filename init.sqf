@@ -120,23 +120,23 @@ if (isServer) then {
 			{if (!isPlayer _x) then {sleep 0.5; 0 = [_x] execVM "loadouts\_client.sqf"};} forEach allUnits;
 	};*/
 
-
-	{
-		_loadout = _x getVariable ["GRAD_loadout","none"];
-		if (_loadout != "none") then {
-			_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-			_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
-		};
-	} forEach playableUnits;
-
-	{
-		_loadout = _x getVariable ["GRAD_loadout","none"];
-		if (_loadout != "none") then {
-			_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
-			_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
-		};
-	} forEach switchableUnits;
-
+	if (isMultiplayer) then {
+		{
+			_loadout = _x getVariable ["GRAD_loadout","none"];
+			if (_loadout != "none") then {
+				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
+			};
+		} forEach playableUnits;
+	} else {
+		{
+			_loadout = _x getVariable ["GRAD_loadout","none"];
+			if (_loadout != "none") then {
+				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
+			};
+		} forEach switchableUnits;
+	};
 
 
 	CRASH_PILOTS = [];

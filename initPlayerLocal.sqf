@@ -24,13 +24,15 @@ if (side player != independent) then {
 	setplayerrespawntime 999999;
 };
 
-// get loadout for the first time
+// get loadout for the first time, just to make sure
+
 _loadout = player getVariable ["GRAD_loadout","none"];
 if (_loadout != "none") then {
 		_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
 		diag_log format ["calling loadout %1",_stringLoadout];
 		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
+
 
 if (player getVariable ["GRAD_canBuy",false]) then {
 		0 = execVM "player\animations\addBuyInteraction.sqf";
