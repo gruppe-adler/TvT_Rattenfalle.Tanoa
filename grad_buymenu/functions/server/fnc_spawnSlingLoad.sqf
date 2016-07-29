@@ -109,9 +109,17 @@ spawnSlingLoad = {
 		};
 
 
+		_spawnpos = [30718.199, -185.97, 200];
+		_CH47F = createVehicle ["RHS_CH_47F", _spawnpos, [], 0, "FLY"];
+		_spawnpos set [2,1500];
+		_CH47F setposatl _spawnpos;
+		createVehicleCrew (_CH47F);
+		_spawnpos set [2,1000]; // so the humvee doesnt collide with the chopper
+		_cargo =  "rhsusf_m1025_d" createVehicle _spawnpos;
+		_cargo setposatl _spawnpos;
+		_CH47F setSlingLoad _cargo;
 
-
-		_chopperArray = [[_chopperPos0 select 0, _chopperPos0 select 1, 200], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
+		_chopperArray = [[0, 0 , 3000 + (random 500)], 0, _spawnVehicleClass, civilian] call BIS_fnc_spawnVehicle;
 		_chopper = _chopperArray select 0;
 		createVehicleCrew _chopper;
 		chopperGroup = group _chopper;
@@ -129,14 +137,11 @@ spawnSlingLoad = {
 		leader group _chopper action ["lightOn", _chopper];
 
 
-		sleep 5;
-
-
-		_vehicle = createVehicle [_classname, [_chopperPos0 select 0, _chopperPos0 select 1, (_chopperPos0 select 2)-25], [], 0, "NONE"];
+		_vehicle = createVehicle [_classname, [0,0,2000 + (random 500)], [], 0, "NONE"];
 		_vehicle allowDamage false;
 		_vehicle disableCollisionWith _chopper;
 
-		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [0, 0, 0], [], 0, "NONE"];
+		_dummyVehicle = createVehicle ["I_Quadbike_01_F", [0, 0, 1000 + (random 500)], [], 0, "NONE"];
 		_dummyVehicle allowDamage false;
 		_dummyVehicle disableCollisionWith _chopper;
 
@@ -161,6 +166,10 @@ spawnSlingLoad = {
 		_maxLength = abs ((_p2 select 1) - (_p1 select 1));
 		_maxHeight = abs ((_p2 select 2) - (_p1 select 2));
 
+		_chopper setPosATL [_chopperPos0 select 0, _chopperPos0 select 1,200];
+		// _vehicle setPosATL [_chopperPos0 select 0, _chopperPos0 select 1,170];
+		
+
 
 		if (count _ropecount > 0) then {
 			_vehicle setMass 8000;
@@ -169,7 +178,7 @@ spawnSlingLoad = {
 			_isloaded = _chopper setSlingLoad _vehicle;
 			deleteVehicle _dummyVehicle;
 		} else {
-			_dummyVehicle setPosATL [getPosATL _chopper select 0, getPosATL _chopper select 1, (getPosATL _chopper select 2) - 15];
+			_dummyVehicle setPosATL [getPosATL _chopper select 0, getPosATL _chopper select 1, (getPosATL _chopper select 2) - 20];
 			_dummyVehicle disableCollisionWith _chopper;
 			_dummyVehicle disableCollisionWith _vehicle;
 

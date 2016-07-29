@@ -164,7 +164,7 @@ if (hasInterface) then {
 		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
 			player setDamage 1;
 		} else {
-			if (!didJIP) exitWith {[] call callIntro;};
+			if (true) exitWith {[] call callIntro;};
 		};
 	};
 
