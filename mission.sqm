@@ -4883,9 +4883,11 @@ class Mission
 			position[]={1691.667,-7.1650681,627.258};
 			class Attributes
 			{
+				name="trg_music";
 				condition="true";
 				sizeA=0;
 				sizeB=0;
+				activationBy="ANY";
 				effectMusic="LeadTrack01b_F_EXP";
 			};
 			id=254;

@@ -172,8 +172,7 @@ if (hasInterface) then {
 	callIntro = {
 		waitUntil {CRASH_SITE select 0 != 0};
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
-		playMusic "LeadTrack01b_F_EXP";
-		0 fademusic 1;
+		
 	};
 
 	sleep 5;
