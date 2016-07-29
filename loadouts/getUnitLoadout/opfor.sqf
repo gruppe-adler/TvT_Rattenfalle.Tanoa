@@ -3,7 +3,7 @@ GRAD_getUnitLoadout_opfor_sql = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs
 ["V_TacChestrig_oli_F",[["rhs_30Rnd_762x39mm_U",30,4],
 ["rhs_30Rnd_762x39mm_89",30,4]]],
 ["tf_rt1523g_bwmod",[["rhs_mag_rdg2_black",1,2],["rhs_mag_rgd5",1,2]]],
-"rhsgref_fieldcap_ttsko_mountain",
+"rhsgref_fieldcap_ttsko_mountain","",
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
 
@@ -11,17 +11,18 @@ GRAD_getUnitLoadout_opfor_ftl = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs
 ["U_I_C_Soldier_Camo_F",[["ACE_NVG_Gen1",1]]],
 ["V_TacChestrig_oli_F",[["rhs_30Rnd_762x39mm_U",30,4],
 ["rhs_30Rnd_762x39mm_89",30,4]]],["tf_rt1523g_bwmod",[["rhs_mag_rdg2_black",1,2],["rhs_mag_rgd5",1,2]]],
-"rhsgref_fieldcap_ttsko_mountain",
+"rhsgref_fieldcap_ttsko_mountain","",
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
 
-GRAD_getUnitLoadout_opfor_medic = [["rhs_weap_akms","","rhs_acc_2dpZenit","",[],[],""],[],[],
-["U_I_C_Soldier_Camo_F",
-[["rhs_acc_ekp1",1],["ACE_epinephrine",2],["ACE_morphine",2],["ACE_elasticBandage",8],["ACE_Flashlight_KSF1",1],["rhs_acc_perst1ik",1],["ACE_NVG_Gen1",1],["ACE_CableTie",2],["ACE_MapTools",1],["ACE_Cellphone",1]]],
-["V_TacVest_camo",[["rhs_30Rnd_762x39mm",30,1],["rhs_30Rnd_762x39mm_U",30,4],["rhs_30Rnd_762x39mm_89",30,2]]],
-["B_Carryall_oli",[["ACE_elasticBandage",40],["ACE_quikclot",40],["ACE_bloodIV_250",10],["ACE_bodyBag",3],["ACE_atropine",10],
-["ACE_epinephrine",15],["ACE_morphine",30],["ACE_packingBandage",10],["ACE_personalAidKit",10],["ACE_adenosine",10],["ACE_plasmaIV_250",6],["ACE_tourniquet",2]]],
-"rhs_beret_milp","",[],
+GRAD_getUnitLoadout_opfor_medic = [["","","rhs_acc_2dpZenit","",[],[],""],[],[], 
+["U_I_C_Soldier_Camo_F", 
+[["rhs_acc_ekp1",1],["ACE_epinephrine",2],["ACE_morphine",2],["ACE_elasticBandage",8],["ACE_Flashlight_KSF1",1],["rhs_acc_perst1ik",1],["ACE_NVG_Gen1",1],["ACE_CableTie",2],["ACE_MapTools",1],["ACE_Cellphone",1]]], 
+["V_TacVest_camo",[["rhs_30Rnd_762x39mm",30,1],["rhs_30Rnd_762x39mm_U",30,4],["rhs_30Rnd_762x39mm_89",30,2]]], 
+["B_Carryall_oli",[["ACE_elasticBandage",40],["ACE_quikclot",40],["ACE_bloodIV_250",10],["ACE_bodyBag",3],["ACE_atropine",10], 
+["ACE_epinephrine",15],["ACE_morphine",30],["ACE_packingBandage",10],["ACE_personalAidKit",10],["ACE_adenosine",10],["ACE_plasmaIV_250",6],["ACE_tourniquet",2]]], 
+"rhs_beret_milp","",
+["Binocular","","","",[],[],""], 
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
 
 GRAD_getUnitLoadout_opfor_marksman = [["rhs_weap_m76","","","",[],[],""],[],[],
@@ -53,13 +54,13 @@ GRAD_getUnitLoadout_opfor_aa = [["rhs_weap_akm","","rhs_acc_2dpZenit","",["rhs_3
 ["U_I_C_Soldier_Camo_F",[["ACE_NVG_Gen1",1],["ACE_epinephrine",2],["ACE_morphine",2],["ACE_elasticBandage",7]]],
 ["V_TacVest_oli",[["rhs_30Rnd_762x39mm",30,1],["rhs_30Rnd_762x39mm_U",30,4],["rhs_30Rnd_762x39mm_89",30,2]]],
 ["B_Carryall_oli",[["rhs_mag_9k38_rocket",1,3]]],
-"rhs_Booniehat_m81",
+"rhs_Booniehat_m81","",
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
 
 GRAD_getUnitLoadout_opfor_rifleman = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs_30Rnd_762x39mm",30],[],""],[],[],
 ["U_I_C_Soldier_Camo_F",[["ACE_epinephrine",1],["ACE_morphine",1],["ACE_elasticBandage",4],["ACE_Flashlight_KSF1",1],["rhs_acc_perst1ik",1],["ACE_CableTie",1],["ACE_Cellphone",1],["ACE_NVG_Gen1",1]]],
 ["V_TacVest_oli",[["rhs_30Rnd_762x39mm",30,7]]],[],
-"H_Bandanna_khk_hs",
+"H_Bandanna_khk_hs","",
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
