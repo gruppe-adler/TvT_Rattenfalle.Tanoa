@@ -164,7 +164,7 @@ if (hasInterface) then {
 		if ((CRASH_SITE select 0 != 0) && didJIP && time > jipTime) then {
 			player setDamage 1;
 		} else {
-			if (true) exitWith {[] call callIntro;};
+			[] call callIntro;
 		};
 	};
 
@@ -172,7 +172,6 @@ if (hasInterface) then {
 	callIntro = {
 		waitUntil {CRASH_SITE select 0 != 0};
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
-		
 	};
 
 	sleep 5;

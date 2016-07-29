@@ -174,13 +174,13 @@ spawnSlingLoad = {
 		if (count _ropecount > 0) then {
 			_vehicle setMass 8000;
 			_vehicle disableCollisionWith _chopper;
-			_vehicle setPosATL [getPosATL _chopper select 0, getPosATL _chopper select 1, (getPosATL _chopper select 2) - 22];
+			_vehicle setPosATL [getPosATL _chopper select 0, getPosATL _chopper select 1, (getPosATL _chopper select 2) - 10];
 			sleep 0.05;
 
 			_isloaded = _chopper setSlingLoad _vehicle;
 			deleteVehicle _dummyVehicle;
 		} else {
-			_dummyVehicle setPosATL [getPosATL _chopper select 0, getPosATL _chopper select 1, (getPosATL _chopper select 2) - 22];
+			_dummyVehicle setPosATL [getPosATL _chopper select 0, getPosATL _chopper select 1, (getPosATL _chopper select 2) - 10];
 			_dummyVehicle disableCollisionWith _chopper;
 			_dummyVehicle disableCollisionWith _vehicle;
 
