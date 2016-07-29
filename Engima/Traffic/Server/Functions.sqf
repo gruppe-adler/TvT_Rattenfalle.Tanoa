@@ -251,11 +251,8 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            _tooClose = false;
                 _insideMarker = true;
                 _tooCloseToAnotherVehicle = false;
-                _isOnRoad = false;
 
-                if (isOnRoad (getPos _roadSegment)) then {
-                	_isOnRoad = true;
-                };
+                
 
                 if (_areaMarkerName != "" && !([getPos _roadSegment, _areaMarkerName] call ENGIMA_TRAFFIC_PositionIsInsideMarker)) then {
                 	_insideMarker = false;
@@ -294,7 +291,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 
 	            _isOk = true;
 
-	            if (_tooClose || _tooFarAwayFromAll || _tooCloseToAnotherVehicle || !_insideMarker || !_isOnRoad) then {
+	            if (_tooClose || _tooFarAwayFromAll || _tooCloseToAnotherVehicle || !_insideMarker || !(isOnRoad (getPos _roadSegment))) then {
 	                _isOk = false;
 	                _tries = _tries + 1;
 	            };
