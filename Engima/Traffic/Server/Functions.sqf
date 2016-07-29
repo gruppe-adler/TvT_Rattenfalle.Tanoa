@@ -218,7 +218,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 
 	_fnc_FindSpawnSegment = {
 	    private ["_currentInstanceIndex", "_allPlayerPositions", "_minSpawnDistance", "_maxSpawnDistance", "_activeVehiclesAndGroup"];
-	    private ["_insideMarker", "_areaMarkerName", "_refPlayerPos", "_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooFarAwayFromAll", "_tooClose", "_tooCloseToAnotherVehicle"];
+	    private ["_isRoad", "_insideMarker", "_areaMarkerName", "_refPlayerPos", "_roadSegments", "_roadSegment", "_isOk", "_tries", "_result", "_spawnDistanceDiff", "_refPosX", "_refPosY", "_dir", "_tooFarAwayFromAll", "_tooClose", "_tooCloseToAnotherVehicle"];
 
 		_currentInstanceIndex = _this select 0;
 	    _allPlayerPositions = _this select 1;
@@ -251,8 +251,11 @@ ENGIMA_TRAFFIC_StartTraffic = {
 	            _tooClose = false;
                 _insideMarker = true;
                 _tooCloseToAnotherVehicle = false;
+                _isRoad = false;
 
-                
+                if (isOnRoad (ASLToAGL getPosASL _roadSegment)) then {
+                	_isRoad = true;
+                };
 
                 if (_areaMarkerName != "" && !([getPos _roadSegment, _areaMarkerName] call ENGIMA_TRAFFIC_PositionIsInsideMarker)) then {
                 	_insideMarker = false;
@@ -291,7 +294,7 @@ ENGIMA_TRAFFIC_StartTraffic = {
 
 	            _isOk = true;
 
-	            if (_tooClose || _tooFarAwayFromAll || _tooCloseToAnotherVehicle || !_insideMarker || !(isOnRoad (getPos _roadSegment))) then {
+	            if (_tooClose || _tooFarAwayFromAll || _tooCloseToAnotherVehicle || !_insideMarker || !_isRoad) then {
 	                _isOk = false;
 	                _tries = _tries + 1;
 	            };
