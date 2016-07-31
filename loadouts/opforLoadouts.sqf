@@ -82,9 +82,6 @@ opfor_sql = {
 		this addPrimaryWeaponItem "rhs_acc_2dpZenit";
 
 		[this] call set_opfor_basics;
-
-		0 = execVM "player\animations\addBuyInteraction.sqf";
-
 };
 
 opfor_ftl = {
@@ -115,11 +112,6 @@ opfor_ftl = {
 	this addPrimaryWeaponItem "rhs_acc_2dpZenit";
 
 	[this] call set_opfor_basics;
-	0 = execVM "player\animations\addBuyInteraction.sqf";
-
-
-
-
 };
 
 opfor_medic = {

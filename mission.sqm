@@ -3833,7 +3833,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="this setVariable [""GRAD_loadout"",""opfor_sql""]; this setVariable [""GRAD_canBuy"", true];";
+						rank="CAPTAIN";
+						init="this setVariable [""GRAD_loadout"",""opfor_sql""]; ";
 						description="SQL";
 						isPlayer=1;
 					};
@@ -4333,13 +4334,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1628.7263,4.6482801,707.29395};
+						position[]={1628.726,4.6482816,707.29401};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						init="this setVariable [""GRAD_loadout"",""blufor_sql""]; this setVariable [""GRAD_canBuy"", true];";
+						rank="CAPTAIN";
+						init="this setVariable [""GRAD_loadout"",""blufor_sql""]; ";
 						description="SQL";
 						isPlayable=1;
 					};
@@ -4437,7 +4439,7 @@ class Mission
 					};
 					id=278;
 					type="B_Soldier_F";
-					atlOffset=-0.020999908;
+					atlOffset=-0.021000385;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4676,7 +4678,7 @@ class Mission
 					};
 					id=284;
 					type="B_Soldier_F";
-					atlOffset=-0.0029997826;
+					atlOffset=-0.0029993057;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4904,7 +4906,7 @@ class Mission
 			{
 			};
 			id=277;
-			atlOffset=-0.020999908;
+			atlOffset=-0.021000385;
 		};
 		class Item88
 		{

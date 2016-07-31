@@ -1,10 +1,10 @@
 fnc_createEntries = {
 	_givenSupplies = _this select 0;
-	_allowedSupplies = _this select 1;
+	_allowedSupplies = player getVariable ['GRAD_canBuy', []];
 
 	_applicableSupplies = [];
 	{
-		if (_allowedSupplies find _x) then {
+		if ((_allowedSupplies find _x) != -1) then {
 			_applicableSupplies pushBack _x;
 		} else {
 			// TODO  debug log...

@@ -1,6 +1,5 @@
 _supplies = _this select 0;
 _money = _this select 1;
-_allowedItems = _this select 2;
 
 fnc_getNextIDC = {
 	_idc = _this select 0;
@@ -31,11 +30,11 @@ fnc_refreshGUI = {
 	closeDialog 0;
 	_supplies = _this select 0;
 	diag_log format ["refreshing gui with %1",_this select 0];
-	_gui = [_supplies, _allowedItems] call fnc_createEntries;
+	_gui = [_supplies] call fnc_createEntries;
 	_toolbar = [_gui,_this select 1] spawn fnc_createToolbar;
 };
 
 
 
-_gui = [_supplies, allVariables _supplies] call fnc_createEntries;
+_gui = [_supplies] call fnc_createEntries;
 _toolbar = [_gui,_money] spawn fnc_createToolbar;

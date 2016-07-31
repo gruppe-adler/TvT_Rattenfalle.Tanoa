@@ -8,7 +8,6 @@ opforLoadoutParams = "[]";
 indepLoadoutPath = "";
 indepLoadoutParams = "[]";
 
-
  ["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;
 
 if (isMultiplayer) then {
@@ -33,7 +32,7 @@ if (_loadout != "none") then {
 		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
 
-0 = player getVariable ["GRAD_canBuy", []] execVM "player\animations\addBuyInteraction.sqf";
+0 = [] execVM "player\animations\addBuyInteraction.sqf";
 
 
 // reset any attempt to raise or lower rating
@@ -48,6 +47,7 @@ player addEventhandler ["HandleRating", {
 // player setUnitLoadout [_codeLoadout, true];
 
 0 = execVM "player\animations\addWavingInteraction.sqf";
+0 = execVM "player\animations\addBuyInteraction.sqf";
 0 = execVM "player\addObjectiveListener.sqf";
 mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoadout.sqf";
 
