@@ -165,6 +165,12 @@ if (hasInterface) then {
 			player setDamage 1;
 		} else {
 			[] call callIntro;
+			_loadout = player getVariable ["GRAD_loadout","none"];
+			if (_loadout != "none") then {
+				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
+				diag_log format ["calling loadout %1",_stringLoadout];
+				player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
+			};
 		};
 	};
 
