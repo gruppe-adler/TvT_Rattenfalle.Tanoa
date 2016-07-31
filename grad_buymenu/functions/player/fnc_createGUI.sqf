@@ -26,10 +26,11 @@ fnc_createToolbar = {
 };
 
 fnc_refreshGUI = {
-	if (!dialog) exitWith {};		
+	if (!dialog) exitWith {};
 	closeDialog 0;
+	_supplies = _this select 0;
 	diag_log format ["refreshing gui with %1",_this select 0];
-	_gui = [_this select 0] call fnc_createEntries;
+	_gui = [_supplies] call fnc_createEntries;
 	_toolbar = [_gui,_this select 1] spawn fnc_createToolbar;
 };
 

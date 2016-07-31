@@ -6,8 +6,8 @@ fnc_createEntryBuyButton = {
 	_xPos = _this select 2;
 	_width = _this select 3;
 	_title = _this select 4;
-	_vehiclePositionInArray = _this select 5;
-	_arrayDisplayName = _this select 6;
+	_menuEntryName = _this select 5;
+	_supplies = _this select 6;
 	_spawnMethod = _this select 7;
 	_isDisabled = _this select 8;
 
@@ -22,7 +22,7 @@ fnc_createEntryBuyButton = {
 
 	// diag_log format ["name is %1",_arrayDisplayName];
 
-	buttonSetAction [_idc, format["[%1, %2, %3] call fnc_manageOrder;",str _arrayDisplayName,_vehiclePositionInArray,_spawnMethod]];
+	buttonSetAction [_idc, format["['%1', '%2', %3] call fnc_manageOrder;", typeOf _supplies, _menuEntryName, _spawnMethod]];
 
 	switch (_isDisabled) do {
 		case 0: {ctrlEnable [_idc,true];};
