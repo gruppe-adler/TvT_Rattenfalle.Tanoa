@@ -199,7 +199,7 @@ spawnSlingLoad = {
 
 		_wp1 = chopperGroup addWaypoint [[_chopperPos2 select 0, _chopperPos2 select 1], 1];
 		_wp1 setWaypointStatements ["true", "this flyInHeight 10;"];
-		_wp1 setWaypointCompletionRadius 50;
+		_wp1 setWaypointCompletionRadius 100;
 		_wp1 setWaypointForceBehaviour true;
 		_wp1 setWaypointType "UNHOOK";
 
@@ -213,7 +213,7 @@ spawnSlingLoad = {
 		_wp3 setWaypointCompletionRadius 200;
 		_wp3 setWaypointType "MOVE";
 
-		[chopperGroup, 0] setWaypointSpeed "LIMITED";
+		[chopperGroup, 0] setWaypointSpeed "FULL";
 		[chopperGroup, 1] setWaypointSpeed "LIMITED";
 		[chopperGroup, 2] setWaypointSpeed "FULL";
 		if (count _ropecount > 0) then {
