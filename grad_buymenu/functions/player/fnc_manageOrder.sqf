@@ -6,11 +6,13 @@ fnc_addBluforOrder = {
 
 	_selector = _this select 0;
 
-	_classname = suppliesBlufor select 1 select _selector select 0;
-	_eta = suppliesBlufor select 1 select _selector select 4;
-	_init = suppliesBlufor select 1 select _selector select 5;
-	_calls = suppliesBlufor select 1 select _selector select 6;
-	_method = suppliesBlufor select 1 select _selector select 8;
+	_supplyItem = (suppliesBlufor getVariable _selector);
+
+	_classname = _supplyItem  select 0;
+	_eta = _supplyItem select 4;
+	_init = _supplyItem select 5;
+	_calls = _supplyItem select 6;
+	_method = _supplyItem select 8;
 
 	diag_log format ["addorderblufor: %1",_classname];
 
@@ -23,21 +25,21 @@ fnc_addBluforOrder = {
 
 	ordersBlufor = ordersBlufor + [_neworder];
 	publicVariableServer "ordersBlufor";
-
-
 };
 
 fnc_addOpforOrder = {
 
 	_selector = _this select 0;
 
-	_classname = suppliesOpfor select 1 select _selector select 0;
-	_eta = suppliesOpfor select 1 select _selector select 4;
-	_init = suppliesOpfor select 1 select _selector select 5;
-	_calls = suppliesOpfor select 1 select _selector select 6;
-	_method = suppliesOpfor select 1 select _selector select 8;
+	_supplyItem = suppliesOpfor getVariable _selector;
 
-	diag_log format ["addorderOpfor: %1",_classname];
+	_classname = _supplyItem select 0;
+	_eta = _supplyItem select 4;
+	_init = _supplyItem select 5;
+	_calls = _supplyItem select 6;
+	_method = _supplyItem select 8;
+
+	diag_log format ["addorderOpfor: %1", _classname];
 
 	_neworder = [];
 	if (_method != 4) then {

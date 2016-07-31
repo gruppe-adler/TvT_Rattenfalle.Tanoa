@@ -8,6 +8,12 @@
 // global values
 if (isServer) then {
 
+
+	suppliesBlufor = "Land_Cliff_Stone_Small_F" createVehicle [0, 1, 0];
+	suppliesOpfor = "Land_Cliff_Stone_Small_F" createVehicle [1, 0, 0];
+	publicVariable "suppliesBlufor";
+	publicVariable "suppliesOpfor";
+
 	// initial money, also used for tracking money during game
 	moneyBlufor = 4000; // initial money
 	moneyOpfor = 4000;
