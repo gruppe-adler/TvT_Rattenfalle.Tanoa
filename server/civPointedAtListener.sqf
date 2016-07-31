@@ -4,13 +4,13 @@ GRAD_civInterrogationAnimations = [
 
 GRAD_fnc_stopCiv = {
     _civ = _this select 0;
-    diag_log format ["GRAD_fnc_stopCiv executed"];
+    // diag_log format ["GRAD_fnc_stopCiv executed"];
     doStop _civ;
 
     //if (vehicle _civ != _civ) then {
 
     _civ leaveVehicle (vehicle _civ);
-    diag_log format ["leaveVehicle ordered"];
+    // diag_log format ["leaveVehicle ordered"];
     waitUntil {vehicle _civ == _civ};
     //};
 
@@ -24,7 +24,7 @@ GRAD_fnc_stopCiv = {
 
     waitUntil {sleep 3; _civ getVariable ["GRAD_isPointedAtBy",0] == 0};
     _civ switchMove "";
-    diag_log format ["reenabling AI"];
+    // diag_log format ["reenabling AI"];
     _civ enableAI "MOVE";
     _civ enableAI "FSM";
     _civ enableAI "CHECKVISIBLE";

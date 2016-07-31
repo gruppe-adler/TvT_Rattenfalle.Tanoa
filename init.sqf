@@ -128,6 +128,14 @@ if (isServer) then {
 				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 			};
 		} forEach playableUnits;
+
+		_x addMPEventHandler ["MPKilled", {
+					//Only on the server
+					if (isServer) then {
+		     			diag_log format ["%1 killed by %2, ace says %3",name (_this select 0),name (_this select 1),(_this select 0) ["ACE_medical_lastDamageSource",(_this select 0)]];
+					};
+				}];
+
 	} else {
 		{
 			_loadout = _x getVariable ["GRAD_loadout","none"];
