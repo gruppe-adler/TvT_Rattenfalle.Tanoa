@@ -17,5 +17,5 @@ _opforWinsListener = {
 };
 
 
-BLUFOR_WINS addPublicVariableEventHandler _bluforWinsListener;
-OPFOR_WINS addPublicVariableEventHandler _opforWinsListener;
+"BLUFOR_WINS" addPublicVariableEventHandler _bluforWinsListener;
+"OPFOR_WINS" addPublicVariableEventHandler _opforWinsListener;
