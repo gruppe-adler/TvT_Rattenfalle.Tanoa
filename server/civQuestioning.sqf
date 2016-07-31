@@ -7,6 +7,8 @@ GRAD_fnc_startTalkLips = {
 GRAD_fnc_questionCiv = {
   _civilian = _this select 0;
   _player = _this select 1;
+  
+  [_civilian] spawn GRAD_fnc_stopCiv;
 
   diag_log format ["executing GRAD_fnc_questionCiv with civ %1 and player %2 ...", _civilian, _player];
 
