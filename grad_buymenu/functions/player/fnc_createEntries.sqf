@@ -1,6 +1,15 @@
 fnc_createEntries = {
 	_givenSupplies = _this select 0;
-	_entryNames = allVariables _givenSupplies;
+	_allowedSupplies = _this select 1;
+
+	_applicableSupplies = [];
+	{
+		if (_allowedSupplies find _x) then {
+			_applicableSupplies pushBack _x;
+		} else {
+			// TODO  debug log...
+		};
+	} forEach (allVariables _givenSupplies);
 
 	0 = createDialog "GRAD_buy_menu";
 	buyMenuOpen = true;
@@ -19,7 +28,7 @@ fnc_createEntries = {
 	randIDC = [randIDC] call fnc_getNextIDC;
 	picIDC = 1338;
 	allMouseOver = [];
-	_amountOfVehicles = count _entryNames;
+	_amountOfVehicles = count _applicableSupplies;
 
 	[randIDC, _createdGui] call fnc_createKeys;
 
@@ -71,7 +80,7 @@ fnc_createEntries = {
 		 randIDC = [randIDC] call fnc_getNextIDC;
  		_btn = [randIDC, _createdGui, _xCoord, _width, "Order", _x, _givenSupplies, _supplyItem select 8, _supplyItem select 9] spawn fnc_createEntryBuyButton;
 
-	} forEach _entryNames;
+	} forEach _applicableSupplies;
 
 	_createdGui
 };
