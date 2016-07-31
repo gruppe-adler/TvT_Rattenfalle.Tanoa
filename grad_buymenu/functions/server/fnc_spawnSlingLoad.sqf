@@ -157,25 +157,25 @@ spawnSlingLoad = {
 		_maxLength = abs ((_p2 select 1) - (_p1 select 1));
 		_maxHeight = abs ((_p2 select 2) - (_p1 select 2));
 
-		_chopper setPosATL [_chopperPos0 select 0, _chopperPos0 select 1,250];
-		
-		
+		_chopper setPosATL [_chopperPos0 select 0, _chopperPos0 select 1, 750];
+
+
 		_isloaded = false;
 
 		if (count _ropecount > 0) then {
 			_vehicle setMass 1000;
 			_vehicle disableCollisionWith _chopper;
-			_vehicle setPosATL [_chopperPos0 select 0, _chopperPos0 select 1, 235];
-			
+			_vehicle setPosATL [_chopperPos0 select 0, _chopperPos0 select 1, 735];
+
 
 			_isloaded = _chopper setSlingLoad _vehicle;
 			deleteVehicle _dummyVehicle;
 		} else {
-			_dummyVehicle setPosATL [_chopperPos0 select 0, _chopperPos0 select 1, 235];
+			_dummyVehicle setPosATL [_chopperPos0 select 0, _chopperPos0 select 1, 735];
 			_dummyVehicle disableCollisionWith _chopper;
 			_dummyVehicle disableCollisionWith _vehicle;
 
-			
+
 			_isloaded = _chopper setSlingLoad _dummyVehicle;
 			// hintsilent format ["ropecount is %1",_isloaded];
 			_vehicle attachTo [_dummyVehicle,[0,_maxLength/4,-_maxHeight/3]];
