@@ -38,7 +38,7 @@ spawnSlingLoad = {
 							_chopperPos4 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
 						};
 						case "WEST": {
-							_chopperPos0 = [_drop_pos, 3000, 270] call BIS_fnc_relPos;
+							_chopperPos0 = [0, _drop_pos select 1,0];
 							_chopperPos1 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
 							_chopperPos3 = [_drop_pos, 1000, 270] call BIS_fnc_relPos;
@@ -91,7 +91,7 @@ spawnSlingLoad = {
 							_chopperPos4 = [_drop_pos, 3000, 180] call BIS_fnc_relPos;
 						};
 						case "EAST": {
-							_chopperPos0 = [_drop_pos, 3000, 90] call BIS_fnc_relPos;
+							_chopperPos0 = [worldSize, _drop_pos select 1,0];
 							_chopperPos1 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
 							_chopperPos2 = [_drop_pos, 0, 0] call BIS_fnc_relPos;
 							_chopperPos3 = [_drop_pos, 1000, 90] call BIS_fnc_relPos;
@@ -160,7 +160,7 @@ spawnSlingLoad = {
 		_chopper setPosATL [_chopperPos0 select 0, _chopperPos0 select 1,250];
 		
 		
-
+		_isloaded = false;
 
 		if (count _ropecount > 0) then {
 			_vehicle setMass 1000;
@@ -179,6 +179,15 @@ spawnSlingLoad = {
 			_isloaded = _chopper setSlingLoad _dummyVehicle;
 			// hintsilent format ["ropecount is %1",_isloaded];
 			_vehicle attachTo [_dummyVehicle,[0,_maxLength/4,-_maxHeight/3]];
+		};
+
+		sleep 0.5;
+		if (!_isloaded) exitWith {
+			deleteVehicle _vehicle;
+			deleteVehicle _chopper;
+			deleteVehicle _dummyVehicle;
+			[_classname,_init,_call,_selector,_side] call spawnSlingLoad;
+			diag_log format ["exiting slingloading because of error, retrying..."];
 		};
 
 		//hintSilent format ["1%",_isloaded];
