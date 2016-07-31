@@ -113,6 +113,7 @@ _CRASH_SITE_listener = {
 		while {checkingObjectives} do {
 				if (PILOTS_RESCUED) exitWith {checkingObjectives=false; BLUFOR_WINS = true; publicVariable "BLUFOR_WINS";};
 				if (PILOTS_DEAD) exitWith {checkingObjectives=false; OPFOR_WINS = true; publicVariable "OPFOR_WINS";};
+			sleep 5;
 		};
 };
 
