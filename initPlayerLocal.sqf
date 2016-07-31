@@ -32,7 +32,7 @@ if (_loadout != "none") then {
 		player setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 };
 
-0 = [] execVM "player\animations\addBuyInteraction.sqf";
+// 0 = [] execVM "player\animations\addBuyInteraction.sqf";
 
 
 // reset any attempt to raise or lower rating

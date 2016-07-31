@@ -115,7 +115,7 @@ blufor_sql = {
 	this addItemToBackpack "SmokeShellRed";
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
-	0 = execVM "player\animations\addBuyInteraction.sqf";
+	// 0 = execVM "player\animations\addBuyInteraction.sqf";
 };
 
 blufor_ftl = {
@@ -137,7 +137,7 @@ blufor_ftl = {
 	this addItemToBackpack "SmokeShellRed";
 	for "_i" from 1 to 4 do {this addItemToBackpack "SmokeShell";};
 	this addItemToBackpack "ACE_HandFlare_Red";
-	0 = execVM "player\animations\addBuyInteraction.sqf";
+	// 0 = execVM "player\animations\addBuyInteraction.sqf";
 
 };
 
