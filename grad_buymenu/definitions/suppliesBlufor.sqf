@@ -123,23 +123,32 @@ suppliesBlufor = [
                   0
             ],
             [
-                  ["RHS_AH1Z_wd_CS"],
-                  [],
-                  2,
-                  3000,
-                  1,
-                  ["mainRotor_folded",0],
-                  {
-                  clearWeaponCargoGlobal (_this select 0);
-                  clearItemCargoGlobal (_this select 0);
-                  clearBackpackCargoGlobal (_this select 0);
-                  clearMagazineCargoGlobal (_this select 0);
-                  (_this select 0) addItemCargoGlobal ["ACE_NVG_Wide",2];
-                  (_this select 0) disableTIEquipment true;
-                  },
-                  format[''],
-                  2,
-                  0
+                ["RHS_AH1Z_wd_CS"],
+                [],
+                2,
+                3000,
+                1,
+                ["mainRotor_folded", 0],
+                {
+                    _helicopter = _this select 0;
+
+                    clearWeaponCargoGlobal _helicopter;
+                    clearItemCargoGlobal _helicopter;
+                    clearBackpackCargoGlobal _helicopter;
+                    clearMagazineCargoGlobal _helicopter;
+
+                    _helicopter addItemCargoGlobal ["ACE_NVG_Wide", 2];
+                    _helicopter disableTIEquipment true;
+
+                    _helicopter removeWeapon "rhs_weap_SidewinderLauncher";
+                    _helicopter removeWeapon "rhs_weap_HellfireLauncher";
+
+                    _helicopter removeMagazine "rhs_mag_Hellfire_16";
+                    _helicopter removeMagazine "rhs_mag_Sidewinder_heli_2";
+                },
+                format [''],
+                2,
+                0
             ]
       ]
 ];
