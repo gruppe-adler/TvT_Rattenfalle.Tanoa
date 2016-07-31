@@ -7,6 +7,7 @@ fnc_createEntries = {
 		if ((_allowedSupplies find _x) != -1) then {
 			_applicableSupplies pushBack _x;
 		} else {
+			diag_log format ["FUUUU not applicable: %1 in %2", _x, allVAriables _givenSupplies];
 			// TODO  debug log...
 		};
 	} forEach (allVariables _givenSupplies);

@@ -23,7 +23,7 @@ _x = [
     4,
     0
 ];
-suppliesOpfor setVariable ['scooter', _x];
+suppliesOpfor setVariable ['scooter', _x, true];
 
 _x = [
     [
@@ -51,7 +51,7 @@ _x = [
     3,
     0
 ];
-suppliesOpfor setVariable ['car', _x];
+suppliesOpfor setVariable ['car', _x, true];
 
 _x = [
     ["RHS_Ural_Open_Civ_01",
@@ -76,7 +76,7 @@ _x = [
     3,
     0
 ];
-suppliesOpfor setVariable ['truck', _x];
+suppliesOpfor setVariable ['truck', _x, true];
 
 _x = [
     ["rhsgref_cdf_reg_uaz_dshkm"],
@@ -97,7 +97,7 @@ _x = [
     2,
     0
 ];
-suppliesOpfor setVariable ['uaz_dshkm', _x];
+suppliesOpfor setVariable ['uaz_dshkm', _x, true];
 
 _x = [
     ["rhsgref_cdf_reg_uaz_spg9"],
@@ -118,7 +118,7 @@ _x = [
     2,
     0
 ];
-suppliesOpfor setVariable ['uaz_spg9', _x];
+suppliesOpfor setVariable ['uaz_spg9', _x, true];
 
 _x = [
     ["rhsgref_BRDM2_ins_g"],
@@ -139,7 +139,7 @@ _x = [
     2,
     0
 ];
-suppliesOpfor setVariable ['brdm', _x];
+suppliesOpfor setVariable ['brdm', _x, true];
 
 _x = [
     ["rhsgref_cdf_gaz66_zu23"],
@@ -167,6 +167,6 @@ _x = [
     2,
     0
 ];
-suppliesOpfor setVariable ['gaz66', _x];
+suppliesOpfor setVariable ['gaz66', _x, true];
 
 publicVariable "suppliesOpfor";

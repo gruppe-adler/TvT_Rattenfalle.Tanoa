@@ -151,12 +151,12 @@ _ah1z = [
     0
 ];
 
-suppliesBlufor setVariable['boat', _boat];
-suppliesBlufor setVariable['car', _car];
-suppliesBlufor setVariable['m1025', _m1025];
-suppliesBlufor setVariable['uh1y', _uh1y];
-suppliesBlufor setVariable['m113', _m113];
-suppliesBlufor setVariable['m109', _m109];
-suppliesBlufor setVariable['ah1z', _ah1z];
+suppliesBlufor setVariable['boat', _boat, true];
+suppliesBlufor setVariable['car', _car, true];
+suppliesBlufor setVariable['m1025', _m1025, true];
+suppliesBlufor setVariable['uh1y', _uh1y, true];
+suppliesBlufor setVariable['m113', _m113, true];
+suppliesBlufor setVariable['m109', _m109, true];
+suppliesBlufor setVariable['ah1z', _ah1z, true];
 
 publicVariable "suppliesBlufor";
