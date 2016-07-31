@@ -2,10 +2,8 @@ grad_player_waving = false;
 
 GRAD_fnc_waveNow = {
 	grad_player_waving = true;
-	[player] call ace_weaponselect_fnc_putWeaponAway;
 	player playMove "Acts_PercMstpSlowWrflDnon_handup2";
 	sleep 4.5;
-	player playMoveNow "";
 	grad_player_waving = false;
 };
 
