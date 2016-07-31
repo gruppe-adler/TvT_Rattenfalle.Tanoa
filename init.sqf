@@ -127,14 +127,20 @@ if (isServer) then {
 				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
 				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 			};
-		} forEach playableUnits;
-
-		_x addMPEventHandler ["MPKilled", {
+			
+			_x addMPEventHandler ["MPKilled", {
 					//Only on the server
 					if (isServer) then {
-		     			diag_log format ["%1 killed by %2, ace says %3",name (_this select 0),name (_this select 1),(_this select 0) ["ACE_medical_lastDamageSource",(_this select 0)]];
+		     			diag_log format ["%1 killed by %2, ace says %3",
+			     			name (_this select 0),
+			     			name (_this select 1),
+			     			(_this select 0) getVariable ["ACE_medical_lastDamageSource",(_this select 0)]
+			     		];
 					};
 				}];
+		} forEach playableUnits;
+
+
 
 	} else {
 		{
