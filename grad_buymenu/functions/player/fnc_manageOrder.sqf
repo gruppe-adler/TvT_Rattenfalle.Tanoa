@@ -6,7 +6,7 @@ fnc_addBluforOrder = {
 
 	_selector = _this select 0;
 
-	_supplyItem = (suppliesBlufor getVariable _selector);
+	_supplyItem = suppliesBlufor getVariable _selector;
 
 	_classname = _supplyItem  select 0;
 	_eta = _supplyItem select 4;
@@ -60,17 +60,19 @@ fnc_manageBlufor = {
 	_supplies = _this select 2;
 	_method = _this select 3;
 
-	_amount = _supplies select 1 select _selector select 2;
-	_cost = _supplies select 1 select _selector select 3;
+	_supplyItem = _supplies getVariable _selector;
+
+	_amount = _supplyItem select 2;
+	_cost = _supplyItem select 3;
 	_money = _tmpmoney - _cost;
 	if (_money < 0) exitWith {publicVariableServer "moneyBlufor";};
 	if (_amount < 1) exitWith {publicVariableServer "moneyBlufor";};
 
-	(_supplies select 1 select _selector) set [2, _amount - 1]; // reduce amount of available cars
-	(_supplies select 1 select _selector) set [9, 1]; // block buy button
+	_supplyItem set [2, _amount - 1]; // reduce amount of available cars
+	_supplyItem set [9, 1]; // block buy button
 
 	if (_amount == 1) then {
-			(_supplies select 1 select _selector) set [9, 2]; // block buy button forever
+			_supplyItem set [9, 2]; // block buy button forever
 	};
 
 	moneyBlufor = _money;
@@ -92,17 +94,19 @@ fnc_manageOpfor = {
 	_supplies = _this select 2;
 	_method = _this select 3;
 
-	_amount = _supplies select 1 select _selector select 2;
-	_cost = _supplies select 1 select _selector select 3;
+	_supplyItem = _supplies getVariable _selector;
+
+	_amount = _supplyItem select 2;
+	_cost = _supplyItem select 3;
 	_money = _tmpmoney - _cost;
 	if (_money < 0) exitWith {publicVariableServer "moneyOpfor";};
 	if (_amount < 1) exitWith {publicVariableServer "moneyOpfor";};
 
-	(_supplies select 1 select _selector) set [2, _amount - 1]; // reduce amount of available cars
-	(_supplies select 1 select _selector) set [9, 1]; // block buy button
+	_supplyItem set [2, _amount - 1]; // reduce amount of available cars
+	_supplyItem set [9, 1]; // block buy button
 
 	if (_amount == 1) then {
-			(_supplies select 1 select _selector) set [9, 2]; // block buy button forever
+		_supplyItem set [9, 2]; // block buy button forever
 	};
 
 	moneyOpfor = _money;
@@ -125,16 +129,16 @@ fnc_manageOrder = {
 
 
 	switch (_suppliesName) do {
-		case "suppliesBlufor": {
-			[_order,moneyBlufor,suppliesBlufor,_spawnMethod] call fnc_manageBlufor;
+		case "Flag_NATO_F": {
+			[_order, moneyBlufor, suppliesBlufor, _spawnMethod] call fnc_manageBlufor;
 		};
 
-		case "suppliesOpfor": {
-			[_order,moneyOpfor,suppliesOpfor,_spawnMethod] call fnc_manageOpfor;
+		case "Flag_CSAT_F": {
+			[_order, moneyOpfor, suppliesOpfor, _spawnMethod] call fnc_manageOpfor;
 		};
 
 		default {
-			diag_log format ["MANAGE ORDER ERROR: %1",_suppliesName];
+			diag_log format ["MANAGE ORDER ERROR: %1", _suppliesName];
 		}
 	};
 };

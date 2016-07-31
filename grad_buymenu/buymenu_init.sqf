@@ -9,8 +9,8 @@
 if (isServer) then {
 
 
-	suppliesBlufor = "Land_Cliff_Stone_Small_F" createVehicle [0, 1, 0];
-	suppliesOpfor = "Land_Cliff_Stone_Small_F" createVehicle [1, 0, 0];
+	suppliesBlufor = "Flag_NATO_F" createVehicle [0, 1, 0];
+	suppliesOpfor = "Flag_CSAT_F" createVehicle [1, 0, 0];
 	publicVariable "suppliesBlufor";
 	publicVariable "suppliesOpfor";
 

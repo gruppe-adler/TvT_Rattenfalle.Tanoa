@@ -47,27 +47,31 @@ waitUntil {!isNil "suppliesOpfor" && !isNil "suppliesBlufor"};
 diag_log "entering singleplayer PVEH emulation";
 
 _moneyBluforListener spawn {
-		_tempmoneyBlufor = moneyBlufor;
-		waitUntil {[moneyBlufor, _tempmoneyBlufor] call BIS_fnc_areEqual};
-		[moneyBlufor] call _this;
+	waitUntil {
+		[0, moneyBlufor] call _this;
+		sleep 20;
+	}
 };
 
 _moneyOpforListener spawn {
-		_tempmoneyOpfor = moneyOpfor;
-		waitUntil {[moneyOpfor, _tempmoneyOpfor] call BIS_fnc_areEqual};
-		[moneyOpfor] call _this;
+	waitUntil {
+		[0, moneyOpfor] call _this;
+		sleep 20;
+	}
 };
 
 
 // SUPPLIES
 _suppliesBluforListener spawn {
-		_tempSuppliesBlufor = suppliesBlufor;
-		waitUntil {[suppliesBlufor, _tempSuppliesBlufor] call BIS_fnc_areEqual};
-		[suppliesBlufor] call _this;
+	waitUntil {
+		[0, suppliesBlufor] call _this;
+		sleep 20;
+	}
 };
 
 _suppliesOpforListener spawn {
-		_tempSuppliesOpfor = suppliesOpfor;
-		waitUntil {[suppliesOpfor, _tempSuppliesOpfor] call BIS_fnc_areEqual};
-		[suppliesOpfor] call _this;
+	waitUntil {
+		[0, suppliesOpfor] call _this;
+		sleep 20;
+	}
 };
