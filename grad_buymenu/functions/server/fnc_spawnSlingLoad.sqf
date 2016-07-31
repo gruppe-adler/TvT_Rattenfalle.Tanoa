@@ -19,7 +19,7 @@ spawnSlingLoad = {
 				_spawnVehicleClass = spawnSlingLoadVehicleClassOpfor;
 				_drop_pos = getMarkerPos spawnMarkerOpforHelicopter; // _this select 0;
 			};
-			default {};
+			default {diag_log "fnc_spawnSlingLoad ERROR in slingloading, no side set";};
 		};
 
 		_chopperPos0 = [_drop_pos, 3000, 0] call BIS_fnc_relPos;
@@ -214,7 +214,7 @@ spawnSlingLoad = {
 		_wp3 setWaypointType "MOVE";
 
 		[chopperGroup, 0] setWaypointSpeed "FULL";
-		[chopperGroup, 1] setWaypointSpeed "LIMITED";
+		[chopperGroup, 1] setWaypointSpeed "NORMAL";
 		[chopperGroup, 2] setWaypointSpeed "FULL";
 		if (count _ropecount > 0) then {
 				waitUntil {isTouchingGround _vehicle};

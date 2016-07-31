@@ -46,7 +46,7 @@ spawnCiv = {
 
 		_wp0 = _civGroup addWaypoint [_civPos, 0];
 		_wp0 setWaypointStatements ["true", "(vehicle (leader group this)) allowDamage true; group this leaveVehicle (vehicle (leader group this));"];
-		_wp0 setWaypointCompletionRadius 10;
+		_wp0 setWaypointCompletionRadius 20;
 		[_civGroup, 0] setWaypointForceBehaviour true;
 
 

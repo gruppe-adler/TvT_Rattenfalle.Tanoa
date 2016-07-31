@@ -1,6 +1,6 @@
 fnc_showMarkers = {
 
-	waitUntil {!isNil "spawnMarkerBluforLand"};
+	waitUntil {!isNil "spawnMarkerBluforLand" && !isNil "spawnMarkerOpforHelicopter"};
 
 	diag_log "fnc show markers";
 
@@ -11,12 +11,14 @@ fnc_showMarkers = {
 			spawnMarkerBluforPlane,
 			spawnMarkerBluforHelicopter
 			];
-	} else {
+	}; 
+
+	if (playerside == east) then {
 		{_x setMarkerAlphaLocal 1;} forEach [
-		spawnMarkerOpforLand,
-		spawnMarkerOpforWater,
-		spawnMarkerOpforPlane,
-		spawnMarkerOpforHelicopter
-		];
+			spawnMarkerOpforLand,
+			spawnMarkerOpforWater,
+			spawnMarkerOpforPlane,
+			spawnMarkerOpforHelicopter
+			];
 	};
 };
