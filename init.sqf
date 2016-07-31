@@ -155,7 +155,7 @@ if (isServer) then {
 
 if (hasInterface) then {
 
-	 
+
 
 	0 = [] execVM "player\createWeaponOnCivilianPointer.sqf";
 

@@ -8,6 +8,12 @@
 // global values
 if (isServer) then {
 
+
+	suppliesBlufor = "Flag_NATO_F" createVehicle [0, 1, 0];
+	suppliesOpfor = "Flag_CSAT_F" createVehicle [1, 0, 0];
+	publicVariable "suppliesBlufor";
+	publicVariable "suppliesOpfor";
+
 	// initial money, also used for tracking money during game
 	moneyBlufor = 4000; // initial money
 	moneyOpfor = 4000;
@@ -140,10 +146,24 @@ if (isServer) then {
 
 // arrays of menu content
 
-
-
 if (hasInterface) then {
 		buyMenuOpen = false; // checks if player has gui open
+
+		_canBuy = [];
+		if (playerSide == east) then {
+			switch (rank player) do {
+				case "CAPTAIN": { _canBuy = ['scooter', 'car', 'truck', 'uaz_dshkm', 'uaz_spg9', 'brdm', 'gaz66']; };
+				default { _canBuy = ['scooter', 'car']; };
+			};
+		};
+		if (playerSide == west) then {
+			switch (rank player) do {
+				case "CAPTAIN": { _canBuy = ['boat','car','m1025','uh1y','m113','m109', 'ah1z']; };
+				default { _canBuy = ['boat', 'car']; };
+			};
+		};
+
+		player setVariable ["GRAD_canBuy", _canBuy];
 
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_addRefreshListener.sqf";
 
