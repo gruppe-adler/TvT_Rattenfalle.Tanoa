@@ -1,5 +1,5 @@
 _bluforWinsListener = {
-  if (!_this) exitWith {};
+  if (!BLUFOR_WINS) exitWith {};
   if (side player == west || side player == independent) then {
       ["US troops safely brought their pilot home.",true,true] call BIS_fnc_endMission;
   } else {
@@ -8,7 +8,7 @@ _bluforWinsListener = {
 };
 
 _opforWinsListener = {
-  if (!_this) exitWith {};
+  if (!OPFOR_WINS) exitWith {};
   if (side player == west || side player == independent) then {
       ["Rebels eliminated the pilot.",false,true] call BIS_fnc_endMission;
   } else {
