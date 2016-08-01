@@ -28,6 +28,11 @@ createCrashSite=  {
 	_smoke2 = [_veh1, "SMOKE_BIG"] execVM "helpers\fireAndSmoke.sqf";
 
 	null = [{[CRASH_SITE] execVM "helpers\createMarkerForSides.sqf";}, "BIS_fnc_spawn", true, true] spawn BIS_fnc_MP;
+
+
+	{
+		_x setVehicleLock "UNLOCKED";
+	}forEach [us_hq1,us_hq2,us_hq3,us_hq4];
 };
 
 
