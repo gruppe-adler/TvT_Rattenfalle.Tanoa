@@ -152,7 +152,7 @@ if (hasInterface) then {
 		_canBuy = [];
 		if (playerSide == east) then {
 			switch (rank player) do {
-				case "CAPTAIN": { _canBuy = ['scooter', 'car', 'truck', 'uaz_dshkm', 'uaz_spg9', 'brdm', 'gaz66']; };
+				case "CAPTAIN": { _canBuy = ['scooter', 'car', 'truck', 'uaz_dshkm', 'uaz_spg9', 'btr70', 'gaz66']; };
 				default { _canBuy = ['scooter', 'car']; };
 			};
 		};

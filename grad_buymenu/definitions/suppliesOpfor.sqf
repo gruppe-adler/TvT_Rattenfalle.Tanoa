@@ -121,12 +121,12 @@ _x = [
 suppliesOpfor setVariable ['uaz_spg9', _x, true];
 
 _x = [
-    ["rhsgref_BRDM2_ins_g"],
+    ["rhsgref_nat_btr70"],
     [],
     3,
     1500,
     1,
-    ["light_hide", 1],
+    [],
     {
     clearWeaponCargoGlobal (_this select 0);
     clearItemCargoGlobal (_this select 0);
@@ -139,7 +139,7 @@ _x = [
     2,
     0
 ];
-suppliesOpfor setVariable ['brdm', _x, true];
+suppliesOpfor setVariable ['btr70', _x, true];
 
 _x = [
     ["rhsgref_cdf_gaz66_zu23"],

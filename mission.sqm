@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=374;
+		nextID=382;
 	};
 	class MarkerIDProvider
 	{
@@ -19,7 +19,7 @@ class EditorData
 		pos[]={10898.906,31.737226,6333.8491};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -57,13 +57,14 @@ addons[]=
 	"ace_refuel",
 	"rds_A2_Civilians",
 	"A3_Soft_F_Gamma_Truck_02",
-	"A3_Soft_F_Gamma_Hatchback_01"
+	"A3_Soft_F_Gamma_Hatchback_01",
+	"CUP_WheeledVehicles_LAV25"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -272,6 +273,11 @@ class AddonsMetaData
 			className="rds_A2_Civilians";
 			name="rds_A2_Civilians";
 		};
+		class Item30
+		{
+			className="CUP_WheeledVehicles_LAV25";
+			name="CUP_WheeledVehicles_LAV25";
+		};
 	};
 };
 randomSeed=7385247;
@@ -326,7 +332,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=147;
+		items=151;
 		class Item0
 		{
 			dataType="Marker";
@@ -6023,6 +6029,7 @@ class Mission
 			};
 			id=304;
 			type="C_Offroad_02_unarmed_F";
+			atlOffset=-0.0012943745;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6064,6 +6071,7 @@ class Mission
 			};
 			id=308;
 			type="C_Offroad_02_unarmed_F";
+			atlOffset=-0.0029802322;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6105,6 +6113,7 @@ class Mission
 			};
 			id=309;
 			type="rhs_7ya37_1_single";
+			atlOffset=-0.0015597343;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6179,6 +6188,7 @@ class Mission
 				angles[]={0,2.860523,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6186,7 +6196,6 @@ class Mission
 			};
 			id=311;
 			type="rhs_7ya37_1_single";
-			atlOffset=3.432869;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6220,6 +6229,7 @@ class Mission
 				angles[]={0,0.11349974,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6227,7 +6237,6 @@ class Mission
 			};
 			id=312;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.75169563;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6261,6 +6270,7 @@ class Mission
 				angles[]={0,2.5109529,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6268,7 +6278,6 @@ class Mission
 			};
 			id=313;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.16019917;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6392,6 +6401,7 @@ class Mission
 			};
 			id=316;
 			type="rhs_7ya37_1_single";
+			atlOffset=-0.00010681152;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6474,6 +6484,7 @@ class Mission
 			};
 			id=318;
 			type="rhs_7ya37_1_single";
+			atlOffset=7.6293945e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6507,7 +6518,6 @@ class Mission
 				angles[]={0,1.2433523,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6515,6 +6525,7 @@ class Mission
 			};
 			id=319;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.27215576;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6548,6 +6559,7 @@ class Mission
 				angles[]={0,2.6867876,6.2826972};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6555,7 +6567,6 @@ class Mission
 			};
 			id=320;
 			type="rhs_7ya37_1_single";
-			atlOffset=1.6278992;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6761,6 +6772,7 @@ class Mission
 			};
 			id=325;
 			type="rhs_7ya37_1_single";
+			atlOffset=-0.0005774498;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6802,6 +6814,7 @@ class Mission
 			};
 			id=326;
 			type="rhs_7ya37_1_single";
+			atlOffset=6.4849854e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6843,6 +6856,7 @@ class Mission
 			};
 			id=327;
 			type="rhs_7ya37_1_single";
+			atlOffset=-0.0005569458;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6966,6 +6980,7 @@ class Mission
 			};
 			id=330;
 			type="rhs_7ya37_1_single";
+			atlOffset=2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7007,6 +7022,7 @@ class Mission
 			};
 			id=331;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.00061798096;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7048,6 +7064,7 @@ class Mission
 			};
 			id=332;
 			type="rhs_7ya37_1_single";
+			atlOffset=-0.001991272;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7130,6 +7147,7 @@ class Mission
 			};
 			id=334;
 			type="rhs_7ya37_1_single";
+			atlOffset=-2.4795532e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7171,7 +7189,7 @@ class Mission
 			};
 			id=335;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.04431963;
+			atlOffset=0.044314384;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7246,6 +7264,7 @@ class Mission
 				angles[]={0,3.425926,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7253,7 +7272,6 @@ class Mission
 			};
 			id=337;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.46746826;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7336,6 +7354,7 @@ class Mission
 			};
 			id=339;
 			type="rhs_7ya37_1_single";
+			atlOffset=-1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7377,6 +7396,7 @@ class Mission
 			};
 			id=340;
 			type="rhs_7ya37_1_single";
+			atlOffset=-7.2479248e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7418,6 +7438,7 @@ class Mission
 			};
 			id=341;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.14587498;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7541,6 +7562,7 @@ class Mission
 			};
 			id=344;
 			type="rhs_7ya37_1_single";
+			atlOffset=-3.8146973e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7582,6 +7604,7 @@ class Mission
 			};
 			id=345;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.00093078613;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7738,6 +7761,7 @@ class Mission
 				angles[]={0,1.2968764,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7745,7 +7769,6 @@ class Mission
 			};
 			id=349;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.40839767;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7910,6 +7933,7 @@ class Mission
 			};
 			id=353;
 			type="rhs_7ya37_1_single";
+			atlOffset=-0.0001373291;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8305,6 +8329,7 @@ class Mission
 			};
 			id=364;
 			type="C_Van_01_fuel_F";
+			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8347,6 +8372,7 @@ class Mission
 			};
 			id=365;
 			type="RDS_Ikarus_Civ_01";
+			atlOffset=2.3841858e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8471,6 +8497,7 @@ class Mission
 			};
 			id=368;
 			type="C_Truck_02_fuel_F";
+			atlOffset=-0.012252808;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8513,6 +8540,7 @@ class Mission
 			};
 			id=372;
 			type="C_Van_01_fuel_F";
+			atlOffset=-0.001411438;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8555,6 +8583,171 @@ class Mission
 			};
 			id=373;
 			type="C_Hatchback_01_sport_F";
+			atlOffset=-3.4332275e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item147
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={11962.523,7.7792606,2914.6514};
+				angles[]={0.0026520467,0,6.2805333};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="UNLOCKED";
+				fuel=0;
+			};
+			id=378;
+			type="CUP_B_LAV25_HQ_USMC";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item148
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1957.9285,15.871759,3447.5098};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="UNLOCKED";
+				fuel=0;
+			};
+			id=379;
+			type="CUP_B_LAV25_HQ_USMC";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item149
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2703.0676,9.903286,7322.1934};
+				angles[]={0.0079935296,0.29803392,6.2698536};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="UNLOCKED";
+				fuel=0;
+			};
+			id=380;
+			type="CUP_B_LAV25_HQ_USMC";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item150
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1812.7515,16.38065,12921.796};
+				angles[]={0.0079936078,0.78532833,6.2805324};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				lock="UNLOCKED";
+				fuel=0;
+			};
+			id=381;
+			type="CUP_B_LAV25_HQ_USMC";
+			atlOffset=-9.5367432e-007;
 			class CustomAttributes
 			{
 				class Attribute0

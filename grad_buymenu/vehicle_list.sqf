@@ -11,7 +11,7 @@ C_Offroad_02_unarmed_F // random civilian car
 rhsgref_cdf_reg_uaz_spg9 // SPG9 UAZ
 rhsgref_cdf_reg_uaz_dshkm // DSHKM UAZ
 rhs_gaz66_zu23_vmf // ZU23 on truck
-rhsgref_BRDM2_ins_g // BRDM2 MG
+btr70 // BTR70
 
 
 // blufor
