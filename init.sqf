@@ -1,9 +1,12 @@
 _isDebug = "debugMode" call BIS_fnc_getParamValue;
+DEBUG = false;
+/*
 if (_isDebug == 0) then {
 	DEBUG = false;
 } else {
 	DEBUG = true;
 };
+*/
 //
 // customizable variables
 //

@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={10898.906,31.737226,6333.8491};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		dir[]={0.18068239,-0.70002574,0.69088238};
+		up[]={0.17711674,0.71411753,0.67724836};
+		aside[]={0.96746242,-8.8766683e-009,-0.25301471};
 	};
 };
 binarizationWanted=0;
@@ -7014,7 +7014,6 @@ class Mission
 				angles[]={0,1.6969571,6.2826972};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7022,7 +7021,7 @@ class Mission
 			};
 			id=331;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.00061798096;
+			atlOffset=0.87155151;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8613,8 +8612,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11962.523,7.7792606,2914.6514};
-				angles[]={0.0026520467,0,6.2805333};
+				position[]={11962.523,7.7793102,2914.6519};
+				angles[]={0.0026529003,0,6.2805324};
 			};
 			side="Empty";
 			flags=4;
@@ -8622,6 +8621,7 @@ class Mission
 			{
 				lock="UNLOCKED";
 				fuel=0;
+				init="this setVehicleLock ""UNLOCKED"";";
 			};
 			id=378;
 			type="CUP_B_LAV25_HQ_USMC";
@@ -8654,7 +8654,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1957.9285,15.871759,3447.5098};
+				position[]={1957.928,15.871759,3447.51};
 			};
 			side="Empty";
 			flags=4;
@@ -8662,6 +8662,7 @@ class Mission
 			{
 				lock="UNLOCKED";
 				fuel=0;
+				init="this setVehicleLock ""UNLOCKED"";";
 			};
 			id=379;
 			type="CUP_B_LAV25_HQ_USMC";
@@ -8694,8 +8695,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2703.0676,9.903286,7322.1934};
-				angles[]={0.0079935296,0.29803392,6.2698536};
+				position[]={2703.0681,9.9036541,7322.1934};
+				angles[]={0.0079936078,0.29803243,6.2698507};
 			};
 			side="Empty";
 			flags=4;
@@ -8703,6 +8704,7 @@ class Mission
 			{
 				lock="UNLOCKED";
 				fuel=0;
+				init="this setVehicleLock ""UNLOCKED"";";
 			};
 			id=380;
 			type="CUP_B_LAV25_HQ_USMC";
@@ -8735,7 +8737,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1812.7515,16.38065,12921.796};
+				position[]={1812.7518,16.380486,12921.796};
 				angles[]={0.0079936078,0.78532833,6.2805324};
 			};
 			side="Empty";
@@ -8744,10 +8746,11 @@ class Mission
 			{
 				lock="UNLOCKED";
 				fuel=0;
+				init="this setVehicleLock ""UNLOCKED"";";
 			};
 			id=381;
 			type="CUP_B_LAV25_HQ_USMC";
-			atlOffset=-9.5367432e-007;
+			atlOffset=-0.0030012131;
 			class CustomAttributes
 			{
 				class Attribute0
