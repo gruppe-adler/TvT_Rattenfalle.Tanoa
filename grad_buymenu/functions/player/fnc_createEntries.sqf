@@ -31,6 +31,13 @@ fnc_createEntries = {
 	allMouseOver = [];
 	_amountOfVehicles = count _applicableSupplies;
 
+	_applicableSupplies = [
+		_applicableSupplies,
+		[],
+		{(_givenSupplies getVariable _x) select 3 },
+		"ASCEND"
+	] call BIS_fnc_sortBy;
+
 	[randIDC, _createdGui] call fnc_createKeys;
 
 	{
