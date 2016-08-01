@@ -68,12 +68,18 @@ fnc_manageBlufor = {
 	if (_money < 0) exitWith {publicVariableServer "moneyBlufor";};
 	if (_amount < 1) exitWith {publicVariableServer "moneyBlufor";};
 
-	_supplyItem set [2, _amount - 1]; // reduce amount of available cars
-	_supplyItem set [9, 1]; // block buy button
+	// _supplyItem set [2, _amount - 1]; // reduce amount of available cars
+	// _supplyItem set [9, 1]; // block buy button
+
+	(suppliesBlufor select 1 select _selector) set [2, _amount - 1]; 
+	(suppliesBlufor select 1 select _selector) set [9, 1]; 
 
 	if (_amount == 1) then {
-			_supplyItem set [9, 2]; // block buy button forever
+			(suppliesBlufor select 1 select _selector) set [9, 2];
+			// _supplyItem set [9, 2]; // block buy button forever
 	};
+
+
 
 	moneyBlufor = _money;
 	publicVariableServer "moneyBlufor";
@@ -102,11 +108,14 @@ fnc_manageOpfor = {
 	if (_money < 0) exitWith {publicVariableServer "moneyOpfor";};
 	if (_amount < 1) exitWith {publicVariableServer "moneyOpfor";};
 
-	_supplyItem set [2, _amount - 1]; // reduce amount of available cars
-	_supplyItem set [9, 1]; // block buy button
+	// _supplyItem set [2, _amount - 1]; // reduce amount of available cars
+	// _supplyItem set [9, 1]; // block buy button
+	(suppliesOpfor select 1 select _selector) set [2, _amount - 1]; 
+	(suppliesOpfor select 1 select _selector) set [9, 1]; 
 
 	if (_amount == 1) then {
-		_supplyItem set [9, 2]; // block buy button forever
+		// _supplyItem set [9, 2]; // block buy button forever
+		(suppliesOpfor select 1 select _selector) set [9, 2]; 
 	};
 
 	moneyOpfor = _money;
