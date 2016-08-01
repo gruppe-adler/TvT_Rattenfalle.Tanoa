@@ -15,7 +15,7 @@ GRAD_getUnitLoadout_opfor_ftl = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
 
-GRAD_getUnitLoadout_opfor_medic = [["","","rhs_acc_2dpZenit","",[],[],""],[],[], 
+GRAD_getUnitLoadout_opfor_medic = [["rhs_weap_akms","","rhs_acc_2dpZenit","",[],[],""],[],[], 
 ["U_I_C_Soldier_Camo_F", 
 [["rhs_acc_ekp1",1],["ACE_epinephrine",2],["ACE_morphine",2],["ACE_elasticBandage",8],["ACE_Flashlight_KSF1",1],["rhs_acc_perst1ik",1],["ACE_NVG_Gen1",1],["ACE_CableTie",2],["ACE_MapTools",1],["ACE_Cellphone",1]]], 
 ["V_TacVest_camo",[["rhs_30Rnd_762x39mm",30,1],["rhs_30Rnd_762x39mm_U",30,4],["rhs_30Rnd_762x39mm_89",30,2]]], 

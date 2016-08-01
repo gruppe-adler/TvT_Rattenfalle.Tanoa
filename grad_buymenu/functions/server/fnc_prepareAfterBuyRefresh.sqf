@@ -8,9 +8,9 @@ fnc_prepareAfterBuyRefresh = {
     if (_side == west) then {
         _supplyItem = suppliesBlufor getVariable _selector;
       if (_supplyItem select 2 == 0) then {
-      _supplyItem set [9, 2]; // block buy button forever
+       (suppliesBlufor select 1 select _selector) set [9, 2]; // _supplyItem set [9, 2]; // block buy button forever
         } else {
-      _supplyItem set [9, 0]; // unblock buy button
+       (suppliesBlufor select 1 select _selector) set [9, 0]; // _supplyItem set [9, 0]; // unblock buy button
       };
     publicVariable "suppliesBlufor";
 
@@ -19,10 +19,12 @@ fnc_prepareAfterBuyRefresh = {
   } else {
       _supplyItem = suppliesOpfor getVariable _selector;
     if (_supplyItem select 2 == 0) then {
-    _supplyItem set [9, 2]; // block buy button forever
+    (suppliesOpfor select 1 select _selector) set [9, 2]; // _supplyItem set [9, 2]; // block buy button forever
       } else {
-    _supplyItem set [9, 0]; // unblock buy button
+    (suppliesOpfor select 1 select _selector) set [9, 0]; // _supplyItem set [9, 0]; // unblock buy button
+
     };
+
     publicVariable "suppliesOpfor";
   };
 };
