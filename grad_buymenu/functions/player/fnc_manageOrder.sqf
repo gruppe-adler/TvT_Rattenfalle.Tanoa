@@ -84,7 +84,7 @@ fnc_manageBlufor = {
 	moneyBlufor = _money;
 	publicVariableServer "moneyBlufor";
 
-	suppliesBlufor = _supplies;
+	// suppliesBlufor = _supplies;
 	publicVariableServer "suppliesBlufor";
 
 	if (!isMultiplayer) then {
@@ -121,7 +121,7 @@ fnc_manageOpfor = {
 	moneyOpfor = _money;
 	publicVariableServer "moneyOpfor";
 
-	suppliesOpfor = _supplies;
+	// suppliesOpfor = _supplies;
 	publicVariableServer "suppliesOpfor";
 	if (!isMultiplayer) then {
 		[_supplies,_money] call fnc_refreshGUI; // should happen automatically later on
