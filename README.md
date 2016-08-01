@@ -1,6 +1,8 @@
 # TvT_Rattenfalle.Tanoa
 Pilot Rescue TvT - US vs. local rebels
 
+![](https://github.com/gruppe-adler/TvT_Rattenfalle.Tanoa/blob/master/pic/loading_pic.jpg)
+
 ***
 ### Regeln
 * 2 Teams im Verhältnis 3:2 (US vs Rebellen) versuchen die Zielpersonen (1-2 Piloten) aufzuspüren und zu retten/töten
