@@ -1,5 +1,3 @@
-publicVariable "suppliesOpfor";
-
 // 0 spawn at ground,
 // 1 spawn with chute,
 // 2 spawn with heli carrier,
@@ -168,5 +166,3 @@ _x = [
     0
 ];
 suppliesOpfor setVariable ['gaz66', _x, true];
-
-publicVariable "suppliesOpfor";

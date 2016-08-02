@@ -1,5 +1,5 @@
 fnc_createEntries = {
-	_givenSupplies = _this select 0;
+	_givenSupplies = missionNamespace getVariable (player getVariable 'GRAD_buymenu_supplies_name');
 	_allowedSupplies = player getVariable ['GRAD_canBuy', []];
 
 	_applicableSupplies = [];
@@ -52,7 +52,7 @@ fnc_createEntries = {
 
 
 		 randIDC = [randIDC] call fnc_getNextIDC;
-		 _btn = [randIDC, _createdGui, _xCoord, _width,_forEachIndex, "fu"] spawn fnc_createEntryMouseOverArea;
+		 _btn = [randIDC, _createdGui, _xCoord, _width, _x] spawn fnc_createEntryMouseOverArea;
 
 
 		 randIDC = [randIDC] call fnc_getNextIDC;
@@ -86,7 +86,7 @@ fnc_createEntries = {
 
 
 		 randIDC = [randIDC] call fnc_getNextIDC;
- 		_btn = [randIDC, _createdGui, _xCoord, _width, "Order", _x, _givenSupplies, _supplyItem select 8, _supplyItem select 9] spawn fnc_createEntryBuyButton;
+ 		_btn = [randIDC, _createdGui, _xCoord, _width, _x, _givenSupplies, _supplyItem select 8, _supplyItem select 9] spawn fnc_createEntryBuyButton;
 
 	} forEach _applicableSupplies;
 

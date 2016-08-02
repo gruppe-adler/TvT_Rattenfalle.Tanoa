@@ -7020,7 +7020,6 @@ class Mission
 			};
 			id=331;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.00061798096;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7436,7 +7435,7 @@ class Mission
 			};
 			id=341;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.14587498;
+			atlOffset=0.14587402;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8706,6 +8705,7 @@ class Mission
 			};
 			id=380;
 			type="CUP_B_LAV25_HQ_USMC";
+			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
