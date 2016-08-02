@@ -20,9 +20,7 @@ fnc_createEntryBuyButton = {
 	// _btn ctrlSetStructuredText parseText ("<t size='1'>" + _title + "</t>");
 	_btn ctrlSetText _title;
 
-	// diag_log format ["name is %1",_arrayDisplayName];
-
-	buttonSetAction [_idc, format["['%1', '%2', %3] call fnc_manageOrder;", typeOf _supplies, _menuEntryName, _spawnMethod]];
+	buttonSetAction [_idc, format["['%1', %2] call fnc_addOrder;", _menuEntryName, _spawnMethod]];
 
 	switch (_isDisabled) do {
 		case 0: {ctrlEnable [_idc,true];};

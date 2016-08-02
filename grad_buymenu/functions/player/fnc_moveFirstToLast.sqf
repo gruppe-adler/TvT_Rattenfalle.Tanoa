@@ -11,43 +11,19 @@ fnc_selectNextVehicleInArray = {
 		diag_log format ["SELECT_NEXT_VEHICLE_IN_ARRAY: supplyarray is %1, vehicle index is %2", _supplies, _vehicleIndex];
 	};
 
-	switch (_supplies) do {
-		case "suppliesBlufor": {
-			_vehicleArray = (suppliesBlufor getVariable _vehicleIndex) select 0;
-			_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
+	_supplies = 0 call (player getVariable ['GRAD_buymenu_supplies', {nil}]);
+	if (isNil _supplies) then {
+		diag_log format ["player does not have access to supplies"];
+	} else {
+		_supplyItem = (_supplies getVariable _vehicleIndex);
 
-			(suppliesBlufor getVariable _vehicleIndexset) set [0, _vehicleArrayResorted];
-			publicVariableServer "suppliesBlufor";
+		_vehicleArray = _supplyItem select 0;
+		_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
+		_supplyItem set [0, _vehicleArrayResorted];
 
-			// diag_log format ["Resorting Array %1 to %2",_vehicleArray,_vehicleArrayResorted];
-			{
-				_supplyItem = suppliesBlufor getVariable _x;
-				diag_log format ["%1 ..... supplies are now %2", _x, _supplyItem];
-			} forEach (allVariables suppliesBlufor);
-		};
-
-		case "suppliesOpfor": {
-			_vehicleArray = (suppliesOpfor getVariable _vehicleIndex) select 0;
-			_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
-
-			(suppliesOpfor getVariable _vehicleIndexset) set [0, _vehicleArrayResorted];
-			publicVariableServer "suppliesOpfor";
-
-			// diag_log format ["Resorting Array %1 to %2",_vehicleArray,_vehicleArrayResorted];
-			{
-				_supplyItem = suppliesOpfor getVariable _x;
-				diag_log format ["%1 ..... supplies are now %2", _x, _supplyItem];
-			} forEach (allVariables suppliesOpfor);
-		};
-
-		default {
-			diag_log format ["_supplies is neither opfor nor blufor"];
-		}
+		diag_log format ["%1 ..... supplies are now %2", _x, _vehicleArrayResorted select 0];
 	};
-
-
 };
-
 
 fnc_moveFirstToLast = {
  _array = _this select 0;

@@ -8,15 +8,16 @@
 // global values
 if (isServer) then {
 
-
 	suppliesBlufor = "Flag_NATO_F" createVehicle [0, 1, 0];
-	suppliesOpfor = "Flag_CSAT_F" createVehicle [1, 0, 0];
+	suppliesOpfor = "Flag_NATO_F" createVehicle [1, 0, 0];
 	publicVariable "suppliesBlufor";
 	publicVariable "suppliesOpfor";
 
 	// initial money, also used for tracking money during game
 	moneyBlufor = 4000; // initial money
 	moneyOpfor = 4000;
+	publicVariable "moneyBlufor";
+	publicVariable "moneyOpfor";
 
 	moneyGainBlufor = 5; // credits added every interval
 	moneyGainOpfor = 5;
@@ -93,16 +94,7 @@ if (isServer) then {
 	spawnChuteVehicleClassOpfor = "RHS_C130J";
 	spawnSlingLoadVehicleClassOpfor = "RHS_Mi8mt_Cargo_vdv";
 
-
 	/// DO NOT EDIT BELOW ///
-
-	ordersBlufor = [];
-	ordersOpfor = [];
-
-	publicVariable "moneyBlufor";
-	publicVariable "moneyOpfor";
-	publicVariable "ordersBlufor";
-	publicVariable "ordersOpfor";
 
 	_randBluInd = ceil (random 3);
 	_randOpfInd = ceil (random 3);
@@ -155,17 +147,30 @@ if (hasInterface) then {
 				case "CAPTAIN": { _canBuy = ['scooter', 'car', 'truck', 'uaz_dshkm', 'uaz_spg9', 'btr70', 'gaz66']; };
 				default { _canBuy = ['scooter', 'car']; };
 			};
+			player setVariable ["GRAD_canBuy", _canBuy];
+
+			player setVariable ['GRAD_buymenu_money', {moneyOpfor}, true];
+			player setVariable ['GRAD_buymenu_money_name', "moneyOpfor", true];
+			player setVariable ['GRAD_buymenu_supplies', {suppliesOpfor}, true];
+			player setVariable ['GRAD_buymenu_supplies_name', "suppliesOpfor", true];
+			player setVariable ['GRAD_buymenu_spawn_water', {getMarkerPos spawnMarkerOpforWater}];
+			player setVariable ['GRAD_buymenu_spawn_land', {getMarkerPos spawnMarkerOpforLand}];
 		};
 		if (playerSide == west) then {
 			switch (rank player) do {
 				case "CAPTAIN": { _canBuy = ['boat','car','m1025','uh1y','m113','m109', 'ah1z']; };
 				default { _canBuy = ['boat', 'car']; };
 			};
+			player setVariable ["GRAD_canBuy", _canBuy];
+
+			player setVariable ['GRAD_buymenu_money', {moneyBlufor}, true];
+			player setVariable ['GRAD_buymenu_money_name', "moneyBlufor"];
+			player setVariable ['GRAD_buymenu_supplies', {suppliesBlufor}, true];
+			player setVariable ['GRAD_buymenu_supplies_name', "suppliesBlufor"];
+
+			player setVariable ['GRAD_buymenu_spawn_water', {getMarkerPos spawnMarkerBluforWater}];
+			player setVariable ['GRAD_buymenu_spawn_land', {getMarkerPos spawnMarkerBluforLand}];
 		};
-
-		player setVariable ["GRAD_canBuy", _canBuy];
-
-		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_addRefreshListener.sqf";
 
 		// G U I   f u n c t i o n s // do not edit below
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_showMarkers.sqf";
@@ -192,33 +197,29 @@ if (hasInterface) then {
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createToolbarheadline.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_createToolbarCredits.sqf";
 
-		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_manageOrder.sqf";
+		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_addOrder.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_refreshCredits.sqf";
+		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_refreshGUI.sqf";
 
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_moveFirstToLast.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_moveDropMarker.sqf";
 		call compile preprocessFileLineNumbers "grad_buymenu\functions\player\fnc_displayWindInfo.sqf";
 
 		[] spawn fnc_showMarkers;
-
 };
 
 
 if (isServer) then {
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_raiseMoney.sqf";
-	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_orderListener.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_spawnVehicleManager.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_spawnChute.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_spawnCiv.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_spawnSimple.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_spawnSlingLoad.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_spawnWater.sqf";
-	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_addRefreshListenerServer.sqf";
 	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\fnc_prepareAfterBuyRefresh.sqf";
+	call compile preprocessFileLineNumbers "grad_buymenu\functions\server\api\fnc_api_createOrder.sqf";
 
 	[] spawn fnc_raiseBluforMoney;
 	[] spawn fnc_raiseOpforMoney;
-	[] spawn fnc_addOrderListener;
-
-
 };

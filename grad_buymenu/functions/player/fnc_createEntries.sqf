@@ -1,5 +1,5 @@
 fnc_createEntries = {
-	_givenSupplies = _this select 0;
+	_givenSupplies = missionNamespace getVariable (player getVariable 'GRAD_buymenu_supplies_name');
 	_allowedSupplies = player getVariable ['GRAD_canBuy', []];
 
 	_applicableSupplies = [];

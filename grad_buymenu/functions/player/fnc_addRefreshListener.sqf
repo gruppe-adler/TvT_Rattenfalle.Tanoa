@@ -1,77 +1,42 @@
 /* client side */
 
+_suppliesName =  (player getVariable 'GRAD_buymenu_supplies_name');
+_moneyName = (player getVariable 'GRAD_buymenu_money_name');
+
 // money
-_moneyBluforListener = {
+_moneyListener = {
 	if (buyMenuOpen) then {
 		[_this select 1] spawn fnc_refreshCredits;
 	};
 };
 
-_moneyOpforListener = {
+_suppliesListener = {
 	if (buyMenuOpen) then {
-			[_this select 1] spawn fnc_refreshCredits;
+		diag_log format ["supplies listener triggered"];
+		[] call fnc_refreshGUI;
 	};
 };
 
-// supplies
-_suppliesBluforListener = {
-	if (buyMenuOpen) then {
-		diag_log format ["supplies blufor listener triggered"];
-		[suppliesBlufor, moneyBlufor] call fnc_refreshGUI;
-	};
-};
 
-_suppliesOpforListener = {
-	if (buyMenuOpen) then {
-		diag_log format ["supplies opfor listener triggered"];
-		[suppliesOpfor, moneyOpfor] call fnc_refreshGUI;
-	};
-};
-
-if (side player == west) then {
-			"moneyBlufor" addPublicVariableEventHandler _moneyBluforListener;
-			"suppliesBlufor" addPublicVariableEventHandler _suppliesBluforListener;
-};
-
-if (side player == east) then {
-		"moneyOpfor" addPublicVariableEventHandler _moneyOpforListener;
-		"suppliesOpfor" addPublicVariableEventHandler _suppliesOpforListener;
-};
-
+_suppliesName addPublicVariableEventHandler _suppliesListener;
+_moneyName addPublicVariableEventHandler _moneyListener;
 
 /* E M U L A T I O N  for singleplayer tests */
 // MONEY
 if (isMultiplayer) exitWith {};
-waitUntil {!isNil "suppliesOpfor" && !isNil "suppliesBlufor"};
 
 diag_log "entering singleplayer PVEH emulation";
 
-_moneyBluforListener spawn {
+_moneyListener spawn {
 	waitUntil {
-		[0, moneyBlufor] call _this;
 		sleep 20;
+		[0,  missionNamespace getVariable (player getVariable 'GRAD_buymenu_money_name')] call _this;
 	}
 };
 
-_moneyOpforListener spawn {
+_suppliesListener spawn {
 	waitUntil {
-		[0, moneyOpfor] call _this;
 		sleep 20;
-	}
-};
-
-
-// SUPPLIES
-_suppliesBluforListener spawn {
-	waitUntil {
-		[0, suppliesBlufor] call _this;
-		sleep 20;
-	}
-};
-
-_suppliesOpforListener spawn {
-	waitUntil {
-		[0, suppliesOpfor] call _this;
-		sleep 20;
+		[] call _this;
 	}
 };
