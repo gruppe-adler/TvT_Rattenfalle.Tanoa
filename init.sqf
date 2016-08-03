@@ -46,7 +46,6 @@ call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\opfor.sqf";
 call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\independent.sqf";
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "helpers\addActionMP.sqf";
-[]execVM "initMakeFire.sqf";
 
 
 
