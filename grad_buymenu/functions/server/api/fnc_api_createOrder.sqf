@@ -5,7 +5,7 @@ fnc_api_createOrder = {
 	_supplyVar = _player getVariable "GRAD_buymenu_supplies_name";
 	_supplies = missionNamespace getVariable _supplyVar;
 
-	_moneyVar = player getVariable "GRAD_buymenu_money_name";
+	_moneyVar = _player getVariable "GRAD_buymenu_money_name";
 	_money = missionNamespace getVariable _moneyVar;
 
 	_supplyItem = _supplies getVariable (_neworder getVariable 'selector');
