@@ -2,7 +2,7 @@ GRAD_getUnitLoadout_opfor_sql = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs
 ["U_I_C_Soldier_Camo_F",[["ACE_NVG_Gen1",1],["ACE_quikclot",10],["ACE_elasticBandage",10],["ACE_morphine",3]]],
 ["V_TacChestrig_oli_F",[["rhs_30Rnd_762x39mm_U",30,4],
 ["rhs_30Rnd_762x39mm_89",30,4]]],
-["tf_anprc155",[["rhs_mag_rdg2_black",1,2],["rhs_mag_rgd5",1,2],["rhs_mag_rdg2_white",1,2],["ACE_Flashlight_KSF1",1]]],
+["tf_mr3000",[["rhs_mag_rdg2_black",1,2],["rhs_mag_rgd5",1,2],["rhs_mag_rdg2_white",1,2],["ACE_Flashlight_KSF1",1]]],
 "rhsgref_fieldcap_ttsko_mountain","",
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
@@ -10,7 +10,7 @@ GRAD_getUnitLoadout_opfor_sql = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs
 GRAD_getUnitLoadout_opfor_ftl = [["rhs_weap_akms","","rhs_acc_2dpZenit","",["rhs_30Rnd_762x39mm",30],[],""],[],[],
 ["U_I_C_Soldier_Camo_F",[["ACE_NVG_Gen1",1],["ACE_quikclot",10],["ACE_elasticBandage",10],["ACE_morphine",3]]],
 ["V_TacChestrig_oli_F",[["rhs_30Rnd_762x39mm_U",30,4],
-["rhs_30Rnd_762x39mm_89",30,4]]],["tf_anprc155",[["rhs_mag_rdg2_black",1,2],["rhs_mag_rgd5",1,2],["rhs_mag_rdg2_white",1,2],["ACE_Flashlight_KSF1",1]]],
+["rhs_30Rnd_762x39mm_89",30,4]]],["tf_mr3000",[["rhs_mag_rdg2_black",1,2],["rhs_mag_rgd5",1,2],["rhs_mag_rdg2_white",1,2],["ACE_Flashlight_KSF1",1]]],
 "rhsgref_fieldcap_ttsko_mountain","",
 ["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_fadak","ItemCompass","ItemWatch",""]];
