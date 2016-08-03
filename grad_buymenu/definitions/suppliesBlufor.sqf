@@ -76,6 +76,7 @@ _uh1y = [
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
+      (_this select 0) disableTIEquipment true;
       [(_this select 0)] call ace_fastroping_fnc_equipFRIES;
       (_this select 0) disableTIEquipment true;
       (_this select 0) addItemCargoGlobal ["ACE_NVG_Wide",2];
@@ -96,8 +97,8 @@ _lav25 = [
       clearItemCargoGlobal (_this select 0);
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
-	  (_this select 0) disableTIEquipment true;
-	  (_this select 0) removeMagazinesTurret ["CUP_210Rnd_TE1_Red_Tracer_25mm_M242_HE",[0]];
+      (_this select 0) disableTIEquipment true;
+      (_this select 0) removeMagazinesTurret ["CUP_210Rnd_TE1_Red_Tracer_25mm_M242_HE",[0]];
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
       ['AddCargoByClass', _this select 0, ['ACE_track', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
