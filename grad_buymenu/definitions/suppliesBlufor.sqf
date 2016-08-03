@@ -158,5 +158,3 @@ suppliesBlufor setVariable['uh1y', _uh1y, true];
 suppliesBlufor setVariable['m113', _m113, true];
 suppliesBlufor setVariable['m109', _m109, true];
 suppliesBlufor setVariable['ah1z', _ah1z, true];
-
-publicVariable "suppliesBlufor";
