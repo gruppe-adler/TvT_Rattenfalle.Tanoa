@@ -84,11 +84,11 @@ _uh1y = [
       2,
       0
 ];
-_m113 = [
-      ["rhsusf_m113_usarmy"],
+_lav25 = [
+      ["CUP_B_LAV25M240_USMC"],
       [],
       3,
-      1500,
+      2000,
       1,
       [],
       {
@@ -96,11 +96,13 @@ _m113 = [
       clearItemCargoGlobal (_this select 0);
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
+	  (_this select 0) disableTIEquipment true;
+	  (_this select 0) removeMagazinesTurret ["CUP_210Rnd_TE1_Red_Tracer_25mm_M242_HE",[0]];
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
       ['AddCargoByClass', _this select 0, ['ACE_track', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
       format[''],
-      1,
+      2,
       0
 ];
 _m109 = [
@@ -115,6 +117,7 @@ _m109 = [
       clearItemCargoGlobal (_this select 0);
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
+	  (_this select 0) disableTIEquipment true;
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
       ['AddCargoByClass', _this select 0, ['ACE_track', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
@@ -155,7 +158,7 @@ suppliesBlufor setVariable['boat', _boat, true];
 suppliesBlufor setVariable['car', _car, true];
 suppliesBlufor setVariable['m1025', _m1025, true];
 suppliesBlufor setVariable['uh1y', _uh1y, true];
-suppliesBlufor setVariable['m113', _m113, true];
+suppliesBlufor setVariable['lav25', _lav25, true];
 suppliesBlufor setVariable['m109', _m109, true];
 suppliesBlufor setVariable['ah1z', _ah1z, true];
 
