@@ -38,7 +38,7 @@ Faustformel: 1000 cr = 10min, Startgeld wird bei 2-3k liegen.
 | Fahrzeug         | Speedboot mit 6x Tauchequipment | Prowler unbewaffnet | HMMWV M2  | UH1Y      | LAV 25  | M109 Artillery | AH1Z      |
 | Anzahl verfügbar | 14                              | 12                  | 6         | 4         | 3       | 1              | 2         |
 | Kosten           | 100                             | 200                 | 1000      | 2500      | 2000    | 2500           | 3000      |
-| Anlieferung      | sofortiger Spawn im Wasser      | Slingload           | Slingload | Slingload | Airdrop | Slingload      | Slingload |
+| Anlieferung      | sofortiger Spawn im Wasser      | Slingload           | Slingload | Slingload |Slingload| Slingload      | Slingload |
 ***
 | OPFOR            |                            |                         |           |           |           |            |
 |------------------|----------------------------|-------------------------|-----------|-----------|-----------|------------|
