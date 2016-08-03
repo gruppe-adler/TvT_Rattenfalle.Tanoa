@@ -22,8 +22,7 @@ fnc_api_createOrder = {
 	// validations fine.
 	// we're good to go and actually register and execute the order.
 
-	missionNamespace setVariable [_moneyVar, _newMoney];
-	publicVariable _moneyVar;
+	missionNamespace setVariable [_moneyVar, _newMoney, true];
 
 	_supplyItem set [2, _newAvailableAmount];
 	if (_newAvailableAmount == 0)  then {
