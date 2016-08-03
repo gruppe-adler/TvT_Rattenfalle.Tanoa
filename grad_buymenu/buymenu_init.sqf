@@ -164,9 +164,9 @@ if (hasInterface) then {
 			player setVariable ["GRAD_canBuy", _canBuy];
 
 			player setVariable ['GRAD_buymenu_money', {moneyBlufor}, true];
-			player setVariable ['GRAD_buymenu_money_name', "moneyBlufor"];
+			player setVariable ['GRAD_buymenu_money_name', "moneyBlufor", true];
 			player setVariable ['GRAD_buymenu_supplies', {suppliesBlufor}, true];
-			player setVariable ['GRAD_buymenu_supplies_name', "suppliesBlufor"];
+			player setVariable ['GRAD_buymenu_supplies_name', "suppliesBlufor", true];
 
 			player setVariable ['GRAD_buymenu_spawn_water', {getMarkerPos spawnMarkerBluforWater}];
 			player setVariable ['GRAD_buymenu_spawn_land', {getMarkerPos spawnMarkerBluforLand}];
