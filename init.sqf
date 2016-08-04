@@ -47,7 +47,7 @@ call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\independent.sqf"
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 
-
+execVM "node_modules\GRAD_makeFire\initMakeFire.sqf";
 
 if (isServer) then {
 
@@ -130,7 +130,7 @@ if (isServer) then {
 				_stringLoadout = "GRAD_getUnitLoadout_" + _loadout;
 				_x setUnitLoadout [(missionNamespace getVariable [_stringLoadout, []]),true];
 			};
-			
+
 			_x addMPEventHandler ["MPKilled", {
 					//Only on the server
 					if (isServer) then {
