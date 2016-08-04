@@ -2,6 +2,6 @@
     "name": "TvT_Rattenfalle.Tanoa",
     "version": "0.3.5",
     "dependencies": {
-        "make-fire": "gruppe-adler/scripts_GRAD_makeFire#master"
+        "make-fire": "gruppe-adler/scripts_GRAD_makeFire#e1093cf"
     }
 }
