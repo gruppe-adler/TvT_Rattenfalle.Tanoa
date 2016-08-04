@@ -39,6 +39,8 @@ if [[ $version == "" ]]; then
 	exit 2
 fi
 
+npm install
+
 cwd=`pwd`
 
 builddir="$cwd/../tmp-build"
