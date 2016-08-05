@@ -37,6 +37,7 @@ _car = [
       clearItemCargoGlobal (_this select 0);
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
+      ['AddCargoByClass', _this select 0, ['ACE_wheel', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
       format[''],
       2,
