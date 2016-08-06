@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=586;
+		nextID=592;
 	};
 	class MarkerIDProvider
 	{
@@ -340,7 +340,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=258;
+		items=261;
 		class Item0
 		{
 			dataType="Marker";
@@ -6718,6 +6718,7 @@ class Mission
 				angles[]={0,3.425926,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6725,7 +6726,6 @@ class Mission
 			};
 			id=330;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.23920441;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7182,7 +7182,7 @@ class Mission
 			};
 			id=341;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.14587402;
+			atlOffset=0.14587498;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9414,7 +9414,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=397;
 					type="C_man_polo_2_F";
@@ -9508,7 +9508,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=399;
 					type="C_man_polo_2_F";
@@ -9602,7 +9602,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=401;
 					type="C_man_polo_2_F";
@@ -9699,7 +9699,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=403;
 					type="C_man_polo_2_F";
@@ -9793,7 +9793,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=405;
 					type="C_man_polo_2_F";
@@ -9887,7 +9887,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=407;
 					type="C_man_polo_2_F";
@@ -9979,7 +9979,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=409;
 					type="C_man_polo_2_F";
@@ -10073,7 +10073,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=411;
 					type="C_man_polo_2_F";
@@ -10353,7 +10353,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=417;
 					type="C_man_polo_2_F";
@@ -10447,7 +10447,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=419;
 					type="C_man_polo_2_F";
@@ -10541,7 +10541,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=421;
 					type="C_man_polo_2_F";
@@ -10728,7 +10728,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=425;
 					type="C_man_polo_2_F";
@@ -10822,7 +10822,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=427;
 					type="C_man_polo_2_F";
@@ -10916,7 +10916,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=429;
 					type="C_man_polo_2_F";
@@ -11008,7 +11008,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=431;
 					type="C_man_polo_2_F";
@@ -11195,7 +11195,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=435;
 					type="C_man_polo_2_F";
@@ -11289,7 +11289,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=437;
 					type="C_man_polo_2_F";
@@ -11383,7 +11383,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=439;
 					type="C_man_polo_2_F";
@@ -11477,7 +11477,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=441;
 					type="C_man_polo_2_F";
@@ -11571,7 +11571,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=443;
 					type="C_man_polo_2_F";
@@ -11665,7 +11665,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=445;
 					type="C_man_polo_2_F";
@@ -11759,7 +11759,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=447;
 					type="C_man_polo_2_F";
@@ -11853,7 +11853,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=449;
 					type="C_man_polo_2_F";
@@ -11947,7 +11947,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=451;
 					type="C_man_polo_2_F";
@@ -12041,7 +12041,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=453;
 					type="C_man_polo_2_F";
@@ -12135,7 +12135,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=455;
 					type="C_man_polo_2_F";
@@ -12229,7 +12229,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=457;
 					type="C_man_polo_2_F";
@@ -12323,7 +12323,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=459;
 					type="C_man_polo_2_F";
@@ -12417,7 +12417,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=461;
 					type="C_man_polo_2_F";
@@ -12511,7 +12511,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=463;
 					type="C_man_polo_2_F";
@@ -12605,7 +12605,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=465;
 					type="C_man_polo_2_F";
@@ -12699,7 +12699,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=467;
 					type="C_man_polo_2_F";
@@ -12793,7 +12793,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=469;
 					type="C_man_polo_2_F";
@@ -12887,7 +12887,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=471;
 					type="C_man_polo_2_F";
@@ -12981,7 +12981,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=473;
 					type="C_man_polo_2_F";
@@ -13075,7 +13075,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=475;
 					type="C_man_polo_2_F";
@@ -13169,7 +13169,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=477;
 					type="C_man_polo_2_F";
@@ -13263,7 +13263,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=479;
 					type="C_man_polo_2_F";
@@ -13357,7 +13357,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=481;
 					type="C_man_polo_2_F";
@@ -13451,7 +13451,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=483;
 					type="C_man_polo_2_F";
@@ -13545,7 +13545,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=485;
 					type="C_man_polo_2_F";
@@ -13639,7 +13639,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=487;
 					type="C_man_polo_2_F";
@@ -13733,7 +13733,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=489;
 					type="C_man_polo_2_F";
@@ -13827,7 +13827,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=491;
 					type="C_man_polo_2_F";
@@ -13921,11 +13921,11 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=493;
 					type="C_man_polo_2_F";
-					atlOffset=0.030086517;
+					atlOffset=0.030076981;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13993,7 +13993,7 @@ class Mission
 			{
 			};
 			id=492;
-			atlOffset=0.030086517;
+			atlOffset=0.030076981;
 		};
 		class Item212
 		{
@@ -14015,7 +14015,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=495;
 					type="C_man_polo_2_F";
@@ -14109,7 +14109,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=497;
 					type="C_man_polo_2_F";
@@ -14203,7 +14203,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=499;
 					type="C_man_polo_2_F";
@@ -14297,7 +14297,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=501;
 					type="C_man_polo_2_F";
@@ -14391,7 +14391,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=503;
 					type="C_man_polo_2_F";
@@ -14485,7 +14485,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=505;
 					type="C_man_polo_2_F";
@@ -14579,7 +14579,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=507;
 					type="C_man_polo_2_F";
@@ -14673,7 +14673,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=509;
 					type="C_man_polo_2_F";
@@ -14767,11 +14767,11 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=511;
 					type="C_man_polo_2_F";
-					atlOffset=0.017421246;
+					atlOffset=0.017418385;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14839,7 +14839,7 @@ class Mission
 			{
 			};
 			id=510;
-			atlOffset=0.017421246;
+			atlOffset=0.017418385;
 		};
 		class Item221
 		{
@@ -14861,7 +14861,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=513;
 					type="C_man_polo_2_F";
@@ -14955,7 +14955,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=515;
 					type="C_man_polo_2_F";
@@ -15049,7 +15049,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=517;
 					type="C_man_polo_2_F";
@@ -15143,7 +15143,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=519;
 					type="C_man_polo_2_F";
@@ -15237,7 +15237,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=521;
 					type="C_man_polo_2_F";
@@ -15331,7 +15331,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=523;
 					type="C_man_polo_2_F";
@@ -15425,7 +15425,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=525;
 					type="C_man_polo_2_F";
@@ -15519,7 +15519,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=527;
 					type="C_man_polo_2_F";
@@ -15613,7 +15613,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=529;
 					type="C_man_polo_2_F";
@@ -15707,7 +15707,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=531;
 					type="C_man_polo_2_F";
@@ -15801,7 +15801,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=533;
 					type="C_man_polo_2_F";
@@ -15895,7 +15895,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=535;
 					type="C_man_polo_2_F";
@@ -15989,7 +15989,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=537;
 					type="C_man_polo_2_F";
@@ -16083,7 +16083,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=539;
 					type="C_man_polo_2_F";
@@ -16177,7 +16177,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=541;
 					type="C_man_polo_2_F";
@@ -16271,7 +16271,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=543;
 					type="C_man_polo_2_F";
@@ -16365,7 +16365,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=545;
 					type="C_man_polo_2_F";
@@ -16459,7 +16459,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=547;
 					type="C_man_polo_2_F";
@@ -16553,7 +16553,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=549;
 					type="C_man_polo_2_F";
@@ -16647,7 +16647,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=551;
 					type="C_man_polo_2_F";
@@ -16741,7 +16741,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=553;
 					type="C_man_polo_2_F";
@@ -16835,7 +16835,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=555;
 					type="C_man_polo_2_F";
@@ -16929,7 +16929,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=557;
 					type="C_man_polo_2_F";
@@ -17023,7 +17023,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=559;
 					type="C_man_polo_2_F";
@@ -17115,7 +17115,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=561;
 					type="C_man_polo_2_F";
@@ -17209,7 +17209,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=563;
 					type="C_man_polo_2_F";
@@ -17303,7 +17303,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=565;
 					type="C_man_polo_2_F";
@@ -17395,7 +17395,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=567;
 					type="C_man_polo_2_F";
@@ -17489,7 +17489,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=569;
 					type="C_man_polo_2_F";
@@ -17583,7 +17583,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=571;
 					type="C_man_polo_2_F";
@@ -17677,7 +17677,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=573;
 					type="C_man_polo_2_F";
@@ -17771,7 +17771,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=575;
 					type="C_man_polo_2_F";
@@ -17865,7 +17865,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=577;
 					type="C_man_polo_2_F";
@@ -17959,7 +17959,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=579;
 					type="C_man_polo_2_F";
@@ -18053,7 +18053,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=581;
 					type="C_man_polo_2_F";
@@ -18147,7 +18147,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=583;
 					type="C_man_polo_2_F";
@@ -18241,7 +18241,7 @@ class Mission
 					class Attributes
 					{
 						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
-						presence=0.8;
+						presence=0.80000001;
 					};
 					id=585;
 					type="C_man_polo_2_F";
@@ -18314,6 +18314,288 @@ class Mission
 			};
 			id=584;
 			atlOffset=7.0571899e-005;
+		};
+		class Item258
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8240.9492,117.39679,11061.318};
+						angles[]={0,2.8925083,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.80000001;
+					};
+					id=587;
+					type="C_man_polo_2_F";
+					atlOffset=0.011421204;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=586;
+			atlOffset=0.011421204;
+		};
+		class Item259
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8324.1172,17.730673,9725.8564};
+						angles[]={0,5.8999453,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.80000001;
+					};
+					id=589;
+					type="C_man_polo_2_F";
+					atlOffset=-0.012580872;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=588;
+			atlOffset=-0.012580872;
+		};
+		class Item260
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8218.7441,70.176476,8707.7803};
+						angles[]={0,0.96298832,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilianStatic.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.80000001;
+					};
+					id=591;
+					type="C_man_polo_2_F";
+					atlOffset=0.0027542114;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=590;
+			atlOffset=0.0027542114;
 		};
 	};
 };

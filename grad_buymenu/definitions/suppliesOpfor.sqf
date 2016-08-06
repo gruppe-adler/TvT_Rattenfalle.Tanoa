@@ -180,6 +180,7 @@ _t55 = [
     clearMagazineCargoGlobal (_this select 0);
     (_this select 0) setVehicleLock 'UNLOCKED';
     (_this select 0) addItemCargoGlobal ['ItemGPS',1];
+    (_this select 0) removeMagazineTurret ["LOP_OF416Sh", [0]];
     ['AddCargoByClass', _this select 0, ['ACE_track', _this select 0, 2]] call ace_common_fnc_targetEvent;
     },
     format[''],

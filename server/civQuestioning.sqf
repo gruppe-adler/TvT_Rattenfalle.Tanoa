@@ -48,7 +48,8 @@ GRAD_fnc_questionCiv = {
 
   _chanceToReveal = CHANCE_TO_REVEAL + _civ_questioned;
 
-  if (_knowsSomething && !_alreadyRevealed) exitWith {
+  // even if he already revealed sth you might ask and reveal again! good for other sides coming by... but beware he will be dead somewhen.
+  if (_knowsSomething) exitWith {
   	if (random 1 > _chanceToReveal) then {
   		if (_civ_questioned < 0.4) then {
         [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
@@ -74,11 +75,15 @@ GRAD_fnc_questionCiv = {
         _civilian setVariable ["sentenceDenyingSerious", _sentenceDenyingSeriousArray - [_sentenceDenyingSerious],true];
   		};
 
-  		if (_civ_questioned > 0.4) then {
-  				_damage = (_civilian getHitPointDamage "head") + (random 1);
-  				[_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
-  				_civilian setVariable ["ACE_medical_lastDamageSource",_player];
-  		};
+  		
+    if (_civ_questioned > 0.4) then {
+        _damage = (_civilian getHitPointDamage "leg_l") + (random 0.3);
+        [_civilian, _damage, "leg_l", "punch"] call ace_medical_fnc_addDamageToUnit;
+        _civilian setVariable ["ACE_medical_lastDamageSource",_player];
+        _civilian playMoveNow "RHS_flashbang_cover";
+        sleep 0.1;
+        _civilian disableAI "ANIM";
+    };
 
   		if (_civ_questioned > 0.7) then {
         [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
@@ -93,6 +98,7 @@ GRAD_fnc_questionCiv = {
   			[_civilian] spawn GRAD_fnc_startTalkLips;
   			[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
         _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging],true];
+       
   		};
 
   	} else {
@@ -143,12 +149,16 @@ GRAD_fnc_questionCiv = {
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,_sentenceDenyingBegging, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
       _civilian setVariable ["sentenceDenyingBegging", _sentenceDenyingBeggingArray - [_sentenceDenyingBegging],true];
+      
   	};
 
   	if (_civ_questioned > 0.4) then {
-  			_damage = (_civilian getHitPointDamage "hithead") + (random 0.3);
-  			[_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
+  			_damage = (_civilian getHitPointDamage "leg_l") + (random 0.3);
+  			[_civilian, _damage, "leg_l", "punch"] call ace_medical_fnc_addDamageToUnit;
   			_civilian setVariable ["ACE_medical_lastDamageSource",_player];
+        _civilian playMoveNow "RHS_flashbang_cover";
+        sleep 0.1;
+        _civilian disableAI "ANIM";
   	};
 
   	// when someone questions too hard, reveal something random
@@ -174,11 +184,15 @@ GRAD_fnc_questionCiv = {
 
   // if you just go on hitting him...
 
-  if (_civ_questioned > 0.4) then {
-      _damage = (_civilian getHitPointDamage "hithead") + (random 0.3);
-      [_civilian, _damage, "head", "punch"] call ace_medical_fnc_addDamageToUnit;
-      _civilian setVariable ["ACE_medical_lastDamageSource",_player];
-  };
+  
+    if (_civ_questioned > 0.4) then {
+        _damage = (_civilian getHitPointDamage "leg_l") + (random 0.3);
+        [_civilian, _damage, "leg_l", "punch"] call ace_medical_fnc_addDamageToUnit;
+        _civilian setVariable ["ACE_medical_lastDamageSource",_player];
+        _civilian playMoveNow "RHS_flashbang_cover";
+        sleep 0.1;
+        _civilian disableAI "ANIM";
+    };
 
 
   [position _civilian,_sentenceQuestionSerious, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
