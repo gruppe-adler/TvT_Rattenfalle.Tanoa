@@ -53,9 +53,9 @@ while {true} do {
 			};
 
 		};
-		sleep (10 + (random 10)); // 120-240 (+10) s between server updates // 10-20 between civ updates
+		sleep (random 10); // 120-240 (+10) s between server updates // 10-20 between civ updates
 	} forEach CRASH_PILOTS;
-	sleep 10; // 10 between pilots
+	sleep SIGHTING_DELAY; // adjusted by penalty
   };
 
   diag_log format ["LAST_PILOTS_POSITION changed to %1", LAST_PILOTS_POSITION];

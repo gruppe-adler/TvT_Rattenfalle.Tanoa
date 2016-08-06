@@ -23,7 +23,7 @@ randomize_pos =
 
 
 _markerPos = _pos;
-// _markerPos = _pos call randomize_pos;
+_markerPos = _pos call randomize_pos;
 
 _marker = createMarkerLocal [format ["pilotmarker_%1", _markerPos],_markerPos];
 _marker setMarkerTypeLocal "mil_unknown";

@@ -7,6 +7,8 @@ _unit = _this select 0;
 
 if (!local _unit) exitWith {};
 
+_unit disableAI "CHECKVISIBLE";
+
 _uniforms = [
 "U_C_Man_casual_1_F",
 "U_C_Man_casual_2_F",

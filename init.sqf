@@ -99,7 +99,7 @@ if (isServer) then {
 	SETUP_DONE = false;
 	publicVariable "SETUP_DONE";
 
-	SIGHTING_DELAY = 120;
+	SIGHTING_DELAY = 60;
 	CHANCE_TO_REVEAL = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
 	publicVariable "CHANCE_TO_REVEAL";
 

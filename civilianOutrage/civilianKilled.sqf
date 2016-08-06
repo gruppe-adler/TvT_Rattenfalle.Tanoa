@@ -6,7 +6,7 @@ diag_log format ["%1 killed by %2",_victim,_shooter];
 
 reduceSightingDelay = {
 	_curDelay = _this select 0;
-	if (_curDelay > 60) then {
+	if (_curDelay > 15) then {
 		_curDelay = _curDelay - 10; // reduce sighting delay 10secs
 	};
 	_curDelay
