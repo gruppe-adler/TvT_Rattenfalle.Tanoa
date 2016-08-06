@@ -7,6 +7,8 @@ should only be called from SERVER!
 
 if (!isServer) exitWith {}; // just to make sure!
 
+waitUntil {count CRASH_PILOTS > 0};
+
 _crashSitePos = _this select 0; // Helicopter crashSite Position
 _maxDistance = _this select 1; // if Pilot is < maxDistance from any location, he will be spotted
 _publicVariable = _this select 2; // publicVariable for this Pilot
