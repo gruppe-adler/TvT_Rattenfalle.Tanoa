@@ -2,7 +2,7 @@
 rebel civ units made from thai warfare mod
 */
 
-randomRebel = {
+
 _unit = _this select 0;
 
 _uniforms = [
@@ -199,4 +199,3 @@ _unit addEventHandler ["Hit", {
 
 [_unit,"GRAD_fnc_addQuestioningAction",nil,true] spawn BIS_fnc_MP;
 
-};

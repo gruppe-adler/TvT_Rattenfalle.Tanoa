@@ -99,6 +99,24 @@ if (isServer) then {
 	_randBluInd = ceil (random 3);
 	_randOpfInd = ceil (random 3);
 
+	// delete bases not needed
+	switch {_randBluInd} do {
+		case 1: { {deleteVehicle _x} forEach list trg_base_blufor_2; {deleteVehicle _x} forEach list trg_base_blufor_3; {deleteVehicle _x} forEach list trg_base_blufor_4; };
+		case 2: { {deleteVehicle _x} forEach list trg_base_blufor_1; {deleteVehicle _x} forEach list trg_base_blufor_3; {deleteVehicle _x} forEach list trg_base_blufor_4; };
+		case 3: { {deleteVehicle _x} forEach list trg_base_blufor_1; {deleteVehicle _x} forEach list trg_base_blufor_2; {deleteVehicle _x} forEach list trg_base_blufor_4; };
+		case 4: { {deleteVehicle _x} forEach list trg_base_blufor_1; {deleteVehicle _x} forEach list trg_base_blufor_2; {deleteVehicle _x} forEach list trg_base_blufor_3; };
+		default {};
+	};
+
+	switch {_randOpfInd} do {
+		case 1: { {deleteVehicle _x} forEach list trg_base_opfor_2; {deleteVehicle _x} forEach list trg_base_opfor_3; {deleteVehicle _x} forEach list trg_base_opfor_4; };
+		case 2: { {deleteVehicle _x} forEach list trg_base_opfor_1; {deleteVehicle _x} forEach list trg_base_opfor_3; {deleteVehicle _x} forEach list trg_base_opfor_4; };
+		case 3: { {deleteVehicle _x} forEach list trg_base_opfor_1; {deleteVehicle _x} forEach list trg_base_opfor_2; {deleteVehicle _x} forEach list trg_base_opfor_4; };
+		case 4: { {deleteVehicle _x} forEach list trg_base_opfor_1; {deleteVehicle _x} forEach list trg_base_opfor_2; {deleteVehicle _x} forEach list trg_base_opfor_3; };
+		default {};
+	};
+	
+
 	spawnMarkerBluforLand = (spawnArrayBluforLand select _randBluInd);
 	spawnMarkerBluforWater = (spawnArrayBluforWater select _randBluInd);
 	spawnMarkerCivilianBlufor = (spawnArrayBluforCivilian select _randBluInd);

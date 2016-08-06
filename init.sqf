@@ -34,7 +34,7 @@ jipTime = 60000;
 
 0 = [] execVM "grad_buymenu\buymenu_init.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
-call compile preprocessfile "civilianOutrage\randomRebel.sqf";
+randomRebel = call compile preprocessfile "civilianOutrage\randomRebel.sqf";
 
 
 

@@ -100,7 +100,7 @@ _m113 = [
       ['AddCargoByClass', _this select 0, ['ACE_track', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
       format[''],
-      1,
+      2,
       0
 ];
 _m109 = [
@@ -115,6 +115,7 @@ _m109 = [
       clearItemCargoGlobal (_this select 0);
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
+      (_this select 0) disableTIEquipment true;
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
       ['AddCargoByClass', _this select 0, ['ACE_track', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
