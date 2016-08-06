@@ -33,13 +33,21 @@ if (isServer || isDedicated) then {
 
 	_firing_position = _this select 0; // [x,y,z]
 	_firing_angle = _this select 1; // guns or weaponholders vector
-	_type = _this select 2;
-	_color = _this select 3; // random, green, red, blue, white
+	_dir = _this select 2;
+	_type = _this select 3;
+	_color = _this select 4; // random, green, red, blue, white
+	
 
 
 	_explosion_power = 50; // 30-70 seems reasonable
 	_glitter_count = 20; // 30 is poor, 50 is ok, 100 might be overkill
-	_initial_velocity = [_firing_angle select 0,_firing_angle select 1, 300]; // firing not perfect but in a slight angle
+	// _initial_velocity = [,_firing_angle select 1, _firing_angle select 2]; // firing not perfect but in a slight angle
+	_initial_velocity = setVelocity [
+		(_firing_angle select 0) + (sin _dir * 100), 
+		(_firing_angle select 1) + (cos _dir * 100), 
+		(_firing_angle select 2)
+	];
+
 
 	_colorArray = [[0.42,0.81,0.1],[0.8,0.1,0.35],[0.2,0.73,0.85],[1,1,1]];
 

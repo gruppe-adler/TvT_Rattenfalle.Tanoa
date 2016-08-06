@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=129;
 	class ItemIDProvider
 	{
 		nextID=382;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={10898.906,434.58221,6333.8491};
-		dir[]={0.43862194,-0.77795142,-0.44989413};
-		up[]={0.54307258,0.62832421,-0.55702895};
-		aside[]={-0.71602041,-2.9569492e-008,-0.69808066};
+		pos[]={1850.6903,39.70668,926.64032};
+		dir[]={0,-0.70710683,0.70710683};
+		up[]={0,0.70710677,0.70710677};
+		aside[]={0.99999994,0,-0};
 	};
 };
 binarizationWanted=0;
@@ -6971,7 +6971,6 @@ class Mission
 				angles[]={0,3.425926,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6979,6 +6978,7 @@ class Mission
 			};
 			id=330;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.23920441;
 			class CustomAttributes
 			{
 				class Attribute0

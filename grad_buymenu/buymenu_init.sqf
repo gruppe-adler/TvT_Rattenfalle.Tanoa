@@ -144,7 +144,7 @@ if (hasInterface) then {
 		_canBuy = [];
 		if (playerSide == east) then {
 			switch (rank player) do {
-				case "CAPTAIN": { _canBuy = ['scooter', 'car', 'truck', 'uaz_dshkm', 'uaz_spg9', 'btr70', 'gaz66']; };
+				case "CAPTAIN": { _canBuy = ['scooter', 'car', 'truck', 'uaz_dshkm', 'uaz_spg9', 'btr70', 'gaz66', 't55']; };
 				default { _canBuy = ['scooter', 'car']; };
 			};
 			player setVariable ["GRAD_canBuy", _canBuy];
@@ -210,6 +210,10 @@ if (hasInterface) then {
 
 
 		[] spawn fnc_showMarkers;
+
+		0 = execVM "grad_buymenu\openMenu.sqf";
+		waitUntil {buyMenuOpen};
+		closeDialog 0;
 };
 
 

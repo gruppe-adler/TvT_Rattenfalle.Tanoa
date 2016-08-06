@@ -5,7 +5,7 @@
 // 4 spawn at water marker
 
 _boat = [
-    ["I_C_Boat_Transport_02_F"],
+    ["CUP_B_RHIB_USMC"],
     [],
     30,
     100,
@@ -78,7 +78,6 @@ _uh1y = [
       clearMagazineCargoGlobal (_this select 0);
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
       [(_this select 0)] call ace_fastroping_fnc_equipFRIES;
-      (_this select 0) disableTIEquipment true;
       (_this select 0) addItemCargoGlobal ["ACE_NVG_Wide",2];
       },
       format[''],

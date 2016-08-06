@@ -199,6 +199,7 @@ if (hasInterface) then {
 	callIntro = {
 		waitUntil {CRASH_SITE select 0 != 0};
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
+		
 	};
 
 	sleep 5;
@@ -220,6 +221,7 @@ if (hasInterface) then {
 
 	if (playerSide == independent) then {
 		[] execVM "player\pilotTeleportListener.sqf";
+		[] execVM "player\addSignalPistolEH.sqf";
 		[] spawn checkJIP;
 	};
 };
