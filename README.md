@@ -35,14 +35,14 @@ Faustformel: 1000 cr = 10min, Startgeld wird bei 2-3k liegen.
 
 | BLUFOR           |                                 |                     |           |           |         |                |           |
 |------------------|---------------------------------|---------------------|-----------|-----------|---------|----------------|-----------|
-| Fahrzeug         | Speedboot mit 6x Tauchequipment | Prowler unbewaffnet | HMMWV M2  | MELB      | M113    | M109 Artillery | AH1Z      |
+| Fahrzeug         | Speedboot mit 6x Tauchequipment | Prowler unbewaffnet | HMMWV M2  | UH1Y      | LAV 25  | M109 Artillery | AH1Z      |
 | Anzahl verfügbar | 14                              | 12                  | 6         | 4         | 3       | 1              | 2         |
-| Kosten           | 100                             | 200                 | 1000      | 2500      | 1500    | 2500           | 3000      |
-| Anlieferung      | sofortiger Spawn im Wasser      | Slingload           | Slingload | Slingload | Airdrop | Slingload      | Slingload |
+| Kosten           | 100                             | 200                 | 1000      | 2500      | 2000    | 2500           | 3000      |
+| Anlieferung      | sofortiger Spawn im Wasser      | Slingload           | Slingload | Slingload |Slingload| Slingload      | Slingload |
 ***
 | OPFOR            |                            |                         |           |           |           |            |
 |------------------|----------------------------|-------------------------|-----------|-----------|-----------|------------|
-| Fahrzeug         | Scooter                    | Jeep unbewaffnet        | UAZ Dshkm | UAZ SPG9  | BRDM2     | GAZ66 ZU23 |
+| Fahrzeug         | Scooter                    | Jeep unbewaffnet        | UAZ Dshkm | UAZ SPG9  | BTR 70    | GAZ66 ZU23 |
 | Anzahl verfügbar | 14                         | 14                      | 10        | 10        | 3         | 3          |
 | Kosten           | 100                        | 200                     | 1000      | 1000      | 1500      | 3000       |
 | Anlieferung      | sofortiger Spawn im Wasser | Zivilist bringts vorbei | Slingload | Slingload | Slingload | Slingload  |

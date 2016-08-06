@@ -158,7 +158,7 @@ if (hasInterface) then {
 		};
 		if (playerSide == west) then {
 			switch (rank player) do {
-				case "CAPTAIN": { _canBuy = ['boat','car','m1025','uh1y','m113','m109', 'ah1z']; };
+				case "CAPTAIN": { _canBuy = ['boat','car','m1025','uh1y','lav25','m109', 'ah1z']; };
 				default { _canBuy = ['boat', 'car']; };
 			};
 			player setVariable ["GRAD_canBuy", _canBuy];
