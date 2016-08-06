@@ -5,6 +5,9 @@ should only be called from CLIENT!
 
 */
 
+// not in use 
+
+
 GRAD_last_pilots_position = (str LAST_PILOTS_POSITION) + "_marker";
 _nil = createMarkerLocal [GRAD_last_pilots_position, [0, 0, 0]];
 GRAD_last_pilots_position setMarkerShapeLocal "ELLIPSE";

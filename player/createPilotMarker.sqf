@@ -1,6 +1,9 @@
 _pos = _this select 0;
 _trackingPrecision = _this select 1;
 
+_pos = CURRENT_PILOTS_POSITION select 1;
+_trackingPrecision = CURRENT_PILOTS_POSITION select 2;
+
 randomize_coord = {
 	_this + random(trackingPrecision * 2) - trackingPrecision
 };

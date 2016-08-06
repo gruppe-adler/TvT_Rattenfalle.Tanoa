@@ -1,4 +1,4 @@
-if (!DEBUG) exitWith {};
+if (isMultiplayer) exitWith {};
 
 _pos = _this select 0;
 _text = _this select 1;

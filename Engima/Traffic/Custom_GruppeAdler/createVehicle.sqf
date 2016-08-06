@@ -12,7 +12,7 @@ createrebelVehicle = {
 
 		_crewDriver = _grp0 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
-		[_crewDriver] call randomRebel; // rebel loadout
+		[_crewDriver] call randomCivilian; // rebel loadout
 		[_crewDriver, _car0, true] call ACE_VehicleLock_fnc_addKeyForVehicle;
 		_car0 setFuel 0.1;
 
@@ -28,7 +28,7 @@ createrebelVehicle = {
 
 		_crewCargo = _grp1 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
 
-		[_crewCargo] call randomRebel; // rebel loadout
+		[_crewCargo] call randomCivilian; // rebel loadout
 
 		_crewCargo assignAsCargo _car1;
 		_crewCargo moveInCargo _car1;

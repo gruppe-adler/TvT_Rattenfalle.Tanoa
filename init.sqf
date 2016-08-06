@@ -34,7 +34,7 @@ jipTime = 60000;
 
 0 = [] execVM "grad_buymenu\buymenu_init.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
-randomRebel = call compile preprocessfile "civilianOutrage\randomRebel.sqf";
+call compile preprocessfile "civilianOutrage\randomCivilian.sqf";
 
 
 
@@ -214,7 +214,6 @@ if (hasInterface) then {
 	if (playerSide == east) then {
 		[] execVM "player\rebelsTeleportListener.sqf";
 		[] spawn checkJIP;
-		["CRASH_SITE"] execVM "player\pilotSightingsClient.sqf";
 		[] execVM "player\createPilotVehicleTracker.sqf";
 	};
 

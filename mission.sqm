@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=474;
+		nextID=586;
 	};
 	class MarkerIDProvider
 	{
@@ -17,9 +17,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={11039.128,30.356184,13293.415};
-		dir[]={-0.40325317,-0.48401567,-0.77660972};
-		up[]={-0.22304936,0.87505633,-0.42956159};
-		aside[]={-0.88749212,-1.5075784e-007,0.4608289};
+		dir[]={0.96445,-0.18497233,0.18877274};
+		up[]={0.18153456,0.98274374,0.035531901};
+		aside[]={0.19208762,-2.5251938e-007,-0.98138613};
 	};
 };
 binarizationWanted=0;
@@ -340,7 +340,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=202;
+		items=258;
 		class Item0
 		{
 			dataType="Marker";
@@ -2018,11 +2018,12 @@ class Mission
 		class Item41
 		{
 			dataType="Marker";
-			position[]={1548.8571,-1.3163354,12939.061};
+			position[]={1544.651,2.1953792e+037,12966.555};
 			name="mrk_spawn_blufor_water_2";
 			type="c_ship";
 			colorName="ColorWEST";
 			id=103;
+			atlOffset=2.1953792e+037;
 		};
 		class Item42
 		{
@@ -2073,12 +2074,12 @@ class Mission
 		class Item47
 		{
 			dataType="Marker";
-			position[]={2699.5439,-1.0634766,7429.73};
+			position[]={2699.8223,-1.2104492,7433.0708};
 			name="mrk_spawn_blufor_water_4";
 			type="c_ship";
 			colorName="ColorWEST";
 			id=109;
-			atlOffset=0.57620358;
+			atlOffset=0.58783197;
 		};
 		class Item48
 		{
@@ -5901,7 +5902,6 @@ class Mission
 			};
 			id=310;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.14574718;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5935,6 +5935,7 @@ class Mission
 				angles[]={0,2.860523,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -5942,7 +5943,6 @@ class Mission
 			};
 			id=311;
 			type="rhs_7ya37_1_single";
-			atlOffset=3.432869;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5976,6 +5976,7 @@ class Mission
 				angles[]={0,0.11349974,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -5983,7 +5984,6 @@ class Mission
 			};
 			id=312;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.75169563;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6017,6 +6017,7 @@ class Mission
 				angles[]={0,2.5109529,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6024,7 +6025,6 @@ class Mission
 			};
 			id=313;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.16019917;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6561,7 +6561,6 @@ class Mission
 			};
 			id=326;
 			type="rhs_7ya37_1_single";
-			atlOffset=6.4849854e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6719,7 +6718,6 @@ class Mission
 				angles[]={0,3.425926,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6727,7 +6725,7 @@ class Mission
 			};
 			id=330;
 			type="rhs_7ya37_1_single";
-			atlOffset=2.2888184e-005;
+			atlOffset=0.23920441;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6769,7 +6767,6 @@ class Mission
 			};
 			id=331;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.00061798096;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7185,7 +7182,7 @@ class Mission
 			};
 			id=341;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.14587498;
+			atlOffset=0.14587402;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7351,7 +7348,6 @@ class Mission
 			};
 			id=345;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.00093078613;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7426,6 +7422,7 @@ class Mission
 				angles[]={0,2.0264654,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7433,7 +7430,6 @@ class Mission
 			};
 			id=347;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.92237473;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7549,6 +7545,7 @@ class Mission
 				angles[]={0,3.425926,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7556,7 +7553,6 @@ class Mission
 			};
 			id=350;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.61722565;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7590,6 +7586,7 @@ class Mission
 				angles[]={0,3.425926,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7597,7 +7594,6 @@ class Mission
 			};
 			id=351;
 			type="rhs_7ya37_1_single";
-			atlOffset=2.2967529;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8459,6 +8455,7 @@ class Mission
 			};
 			id=380;
 			type="CUP_B_LAV25_HQ_USMC";
+			atlOffset=-4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8584,7 +8581,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14304.489,5.1509037,11616.993};
+				position[]={14304.489,5.1512785,11616.993};
 				angles[]={0.047961645,2.2820704,6.2219238};
 			};
 			side="Empty";
@@ -8593,10 +8590,12 @@ class Mission
 			{
 				fuel=0;
 				init="this allowDamage false;";
+				name="rebel_hq4";
 				textures="camo";
 			};
 			id=384;
 			type="rhsgref_ins_g_gaz66_r142";
+			atlOffset=0.001999855;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8759,8 +8758,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={12258.045,6.0654035,6653.1802};
-				angles[]={6.2378831,1.1617678,0.013336525};
+				position[]={12258.045,6.0652423,6653.1807};
+				angles[]={6.2378764,1.161761,0.013334315};
 			};
 			side="Empty";
 			flags=4;
@@ -8768,10 +8767,12 @@ class Mission
 			{
 				fuel=0;
 				init="this allowDamage false;";
+				name="rebel_hq3";
 				textures="camo";
 			};
 			id=385;
 			type="rhsgref_ins_g_gaz66_r142";
+			atlOffset=-0.0029997826;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8934,8 +8935,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6783.8086,4.2614498,13352.168};
-				angles[]={0.037316564,0.14429307,6.2405448};
+				position[]={6783.8086,4.2613564,13352.168};
+				angles[]={0.037315138,0.14428636,6.2405472};
 			};
 			side="Empty";
 			flags=4;
@@ -8943,10 +8944,12 @@ class Mission
 			{
 				fuel=0;
 				init="this allowDamage false;";
+				name="rebel_hq1";
 				textures="camo";
 			};
 			id=386;
 			type="rhsgref_ins_g_gaz66_r142";
+			atlOffset=-0.001999855;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9109,8 +9112,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11039.322,6.8219123,13261.477};
-				angles[]={0.18196473,0.53830624,6.2432065};
+				position[]={11039.322,6.8221703,13261.477};
+				angles[]={0.18196802,0.5383119,6.2431998};
 			};
 			side="Empty";
 			flags=4;
@@ -9118,10 +9121,12 @@ class Mission
 			{
 				fuel=0;
 				init="this allowDamage false;";
+				name="rebel_hq2";
 				textures="camo";
 			};
 			id=387;
 			type="rhsgref_ins_g_gaz66_r142";
+			atlOffset=-0.001999855;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9408,10 +9413,12 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=397;
 					type="C_man_polo_2_F";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9479,6 +9486,7 @@ class Mission
 			{
 			};
 			id=396;
+			atlOffset=4.7683716e-007;
 		};
 		class Item164
 		{
@@ -9499,7 +9507,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=399;
 					type="C_man_polo_2_F";
@@ -9592,7 +9601,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=401;
 					type="C_man_polo_2_F";
@@ -9662,6 +9672,9 @@ class Mission
 			};
 			class Attributes
 			{
+				combatMode="BLUE";
+				behaviour="CARELESS";
+				speedMode="LIMITED";
 			};
 			id=400;
 			atlOffset=0.0020027161;
@@ -9685,7 +9698,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=403;
 					type="C_man_polo_2_F";
@@ -9778,11 +9792,12 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=405;
 					type="C_man_polo_2_F";
-					atlOffset=-0.011000156;
+					atlOffset=-0.011000633;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9850,7 +9865,7 @@ class Mission
 			{
 			};
 			id=404;
-			atlOffset=-0.011000156;
+			atlOffset=-0.011000633;
 		};
 		class Item168
 		{
@@ -9871,7 +9886,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=407;
 					type="C_man_polo_2_F";
@@ -9962,7 +9978,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=409;
 					type="C_man_polo_2_F";
@@ -10055,7 +10072,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=411;
 					type="C_man_polo_2_F";
@@ -10148,7 +10166,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf"";";
 					};
 					id=413;
 					type="C_man_polo_2_F";
@@ -10241,7 +10259,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf"";";
 					};
 					id=415;
 					type="C_man_polo_2_F";
@@ -10334,7 +10352,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=417;
 					type="C_man_polo_2_F";
@@ -10427,7 +10446,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=419;
 					type="C_man_polo_2_F";
@@ -10520,7 +10540,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=421;
 					type="C_man_polo_2_F";
@@ -10613,7 +10634,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf"";";
 					};
 					id=423;
 					type="C_man_polo_2_F";
@@ -10706,11 +10727,12 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=425;
 					type="C_man_polo_2_F";
-					atlOffset=-0.0049996376;
+					atlOffset=-0.0050001144;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -10778,7 +10800,7 @@ class Mission
 			{
 			};
 			id=424;
-			atlOffset=-0.0049996376;
+			atlOffset=-0.0050001144;
 		};
 		class Item178
 		{
@@ -10799,7 +10821,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=427;
 					type="C_man_polo_2_F";
@@ -10892,7 +10915,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=429;
 					type="C_man_polo_2_F";
@@ -10983,7 +11007,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=431;
 					type="C_man_polo_2_F";
@@ -11076,11 +11101,11 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf"";";
 					};
 					id=433;
 					type="C_man_polo_2_F";
-					atlOffset=-0.048654079;
+					atlOffset=-0.048498154;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11148,7 +11173,7 @@ class Mission
 			{
 			};
 			id=432;
-			atlOffset=-0.048654079;
+			atlOffset=-0.048498154;
 		};
 		class Item182
 		{
@@ -11169,7 +11194,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=435;
 					type="C_man_polo_2_F";
@@ -11262,7 +11288,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=437;
 					type="C_man_polo_2_F";
@@ -11355,7 +11382,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=439;
 					type="C_man_polo_2_F";
@@ -11448,7 +11476,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=441;
 					type="C_man_polo_2_F";
@@ -11541,7 +11570,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=443;
 					type="C_man_polo_2_F";
@@ -11634,7 +11664,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=445;
 					type="C_man_polo_2_F";
@@ -11727,7 +11758,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=447;
 					type="C_man_polo_2_F";
@@ -11820,7 +11852,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=449;
 					type="C_man_polo_2_F";
@@ -11913,7 +11946,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=451;
 					type="C_man_polo_2_F";
@@ -12006,7 +12040,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=453;
 					type="C_man_polo_2_F";
@@ -12099,7 +12134,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=455;
 					type="C_man_polo_2_F";
@@ -12192,7 +12228,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=457;
 					type="C_man_polo_2_F";
@@ -12285,7 +12322,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=459;
 					type="C_man_polo_2_F";
@@ -12378,11 +12416,12 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=461;
 					type="C_man_polo_2_F";
-					atlOffset=-0.048988342;
+					atlOffset=-0.048835754;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -12450,7 +12489,7 @@ class Mission
 			{
 			};
 			id=460;
-			atlOffset=-0.048988342;
+			atlOffset=-0.048835754;
 		};
 		class Item196
 		{
@@ -12471,7 +12510,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=463;
 					type="C_man_polo_2_F";
@@ -12564,7 +12604,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=465;
 					type="C_man_polo_2_F";
@@ -12657,7 +12698,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=467;
 					type="C_man_polo_2_F";
@@ -12750,7 +12792,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=469;
 					type="C_man_polo_2_F";
@@ -12843,7 +12886,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=471;
 					type="C_man_polo_2_F";
@@ -12936,7 +12980,8 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="0 = [this] execVM ""civilianOutrage\randomRebel.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
 					};
 					id=473;
 					type="C_man_polo_2_F";
@@ -13009,6 +13054,5266 @@ class Mission
 			};
 			id=472;
 			atlOffset=0.02099514;
+		};
+		class Item202
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9908.5498,7.2220044,6495.0278};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=475;
+					type="C_man_polo_2_F";
+					atlOffset=0.017421246;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=474;
+			atlOffset=0.017421246;
+		};
+		class Item203
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9662.3135,60.304123,7154.1553};
+						angles[]={0,3.7810428,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=477;
+					type="C_man_polo_2_F";
+					atlOffset=0.015407562;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=476;
+			atlOffset=0.015407562;
+		};
+		class Item204
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8801.7119,5.8437843,6672.5918};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=479;
+					type="C_man_polo_2_F";
+					atlOffset=0.025419235;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=478;
+			atlOffset=0.025419235;
+		};
+		class Item205
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7936.4395,7.7301831,7808.2729};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=481;
+					type="C_man_polo_2_F";
+					atlOffset=0.028751373;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=480;
+			atlOffset=0.028751373;
+		};
+		class Item206
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6830.0991,22.743505,8659.5342};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=483;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0065727234;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=482;
+			atlOffset=-0.0065727234;
+		};
+		class Item207
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5679.2925,3.0198269,10334.453};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=485;
+					type="C_man_polo_2_F";
+					atlOffset=0.017431021;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=484;
+			atlOffset=0.017431021;
+		};
+		class Item208
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5181.0396,4.4579635,9953.459};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=487;
+					type="C_man_polo_2_F";
+					atlOffset=9.1552734e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=486;
+			atlOffset=9.1552734e-005;
+		};
+		class Item209
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6704.665,18.853708,12356.395};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=489;
+					type="C_man_polo_2_F";
+					atlOffset=-0.019489288;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=488;
+			atlOffset=-0.019489288;
+		};
+		class Item210
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10364.504,15.969407,13279.498};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=491;
+					type="C_man_polo_2_F";
+					atlOffset=0.0094232559;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=490;
+			atlOffset=0.0094232559;
+		};
+		class Item211
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8948.4375,20.754539,10181.813};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=493;
+					type="C_man_polo_2_F";
+					atlOffset=0.030086517;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=492;
+			atlOffset=0.030086517;
+		};
+		class Item212
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8993.1406,29.441607,10347.752};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=495;
+					type="C_man_polo_2_F";
+					atlOffset=0.026752472;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=494;
+			atlOffset=0.026752472;
+		};
+		class Item213
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={7650.4497,77.94529,10583.984};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=497;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0092468262;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=496;
+			atlOffset=-0.0092468262;
+		};
+		class Item214
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11253.198,95.597397,7872.9038};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=499;
+					type="C_man_polo_2_F";
+					atlOffset=0.060798645;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=498;
+			atlOffset=0.060798645;
+		};
+		class Item215
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10383.702,239.29022,8530.165};
+						angles[]={0,3.9888518,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=501;
+					type="C_man_polo_2_F";
+					atlOffset=0.020797729;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=500;
+			atlOffset=0.020797729;
+		};
+		class Item216
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10009.758,129.25761,9342.5469};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=503;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0065765381;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=502;
+			atlOffset=-0.0065765381;
+		};
+		class Item217
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14002.597,4.8155785,8338.3213};
+						angles[]={0,1.4870522,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=505;
+					type="C_man_polo_2_F";
+					atlOffset=0.0014057159;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=504;
+			atlOffset=0.0014057159;
+		};
+		class Item218
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14148.943,27.624592,9104.6729};
+						angles[]={0,3.7131612,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=507;
+					type="C_man_polo_2_F";
+					atlOffset=-0.013362885;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=506;
+			atlOffset=-0.013362885;
+		};
+		class Item219
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13335.23,33.652794,11167.502};
+						angles[]={0,4.761632,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=509;
+					type="C_man_polo_2_F";
+					atlOffset=0.0070762634;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=508;
+			atlOffset=0.0070762634;
+		};
+		class Item220
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12446.938,4.8916745,12697.182};
+						angles[]={0,3.4330282,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=511;
+					type="C_man_polo_2_F";
+					atlOffset=0.017421246;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=510;
+			atlOffset=0.017421246;
+		};
+		class Item221
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11568.081,146.35886,9166.2715};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=513;
+					type="C_man_polo_2_F";
+					atlOffset=0.017425537;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=512;
+			atlOffset=0.017425537;
+		};
+		class Item222
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6915.7212,70.583405,11314.605};
+						angles[]={0,2.3918955,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=515;
+					type="C_man_polo_2_F";
+					atlOffset=0.020751953;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=514;
+			atlOffset=0.020751953;
+		};
+		class Item223
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5717.415,25.838566,12291.503};
+						angles[]={0,3.0494592,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=517;
+					type="C_man_polo_2_F";
+					atlOffset=0.024747849;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=516;
+			atlOffset=0.024747849;
+		};
+		class Item224
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5367.6895,4.4383049,11432.3};
+						angles[]={0,0.5002898,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=519;
+					type="C_man_polo_2_F";
+					atlOffset=0.0072636604;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=518;
+			atlOffset=0.0072636604;
+		};
+		class Item225
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5716.7822,2.6788602,11014.472};
+						angles[]={0,1.707076,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=521;
+					type="C_man_polo_2_F";
+					atlOffset=0.017421246;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=520;
+			atlOffset=0.017421246;
+		};
+		class Item226
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5847.5698,2.6888602,11191.554};
+						angles[]={0,6.2316113,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=523;
+					type="C_man_polo_2_F";
+					atlOffset=0.017421246;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=522;
+			atlOffset=0.017421246;
+		};
+		class Item227
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6331.4595,49.029243,8869.0938};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=525;
+					type="C_man_polo_2_F";
+					atlOffset=0.036087036;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=524;
+			atlOffset=0.036087036;
+		};
+		class Item228
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5954.3682,16.949501,8058.9873};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=527;
+					type="C_man_polo_2_F";
+					atlOffset=0.012058258;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=526;
+			atlOffset=0.012058258;
+		};
+		class Item229
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6187.4346,2.6796634,7240.5635};
+						angles[]={0,2.8130229,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=529;
+					type="C_man_polo_2_F";
+					atlOffset=0.016088247;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=528;
+			atlOffset=0.016088247;
+		};
+		class Item230
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11728.258,18.376802,6922.8491};
+						angles[]={0,2.3279366,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=531;
+					type="C_man_polo_2_F";
+					atlOffset=0.019422531;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=530;
+			atlOffset=0.019422531;
+		};
+		class Item231
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13471.159,40.853199,8474.2275};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=533;
+					type="C_man_polo_2_F";
+					atlOffset=-0.013237;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=532;
+			atlOffset=-0.013237;
+		};
+		class Item232
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13154.276,96.4701,8612.6777};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=535;
+					type="C_man_polo_2_F";
+					atlOffset=0.0047531128;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=534;
+			atlOffset=0.0047531128;
+		};
+		class Item233
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13434.674,150.50018,9593.3721};
+						angles[]={0,2.802351,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=537;
+					type="C_man_polo_2_F";
+					atlOffset=0.10139465;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=536;
+			atlOffset=0.10139465;
+		};
+		class Item234
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12387.464,142.8434,11253.52};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=539;
+					type="C_man_polo_2_F";
+					atlOffset=0.014755249;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=538;
+			atlOffset=0.014755249;
+		};
+		class Item235
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10922.199,350.39886,11459.914};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=541;
+					type="C_man_polo_2_F";
+					atlOffset=0.017425537;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=540;
+			atlOffset=0.017425537;
+		};
+		class Item236
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9380.4102,96.830254,11226.217};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=543;
+					type="C_man_polo_2_F";
+					atlOffset=0.052078247;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=542;
+			atlOffset=0.052078247;
+		};
+		class Item237
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14081.87,86.637428,10698.544};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=545;
+					type="C_man_polo_2_F";
+					atlOffset=-0.027900696;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=544;
+			atlOffset=-0.027900696;
+		};
+		class Item238
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14581.914,15.028861,10975.412};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=547;
+					type="C_man_polo_2_F";
+					atlOffset=0.017421722;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=546;
+			atlOffset=0.017421722;
+		};
+		class Item239
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12882.67,46.901482,11654.475};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=549;
+					type="C_man_polo_2_F";
+					atlOffset=-0.02923584;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=548;
+			atlOffset=-0.02923584;
+		};
+		class Item240
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9673.0654,14.347598,13421.753};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=551;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0072536469;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=550;
+			atlOffset=-0.0072536469;
+		};
+		class Item241
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8780.5107,29.289766,13590.322};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=553;
+					type="C_man_polo_2_F";
+					atlOffset=-0.00057220459;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=552;
+			atlOffset=-0.00057220459;
+		};
+		class Item242
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8073.6328,21.153404,9847.0205};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=555;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0055141449;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=554;
+			atlOffset=-0.0055141449;
+		};
+		class Item243
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={6276.3853,39.258877,9952.9092};
+						angles[]={0,3.2052097,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=557;
+					type="C_man_polo_2_F";
+					atlOffset=0.060077667;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=556;
+			atlOffset=0.060077667;
+		};
+		class Item244
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={5430.3311,39.678329,9431.6494};
+						angles[]={0,2.4171429,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=559;
+					type="C_man_polo_2_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=558;
+		};
+		class Item245
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8592.7637,93.094955,8988.4072};
+						angles[]={0,6.2009301,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=561;
+					type="C_man_polo_2_F";
+					atlOffset=0.045402527;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=560;
+			atlOffset=0.045402527;
+		};
+		class Item246
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10313.098,176.5056,10557.114};
+						angles[]={0,0.96298832,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=563;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0052490234;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=562;
+			atlOffset=-0.0052490234;
+		};
+		class Item247
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10546.549,156.56389,10543.137};
+						angles[]={0,3.6154103,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=565;
+					type="C_man_polo_2_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=564;
+		};
+		class Item248
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11006.278,120.66964,10291.544};
+						angles[]={0,5.2527761,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=567;
+					type="C_man_polo_2_F";
+					atlOffset=0.01940918;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=566;
+			atlOffset=0.01940918;
+		};
+		class Item249
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.318,189.03766,10300.975};
+						angles[]={0,2.5515318,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=569;
+					type="C_man_polo_2_F";
+					atlOffset=0.022735596;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=568;
+			atlOffset=0.022735596;
+		};
+		class Item250
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={13147.009,6.9920349,11928.722};
+						angles[]={0,2.5515318,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=571;
+					type="C_man_polo_2_F";
+					atlOffset=-0.0099263191;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=570;
+			atlOffset=-0.0099263191;
+		};
+		class Item251
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11945.144,35.563911,12721.998};
+						angles[]={0,5.1681719,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=573;
+					type="C_man_polo_2_F";
+					atlOffset=0.0013275146;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=572;
+			atlOffset=0.0013275146;
+		};
+		class Item252
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8454.625,167.61508,12479.203};
+						angles[]={0,0.59675151,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=575;
+					type="C_man_polo_2_F";
+					atlOffset=-0.013931274;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=574;
+			atlOffset=-0.013931274;
+		};
+		class Item253
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8477.6357,35.215698,13432.681};
+						angles[]={0,2.5515318,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=577;
+					type="C_man_polo_2_F";
+					atlOffset=-0.010597229;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=576;
+			atlOffset=-0.010597229;
+		};
+		class Item254
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={9375.1836,82.777061,10469.448};
+						angles[]={0,2.5515318,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=579;
+					type="C_man_polo_2_F";
+					atlOffset=-0.017929077;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=578;
+			atlOffset=-0.017929077;
+		};
+		class Item255
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11512.077,134.36087,8014.7183};
+						angles[]={0,2.5515318,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=581;
+					type="C_man_polo_2_F";
+					atlOffset=0.01940918;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=580;
+			atlOffset=0.01940918;
+		};
+		class Item256
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12455.227,31.277637,8063.189};
+						angles[]={0,0.21722122,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=583;
+					type="C_man_polo_2_F";
+					atlOffset=0.018732071;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=582;
+			atlOffset=0.018732071;
+		};
+		class Item257
+		{
+			dataType="Group";
+			side="Civilian";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12666.492,17.715796,7524.333};
+						angles[]={0,0.41406393,0};
+					};
+					side="Civilian";
+					flags=7;
+					class Attributes
+					{
+						init="0 = [this] execVM ""civilianOutrage\randomCivilian.sqf""; this disableAI ""FSM""; this disableAI ""MOVE"";";
+						presence=0.30799794;
+					};
+					id=585;
+					type="C_man_polo_2_F";
+					atlOffset=7.0571899e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isHandcuffed";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleHandcuffed}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ace_isSurrendered";
+							expression="if (_value) then {[objNull,[_this],true] call ace_captives_fnc_moduleSurrender}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=584;
+			atlOffset=7.0571899e-005;
 		};
 	};
 };

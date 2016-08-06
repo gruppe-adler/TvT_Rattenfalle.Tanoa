@@ -99,6 +99,7 @@ if (isServer) then {
 	_randBluInd = ceil (random 3);
 	_randOpfInd = ceil (random 3);
 
+	/*
 	// delete bases not needed
 	switch {_randBluInd} do {
 		case 1: { {deleteVehicle _x} forEach list trg_base_blufor_2; {deleteVehicle _x} forEach list trg_base_blufor_3; {deleteVehicle _x} forEach list trg_base_blufor_4; };
@@ -114,7 +115,7 @@ if (isServer) then {
 		case 3: { {deleteVehicle _x} forEach list trg_base_opfor_1; {deleteVehicle _x} forEach list trg_base_opfor_2; {deleteVehicle _x} forEach list trg_base_opfor_4; };
 		case 4: { {deleteVehicle _x} forEach list trg_base_opfor_1; {deleteVehicle _x} forEach list trg_base_opfor_2; {deleteVehicle _x} forEach list trg_base_opfor_3; };
 		default {};
-	};
+	};*/
 	
 
 	spawnMarkerBluforLand = (spawnArrayBluforLand select _randBluInd);
@@ -231,6 +232,7 @@ if (hasInterface) then {
 		waitUntil {!isnil "suppliesBlufor" && !isNil "suppliesOpfor"};
 		0 = execVM "grad_buymenu\openMenu.sqf";
 		waitUntil {buyMenuOpen};
+		sleep 3;
 		closeDialog 0;
 };
 
