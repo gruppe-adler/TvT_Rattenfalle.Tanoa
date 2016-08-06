@@ -210,7 +210,7 @@ if (hasInterface) then {
 
 
 		[] spawn fnc_showMarkers;
-
+		waitUntil {!isnil "suppliesBlufor" && !isNil "suppliesOpfor"};
 		0 = execVM "grad_buymenu\openMenu.sqf";
 		waitUntil {buyMenuOpen};
 		closeDialog 0;

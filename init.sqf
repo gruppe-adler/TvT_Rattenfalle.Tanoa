@@ -35,8 +35,7 @@ jipTime = 60000;
 0 = [] execVM "grad_buymenu\buymenu_init.sqf";
 call compile preprocessfile "Engima\Traffic\Custom_GruppeAdler\createVehicle.sqf";
 call compile preprocessfile "civilianOutrage\randomRebel.sqf";
-callFireworks = compile preprocessFileLineNumbers "GRAD_fireworks\callFireworks.sqf";
-_nul = [] execVM "GRAD_fireworks\fireworks.sqf";
+
 
 
 
@@ -199,7 +198,7 @@ if (hasInterface) then {
 	callIntro = {
 		waitUntil {CRASH_SITE select 0 != 0};
 		0 = [CRASH_SITE,"",1000] execVM "helpers\establishingShot.sqf";
-		
+
 	};
 
 	sleep 5;
