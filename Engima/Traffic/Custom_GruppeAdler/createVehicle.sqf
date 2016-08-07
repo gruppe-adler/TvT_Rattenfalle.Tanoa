@@ -44,7 +44,7 @@ createrebelVehicle = {
 
 	if (_vehicleType == "RDS_Ikarus_Civ_01" || _vehicleType == "RDS_Ikarus_Civ_02") exitWith {
 
-		_crewCount = floor (random 15);
+		_crewCount = floor (random 5);
 
 		for [{_i=0}, {_i<_crewCount}, {_i=_i+1}] do {
 		[_group,_veh] call _createCargo;
