@@ -153,12 +153,12 @@ randomCivilian = {
 		"Wir brauchen deine Hilfe - wir suchen einen Piloten!",
 		"Den Piloten suchen wir. Schon von ihm gehört?",
 		"Wir wollen mal nett sein und fragen erst höflich: Wo ist der Pilot?",
-		"Den oder die Piloten, die wir abgeschossen haben.. wo sind die?",
+		"Den oder die Piloten, die abgeschossen wurden.. wo sind die?",
 		"Wir suchen einen oder mehrere Piloten."
 		]];
 
 	_unit setVariable ["sentenceQuestionSerious", [
-		"Nochmal: Wo ist der Pilot?",
+		"Wo ist der Pilot?",
 		"Hör auf zu lügen!",
 		"Wir wissen, wo deine Familie wohnt!",
 		"Du und nichts wissen, willst du uns verarschen?",

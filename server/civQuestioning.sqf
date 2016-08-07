@@ -21,14 +21,14 @@ GRAD_fnc_questionCiv = {
 
   // exit if civ was already interviewed
   if (_civilian getVariable ["isInterviewedByWest",false] && side _player == west) exitWith {
-      [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+      [position _civilian,"Nochmal: Wo ist der Pilot?", []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
       sleep 4;
       [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
       _civilian setVariable ["civ_occupied",false,true];
    };
  
    if (_civilian getVariable ["isInterviewedByEast",false] && side _player == east) exitWith {
-      [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+      [position _civilian,"Nochmal: Wo ist der Pilot?", []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
       sleep 4;
       [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
     _civilian setVariable ["civ_occupied",false,true];
