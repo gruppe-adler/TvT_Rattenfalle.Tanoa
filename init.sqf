@@ -52,6 +52,7 @@ call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\independent.sqf"
 
 [] spawn {
 	#define MAKEFIRE_TREERADIUS 40                                                //distance player-->trees in order to be able to start fire (this is not exact)
+	#define MAKEFIRE_CANBUILD (player getVariable ["GRAD_isCrashPilot",false])		//condition to be able to build fires
 	#define MAKEFIRE_BUILDTIME 10                                                 //time it takes to make the fire
 	#define MAKEFIRE_UPGRADETIME 10                                               //time it takes to upgrade fire
 	#define MAKEFIRE_ADDLVSTIME 10                                                //time it takes to add leaves to the fire
