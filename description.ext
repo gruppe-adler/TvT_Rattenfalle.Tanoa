@@ -15,6 +15,14 @@ respawnTemplates[] = {"Base"};
 respawnOnStart = 0;//Dont respawn on start.
 respawnDialog = 0;
 
+class Header
+{
+  gameType = Seize;
+  minPlayers = 3;
+  maxPlayers = 26;
+};
+
+
 class Params
 {
   class TimeOfDay

@@ -16,6 +16,7 @@ GRAD_fnc_questionCiv = {
   if (_civilian getVariable ["civ_occupied",false]) exitWith {};
   _civilian setVariable ["civ_occupied",true,true];
 
+
   _civ_questioned = _civilian getVariable ["civ_questioned",0];
   _civilian setVariable ["civ_questioned",_civ_questioned + 0.05,true];
 
@@ -46,7 +47,24 @@ GRAD_fnc_questionCiv = {
   	"Ich habe gehört bei "
   	] call BIS_fnc_selectRandom;
 
+  _sentenceGetOffMe = [
+    "Ich hab euch schon alles gesagt, was ihr hören wolltet!",
+    "Mehr weiß ich nicht! Ihr habt alles gehört!",
+    "Mehr kann ich euch nicht sagen! Geht jetzt.",
+    "Ich habe euch bereits geholfen."
+    ] call BIS_fnc_selectRandom;
+
   _chanceToReveal = 0.2;
+
+  if (side _player == west) then {
+     if (_civilian getVariable ["isInterviewedByWest",false]) exitWith {
+      [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+     };
+  } else {
+      if (_civilian getVariable ["isInterviewedByEast",false]) exitWith {
+      [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+     };
+  };
 
   if (side _player == west) then {
     _chanceToReveal = CHANCE_TO_REVEAL_BLUFOR + _civ_questioned;
@@ -114,6 +132,12 @@ GRAD_fnc_questionCiv = {
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,format ["Zivilist: %1",_sentenceReveal + (CURRENT_PILOTS_POSITION select 0) + ". Ich markiere es auf eurer Karte."],[CURRENT_PILOTS_POSITION select 1, CURRENT_PILOTS_POSITION select 2]] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
   		_civilian setVariable ["civ_revealed",true,true];
+
+      if (side _player == west) then {
+        _civilian setVariable ["isInterviewedByWest",true,true];
+      } else {
+        _civilian setVariable ["isInterviewedByEast",true,true];
+      };
   	};
   	_civilian setVariable ["civ_occupied",false,true];
   };
@@ -182,6 +206,12 @@ GRAD_fnc_questionCiv = {
   		[_civilian] spawn GRAD_fnc_startTalkLips;
   		[position _civilian,format ["Zivilist: %1",_sentenceReveal + _text + ". Ich markiere es auf eurer Karte."],[getpos _location]] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
   		_civilian setVariable ["civ_revealed",true,true];
+
+      if (side _player == west) then {
+        _civilian setVariable ["isInterviewedByWest",true,true];
+      } else {
+        _civilian setVariable ["isInterviewedByEast",true,true];
+      };
 
   	};
 
