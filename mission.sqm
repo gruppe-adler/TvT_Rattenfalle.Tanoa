@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11039.128,30.356184,13293.415};
-		dir[]={0.86373663,-0.28233698,-0.41744483};
-		up[]={0.25421068,0.95931506,-0.12286029};
-		aside[]={-0.43514922,-2.4412293e-007,-0.90036798};
+		pos[]={12135.879,46.588898,6666.9995};
+		dir[]={-0.29088694,-0.39673689,0.87062413};
+		up[]={-0.12572335,0.9179318,0.37628987};
+		aside[]={0.94846165,-6.9849193e-009,0.31689346};
 	};
 };
 binarizationWanted=0;
@@ -2917,7 +2917,7 @@ class Mission
 		class Item67
 		{
 			dataType="Marker";
-			position[]={6889.3394,1.6308587e+021,13384.634};
+			position[]={6664.71,1.6308587e+021,13393.682};
 			name="mrk_spawn_opfor_helicopter_1";
 			type="c_air";
 			colorName="ColorEAST";
@@ -2955,7 +2955,7 @@ class Mission
 		class Item71
 		{
 			dataType="Marker";
-			position[]={12419.734,1.6308587e+021,6766.272};
+			position[]={12121.467,1.6308587e+021,6700.105};
 			name="mrk_spawn_opfor_helicopter_3";
 			type="c_air";
 			colorName="ColorEAST";
@@ -2974,7 +2974,7 @@ class Mission
 		class Item73
 		{
 			dataType="Marker";
-			position[]={14157.555,1.6308587e+021,11753.962};
+			position[]={14065.915,1.6308587e+021,11840.468};
 			name="mrk_spawn_opfor_helicopter_4";
 			type="c_air";
 			colorName="ColorEAST";
@@ -6552,6 +6552,7 @@ class Mission
 				angles[]={0,2.6867876,0};
 			};
 			side="Empty";
+			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6559,7 +6560,7 @@ class Mission
 			};
 			id=326;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.39981079;
+			atlOffset=6.4849854e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6725,6 +6726,7 @@ class Mission
 			};
 			id=330;
 			type="rhs_7ya37_1_single";
+			atlOffset=2.2888184e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7181,7 +7183,7 @@ class Mission
 			};
 			id=341;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.14587498;
+			atlOffset=0.14587402;
 			class CustomAttributes
 			{
 				class Attribute0
