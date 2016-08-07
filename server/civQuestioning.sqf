@@ -17,7 +17,7 @@ GRAD_fnc_questionCiv = {
   _civilian setVariable ["civ_occupied",true,true];
 
   _civ_questioned = _civilian getVariable ["civ_questioned",0];
-  _civilian setVariable ["civ_questioned",_civ_questioned + 0.1,true];
+  _civilian setVariable ["civ_questioned",_civ_questioned + 0.05,true];
 
   _knowsSomething = _civilian getVariable ["civ_knowsSomething",false];
   _alreadyRevealed = _civilian getVariable ["civ_revealed",false];
@@ -46,7 +46,11 @@ GRAD_fnc_questionCiv = {
   	"Ich habe gehört bei "
   	] call BIS_fnc_selectRandom;
 
-  _chanceToReveal = CHANCE_TO_REVEAL + _civ_questioned;
+  if (side _player == west) then {
+    _chanceToReveal = CHANCE_TO_REVEAL_BLUFOR + _civ_questioned;
+  } else {
+    _chanceToReveal = CHANCE_TO_REVEAL_OPFOR + _civ_questioned;
+  };
 
   // even if he already revealed sth you might ask and reveal again! good for other sides coming by... but beware he will be dead somewhen.
   if (_knowsSomething) exitWith {

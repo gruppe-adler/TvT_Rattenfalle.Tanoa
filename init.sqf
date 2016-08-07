@@ -130,8 +130,12 @@ if (isServer) then {
 	publicVariable "SETUP_DONE";
 
 	SIGHTING_DELAY = 60;
-	CHANCE_TO_REVEAL = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
-	publicVariable "CHANCE_TO_REVEAL";
+	
+	CHANCE_TO_REVEAL_BLUFOR = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
+	publicVariable "CHANCE_TO_REVEAL_BLUFOR";
+
+	CHANCE_TO_REVEAL_OPFOR = 0.2; // value from 0 - 1 giving the general chance of civilians to reveal something when questioned
+	publicVariable "CHANCE_TO_REVEAL_OPFOR";
 
 
 	0 = [] execVM "server\serverTeleportListener.sqf";

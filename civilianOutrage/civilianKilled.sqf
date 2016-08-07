@@ -4,41 +4,47 @@ _victim = _this select 0;
 _shooter = _victim getVariable ["ACE_medical_lastDamageSource",_victim];
 diag_log format ["%1 killed by %2",_victim,_shooter];
 
-reduceSightingDelay = {
-	_curDelay = _this select 0;
-	if (_curDelay > 15) then {
-		_curDelay = _curDelay - 10; // reduce sighting delay 10secs
+reduceChanceToReveal = {
+	_curChance = _this select 0;
+	if (_curChance > 0.1) then {
+		_curChance = _curChance - 0.1; // reduce ChanceToReveal 0.1
 	};
-	_curDelay
+	_curChance
 };
 
-increaseSightingDelay = {
-	_curDelay = _this select 0;
-	_curDelay = _curDelay + 10; // increase sighting delay 10secs
-	_curDelay
+increaseChanceToReveal = {
+	_curChance = _this select 0;
+	if (_curChance < 0.9) then {
+		_curChance = _curChance + 0.1; // increase ChanceToReveal 0.1
+	};
+	_curChance
 };
 
 
 switch (str (side _shooter)) do {
 
 	case "WEST": {
-		SIGHTING_DELAY = [SIGHTING_DELAY] call reduceSightingDelay;
+		CHANCE_TO_REVEAL_BLUFOR = [CHANCE_TO_REVEAL_BLUFOR] call reduceChanceToReveal;
+		CHANCE_TO_REVEAL_OPFOR = [CHANCE_TO_REVEAL_OPFOR] call increaseChanceToReveal;
 
-		diag_log format ["civilian %1 killed by US %2, increasing delay to %3",_victim,_shooter,SIGHTING_DELAY];
-		publicVariable "SIGHTING_DELAY";
+		diag_log format ["civilian %1 killed by US %2, reducing chance to %3",_victim,_shooter,CHANCE_TO_REVEAL_BLUFOR];
+		publicVariable "CHANCE_TO_REVEAL_BLUFOR";
 	};
 
 	case "EAST": {
+		CHANCE_TO_REVEAL_OPFOR = [CHANCE_TO_REVEAL_OPFOR] call reduceChanceToReveal;
+		CHANCE_TO_REVEAL_BLUFOR = [CHANCE_TO_REVEAL_BLUFOR] call increaseChanceToReveal;
 
-		SIGHTING_DELAY = [SIGHTING_DELAY] call increaseSightingDelay;
-		diag_log format ["civilian %1 killed by rebels %2, reducing delay to %3",_victim,_shooter,SIGHTING_DELAY];
-		publicVariable "SIGHTING_DELAY";
+		diag_log format ["civilian %1 killed by rebels %2, reducing delay to %3",_victim,_shooter,CHANCE_TO_REVEAL_OPFOR];
+		publicVariable "CHANCE_TO_REVEAL_OPFOR";
 	};
 
 	case "INDEPENDENT": {
-		SIGHTING_DELAY = [SIGHTING_DELAY] call reduceSightingDelay;
-		diag_log format ["civilian %1 killed by pilot %2, reducing delay to %3",_victim,_shooter,SIGHTING_DELAY];
-		publicVariable "SIGHTING_DELAY";
+		CHANCE_TO_REVEAL_OPFOR = [CHANCE_TO_REVEAL_OPFOR] call reduceChanceToReveal;
+		CHANCE_TO_REVEAL_BLUFOR = [CHANCE_TO_REVEAL_BLUFOR] call increaseChanceToReveal;
+		
+		diag_log format ["civilian %1 killed by pilot %2, reducing delay to %3",_victim,_shooter,CHANCE_TO_REVEAL_OPFOR];
+		publicVariable "CHANCE_TO_REVEAL_OPFOR";
 	};
 
 	case "CIVILIAN": {
