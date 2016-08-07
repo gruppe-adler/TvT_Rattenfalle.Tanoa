@@ -17,6 +17,8 @@ fnc_selectNextVehicleInArray = {
 	_vehicleArrayResorted = [_vehicleArray] call fnc_moveFirstToLast;
 	_supplyItem set [0, _vehicleArrayResorted];
 
+	call fnc_refreshGUI;
+
 	diag_log format ["%1 ..... supplies are now %2", _x, _vehicleArrayResorted select 0];
 };
 
