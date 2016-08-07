@@ -37,6 +37,7 @@ _car = [
       clearItemCargoGlobal (_this select 0);
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
+      (_this select 0) addWeaponCargoGlobal ['rhs_weap_M136_hedp',1];
       ['AddCargoByClass', _this select 0, ['ACE_wheel', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
       format[''],
@@ -57,6 +58,7 @@ _m1025 = [
       clearBackpackCargoGlobal (_this select 0);
       clearMagazineCargoGlobal (_this select 0);
       (_this select 0) addItemCargoGlobal ['ItemGPS',1];
+      (_this select 0) addWeaponCargoGlobal ['rhs_weap_M136_hedp',2];
       ['AddCargoByClass', _this select 0, ['ACE_wheel', _this select 0, 2]] call ace_common_fnc_targetEvent;
       },
       format[''],
@@ -85,7 +87,7 @@ _uh1y = [
       0
 ];
 _m113 = [
-      ["rhsusf_m113_usarmy"],
+      ["CUP_B_LAV25M240_USMC"],
       [],
       3,
       1500,

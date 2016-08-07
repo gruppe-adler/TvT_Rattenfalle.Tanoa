@@ -3,7 +3,7 @@ createrebelVehicle = {
 	_vehicleType = _this select 1;
 	_side = _this select 2;
 
-	_crewCount = floor (random 2);
+	_crewCount = floor (random 1);
 
 
 	_createDriver = {
@@ -18,6 +18,7 @@ createrebelVehicle = {
 
 		_crewDriver assignAsDriver _car0;
 		_crewDriver moveInDriver _car0;
+		sleep 0.1;
 		_crewDriver action ["lightOn", _car0];
 		// hintsilent format ["ordered %1 to enter %2", _crewDriver,_car0];
 	};
@@ -27,6 +28,8 @@ createrebelVehicle = {
 		_car1 = _this select 1;
 
 		_crewCargo = _grp1 createUnit ["C_man_1", _pos, [], 0, "CARGO"];
+
+		_crewCargo disableAI "FSM";
 
 		[_crewCargo] call randomCivilian; // rebel loadout
 
