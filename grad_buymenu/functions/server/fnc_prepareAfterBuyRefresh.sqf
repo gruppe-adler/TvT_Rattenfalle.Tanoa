@@ -2,6 +2,8 @@ fnc_prepareAfterBuyRefresh = {
     _side = _this select 0;
     _selector = _this select 1;
 
+    sleep 60; // vehicles shouldnt spawn in each other
+
     _supplyVar = '';
     switch (_side) do {
         case west: {_supplyVar = 'suppliesBlufor';};
