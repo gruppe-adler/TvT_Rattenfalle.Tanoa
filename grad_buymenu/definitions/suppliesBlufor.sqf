@@ -86,7 +86,7 @@ _uh1y = [
       2,
       0
 ];
-_m113 = [
+_lav = [
       ["CUP_B_LAV25M240_USMC"],
       [],
       3,
@@ -158,6 +158,6 @@ suppliesBlufor setVariable['boat', _boat, true];
 suppliesBlufor setVariable['car', _car, true];
 suppliesBlufor setVariable['m1025', _m1025, true];
 suppliesBlufor setVariable['uh1y', _uh1y, true];
-suppliesBlufor setVariable['m113', _m113, true];
+suppliesBlufor setVariable['m113', _lav, true];
 suppliesBlufor setVariable['m109', _m109, true];
 suppliesBlufor setVariable['ah1z', _ah1z, true];
