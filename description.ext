@@ -1,6 +1,6 @@
 #include "grad_buymenu\definitions\_defines.hpp"
 #include "grad_buymenu\definitions\_dialogs.hpp"
-#include "node_modules\GRAD_leaveNotes\UI\leaveNotes_dialog.hpp";
+#include "node_modules\GRAD_leaveNotes\UI\leaveNotes_dialog.hpp"
 
 OnLoadMission = "TvT_Rattrap";
 author = "Nomisum für Gruppe Adler";  //appears as author in overview and loading screen
