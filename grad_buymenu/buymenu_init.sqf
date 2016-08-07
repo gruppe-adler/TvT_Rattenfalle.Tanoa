@@ -229,11 +229,13 @@ if (hasInterface) then {
 
 
 		[] spawn fnc_showMarkers;
-		waitUntil {!isnil "suppliesBlufor" && !isNil "suppliesOpfor"};
-		0 = execVM "grad_buymenu\openMenu.sqf";
-		waitUntil {buyMenuOpen};
-		sleep 3;
-		closeDialog 0;
+		[] spawn {
+		waitUntil {!isnil "suppliesBlufor" && !isNil "suppliesOpfor" && time > 0 };
+			0 = execVM "grad_buymenu\openMenu.sqf";
+			waitUntil {buyMenuOpen};
+			sleep 3;
+			closeDialog 0;
+		};
 };
 
 

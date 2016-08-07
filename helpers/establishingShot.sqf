@@ -396,7 +396,7 @@ if (isNil "BIS_fnc_establishingShot_skip") then {
 				};
 
 				private ["_time"];
-				_time = time + 4;
+				_time = time + 5;
 				waitUntil {time >= _time || !(isNil "GRAD_player_teleported")};
 
 				if (isNil "BIS_fnc_establishingShot_skip") then {
