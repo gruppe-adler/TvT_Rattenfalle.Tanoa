@@ -69,7 +69,7 @@ _parameters = [
 	["MIN_SKILL", 0.4],
 	["MAX_SKILL", 0.6],
   ["AREA_MARKER", "mrk_drive_area"],
-	["DEBUG", DEBUG]
+	["DEBUG", false]
 ];
 
 // Start an instance of the traffic

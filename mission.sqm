@@ -396,7 +396,7 @@ class Mission
 		class Item5
 		{
 			dataType="Marker";
-			position[]={9725.2402,3.5602481e+010,9852.0449};
+			position[]={9725.2402,-4.0923662e-020,9852.0449};
 			name="mrk_drive_area";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -404,7 +404,7 @@ class Mission
 			a=5500;
 			b=4500;
 			id=5;
-			atlOffset=3.5602481e+010;
+			atlOffset=-53.611301;
 		};
 		class Item6
 		{
@@ -6552,7 +6552,6 @@ class Mission
 				angles[]={0,2.6867876,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6560,6 +6559,7 @@ class Mission
 			};
 			id=326;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.39981079;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -6758,7 +6758,6 @@ class Mission
 				angles[]={0,1.6969571,6.2826972};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -6766,6 +6765,7 @@ class Mission
 			};
 			id=331;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.87155151;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7181,7 +7181,7 @@ class Mission
 			};
 			id=341;
 			type="rhs_7ya37_1_single";
-			atlOffset=0.14587402;
+			atlOffset=0.14587498;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -7339,7 +7339,6 @@ class Mission
 				angles[]={0,1.441553,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				init="clearWeaponCargoGlobal this; clearItemCargoGlobal this; clearBackpackCargoGlobal this; clearMagazineCargoGlobal this; this addItemCargoGlobal [""ACE_key_lockpick"",1];";
@@ -7347,6 +7346,7 @@ class Mission
 			};
 			id=345;
 			type="rhs_7ya37_1_single";
+			atlOffset=0.28988647;
 			class CustomAttributes
 			{
 				class Attribute0
