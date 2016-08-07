@@ -58,11 +58,17 @@ GRAD_fnc_questionCiv = {
 
   if (side _player == west) then {
      if (_civilian getVariable ["isInterviewedByWest",false]) exitWith {
-      [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+        [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+        sleep 4;
+        [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+        _civilian setVariable ["civ_occupied",false,true];
      };
   } else {
       if (_civilian getVariable ["isInterviewedByEast",false]) exitWith {
-      [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+        [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+        sleep 4;
+        [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+      _civilian setVariable ["civ_occupied",false,true];
      };
   };
 
