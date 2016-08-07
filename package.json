@@ -2,7 +2,7 @@
     "name": "TvT_Rattenfalle.Tanoa",
     "version": "0.3.5",
     "dependencies": {
-        "make-fire": "gruppe-adler/scripts_GRAD_makeFire#>=1.0.0"
-        "leave-notes": "gruppe-adler/script_GRAD_leaveNotes#>=1.0.0"
+        "GRAD_makeFire": "^1.0.0"
+        "GRAD_leaveNotes": "^1.0.0"
     }
 }
