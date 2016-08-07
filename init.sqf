@@ -50,7 +50,37 @@ call compile preprocessFileLineNumbers "loadouts\getUnitLoadout\independent.sqf"
 []execVM "helpers\findSpawnPos.sqf";
 []execVM "helpers\addActionMP.sqf";
 
-execVM "node_modules\GRAD_makeFire\initMakeFire.sqf";
+[] spawn {
+	#define MAKEFIRE_TREERADIUS 40                                                //distance player-->trees in order to be able to start fire (this is not exact)
+	#define MAKEFIRE_CANBUILD (player getVariable ["GRAD_isCrashPilot",false])		//condition to be able to build fires
+	#define MAKEFIRE_BUILDTIME 10                                                 //time it takes to make the fire
+	#define MAKEFIRE_UPGRADETIME 10                                               //time it takes to upgrade fire
+	#define MAKEFIRE_ADDLVSTIME 10                                                //time it takes to add leaves to the fire
+	#define MAKEFIRE_PLAYERDIST 2                                                 //distance to player that the fire object will be spawned
+	#define MAKEFIRE_CLASS_SMALL "FirePlace_burning_F"                            //small fire classname
+	#define MAKEFIRE_CLASS_BIG "Campfire_burning_F"                               //big fire classname
+	#define MAKEFIRE_ACTOFFSET [0,0,0.2]                                          //interaction point offset from model center
+	#define MAKEFIRE_ACTDIST 2.5                                                  //distance from which interaction point can be accessed
+	#define MAKEFIRE_BURNTIMESMALL 60                                             //time that a small fire will burn
+	#define MAKEFIRE_BURNTIMEBIG 90                                               //time that a big fire will burn
+	#define MAKEFIRE_BURNTIMELVS 20                                               //time that adding leaves will add to total burntime
+
+	C9J_fnc_createSmokeColumn = compile preprocessFileLineNumbers "helpers\fn_createSmokeColumn.sqf";
+	#include "node_modules\GRAD_makeFire\initMakeFire.sqf";
+};
+
+[] spawn {
+  #define LEAVENOTES_CANWRITENOTES (player getVariable ["GRAD_isCrashPilot",false])      //condition to be able to write notes
+  #define LEAVENOTES_UNLIMITED true                                             //can write unlimited amount of notes
+  #define LEAVENOTES_AMOUNT 2                                                   //amount of notes per player (irrelevant if LEAVENOTES_UNLIMITED)
+  #define LEAVENOTES_PLAYERDIST 1                                               //distance to player that notes will be dropped
+  #define LEAVENOTES_CLASS "Land_Notepad_F"                                     //note object class name
+  #define LEAVENOTES_ACTOFFSET [0,0,0.1]                                        //interaction point offset to notepad object
+  #define LEAVENOTES_ACTDIST 2                                                  //interaction distance
+  #define LEAVENOTES_SLEEPTIME 0.1                                              //sleeptime between interaction and creation of dialog (ACE-interact-menu would stay open sometimes)
+
+  #include "node_modules\GRAD_leaveNotes\initLeaveNotes.sqf";
+};
 
 if (isServer) then {
 
