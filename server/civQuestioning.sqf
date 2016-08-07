@@ -46,6 +46,8 @@ GRAD_fnc_questionCiv = {
   	"Ich habe gehört bei "
   	] call BIS_fnc_selectRandom;
 
+  _chanceToReveal = 0.2;
+
   if (side _player == west) then {
     _chanceToReveal = CHANCE_TO_REVEAL_BLUFOR + _civ_questioned;
   } else {
