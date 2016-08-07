@@ -19,6 +19,14 @@ GRAD_fnc_questionCiv = {
   // dont do anything if the civilian is already in 'use'
   if (_civilian getVariable ["civ_occupied",false]) exitWith {};
 
+
+   _sentenceGetOffMe = [
+    "Ich hab euch schon alles gesagt, was ihr hören wolltet!",
+    "Mehr weiß ich nicht! Ihr habt alles gehört!",
+    "Mehr kann ich euch nicht sagen! Geht jetzt.",
+    "Ich habe euch bereits geholfen."
+    ] call BIS_fnc_selectRandom;
+
   // exit if civ was already interviewed
   if (_civilian getVariable ["isInterviewedByWest",false] && side _player == west) exitWith {
       [position _civilian,"Nochmal: Wo ist der Pilot?", []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
@@ -67,12 +75,7 @@ GRAD_fnc_questionCiv = {
   	"Ich habe gehört bei "
   	] call BIS_fnc_selectRandom;
 
-  _sentenceGetOffMe = [
-    "Ich hab euch schon alles gesagt, was ihr hören wolltet!",
-    "Mehr weiß ich nicht! Ihr habt alles gehört!",
-    "Mehr kann ich euch nicht sagen! Geht jetzt.",
-    "Ich habe euch bereits geholfen."
-    ] call BIS_fnc_selectRandom;
+ 
 
   _chanceToReveal = 0.2;
 
