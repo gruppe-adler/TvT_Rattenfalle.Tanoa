@@ -2,7 +2,7 @@
     "name": "TvT_Rattenfalle.Tanoa",
     "version": "0.3.5",
     "dependencies": {
-        "GRAD_makeFire": "^1.0.0"
+        "GRAD_makeFire": "^1.0.0",
         "GRAD_leaveNotes": "^1.0.0"
     }
 }
