@@ -10,10 +10,30 @@ GRAD_fnc_questionCiv = {
   
   [_civilian] spawn GRAD_fnc_stopCiv;
 
+
+
   diag_log format ["executing GRAD_fnc_questionCiv with civ %1 and player %2 ...", _civilian, _player];
+
+
 
   // dont do anything if the civilian is already in 'use'
   if (_civilian getVariable ["civ_occupied",false]) exitWith {};
+
+  // exit if civ was already interviewed
+  if (_civilian getVariable ["isInterviewedByWest",false] && side _player == west) exitWith {
+      [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+      sleep 4;
+      [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+      _civilian setVariable ["civ_occupied",false,true];
+   };
+ 
+   if (_civilian getVariable ["isInterviewedByEast",false] && side _player == east) exitWith {
+      [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+      sleep 4;
+      [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
+    _civilian setVariable ["civ_occupied",false,true];
+   };
+
   _civilian setVariable ["civ_occupied",true,true];
 
 
@@ -56,21 +76,9 @@ GRAD_fnc_questionCiv = {
 
   _chanceToReveal = 0.2;
 
-  if (side _player == west) then {
-     if (_civilian getVariable ["isInterviewedByWest",false]) exitWith {
-        [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        sleep 4;
-        [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        _civilian setVariable ["civ_occupied",false,true];
-     };
-  } else {
-      if (_civilian getVariable ["isInterviewedByEast",false]) exitWith {
-        [position _civilian,_sentenceQuestionCalm, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-        sleep 4;
-        [position _civilian,_sentenceGetOffMe, []] remoteExec ["GRAD_fnc_showQuestioningAnswer", [0, -2] select isMultiplayer, false];
-      _civilian setVariable ["civ_occupied",false,true];
-     };
-  };
+ 
+   
+  
 
   if (side _player == west) then {
     _chanceToReveal = CHANCE_TO_REVEAL_BLUFOR + _civ_questioned;
