@@ -32,7 +32,7 @@ GRAD_getUnitLoadout_blufor_medic = [["rhs_weap_hk416d10","","rhsusf_acc_anpeq15_
 selectRandom ["rhsusf_opscore_fg","rhsusf_opscore_fg","rhsusf_opscore_fg_pelt_cam"],"",["Binocular","","","",[],[],""],
 ["ItemMap","ItemGPS","tf_anprc148jem","ItemCompass","ItemWatch",""]];
 
-GRAD_getUnitLoadout_blufor_at = [["rhs_weap_hk416d10","","rhsusf_acc_anpeq15_bk","rhsusf_acc_eotech_552",["rhs_mag_30Rnd_556x45_Mk262_Stanag",30],[],""],["rhs_weap_m72a7","","","",[],[],""],["rhsusf_weap_m9","","","",["rhsusf_mag_15Rnd_9x19_JHP",15],[],""],
+GRAD_getUnitLoadout_blufor_at = [["rhs_weap_hk416d10","","rhsusf_acc_anpeq15_bk","rhsusf_acc_eotech_552",["rhs_mag_30Rnd_556x45_Mk262_Stanag",30],[],""],["rhs_weap_M136_hedp","","","",[],[],""],["rhsusf_weap_m9","","","",["rhsusf_mag_15Rnd_9x19_JHP",15],[],""],
 ["rhs_uniform_g3_rgr",[["ACE_microDAGR",1],["ACE_NVG_Gen2",1],["ACE_DefusalKit",1],["rhsusf_mag_15Rnd_9x19_JHP",15,2]]],
 [selectRandom ["V_TacChestrig_oli_F","V_TacChestrig_grn_F","V_TacChestrig_grn_F"],
 [["30Rnd_556x45_Stanag_Tracer_Red",30,10],["rhs_mag_30Rnd_556x45_Mk262_Stanag",30,6]]],
