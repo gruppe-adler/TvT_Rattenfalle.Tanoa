@@ -17,7 +17,7 @@ if (hasInterface) then {
 setViewDistance 3500;
 enableSentences false;
 enableRadio false;
-0 fadeRadio 0;
+// 0 fadeRadio 0;
 showChat false;
 // functional variables - do not change!
 // player_respawned = 0;
