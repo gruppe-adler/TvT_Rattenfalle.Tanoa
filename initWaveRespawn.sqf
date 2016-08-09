@@ -47,27 +47,30 @@ if (isServer) then {
   };
 
   //REMOVE FROM WAVE FUNCTION ==================================================
-  mcd_fnc_removeRespawnedFromList = {
+  mcd_fnc_handleRespawned = {
     _respawnedPlayer = param [0,""];
     _respawnedSide = param [1,"UNKNOWN"];
+    _respawnedUnit = param [2, objNull];
+
+    [_respawnedUnit, _respawnedSide] spawn mcd_fnc_addRespawnedToGroup;
 
     switch (_respawnedSide) do {
 
       case "west": {
         if (_respawnedPlayer in deadPlayersBlu) then {
           deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
-          diag_log format ["removeRespawnedFromList - Player %1 respawned and has been removed from deadPlayersBlu.", _respawnedPlayer];
+          diag_log format ["handleRespawned - Player %1 respawned and has been removed from deadPlayersBlu.", _respawnedPlayer];
         } else {
-          diag_log format ["removeRespawnedFromList - ERROR, player %1 is not in deadPlayersBlu", _respawnedPlayer];
+          diag_log format ["handleRespawned - ERROR, player %1 is not in deadPlayersBlu", _respawnedPlayer];
         };
       };
 
       case "east": {
         if (_respawnedPlayer in deadPlayersOpf) then {
           deadPlayersOpf = deadPlayersOpf - [_respawnedPlayer];
-          diag_log format ["removeRespawnedFromList - Player %1 respawned and has been removed from deadPlayersOpf.", _respawnedPlayer];
+          diag_log format ["handleRespawned - Player %1 respawned and has been removed from deadPlayersOpf.", _respawnedPlayer];
         } else {
-          diag_log format ["removeRespawnedFromList - ERROR, player %1 is not in deadPlayersOpf", _respawnedPlayer];
+          diag_log format ["handleRespawned - ERROR, player %1 is not in deadPlayersOpf", _respawnedPlayer];
         };
       };
 
@@ -76,23 +79,23 @@ if (isServer) then {
       case "unknown": {
         if (_respawnedPlayer in deadPlayersBlu) then {
           deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
-          diag_log format ["removeRespawnedFromList - Player %1 disconnected and has been removed from deadPlayersBlu", _respawnedPlayer];
+          diag_log format ["handleRespawned - Player %1 disconnected and has been removed from deadPlayersBlu", _respawnedPlayer];
         } else {
           if (_respawnedPlayer in deadPlayersOpf) then {
             deadPlayersOpf = deadPlayersOpf - [_respawnedPlayer];
-            diag_log format ["removeRespawnedFromList - Player %1 disconnected and has been removed from deadPlayersOpf", _respawnedPlayer];
+            diag_log format ["handleRespawned - Player %1 disconnected and has been removed from deadPlayersOpf", _respawnedPlayer];
           } else {
             if (_respawnedPlayer in deadPlayersInd) then {
               deadPlayersInd = deadPlayersInd - [_respawnedPlayer];
-              diag_log format ["removeRespawnedFromList - Player %1 disconnected and has been removed from deadPlayersInd", _respawnedPlayer];
+              diag_log format ["handleRespawned - Player %1 disconnected and has been removed from deadPlayersInd", _respawnedPlayer];
             } else {
-              diag_log format ["removeRespawnedFromList - Player %1 disconnected but was not waiting for respawn", _respawnedPlayer];
+              diag_log format ["handleRespawned - Player %1 disconnected but was not waiting for respawn", _respawnedPlayer];
             };
           };
         };
       };
 
-      default {diag_log format ["removeRespawnedFromList - ERROR, player %1 is neither WEST nor EAST nor UNKNOWN", _respawnedPlayer]};
+      default {diag_log format ["handleRespawned - ERROR, player %1 is neither WEST nor EAST nor UNKNOWN", _respawnedPlayer]};
     };
 
     //wait extra respawn time
@@ -104,6 +107,45 @@ if (isServer) then {
     publicVariable "WAVERESPAWNPLAYERSLEFTBLU";
     publicVariable "WAVERESPAWNPLAYERSLEFTOPF";
 
+  };
+
+  //ADD TO NEW GROUP FUNCTION ==================================================
+  mcd_fnc_addRespawnedToGroup = {
+    params ["_player", "_side"];
+    private ["_leader"];
+
+    if (_side == "UNKNOWN") exitWith {diag_log format ["fnc_addRespawnedToGroup - Player %1's side is unknown.", _player]};
+
+
+    if (_side == "WEST") then {
+      newBluSpawns pushBack _player;
+      _leader = newBluSpawns select 0;
+    };
+
+    if (_side == "EAST") then {
+      newOpfSpawns pushBack _player;
+      _leader = newOpfSpawns select 0;
+    };
+
+    //player is not leader --> join leader
+    if (_player != _leader) then {
+      [_player] joinSilent _leader;
+      diag_log format ["fnc_addRespawnedToGroup - Player %1 joined %2's group.", _player, _leader];
+    };
+
+    //player is leader --> register group
+    if (_player == _leader) then {
+      _groupExists = true;
+      _groupName = "";
+      _i = 1;
+      while {_groupExists} do {
+        _groupName = format ["Reinforcements %1", _i];
+        _groupExists = str (["GetGroupByName", [_groupName, side _leader]] call BIS_fnc_dynamicGroups) != "<NULL-group>";
+        _i = _i + 1;
+      };
+     ["RegisterGroup", [group _leader, _leader, [nil, _groupName, false]]] call BIS_fnc_dynamicGroups;
+      diag_log format ["fnc_addRespawnedToGroup - Player %1 is groupleader of new respawned players for side %2.", _player, _side];
+    };
   };
 
   //WAVE SIZE ==================================================================
@@ -137,6 +179,6 @@ if (isServer) then {
 
 
   //============================================================================
-  addMissionEventHandler ["HandleDisconnect", {[_this select 3] spawn mcd_fnc_removeRespawnedFromList}];
+  addMissionEventHandler ["HandleDisconnect", {[_this select 3] spawn mcd_fnc_handleRespawned}];
   [] execVM "waveRespawn.sqf";
 };
