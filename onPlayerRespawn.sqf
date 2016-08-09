@@ -13,8 +13,6 @@ if (player getVariable ["GRAD_canBuy",false]) then {
 };
 */
 
-//check JIP player is spawning for the first time
-if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "Player is JIP, not executing onPlayerRespawn.sqf"};
-
-//notify server
-[profileName, originalSide] remoteExec ["mcd_fnc_removeRespawnedFromList",2,false];
+//make sure this is not respawn on first join
+if (serverTime-joinTime < 30) exitWith {diag_log "Player just joined, not executing mcd_fnc_handleRespawned"};
+[profileName, originalSide, player] remoteExec ["mcd_fnc_handleRespawned",2,false];

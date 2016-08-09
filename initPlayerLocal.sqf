@@ -16,12 +16,8 @@ if (isMultiplayer) then {
 	joinTime = time;
 };
 
-// exclude independents from wave respawn
-if (side player != independent) then {
-	[] execVM "initWaveRespawn.sqf";
-} else {
-	setplayerrespawntime 999999;
-};
+[] execVM "initWaveRespawn.sqf";
+
 
 // get loadout for the first time, just to make sure
 
@@ -69,7 +65,7 @@ GRAD_fnc_showQuestioningAnswer = {
 
 		// dont display if too far away
 		if (position player distance _pos > 8) exitWith {};
-		
+
 		// create marker for bystanders
 		if (count _markerPositionArray > 0) then {
 				0 = [(_markerPositionArray select 0), 250] execVM "player\createPilotMarker.sqf";

@@ -2,10 +2,13 @@
 if (serverTime-joinTime < 30 && didJIP) exitWith {diag_log "Player is JIP, not executing onPlayerKilled.sqf"};
 private ["_timeleft","_waveLeft","_minutes","_seconds","_respawnIn", "_explanation"];
 
+//keep player from respawning
+setPlayerRespawnTime 99999;
+
 _handle = execVM "player\createDeathCam.sqf";
 waitUntil {scriptdone _handle};
 cutText ["", "BLACK IN", 1];
- if (originalSide == "independent") exitWith {
+ if (originalSide == "GUER") exitWith {
     // todo: add free cams for dead pilots
     [allUnits,true] call ace_spectator_fnc_updateUnits;
     [[west,east,independent,civilian], []] call ace_spectator_fnc_updateSpectatableSides;
@@ -16,8 +19,6 @@ cutText ["", "BLACK IN", 1];
 [true] call ace_spectator_fnc_setSpectator;
 [player, true] call TFAR_fnc_forceSpectator;
 
-//keep player from respawning
-setPlayerRespawnTime 9999;
 sleep 2;
 
 //declare/define variables =====================================================
