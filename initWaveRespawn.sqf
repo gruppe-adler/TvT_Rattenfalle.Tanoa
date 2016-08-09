@@ -56,7 +56,7 @@ if (isServer) then {
 
     switch (_respawnedSide) do {
 
-      case "west": {
+      case "WEST": {
         if (_respawnedPlayer in deadPlayersBlu) then {
           deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
           diag_log format ["handleRespawned - Player %1 respawned and has been removed from deadPlayersBlu.", _respawnedPlayer];
@@ -65,7 +65,7 @@ if (isServer) then {
         };
       };
 
-      case "east": {
+      case "EAST": {
         if (_respawnedPlayer in deadPlayersOpf) then {
           deadPlayersOpf = deadPlayersOpf - [_respawnedPlayer];
           diag_log format ["handleRespawned - Player %1 respawned and has been removed from deadPlayersOpf.", _respawnedPlayer];
@@ -76,7 +76,7 @@ if (isServer) then {
 
 
 
-      case "unknown": {
+      case "UNKNOWN": {
         if (_respawnedPlayer in deadPlayersBlu) then {
           deadPlayersBlu = deadPlayersBlu - [_respawnedPlayer];
           diag_log format ["handleRespawned - Player %1 disconnected and has been removed from deadPlayersBlu", _respawnedPlayer];
