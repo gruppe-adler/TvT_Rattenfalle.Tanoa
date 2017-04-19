@@ -1,6 +1,7 @@
 [] execVM "server\civPointedAtListener.sqf";
 [] execVM "server\civQuestioning.sqf";
 [] execVM "initWaveRespawn.sqf";
+[] execVM "initMakeFire.sqf";
 mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoadout.sqf";
 
 // description.ext parameters

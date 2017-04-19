@@ -45,6 +45,7 @@ player addEventhandler ["HandleRating", {
 0 = execVM "player\animations\addWavingInteraction.sqf";
 0 = execVM "player\animations\addBuyInteraction.sqf";
 0 = execVM "player\addObjectiveListener.sqf";
+0 = execVM "initMakeFire.sqf";
 mcd_fnc_strToLoadout = compile preprocessFileLineNumbers "loadouts\fnc_strToLoadout.sqf";
 
 // for local execution of interrogation actions
